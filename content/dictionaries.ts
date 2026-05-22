@@ -44,7 +44,7 @@ export const dictionaries = {
       breadcrumbsHome: "Home"
     },
     home: {
-      heroTitle: "27+ Years of Power Plant Operations & EPC Experience",
+      heroTitle: "28+ Years of Power Plant Operations & EPC Experience",
       heroText:
         "High-trust technical consultancy for hydropower, solar, commissioning, owner's engineering and operational performance improvement.",
       proof: "274+ MW completed project experience across 8 power plant projects.",
@@ -65,7 +65,7 @@ export const dictionaries = {
         "International energy companies"
       ],
       reasons: [
-        "27+ years of hands-on plant operation and EPC delivery experience",
+        "28+ years of hands-on plant operation and EPC delivery experience",
         "Practical hydropower and solar know-how from commissioning to O&M",
         "Owner-side engineering judgment for risk, quality and performance",
         "Clear technical reporting for boards, lenders and project teams"
@@ -84,7 +84,7 @@ export const dictionaries = {
       description:
         "Oztoprak Energy Consultancy helps developers, EPC contractors, plant owners and investors make technically sound decisions across the renewable energy project lifecycle.",
       body:
-        "The practice combines 27+ years of power plant operations and EPC experience with a pragmatic field-first consulting approach. Engagements are designed for clarity: technical risks are identified, prioritized and converted into decisions that project teams can execute.",
+        "The practice combines 28+ years of power plant operations and EPC experience with a pragmatic field-first consulting approach. Engagements are designed for clarity: technical risks are identified, prioritized and converted into decisions that project teams can execute.",
       values: ["Technical independence", "Operational realism", "Investor-grade reporting", "Long-term asset performance"]
     },
     contact: {
@@ -153,7 +153,7 @@ export const dictionaries = {
       breadcrumbsHome: "Ana Sayfa"
     },
     home: {
-      heroTitle: "27+ Yıllık Enerji Santrali İşletme ve EPC Deneyimi",
+      heroTitle: "28+ Yıllık Enerji Santrali İşletme ve EPC Deneyimi",
       heroText:
         "HES, GES, devreye alma, işveren mühendisliği ve operasyonel performans iyileştirme için güven veren teknik danışmanlık.",
       proof: "8 enerji santrali projesinde 274+ MW tamamlanmış proje deneyimi.",
@@ -168,7 +168,7 @@ export const dictionaries = {
         "Fizibilite, devreye alma riski, işletme bakım performansı, şebeke koruma veya satın alma teknik incelemesi için odaklı danışmanlık talep edin.",
       industries: ["EPC şirketleri", "Yenilenebilir enerji yatırımcıları", "Santral sahipleri", "Endüstriyel tesisler", "Uluslararası enerji şirketleri"],
       reasons: [
-        "27+ yıllık sahaya dayalı santral işletme ve EPC teslim deneyimi",
+        "28+ yıllık sahaya dayalı santral işletme ve EPC teslim deneyimi",
         "Devreye alma aşamasından işletmeye kadar pratik HES ve GES bilgisi",
         "Risk, kalite ve performans için işveren tarafı mühendislik bakışı",
         "Yönetim, finans kuruluşları ve proje ekipleri için net teknik raporlama"
@@ -187,7 +187,7 @@ export const dictionaries = {
       description:
         "Öztoprak Enerji Danışmanlık; geliştiriciler, EPC yüklenicileri, santral sahipleri ve yatırımcılar için teknik olarak doğru kararlar alınmasına destek olur.",
       body:
-        "Danışmanlık yaklaşımı 27+ yıllık santral işletme ve EPC deneyimini sahaya dayalı pratik mühendislik bakışıyla birleştirir. Her çalışma teknik riskleri netleştirir, önceliklendirir ve proje ekiplerinin uygulayabileceği kararlara dönüştürür.",
+        "Danışmanlık yaklaşımı 28+ yıllık santral işletme ve EPC deneyimini sahaya dayalı pratik mühendislik bakışıyla birleştirir. Her çalışma teknik riskleri netleştirir, önceliklendirir ve proje ekiplerinin uygulayabileceği kararlara dönüştürür.",
       values: ["Teknik bağımsızlık", "Operasyonel gerçekçilik", "Yatırımcı düzeyinde raporlama", "Uzun vadeli varlık performansı"]
     },
     contact: {

@@ -31,7 +31,7 @@ const content = {
     metaDescription:
       "Premium EPC, hydropower, solar, commissioning, grid compliance and renewable energy due diligence consultancy for investors, owners and international EPC teams.",
     heroKicker: "Independent EPC and renewable energy technical advisory",
-    heroTitle: "27+ Years of Power Plant Operations & EPC Experience",
+    heroTitle: "28+ Years of Power Plant Operations & EPC Experience",
     heroText:
       "Oztoprak Energy Consulting supports owners, investors and EPC contractors with field-proven engineering judgement across hydropower, solar, commissioning, grid compliance and operational optimization.",
     proof: "274+ MW completed project experience across 8 power plant projects.",
@@ -101,7 +101,7 @@ const content = {
       }
     ],
     reasons: [
-      ["27+ years experience", "Plant operation, EPC delivery and commissioning judgment from real renewable energy assets."],
+      ["28+ years experience", "Plant operation, EPC delivery and commissioning judgment from real renewable energy assets."],
       ["274+ MW completed projects", "Technical exposure across hydropower, solar PV, grid interface and power plant performance recovery."],
       ["8 completed power plants", "Hands-on understanding of what must work before an asset can operate reliably."],
       ["International EPC experience", "Communication and reporting suitable for global EPC contractors, investors and owner teams."],
@@ -136,7 +136,7 @@ const content = {
     metaDescription:
       "Yatırımcılar, santral sahipleri ve uluslararası EPC ekipleri için HES, GES, devreye alma, şebeke uyumu ve yenilenebilir enerji teknik danışmanlığı.",
     heroKicker: "Bağımsız EPC ve yenilenebilir enerji teknik danışmanlığı",
-    heroTitle: "27+ Yıllık Enerji Santrali İşletme ve EPC Deneyimi",
+    heroTitle: "28+ Yıllık Enerji Santrali İşletme ve EPC Deneyimi",
     heroText:
       "Öztoprak Enerji Danışmanlık; santral sahipleri, yatırımcılar ve EPC yüklenicileri için HES, GES, devreye alma, şebeke uyumu ve operasyonel optimizasyon alanlarında sahaya dayalı mühendislik desteği sağlar.",
     proof: "8 enerji santrali projesinde 274+ MW tamamlanmış proje deneyimi.",
@@ -206,7 +206,7 @@ const content = {
       }
     ],
     reasons: [
-      ["27+ yıl deneyim", "Gerçek yenilenebilir enerji varlıklarından gelen santral işletme, EPC teslim ve devreye alma bilgisi."],
+      ["28+ yıl deneyim", "Gerçek yenilenebilir enerji varlıklarından gelen santral işletme, EPC teslim ve devreye alma bilgisi."],
       ["274+ MW tamamlanmış proje", "HES, GES, şebeke arayüzü ve santral performans toparlama alanlarında teknik deneyim."],
       ["8 tamamlanan enerji santrali", "Bir varlığın güvenilir çalışması için sahada gerçekten neyin hazır olması gerektiğine hakimiyet."],
       ["Uluslararası EPC deneyimi", "Global EPC yüklenicileri, yatırımcılar ve işveren ekipleri için uygun raporlama ve iletişim."],
@@ -291,7 +291,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   const contactHref = locale === "tr" ? "/tr/iletisim" : "/en/contact";
   const servicesHref = locale === "tr" ? "/tr/hizmetler" : "/en/services";
   const metrics = [
-    ["27+", locale === "en" ? "Years Experience" : "Yıl Deneyim"],
+    ["28+", locale === "en" ? "Years Experience" : "Yıl Deneyim"],
     ["274+", locale === "en" ? "MW Completed Projects" : "MW Tamamlanan Proje"],
     ["8", locale === "en" ? "Completed Power Plants" : "Tamamlanan Santral"],
     [locale === "en" ? "Hydro + Solar" : "HES + GES", locale === "en" ? "Renewable Expertise" : "Yenilenebilir Uzmanlığı"],

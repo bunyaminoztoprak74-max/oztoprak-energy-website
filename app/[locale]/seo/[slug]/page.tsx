@@ -82,7 +82,7 @@ export default async function GeneratedSeoPage({ params }: { params: Promise<{ l
       ]}
       relatedSeed={{ services: [service.slug], categories: service.keywords, exclude: page.slug }}
       stats={[
-        ["27+", dict.labels.years],
+        ["28+", dict.labels.years],
         ["274+", dict.labels.mw],
         ["8", dict.labels.projects],
         [location.label, locale === "en" ? "Target market" : "Hedef pazar"]

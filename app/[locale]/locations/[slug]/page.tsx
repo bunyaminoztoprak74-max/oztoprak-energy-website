@@ -91,8 +91,8 @@ export default async function LocationPage({ params }: { params: Promise<{ local
         {
           heading: locale === "en" ? "Trust signals for technical buyers" : "Teknik karar vericiler için güven sinyalleri",
           content: locale === "en"
-            ? "The page emphasizes 27+ years of plant operations and EPC experience, 274+ MW project experience, evidence-based reporting and owner-side engineering judgment."
-            : "Sayfa 27+ yıllık santral işletme ve EPC deneyimini, 274+ MW proje deneyimini, kanıta dayalı raporlamayı ve işveren tarafı mühendislik yorumunu öne çıkarır."
+            ? "The page emphasizes 28+ years of plant operations and EPC experience, 274+ MW project experience, evidence-based reporting and owner-side engineering judgment."
+            : "Sayfa 28+ yıllık santral işletme ve EPC deneyimini, 274+ MW proje deneyimini, kanıta dayalı raporlamayı ve işveren tarafı mühendislik yorumunu öne çıkarır."
         }
       ]}
       deliverables={locale === "en"
