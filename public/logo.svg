@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="48" viewBox="0 0 220 48" role="img" aria-label="Oztoprak Energy">
+  <rect width="48" height="48" rx="8" fill="#2fb7ff"/>
+  <path d="M13 31 24 10l11 21h-7l-4-8-4 8h-7Z" fill="#07111f"/>
+  <path d="M58 15h22v5H65v4h13v5H65v4h16v5H58V15Zm30 0h7l13 15V15h6v23h-7L94 23v15h-6V15Zm35 0h23v5h-16v4h14v5h-14v9h-7V15Zm30 0h7v18h15v5h-22V15Zm29 0h7v23h-7V15Zm15 0h7l10 14 10-14h7v23h-7V25l-8 11h-4l-8-11v13h-7V15Z" fill="#f8fbff"/>
+</svg>
