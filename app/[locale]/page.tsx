@@ -23,7 +23,6 @@ import { FeatureCard } from "@/components/cards";
 import { CtaSection } from "@/components/cta-section";
 import { buildMetadata } from "@/lib/seo";
 import { isLocale, type Locale } from "@/lib/i18n";
-import { localBusinessSchema } from "@/lib/schema";
 
 const content = {
   en: {
@@ -34,14 +33,14 @@ const content = {
     heroTitle: "28+ Years of Power Plant Operations & EPC Experience",
     heroText:
       "Oztoprak Energy Consulting supports owners, investors and EPC contractors with field-proven engineering judgement across hydropower, solar, commissioning, grid compliance and operational optimization.",
-    proof: "274+ MW completed project experience across 8 power plant projects.",
+    proof: "275+ MW managed capacity experience across 8 successfully completed power plant projects.",
     heroSignals: ["Hydropower technical audits", "Owner-side EPC review", "Commissioning and grid readiness"],
     servicesEyebrow: "Core Advisory Services",
     servicesTitle: "Technical Consultancy for Renewable Energy Decisions",
     servicesText:
       "Each engagement is structured around evidence from site inspections, operating data, commissioning records and EPC documentation, so recommendations are practical for owners, lenders and project teams.",
     projectsEyebrow: "International Project Profile",
-    projectsTitle: "Representative Renewable Energy Advisory Experience",
+    projectsTitle: "Anonymized Technical Case Studies",
     projectsText:
       "Project references are presented as consulting profiles that reflect the technical scope, asset class and owner-side role typically required by international EPC and investment teams.",
     workflowEyebrow: "Technical Audit Workflow",
@@ -102,16 +101,16 @@ const content = {
     ],
     reasons: [
       ["28+ years experience", "Plant operation, EPC delivery and commissioning judgment from real renewable energy assets."],
-      ["274+ MW completed projects", "Technical exposure across hydropower, solar PV, grid interface and power plant performance recovery."],
-      ["8 completed power plants", "Hands-on understanding of what must work before an asset can operate reliably."],
+      ["275+ MW managed capacity", "Technical exposure across hydropower, solar PV, grid interface and power plant performance recovery."],
+      ["8 successfully completed power plant projects", "Hands-on understanding of what must work before an asset can operate reliably."],
       ["International EPC experience", "Communication and reporting suitable for global EPC contractors, investors and owner teams."],
       ["Operational optimization expertise", "Focus on availability, generation loss, maintenance discipline and corrective action priorities."]
     ],
     projects: [
-      { name: "Hydropower Portfolio Optimization", country: "Turkey", capacity: "118 MW", role: "Technical Consultant", technology: "Hydropower" },
-      { name: "Solar Plant Performance Recovery", country: "Turkey", capacity: "46 MW", role: "Performance Advisor", technology: "Solar PV" },
-      { name: "Commissioning Readiness Program", country: "Türkiye / International EPC", capacity: "72 MW", role: "Commissioning Consultant", technology: "Renewable Power" },
-      { name: "Existing Plant Technical Audit", country: "Regional Owner Portfolio", capacity: "38 MW", role: "Independent Technical Auditor", technology: "Hydropower + BoP" }
+      { name: "Hydropower Commissioning Case Study", country: "Anonymized international HPP", capacity: "64 MW", role: "Commissioning Advisor", technology: "Hydropower", slug: "hydropower-commissioning-case-study" },
+      { name: "Plant Performance Improvement Case Study", country: "Anonymized portfolio", capacity: "92 MW", role: "Performance Consultant", technology: "Hydropower + Solar", slug: "plant-performance-improvement-case-study" },
+      { name: "Solar Plant Technical Audit Case Study", country: "Anonymized PV asset", capacity: "48 MWp", role: "Independent Auditor", technology: "Solar PV", slug: "solar-plant-technical-audit-case-study" },
+      { name: "EPC Owner-Side Technical Control Case Study", country: "Anonymized EPC project", capacity: "71 MW", role: "Owner-side Advisor", technology: "Renewable Power", slug: "epc-owner-side-technical-control-case-study" }
     ],
     workflow: [
       ["Site inspection", "Walk down civil, mechanical, electrical, control and protection interfaces with attention to operating evidence."],
@@ -139,14 +138,14 @@ const content = {
     heroTitle: "28+ Yıllık Enerji Santrali İşletme ve EPC Deneyimi",
     heroText:
       "Öztoprak Enerji Danışmanlık; santral sahipleri, yatırımcılar ve EPC yüklenicileri için HES, GES, devreye alma, şebeke uyumu ve operasyonel optimizasyon alanlarında sahaya dayalı mühendislik desteği sağlar.",
-    proof: "8 enerji santrali projesinde 274+ MW tamamlanmış proje deneyimi.",
+    proof: "8 başarıyla tamamlanmış enerji santrali projesinde 275+ MW yönetilen kapasite deneyimi.",
     heroSignals: ["HES teknik denetimleri", "İşveren tarafı EPC inceleme", "Devreye alma ve şebeke hazırlığı"],
     servicesEyebrow: "Temel Danışmanlık Hizmetleri",
     servicesTitle: "Yenilenebilir Enerji Kararları İçin Teknik Danışmanlık",
     servicesText:
       "Her çalışma saha incelemesi, işletme verisi, devreye alma kayıtları ve EPC dokümantasyonu üzerine kurulur; böylece öneriler işveren, finans kuruluşu ve proje ekipleri için uygulanabilir olur.",
     projectsEyebrow: "Uluslararası Proje Profili",
-    projectsTitle: "Yenilenebilir Enerji Danışmanlığı Deneyimi",
+    projectsTitle: "Anonim Teknik Vaka Çalışmaları",
     projectsText:
       "Proje kartları; uluslararası EPC ve yatırım ekiplerinin ihtiyaç duyduğu teknik kapsamı, varlık sınıfını ve işveren tarafı danışmanlık rolünü gösteren profesyonel profiller olarak sunulur.",
     workflowEyebrow: "Teknik Denetim Süreci",
@@ -207,16 +206,16 @@ const content = {
     ],
     reasons: [
       ["28+ yıl deneyim", "Gerçek yenilenebilir enerji varlıklarından gelen santral işletme, EPC teslim ve devreye alma bilgisi."],
-      ["274+ MW tamamlanmış proje", "HES, GES, şebeke arayüzü ve santral performans toparlama alanlarında teknik deneyim."],
-      ["8 tamamlanan enerji santrali", "Bir varlığın güvenilir çalışması için sahada gerçekten neyin hazır olması gerektiğine hakimiyet."],
+      ["275+ MW yönetilen kapasite", "HES, GES, şebeke arayüzü ve santral performans toparlama alanlarında teknik deneyim."],
+      ["8 başarıyla tamamlanmış enerji santrali projesi", "Bir varlığın güvenilir çalışması için sahada gerçekten neyin hazır olması gerektiğine hakimiyet."],
       ["Uluslararası EPC deneyimi", "Global EPC yüklenicileri, yatırımcılar ve işveren ekipleri için uygun raporlama ve iletişim."],
       ["Operasyonel optimizasyon uzmanlığı", "Emre amadelik, üretim kaybı, bakım disiplini ve düzeltici aksiyon önceliklerine odaklanma."]
     ],
     projects: [
-      { name: "HES Portföy Optimizasyonu", country: "Türkiye", capacity: "118 MW", role: "Teknik Danışman", technology: "Hidroelektrik" },
-      { name: "GES Performans Toparlama", country: "Türkiye", capacity: "46 MW", role: "Performans Danışmanı", technology: "Güneş PV" },
-      { name: "Devreye Alma Hazırlık Programı", country: "Türkiye / Uluslararası EPC", capacity: "72 MW", role: "Devreye Alma Danışmanı", technology: "Yenilenebilir Enerji" },
-      { name: "Mevcut Santral Teknik Denetimi", country: "Bölgesel İşveren Portföyü", capacity: "38 MW", role: "Bağımsız Teknik Denetçi", technology: "HES + Yardımcı Sistemler" }
+      { name: "HES Devreye Alma Vaka Çalışması", country: "Anonim uluslararası HES", capacity: "64 MW", role: "Devreye Alma Danışmanı", technology: "Hidroelektrik", slug: "hes-devreye-alma-vaka-calismasi" },
+      { name: "Santral Performans İyileştirme Vaka Çalışması", country: "Anonim portföy", capacity: "92 MW", role: "Performans Danışmanı", technology: "HES + GES", slug: "santral-performans-iyilestirme-vaka-calismasi" },
+      { name: "GES Teknik Denetim Vaka Çalışması", country: "Anonim GES varlığı", capacity: "48 MWp", role: "Bağımsız Denetçi", technology: "Güneş PV", slug: "ges-teknik-denetim-vaka-calismasi" },
+      { name: "EPC İşveren Tarafı Teknik Kontrol Vaka Çalışması", country: "Anonim EPC projesi", capacity: "71 MW", role: "İşveren Tarafı Danışman", technology: "Yenilenebilir Enerji", slug: "epc-isveren-tarafi-teknik-kontrol-vaka-calismasi" }
     ],
     workflow: [
       ["Saha incelemesi", "İnşaat, mekanik, elektrik, kontrol ve koruma arayüzleri işletme kanıtlarıyla birlikte sahada incelenir."],
@@ -267,7 +266,7 @@ const content = {
   advisory: string;
   services: Array<{ title: string; text: string; href: string; icon: typeof Waves }>;
   reasons: Array<[string, string]>;
-  projects: Array<{ name: string; country: string; capacity: string; role: string; technology: string }>;
+  projects: Array<{ name: string; country: string; capacity: string; role: string; technology: string; slug: string }>;
   workflow: Array<[string, string]>;
   operations: Array<[string, string, typeof Activity]>;
   problemCards: Array<[string, string]>;
@@ -292,15 +291,14 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   const servicesHref = locale === "tr" ? "/tr/hizmetler" : "/en/services";
   const metrics = [
     ["28+", locale === "en" ? "Years Experience" : "Yıl Deneyim"],
-    ["274+", locale === "en" ? "MW Completed Projects" : "MW Tamamlanan Proje"],
-    ["8", locale === "en" ? "Completed Power Plants" : "Tamamlanan Santral"],
-    [locale === "en" ? "Hydro + Solar" : "HES + GES", locale === "en" ? "Renewable Expertise" : "Yenilenebilir Uzmanlığı"],
-    ["EPC", locale === "en" ? "Commissioning Experience" : "Devreye Alma Deneyimi"]
+    ["275+", locale === "en" ? "MW Managed Capacity" : "MW Yönetilen Kapasite"],
+    ["8", locale === "en" ? "Successfully Completed Power Plant Projects" : "Başarıyla Tamamlanan Santral Projesi"],
+    [locale === "en" ? "Hydro + Solar" : "HES + GES", locale === "en" ? "Hydropower & Solar Expertise" : "HES ve GES Uzmanlığı"],
+    ["EPC", locale === "en" ? "Commissioning, O&M and Due Diligence" : "Devreye Alma, O&M ve Teknik Durum Tespiti"]
   ];
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema(locale)) }} />
       <section className="hero-industrial relative overflow-hidden bg-navy-950">
         <Container className="relative z-10 grid min-h-[70vh] items-center py-14 sm:py-16 lg:py-20">
           <div className="grid gap-10 lg:grid-cols-[1.02fr_0.72fr] lg:items-center">
@@ -420,7 +418,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             {page.projects.map((project, index) => (
               <MotionReveal key={project.name} delay={index * 0.04}>
-                <article className="group h-full rounded-lg border border-white/10 bg-[radial-gradient(circle_at_18%_0%,rgba(47,183,255,0.16),transparent_18rem),rgba(255,255,255,0.035)] p-6 shadow-[0_18px_70px_rgba(0,0,0,0.24)] transition duration-300 hover:-translate-y-1 hover:border-energy-500/55">
+                <a href={`/${locale}/projects/${project.slug}`} className="group block h-full rounded-lg border border-white/10 bg-[radial-gradient(circle_at_18%_0%,rgba(47,183,255,0.16),transparent_18rem),rgba(255,255,255,0.035)] p-6 shadow-[0_18px_70px_rgba(0,0,0,0.24)] transition duration-300 hover:-translate-y-1 hover:border-energy-500/55">
                   <div className="flex items-start justify-between gap-4">
                     <Globe2 className="h-6 w-6 text-energy-500" />
                     <span className="rounded-md border border-white/10 px-3 py-1 text-xs font-semibold text-steel">{project.country}</span>
@@ -438,7 +436,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                       </div>
                     ))}
                   </dl>
-                </article>
+                </a>
               </MotionReveal>
             ))}
           </div>

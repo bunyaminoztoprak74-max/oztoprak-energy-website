@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { Container } from "@/components/container";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { LinkCard } from "@/components/cards";
+import { ConversionFunnel } from "@/components/conversion-funnel";
 import { getCategories, getPosts } from "@/content/blog";
 import { getDictionary } from "@/content/dictionaries";
 import { buildMetadata } from "@/lib/seo";
@@ -51,6 +52,7 @@ export default async function BlogCategoryPage({ params }: { params: Promise<{ l
           ))}
         </Container>
       </section>
+      <ConversionFunnel locale={locale} />
     </>
   );
 }

@@ -4,8 +4,13 @@ import { Container } from "@/components/container";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { ButtonLink } from "@/components/button-link";
 import { RelatedContent } from "@/components/related-content";
+import { AuthorityMetrics } from "@/components/authority-metrics";
+import { ConversionFunnel } from "@/components/conversion-funnel";
+import { EngineeringVisualBlocks } from "@/components/engineering-visual-blocks";
+import { StickyConsultationCta } from "@/components/sticky-consultation-cta";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/content/dictionaries";
+import { contactPath, servicesIndexPath } from "@/lib/routes";
 
 type ProgrammaticPageProps = {
   locale: Locale;
@@ -62,6 +67,7 @@ export function ProgrammaticPage({
 
   return (
     <>
+      <StickyConsultationCta locale={locale} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <section className="energy-grid bg-navy-950 py-20">
         <Container>
@@ -71,8 +77,8 @@ export function ProgrammaticPage({
           <p className="mt-6 max-w-3xl text-lg leading-8 text-steel">{description}</p>
           {intro ? <p className="mt-5 max-w-4xl text-base leading-8 text-white/85">{intro}</p> : null}
           <div className="mt-8 flex flex-wrap gap-3">
-            <ButtonLink href={`/${locale}/contact`}>{dict.nav.consultation}</ButtonLink>
-            <ButtonLink href={`/${locale}/services`} variant="secondary">{dict.nav.services}</ButtonLink>
+            <ButtonLink href={contactPath(locale)}>{dict.nav.consultation}</ButtonLink>
+            <ButtonLink href={servicesIndexPath(locale)} variant="secondary">{dict.nav.services}</ButtonLink>
           </div>
           {stats ? (
             <div className="mt-12 grid gap-3 sm:grid-cols-4">
@@ -84,8 +90,12 @@ export function ProgrammaticPage({
               ))}
             </div>
           ) : null}
+          <div className="mt-12">
+            <AuthorityMetrics locale={locale} />
+          </div>
         </Container>
       </section>
+      <EngineeringVisualBlocks locale={locale} />
 
       <section className="bg-navy-900 py-20">
         <Container className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
@@ -148,7 +158,7 @@ export function ProgrammaticPage({
                   <div className="mt-8 rounded-md bg-navy-950 p-5">
                     <p className="text-sm leading-7 text-white">{cta}</p>
                     <div className="mt-5">
-                      <ButtonLink href={`/${locale}/contact`}>{dict.nav.consultation}</ButtonLink>
+                      <ButtonLink href={contactPath(locale)}>{dict.nav.consultation}</ButtonLink>
                     </div>
                   </div>
                 ) : null}
@@ -236,6 +246,7 @@ export function ProgrammaticPage({
         </section>
       ) : null}
 
+      <ConversionFunnel locale={locale} />
       <RelatedContent locale={locale} seed={relatedSeed} />
     </>
   );

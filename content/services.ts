@@ -115,6 +115,46 @@ export const services: Record<Locale, Service[]> = {
       outcomes: ["Better investment decisions", "Clear technical risks", "Practical value creation options"],
       scope: ["Technical due diligence", "Feasibility challenge review", "CAPEX/OPEX technical assumptions", "Asset improvement strategy"],
       faqs: sharedFaq.en
+    },
+    {
+      slug: "hydropower-consulting",
+      title: "Hydropower Consulting",
+      eyebrow: "HPP performance, commissioning and asset reliability",
+      description: "Expert hydropower consulting for owners, EPC teams and investors who need practical engineering support for HPP commissioning, operations, technical audits and performance recovery.",
+      keywords: ["hydropower consulting", "HPP commissioning", "hydropower technical audit", "power plant operations"],
+      outcomes: ["Higher HPP availability", "Clear commissioning and O&M risk priorities", "Evidence-based hydropower improvement plan"],
+      scope: ["Hydropower site inspection", "Turbine-generator operating review", "HPP commissioning evidence assessment", "Water-to-wire loss analysis", "O&M and outage history review"],
+      faqs: sharedFaq.en
+    },
+    {
+      slug: "energy-audit",
+      title: "Energy Audit Services",
+      eyebrow: "Plant performance, losses and technical due diligence",
+      description: "Energy audit services for hydropower, solar and renewable power plants focused on technical risk, operating losses, asset condition and practical corrective actions.",
+      keywords: ["energy audit services", "power plant technical audit", "renewable energy consultancy", "plant performance review"],
+      outcomes: ["Prioritized technical audit report", "Actionable loss reduction roadmap", "Owner-ready investment and risk ranking"],
+      scope: ["Power plant site audit", "Performance and loss review", "Asset condition observations", "Grid and protection evidence review", "Corrective action prioritization"],
+      faqs: sharedFaq.en
+    },
+    {
+      slug: "solar-energy-consulting",
+      title: "Solar Energy Consulting",
+      eyebrow: "Solar PV performance, EPC quality and O&M recovery",
+      description: "Solar energy consulting for PV investors, owners and EPC teams requiring performance ratio analysis, technical audit support and lifecycle asset optimization.",
+      keywords: ["solar energy consulting", "solar plant technical audit", "solar performance ratio analysis", "renewable energy consultancy"],
+      outcomes: ["Clear PR and loss diagnosis", "Improved EPC and O&M accountability", "Practical solar recovery action plan"],
+      scope: ["Performance ratio analysis", "Inverter and string-level review", "EPC quality evidence assessment", "O&M response and cleaning routine review", "Solar technical due diligence"],
+      faqs: sharedFaq.en
+    },
+    {
+      slug: "epc-technical-advisory",
+      title: "EPC Technical Advisory",
+      eyebrow: "Owner-side EPC risk, quality and delivery control",
+      description: "EPC technical advisory for renewable energy projects where owners and investors need independent technical control over design, interfaces, commissioning and handover.",
+      keywords: ["EPC technical advisory", "EPC technical consultancy", "owner's engineering", "renewable energy consultancy"],
+      outcomes: ["Reduced EPC delivery risk", "Better interface and contractor control", "Stronger commissioning and handover evidence"],
+      scope: ["EPC scope and interface review", "Technical risk register", "Contractor deliverable review", "Commissioning readiness challenge", "Owner decision support"],
+      faqs: sharedFaq.en
     }
   ],
   tr: [
@@ -206,6 +246,46 @@ export const services: Record<Locale, Service[]> = {
       keywords: ["enerji yatırım danışmanlığı", "enerji santrali danışmanlığı", "HES teknik denetim"],
       outcomes: ["Daha doğru yatırım kararları", "Net teknik riskler", "Pratik değer yaratma seçenekleri"],
       scope: ["Teknik durum tespiti", "Fizibilite varsayım incelemesi", "CAPEX/OPEX teknik varsayımları", "Varlık iyileştirme stratejisi"],
+      faqs: sharedFaq.tr
+    },
+    {
+      slug: "hes-danismanligi",
+      title: "HES Danışmanlığı",
+      eyebrow: "HES performansı, devreye alma ve varlık güvenilirliği",
+      description: "HES sahipleri, EPC ekipleri ve yatırımcılar için HES devreye alma, işletme, teknik denetim ve performans toparlama odaklı uzman hidroelektrik danışmanlığı.",
+      keywords: ["HES danışmanlığı", "HES devreye alma", "HES teknik denetim", "enerji santrali danışmanlığı"],
+      outcomes: ["Daha yüksek HES emre amadeliği", "Net devreye alma ve O&M risk öncelikleri", "Kanıta dayalı HES iyileştirme planı"],
+      scope: ["HES saha incelemesi", "Türbin-jeneratör işletme incelemesi", "HES devreye alma kanıt değerlendirmesi", "Su-güç kayıp analizi", "O&M ve duruş geçmişi incelemesi"],
+      faqs: sharedFaq.tr
+    },
+    {
+      slug: "enerji-denetimi",
+      title: "Enerji Denetimi Hizmetleri",
+      eyebrow: "Santral performansı, kayıplar ve teknik durum tespiti",
+      description: "HES, GES ve yenilenebilir enerji santralleri için teknik risk, işletme kayıpları, varlık durumu ve uygulanabilir düzeltici aksiyon odaklı enerji denetimi hizmetleri.",
+      keywords: ["enerji denetimi", "santral teknik denetim", "enerji santrali danışmanlığı", "santral performans analizi"],
+      outcomes: ["Öncelikli teknik denetim raporu", "Uygulanabilir kayıp azaltma yol haritası", "İşveren için yatırım ve risk sıralaması"],
+      scope: ["Santral saha denetimi", "Performans ve kayıp incelemesi", "Varlık durumu gözlemleri", "Şebeke ve koruma kanıt incelemesi", "Düzeltici aksiyon önceliklendirme"],
+      faqs: sharedFaq.tr
+    },
+    {
+      slug: "gunes-enerjisi-danismanligi",
+      title: "Güneş Enerjisi Danışmanlığı",
+      eyebrow: "GES performansı, EPC kalite ve O&M toparlama",
+      description: "Performans oranı analizi, teknik denetim ve yaşam döngüsü varlık optimizasyonu ihtiyacı olan GES yatırımcıları, sahipleri ve EPC ekipleri için güneş enerjisi danışmanlığı.",
+      keywords: ["güneş enerjisi danışmanlığı", "GES teknik denetim", "GES performans oranı analizi", "yenilenebilir enerji danışmanlığı"],
+      outcomes: ["Net PR ve kayıp teşhisi", "Geliştirilmiş EPC ve O&M sorumluluk görünürlüğü", "Uygulanabilir GES toparlama aksiyon planı"],
+      scope: ["Performans oranı analizi", "İnverter ve string düzeyi inceleme", "EPC kalite kanıt değerlendirmesi", "O&M müdahale ve temizlik rutini incelemesi", "GES teknik durum tespiti"],
+      faqs: sharedFaq.tr
+    },
+    {
+      slug: "epc-teknik-danismanlik-hizmeti",
+      title: "EPC Teknik Danışmanlık Hizmeti",
+      eyebrow: "İşveren tarafı EPC risk, kalite ve teslim kontrolü",
+      description: "Tasarım, arayüzler, devreye alma ve teslim süreçlerinde bağımsız teknik kontrol ihtiyacı olan yenilenebilir enerji projeleri için EPC teknik danışmanlık hizmeti.",
+      keywords: ["EPC teknik danışmanlık", "işveren mühendisliği", "yenilenebilir enerji danışmanlığı", "santral devreye alma"],
+      outcomes: ["Azaltılmış EPC teslim riski", "Daha güçlü arayüz ve yüklenici kontrolü", "Daha sağlam devreye alma ve teslim kanıtları"],
+      scope: ["EPC kapsam ve arayüz incelemesi", "Teknik risk listesi", "Yüklenici doküman incelemesi", "Devreye alma hazırlık sorgulaması", "İşveren karar desteği"],
       faqs: sharedFaq.tr
     }
   ]

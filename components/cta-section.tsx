@@ -2,6 +2,7 @@ import { ButtonLink } from "@/components/button-link";
 import { Container } from "@/components/container";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/content/dictionaries";
+import { contactPath } from "@/lib/routes";
 
 export function CtaSection({ locale }: { locale: Locale }) {
   const dict = getDictionary(locale);
@@ -15,7 +16,7 @@ export function CtaSection({ locale }: { locale: Locale }) {
           <p className="mt-4 max-w-3xl leading-7 text-navy-900">{dict.home.ctaText}</p>
         </div>
         <div className="relative flex flex-wrap gap-3">
-          <ButtonLink href={`/${locale}/contact`} variant="secondary">{dict.nav.consultation}</ButtonLink>
+          <ButtonLink href={contactPath(locale)} variant="secondary">{dict.nav.consultation}</ButtonLink>
         </div>
       </Container>
     </section>

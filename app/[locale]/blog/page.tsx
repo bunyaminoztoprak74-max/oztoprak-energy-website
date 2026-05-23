@@ -2,7 +2,9 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { Container } from "@/components/container";
 import { Breadcrumbs } from "@/components/breadcrumbs";
-import { LinkCard } from "@/components/cards";
+import { BlogSearch } from "@/components/blog-search";
+import { AuthorityMetrics } from "@/components/authority-metrics";
+import { ConversionFunnel } from "@/components/conversion-funnel";
 import { getDictionary } from "@/content/dictionaries";
 import { getCategories, getPosts } from "@/content/blog";
 import { buildMetadata } from "@/lib/seo";
@@ -26,6 +28,7 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
   const dict = getDictionary(locale);
   const posts = getPosts(locale);
   const categories = getCategories(locale);
+  const featured = posts[0];
 
   return (
     <>
@@ -41,15 +44,31 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
               </Link>
             ))}
           </div>
+          <div className="mt-12">
+            <AuthorityMetrics locale={locale} />
+          </div>
         </Container>
       </section>
       <section className="bg-navy-900 py-20">
-        <Container className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {posts.map((post) => (
-            <LinkCard key={post.slug} href={`/${locale}/blog/${post.slug}`} title={post.title} text={post.description} meta={`${post.category} · ${post.readingTime}`} />
-          ))}
+        <Container>
+          {featured ? (
+            <Link href={`/${locale}/blog/${featured.slug}`} className="mb-10 grid gap-6 rounded-lg border border-energy-500/30 bg-energy-500/10 p-6 shadow-glow lg:grid-cols-[0.9fr_1.1fr]">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-energy-500">
+                  {locale === "en" ? "Featured technical insight" : "One cikan teknik yazi"}
+                </p>
+                <h2 className="mt-4 text-3xl font-bold text-white">{featured.title}</h2>
+              </div>
+              <div>
+                <p className="leading-8 text-steel">{featured.description}</p>
+                <p className="mt-5 text-sm font-semibold text-white">{featured.category} - {featured.readingTime}</p>
+              </div>
+            </Link>
+          ) : null}
+          <BlogSearch locale={locale} posts={posts} />
         </Container>
       </section>
+      <ConversionFunnel locale={locale} />
     </>
   );
 }

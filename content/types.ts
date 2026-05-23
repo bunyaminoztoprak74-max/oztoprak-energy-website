@@ -22,6 +22,10 @@ export type Project = {
   commissioning: string;
   om: string;
   results: string[];
+  challenge?: string;
+  approach?: string;
+  actions?: string[];
+  lessons?: string[];
 };
 
 export type BlogPost = {
@@ -30,12 +34,17 @@ export type BlogPost = {
   description: string;
   category: string;
   categorySlug: string;
+  tags?: string[];
+  author?: string;
+  featured?: boolean;
+  trending?: boolean;
   date: string;
   readingTime: string;
   toc: string[];
   related: string[];
   body: Array<{ heading: string; content: string }>;
   serviceLinks: string[];
+  faqs?: Array<{ question: string; answer: string }>;
 };
 
 export type SeoEntity = {

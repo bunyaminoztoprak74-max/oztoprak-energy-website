@@ -1,15 +1,17 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { Linkedin, Mail, Share2 } from "lucide-react";
 import { Container } from "@/components/container";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { CtaSection } from "@/components/cta-section";
+import { ConversionFunnel } from "@/components/conversion-funnel";
 import { getPost, getPosts } from "@/content/blog";
 import { getDictionary } from "@/content/dictionaries";
 import { getService } from "@/content/services";
 import { buildMetadata } from "@/lib/seo";
 import { alternateLocale, isLocale, type Locale } from "@/lib/i18n";
-import { articleSchema, breadcrumbSchema } from "@/lib/schema";
+import { articleSchema, breadcrumbSchema, faqSchema } from "@/lib/schema";
 
 export function generateStaticParams() {
   return (["en", "tr"] as Locale[]).flatMap((locale) => getPosts(locale).map((post) => ({ locale, slug: post.slug })));
@@ -45,7 +47,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ local
       { name: dict.nav.blog, url: `/${locale}/blog` },
       { name: post.title, url: `/${locale}/blog/${post.slug}` }
     ]),
-    articleSchema(locale, post)
+    articleSchema(locale, post),
+    ...(post.faqs?.length ? [faqSchema(post.faqs)] : [])
   ];
 
   return (
@@ -89,6 +92,34 @@ export default async function BlogPostPage({ params }: { params: Promise<{ local
                 })}
               </div>
             </div>
+            <div className="mt-5 premium-card rounded-lg p-6">
+              <h2 className="font-semibold text-white">{locale === "en" ? "Author Profile" : "Yazar Profili"}</h2>
+              <p className="mt-3 text-sm leading-7 text-steel">
+                {locale === "en"
+                  ? "Prepared by the Oztoprak Energy engineering desk with a focus on plant operations, EPC delivery, commissioning evidence and owner-side technical decisions."
+                  : "Oztoprak Enerji muhendislik masasi tarafindan; santral isletme, EPC teslim, devreye alma kaniti ve isveren tarafi teknik kararlar odaginda hazirlanmistir."}
+              </p>
+              <div className="mt-5 flex gap-2">
+                <Link href={`mailto:${dict.contact.email}`} className="rounded-md border border-white/10 p-2 text-steel hover:border-energy-500 hover:text-energy-500">
+                  <Mail className="h-4 w-4" />
+                </Link>
+                <Link href="https://www.linkedin.com/company/oztoprakenerji/" target="_blank" rel="noopener noreferrer" className="rounded-md border border-white/10 p-2 text-steel hover:border-energy-500 hover:text-energy-500">
+                  <Linkedin className="h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+            <div className="mt-5 rounded-lg border border-energy-500/30 bg-energy-500/10 p-6">
+              <h2 className="font-semibold text-white">{locale === "en" ? "Newsletter and checklist" : "Bulten ve kontrol listesi"}</h2>
+              <p className="mt-3 text-sm leading-7 text-steel">
+                {locale === "en"
+                  ? "Request the technical assessment checklist and receive practical notes on commissioning, O&M and power plant audit decisions."
+                  : "Teknik degerlendirme kontrol listesini talep edin; devreye alma, O&M ve santral denetimi kararlarina dair pratik notlar alin."}
+              </p>
+              <Link href={locale === "en" ? "/en/contact" : "/tr/iletisim"} className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-energy-500 hover:text-white">
+                <Share2 className="h-4 w-4" />
+                {locale === "en" ? "Request checklist" : "Kontrol listesi talep et"}
+              </Link>
+            </div>
           </aside>
           <article className="prose prose-invert max-w-none prose-headings:text-white prose-p:text-steel prose-p:leading-8 prose-a:text-energy-500">
             {post.body.map((section) => (
@@ -115,9 +146,21 @@ export default async function BlogPostPage({ params }: { params: Promise<{ local
                 </li>
               ) : null)}
             </ul>
+            {post.faqs?.length ? (
+              <section>
+                <h2>FAQ</h2>
+                {post.faqs.map((faq) => (
+                  <div key={faq.question}>
+                    <h3>{faq.question}</h3>
+                    <p>{faq.answer}</p>
+                  </div>
+                ))}
+              </section>
+            ) : null}
           </article>
         </Container>
       </section>
+      <ConversionFunnel locale={locale} />
       <CtaSection locale={locale} />
     </>
   );
