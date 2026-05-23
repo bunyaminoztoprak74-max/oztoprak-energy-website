@@ -2,7 +2,7 @@ import type { Locale } from "@/lib/i18n";
 import type { PillarPage, ProgrammaticSeoPage, SeoEntity, TopicCluster } from "@/content/types";
 import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 
-const baseUrl = "https://oztoprakenerji.com";
+const baseUrl = "https://www.oztoprakenerji.com";
 
 export function collectionPageSchema(locale: Locale, path: string, title: string, description: string, items: Array<{ name: string; url: string }>) {
   return [
