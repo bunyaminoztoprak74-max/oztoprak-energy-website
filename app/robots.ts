@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/", "/_next/server/", "/admin/", "/*?*"]
       }
     ],
-    sitemap: "https://www.oztoprakenerji.com/sitemap.xml",
-    host: "https://www.oztoprakenerji.com"
+    sitemap: "https://oztoprakenerji.com/sitemap.xml",
+    host: "https://oztoprakenerji.com"
   };
 }

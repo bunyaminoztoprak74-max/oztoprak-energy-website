@@ -4,7 +4,7 @@ import { getProjects } from "@/content/projects";
 import { getPosts, getCategories } from "@/content/blog";
 import { generateProgrammaticSeoPages, getClusters, getLocations, getPillars, getProblems } from "@/content/programmatic-seo";
 
-const baseUrl = "https://www.oztoprakenerji.com";
+const baseUrl = "https://oztoprakenerji.com";
 const now = new Date();
 const prioritySeoLocations = new Set(["turkey", "turkiye", "ankara", "istanbul"]);
 const prioritySeoIntents = new Set(["consultancy", "danismanlik", "technical-audit", "teknik-denetim", "owner-engineering", "isveren-muhendisligi"]);

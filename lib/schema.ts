@@ -3,7 +3,7 @@ import { getDictionary } from "@/content/dictionaries";
 import type { BlogPost, Project, Service } from "@/content/types";
 import { linkedinUrl } from "@/lib/social";
 
-const baseUrl = "https://www.oztoprakenerji.com";
+const baseUrl = "https://oztoprakenerji.com";
 const brandId = `${baseUrl}/#organization`;
 const localBusinessId = `${baseUrl}/#localbusiness`;
 const targetKeywords = [

@@ -1,14 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 
 export function middleware(request: NextRequest) {
-  const host = request.nextUrl.hostname;
-  const isLocal = host === "localhost" || host === "127.0.0.1";
-  if (!isLocal && request.nextUrl.protocol === "http:") {
-    const url = request.nextUrl.clone();
-    url.protocol = "https:";
-    return NextResponse.redirect(url, 308);
-  }
-
   const redirects: Record<string, string> = {
     "/": "/en",
     "/en/hizmetler": "/en/services",
