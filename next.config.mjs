@@ -23,6 +23,11 @@ const nextConfig = {
         destination: "/tr/services/yenilenebilir-enerji-yatirim-danismanligi",
         permanent: true
       },
+      {
+        source: "/hizmetler/proje-tasarim-ve-muhendislik",
+        destination: "/tr/services/epc-teknik-danismanlik-hizmeti",
+        permanent: true
+      },
       { source: "/en/hizmetler", destination: "/en/services", permanent: true },
       { source: "/tr/services", destination: "/tr/hizmetler", permanent: true },
       { source: "/en/iletisim", destination: "/en/contact", permanent: true },

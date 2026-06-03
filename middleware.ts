@@ -13,6 +13,7 @@ export function middleware(request: NextRequest) {
     "/projeler": "/tr/projects",
     "/sss": "/tr/hizmetler",
     "/hizmetler/fizibilite-ve-yatirim-danismanligi": "/tr/services/yenilenebilir-enerji-yatirim-danismanligi",
+    "/hizmetler/proje-tasarim-ve-muhendislik": "/tr/services/epc-teknik-danismanlik-hizmeti",
     "/en/hizmetler": "/en/services",
     "/tr/services": "/tr/hizmetler",
     "/en/iletisim": "/en/contact",
