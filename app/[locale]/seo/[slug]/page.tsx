@@ -19,13 +19,25 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   if (!page) return {};
   const index = generateProgrammaticSeoPages(locale).findIndex((item) => item.slug === slug);
   const translated = generateProgrammaticSeoPages(alternateLocale(locale))[index];
-  return buildMetadata({
+  const metadata = buildMetadata({
     locale,
     path: `/seo/${slug}`,
     alternatePath: translated ? `/seo/${translated.slug}` : undefined,
     title: page.title,
     description: page.description
   });
+
+  return {
+    ...metadata,
+    robots: {
+      index: false,
+      follow: true,
+      googleBot: {
+        index: false,
+        follow: true
+      }
+    }
+  };
 }
 
 export default async function GeneratedSeoPage({ params }: { params: Promise<{ locale: string; slug: string }> }) {

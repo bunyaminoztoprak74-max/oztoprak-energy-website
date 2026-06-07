@@ -492,6 +492,449 @@ function buildAuthorityArticle(locale: Locale, topic: (typeof longFormTopics)[Lo
 blogPosts.en.push(...longFormTopics.en.map((topic, index) => buildAuthorityArticle("en", topic, index)));
 blogPosts.tr.push(...longFormTopics.tr.map((topic, index) => buildAuthorityArticle("tr", topic, index)));
 
+type AuthorityTopic = {
+  enSlug: string;
+  trSlug: string;
+  enTitle: string;
+  trTitle: string;
+  enDescription: string;
+  trDescription: string;
+  category: string;
+  categorySlug: string;
+  enServices: string[];
+  trServices: string[];
+  focus: string;
+  equipment: string;
+  risk: string;
+};
+
+const authorityTopics: AuthorityTopic[] = [
+  {
+    enSlug: "hydropower-consulting-field-guide",
+    trSlug: "hes-danismanligi-saha-rehberi",
+    enTitle: "Hydropower Consulting Field Guide for Owners and Investors",
+    trTitle: "HES Danismanligi Saha Rehberi: Isveren ve Yatirimci Icin Teknik Yol Haritasi",
+    enDescription: "A deep engineering guide to hydropower consulting, technical audits, commissioning evidence, turbine performance and owner-side decision control.",
+    trDescription: "HES danismanligi, teknik denetim, devreye alma kaniti, turbin performansi ve isveren tarafi karar kontrolu icin kapsamli muhendislik rehberi.",
+    category: "HES",
+    categorySlug: "hes",
+    enServices: ["hydropower-consulting", "technical-audits-existing-power-plants", "om-performance-improvement"],
+    trServices: ["hes-danismanligi", "mevcut-santraller-icin-teknik-denetim", "isletme-bakim-performans-iyilestirme"],
+    focus: "HES danismanligi",
+    equipment: "Francis, Kaplan veya Pelton turbin-jenerator grubu",
+    risk: "su-guc verim kaybi, gereksiz tripler ve eksik isletme kaniti"
+  },
+  {
+    enSlug: "solar-energy-consulting-performance-guide",
+    trSlug: "ges-danismanligi-performans-rehberi",
+    enTitle: "Solar Energy Consulting Performance Guide for PV Investors",
+    trTitle: "GES Danismanligi Performans Rehberi: PV Yatirimcilari Icin Teknik Kontrol",
+    enDescription: "How solar energy consulting should review PR loss, inverter evidence, EPC handover quality, O&M response and technical audit priorities.",
+    trDescription: "GES danismanligi kapsaminda PR kaybi, inverter kaniti, EPC teslim kalitesi, O&M yaniti ve teknik denetim oncelikleri nasil incelenir?",
+    category: "GES",
+    categorySlug: "ges",
+    enServices: ["solar-energy-consulting", "energy-audit", "om-performance-improvement"],
+    trServices: ["gunes-enerjisi-danismanligi", "enerji-denetimi", "isletme-bakim-performans-iyilestirme"],
+    focus: "GES danismanligi",
+    equipment: "inverter, string, trafo, meteoroloji ve SCADA olcum zinciri",
+    risk: "dusuk performans orani, kirlenme kaybi ve gec ariza mudahalesi"
+  },
+  {
+    enSlug: "epc-consulting-owner-side-control",
+    trSlug: "epc-danismanligi-isveren-tarafi-kontrol",
+    enTitle: "EPC Consulting for Owner-Side Technical Control",
+    trTitle: "EPC Danismanligi: Isveren Tarafi Teknik Kontrol ve Risk Yonetimi",
+    enDescription: "Owner-side EPC consulting framework for interface control, design review, commissioning readiness and evidence-based contractor management.",
+    trDescription: "EPC danismanligi ile arayuz kontrolu, tasarim inceleme, devreye alma hazirligi ve kanita dayali yuklenici yonetimi.",
+    category: "EPC",
+    categorySlug: "epc",
+    enServices: ["epc-technical-advisory", "owners-engineering", "power-plant-commissioning"],
+    trServices: ["epc-teknik-danismanlik-hizmeti", "isveren-muhendisligi", "enerji-santrali-devreye-alma"],
+    focus: "EPC danismanligi",
+    equipment: "insaat, elektromekanik, otomasyon, koruma ve sebeke arayuzleri",
+    risk: "gecikme, kapsam boslugu, teslim kaniti eksigi ve claim riski"
+  },
+  {
+    enSlug: "technical-audit-power-plant-evidence",
+    trSlug: "teknik-denetim-santral-kanit-yonetimi",
+    enTitle: "Technical Audit Evidence for Existing Power Plants",
+    trTitle: "Teknik Denetim: Mevcut Santrallerde Kanit ve Risk Yonetimi",
+    enDescription: "Technical audit methodology for existing hydropower and solar assets using operating records, commissioning files, site evidence and risk ranking.",
+    trDescription: "Teknik denetim metodolojisi: mevcut HES ve GES varliklarinda isletme kaydi, devreye alma dosyasi, saha kaniti ve risk siralamasi.",
+    category: "Teknik Denetim",
+    categorySlug: "teknik-denetim",
+    enServices: ["technical-audits-existing-power-plants", "energy-audit", "renewable-energy-investment-advisory"],
+    trServices: ["mevcut-santraller-icin-teknik-denetim", "enerji-denetimi", "yenilenebilir-enerji-yatirim-danismanligi"],
+    focus: "Teknik denetim",
+    equipment: "primer ekipman, yardimci sistemler, koruma, SCADA ve O&M dokumantasyonu",
+    risk: "gizli CAPEX ihtiyaci, garanti belirsizligi ve yatirim riski"
+  },
+  {
+    enSlug: "commissioning-services-renewable-power-plants",
+    trSlug: "devreye-alma-hizmetleri-yenilenebilir-santraller",
+    enTitle: "Commissioning Services for Renewable Power Plants",
+    trTitle: "Devreye Alma Hizmetleri: Yenilenebilir Enerji Santrallerinde Kontrollu Baslangic",
+    enDescription: "Commissioning services guide covering energization, functional tests, synchronization, protection files, punch-list discipline and handover evidence.",
+    trDescription: "Devreye alma hizmetleri rehberi: enerjilendirme, fonksiyonel test, senkronizasyon, koruma dosyalari, punch-list disiplini ve teslim kaniti.",
+    category: "Devreye Alma",
+    categorySlug: "devreye-alma",
+    enServices: ["power-plant-commissioning", "owners-engineering", "grid-protection-system-analysis"],
+    trServices: ["enerji-santrali-devreye-alma", "isveren-muhendisligi", "sebeke-koruma-sistemi-analizi"],
+    focus: "Devreye alma",
+    equipment: "kesici, role, governor, AVR, SCADA, yardimci sistem ve trafo adalari",
+    risk: "erken enerjilendirme, eksik test ve operasyonel hazirlik zafiyeti"
+  },
+  {
+    enSlug: "power-plant-performance-analysis-methodology",
+    trSlug: "santral-performans-analizi-metodolojisi",
+    enTitle: "Power Plant Performance Analysis Methodology",
+    trTitle: "Santral Performans Analizi Metodolojisi: Uretim Kaybini Kanitla Okumak",
+    enDescription: "Performance analysis methodology for hydropower and solar plants using loss categories, SCADA trends, O&M events and corrective action ranking.",
+    trDescription: "Santral performans analizi metodolojisi: HES ve GES varliklarinda kayip kategorisi, SCADA trendi, O&M olayi ve aksiyon onceligi.",
+    category: "Performans",
+    categorySlug: "performans",
+    enServices: ["om-performance-improvement", "energy-audit", "hydropower-consulting"],
+    trServices: ["isletme-bakim-performans-iyilestirme", "enerji-denetimi", "hes-danismanligi"],
+    focus: "Performans analizi",
+    equipment: "uretim sayaclari, SCADA trendleri, inverter veya turbin kontrol sistemi",
+    risk: "gelir kaybi, dusuk emre amadelik ve yanlis bakim onceligi"
+  },
+  {
+    enSlug: "renewable-energy-investment-consulting-due-diligence",
+    trSlug: "enerji-yatirim-danismanligi-teknik-due-diligence",
+    enTitle: "Renewable Energy Investment Consulting and Technical Due Diligence",
+    trTitle: "Enerji Yatirim Danismanligi: Teknik Due Diligence ve Varlik Riski",
+    enDescription: "Investment consulting framework for renewable energy assets covering EPC evidence, performance assumptions, grid risk, O&M maturity and CAPEX exposure.",
+    trDescription: "Enerji yatirim danismanligi cercevesi: EPC kaniti, performans varsayimi, sebeke riski, O&M olgunlugu ve CAPEX maruziyeti.",
+    category: "Yatirim",
+    categorySlug: "yatirim",
+    enServices: ["renewable-energy-investment-advisory", "technical-audits-existing-power-plants", "epc-technical-advisory"],
+    trServices: ["yenilenebilir-enerji-yatirim-danismanligi", "mevcut-santraller-icin-teknik-denetim", "epc-teknik-danismanlik-hizmeti"],
+    focus: "Enerji yatirim danismanligi",
+    equipment: "finansal model varsayimlari, uretim raporlari, teknik varlik dosyasi ve lisans-saha kanitlari",
+    risk: "fazla iyimser uretim tahmini, gizli teknik borc ve yatirim deger kaybi"
+  },
+  {
+    enSlug: "agc-compliance-consulting-hydropower",
+    trSlug: "agc-uyumu-danismanligi-hes-isletme",
+    enTitle: "AGC Compliance Consulting for Hydropower Operations",
+    trTitle: "AGC Uyumu Danismanligi: HES Isletmede Governor Tepkisi ve Sebeke Kararliligi",
+    enDescription: "AGC compliance guide for hydropower plants covering governor response, setpoint tracking, ramp behavior, reactive power and grid stability evidence.",
+    trDescription: "AGC uyumu rehberi: HES isletmede governor tepkisi, set noktasi takibi, rampa davranisi, reaktif guc ve sebeke kararliligi kaniti.",
+    category: "Sebeke",
+    categorySlug: "sebeke",
+    enServices: ["grid-protection-system-analysis", "power-plant-commissioning", "om-performance-improvement"],
+    trServices: ["sebeke-koruma-sistemi-analizi", "enerji-santrali-devreye-alma", "isletme-bakim-performans-iyilestirme"],
+    focus: "AGC uyumu",
+    equipment: "governor, AVR, SCADA, telemetri, primer ve sekonder frekans kontrolu",
+    risk: "set noktasi sapmasi, frekans kontrol zafiyeti ve sebeke uyum riski"
+  },
+  {
+    enSlug: "kaplan-turbine-consulting-efficiency-loss",
+    trSlug: "kaplan-turbin-danismanligi-verim-kaybi",
+    enTitle: "Kaplan Turbine Consulting for Efficiency Loss and Availability",
+    trTitle: "Kaplan Turbin Danismanligi: Verim Kaybi, Kanat Ayari ve Emre Amadelik",
+    enDescription: "Kaplan turbine consulting guide for blade pitch behavior, hydraulic efficiency, vibration evidence, governor response and O&M priorities.",
+    trDescription: "Kaplan turbin danismanligi rehberi: kanat ayari davranisi, hidrolik verim, vibrasyon kaniti, governor tepkisi ve O&M oncelikleri.",
+    category: "HES",
+    categorySlug: "hes",
+    enServices: ["hydropower-consulting", "hydropower-plant-optimization", "energy-audit"],
+    trServices: ["hes-danismanligi", "hes-optimizasyonu", "enerji-denetimi"],
+    focus: "Kaplan turbin",
+    equipment: "Kaplan runner, kanat ayar mekanizmasi, yolluk, governor ve yatak sistemleri",
+    risk: "kismi yuk verim kaybi, kanat mekanizmasi arizasi ve vibrasyon artisi"
+  },
+  {
+    enSlug: "scada-optimization-power-plant-operations",
+    trSlug: "scada-optimizasyonu-santral-isletme",
+    enTitle: "SCADA Optimization for Power Plant Operations",
+    trTitle: "SCADA Optimizasyonu: Santral Isletmede Alarm, Trend ve Karar Kalitesi",
+    enDescription: "SCADA optimization guide for alarm discipline, trend quality, event records, O&M response and power plant performance decisions.",
+    trDescription: "SCADA optimizasyonu rehberi: alarm disiplini, trend kalitesi, olay kaydi, O&M yaniti ve santral performans kararlari.",
+    category: "SCADA",
+    categorySlug: "scada",
+    enServices: ["om-performance-improvement", "grid-protection-system-analysis", "energy-audit"],
+    trServices: ["isletme-bakim-performans-iyilestirme", "sebeke-koruma-sistemi-analizi", "enerji-denetimi"],
+    focus: "SCADA optimizasyonu",
+    equipment: "SCADA tag yapisi, alarm siniflandirmasi, olay kaydi, historian ve raporlama ekranlari",
+    risk: "alarm yorgunlugu, veri kalitesi zafiyeti ve gec ariza teshisi"
+  },
+  {
+    enSlug: "francis-turbine-performance-diagnosis",
+    trSlug: "francis-turbin-performans-teshisi",
+    enTitle: "Francis Turbine Performance Diagnosis for Hydropower Plants",
+    trTitle: "Francis Turbin Performans Teshisi: HES Danismanligi Icin Kanit Yaklasimi",
+    enDescription: "Francis turbine diagnosis guide covering efficiency loss, cavitation, guide vane behavior, vibration, cooling limits and outage evidence.",
+    trDescription: "Francis turbin teshis rehberi: verim kaybi, kavitasyon, ayar kanadi davranisi, vibrasyon, sogutma limiti ve durus kaniti.",
+    category: "HES",
+    categorySlug: "hes",
+    enServices: ["hydropower-consulting", "technical-audits-existing-power-plants", "om-performance-improvement"],
+    trServices: ["hes-danismanligi", "mevcut-santraller-icin-teknik-denetim", "isletme-bakim-performans-iyilestirme"],
+    focus: "Francis turbin",
+    equipment: "Francis runner, ayar kanatlari, salyangoz, draft tube, yatak ve sogutma sistemi",
+    risk: "kavitasyon, verim dususu, sogutma limiti ve plansiz durus"
+  },
+  {
+    enSlug: "primary-frequency-control-renewable-plants",
+    trSlug: "primer-frekans-kontrolu-yenilenebilir-santraller",
+    enTitle: "Primary Frequency Control in Renewable Power Plants",
+    trTitle: "Primer Frekans Kontrolu: Yenilenebilir Santrallerde Tepki ve Kanit Yonetimi",
+    enDescription: "Engineering guide to primary frequency control, governor or inverter response, droop behavior, testing evidence and grid compliance.",
+    trDescription: "Primer frekans kontrolu icin muhendislik rehberi: governor veya inverter tepkisi, droop davranisi, test kaniti ve sebeke uyumu.",
+    category: "Sebeke",
+    categorySlug: "sebeke",
+    enServices: ["grid-protection-system-analysis", "power-plant-commissioning", "owners-engineering"],
+    trServices: ["sebeke-koruma-sistemi-analizi", "enerji-santrali-devreye-alma", "isveren-muhendisligi"],
+    focus: "Primer frekans kontrolu",
+    equipment: "governor droop, inverter kontrol modu, frekans olcum zinciri ve test kayitlari",
+    risk: "uyum testi basarisizligi, grid kod riski ve kontrol kararsizligi"
+  },
+  {
+    enSlug: "secondary-frequency-control-agc-readiness",
+    trSlug: "sekonder-frekans-kontrolu-agc-hazirligi",
+    enTitle: "Secondary Frequency Control and AGC Readiness",
+    trTitle: "Sekonder Frekans Kontrolu ve AGC Hazirligi: Santral Kabul Kriterleri",
+    enDescription: "Secondary frequency control and AGC readiness guide for renewable plants including telemetry, setpoint tracking, ramp tests and control room procedures.",
+    trDescription: "Sekonder frekans kontrolu ve AGC hazirligi rehberi: telemetri, set noktasi takibi, rampa testi ve kumanda prosedurleri.",
+    category: "Sebeke",
+    categorySlug: "sebeke",
+    enServices: ["grid-protection-system-analysis", "power-plant-commissioning", "om-performance-improvement"],
+    trServices: ["sebeke-koruma-sistemi-analizi", "enerji-santrali-devreye-alma", "isletme-bakim-performans-iyilestirme"],
+    focus: "Sekonder frekans kontrolu",
+    equipment: "AGC baglantisi, telemetri, setpoint tracking, SCADA ve kontrol odasi rutini",
+    risk: "AGC komut takibi zafiyeti, rampa siniri ve operasyonel kabul riski"
+  },
+  {
+    enSlug: "solar-plant-technical-audit-checklist",
+    trSlug: "ges-teknik-denetim-kontrol-listesi",
+    enTitle: "Solar Plant Technical Audit Checklist",
+    trTitle: "GES Teknik Denetim Kontrol Listesi: PR, Inverter ve EPC Kaniti",
+    enDescription: "Solar technical audit checklist for PR analysis, inverter logs, string evidence, EPC handover, O&M maturity and investment decisions.",
+    trDescription: "GES teknik denetim kontrol listesi: PR analizi, inverter loglari, string kaniti, EPC teslimi, O&M olgunlugu ve yatirim kararlari.",
+    category: "GES",
+    categorySlug: "ges",
+    enServices: ["solar-energy-consulting", "technical-audits-existing-power-plants", "renewable-energy-investment-advisory"],
+    trServices: ["ges-danismanligi", "mevcut-santraller-icin-teknik-denetim", "yenilenebilir-enerji-yatirim-danismanligi"],
+    focus: "GES teknik denetim",
+    equipment: "modul, inverter, string, trafo, kamera, meteoroloji istasyonu ve izleme sistemi",
+    risk: "eksik EPC kaniti, PR kaybi ve satin alma sonrasi CAPEX ihtiyaci"
+  },
+  {
+    enSlug: "hpp-technical-audit-operating-assets",
+    trSlug: "hes-teknik-denetim-isletmedeki-varliklar",
+    enTitle: "HPP Technical Audit for Operating Hydropower Assets",
+    trTitle: "HES Teknik Denetim: Isletmedeki Varliklarda Risk ve Performans",
+    enDescription: "HPP technical audit guide for operating assets covering civil structures, turbine-generator evidence, protection records, O&M maturity and CAPEX ranking.",
+    trDescription: "HES teknik denetim rehberi: isletmedeki varliklarda insaat yapilari, turbin-jenerator kaniti, koruma kayitlari, O&M olgunlugu ve CAPEX siralamasi.",
+    category: "HES",
+    categorySlug: "hes",
+    enServices: ["technical-audits-existing-power-plants", "hydropower-consulting", "energy-audit"],
+    trServices: ["mevcut-santraller-icin-teknik-denetim", "hes-danismanligi", "enerji-denetimi"],
+    focus: "HES teknik denetim",
+    equipment: "cebri boru, vana, turbin, generator, trafo, kesici ve koruma sistemi",
+    risk: "yaslanan varlik riski, dokumantasyon boslugu ve plansiz CAPEX"
+  },
+  {
+    enSlug: "epc-delay-risk-power-plant-projects",
+    trSlug: "epc-gecikme-riski-enerji-santrali-projeleri",
+    enTitle: "EPC Delay Risk in Power Plant Projects",
+    trTitle: "EPC Gecikme Riski: Enerji Santrali Projelerinde Teknik Kokenler",
+    enDescription: "Technical review of EPC delay risk in renewable power projects including interface gaps, late testing, grid documents and owner-side controls.",
+    trDescription: "Yenilenebilir enerji projelerinde EPC gecikme riski: arayuz bosluklari, gec test, sebeke dokumanlari ve isveren tarafi kontroller.",
+    category: "EPC",
+    categorySlug: "epc",
+    enServices: ["epc-technical-advisory", "power-plant-commissioning", "owners-engineering"],
+    trServices: ["epc-teknik-danismanlik-hizmeti", "enerji-santrali-devreye-alma", "isveren-muhendisligi"],
+    focus: "EPC gecikme riski",
+    equipment: "proje takvimi, arayuz matrisi, test proseduru, koruma dosyasi ve kabul kriterleri",
+    risk: "gec ticari isletme, gelir kaybi ve sozlesmesel uyusmazlik"
+  },
+  {
+    enSlug: "reactive-power-control-renewable-plants",
+    trSlug: "reaktif-guc-kontrolu-yenilenebilir-santraller",
+    enTitle: "Reactive Power Control in Renewable Power Plants",
+    trTitle: "Reaktif Guc Kontrolu: Yenilenebilir Santrallerde AVR, Inverter ve Sebeke Uyumu",
+    enDescription: "Reactive power control guide for renewable plants covering AVR, inverter modes, voltage setpoints, transformer limits and compliance testing.",
+    trDescription: "Reaktif guc kontrolu rehberi: AVR, inverter modlari, gerilim setleri, trafo limitleri ve sebeke uyum testi.",
+    category: "Sebeke",
+    categorySlug: "sebeke",
+    enServices: ["grid-protection-system-analysis", "solar-energy-consulting", "power-plant-commissioning"],
+    trServices: ["sebeke-koruma-sistemi-analizi", "gunes-enerjisi-danismanligi", "enerji-santrali-devreye-alma"],
+    focus: "Reaktif guc kontrolu",
+    equipment: "AVR, inverter Q kontrolu, trafo tap, gerilim regule modu ve sayaç olcumleri",
+    risk: "gerilim uyumsuzlugu, ceza riski ve ekipman zorlanmasi"
+  },
+  {
+    enSlug: "om-optimization-renewable-assets",
+    trSlug: "om-optimizasyonu-yenilenebilir-enerji-varliklari",
+    enTitle: "O&M Optimization for Renewable Energy Assets",
+    trTitle: "O&M Optimizasyonu: Yenilenebilir Enerji Varliklarinda Emre Amadelik ve Kayip Azaltma",
+    enDescription: "O&M optimization guide for renewable assets using alarms, outage history, maintenance planning, spare parts and performance recovery logic.",
+    trDescription: "O&M optimizasyonu rehberi: alarm, durus gecmisi, bakim planlama, yedek parca ve performans toparlama mantigi.",
+    category: "Isletme",
+    categorySlug: "isletme",
+    enServices: ["om-performance-improvement", "energy-audit", "technical-audits-existing-power-plants"],
+    trServices: ["isletme-bakim-performans-iyilestirme", "enerji-denetimi", "mevcut-santraller-icin-teknik-denetim"],
+    focus: "O&M optimizasyonu",
+    equipment: "bakim planlari, alarm listeleri, yedek parca, ariza kaydi ve performans raporlari",
+    risk: "tekrar eden ariza, dusuk emre amadelik ve uretim kaybi"
+  },
+  {
+    enSlug: "owner-engineering-renewable-energy-projects",
+    trSlug: "isveren-muhendisligi-yenilenebilir-enerji-projeleri",
+    enTitle: "Owner's Engineering in Renewable Energy Projects",
+    trTitle: "Isveren Muhendisligi: Yenilenebilir Enerji Projelerinde Bagimsiz Teknik Kontrol",
+    enDescription: "Owner's engineering guide for renewable projects covering design review, EPC deliverables, commissioning evidence and investment decision support.",
+    trDescription: "Isveren muhendisligi rehberi: tasarim inceleme, EPC teslimatlari, devreye alma kaniti ve yatirim karari destegi.",
+    category: "EPC",
+    categorySlug: "epc",
+    enServices: ["owners-engineering", "epc-technical-advisory", "renewable-energy-investment-advisory"],
+    trServices: ["isveren-muhendisligi", "epc-teknik-danismanlik-hizmeti", "yenilenebilir-enerji-yatirim-danismanligi"],
+    focus: "Isveren muhendisligi",
+    equipment: "tasarim dosyalari, EPC deliverable listesi, saha ilerleme kaniti ve kabul kriterleri",
+    risk: "isveren gorunurlugu eksigi, zayif teknik itiraz ve teslim kalitesi riski"
+  },
+  {
+    enSlug: "power-plant-fault-analysis-method",
+    trSlug: "santral-ariza-analizi-metodu",
+    enTitle: "Power Plant Fault Analysis Method for Owners",
+    trTitle: "Santral Ariza Analizi Metodu: Koku Neden, SCADA ve Koruma Kaydi",
+    enDescription: "Fault analysis method for renewable power plants using SCADA events, relay records, operator logs, maintenance history and corrective action ranking.",
+    trDescription: "Santral ariza analizi metodu: SCADA olaylari, role kayitlari, operator loglari, bakim gecmisi ve duzeltici aksiyon siralamasi.",
+    category: "Ariza Analizi",
+    categorySlug: "ariza-analizi",
+    enServices: ["om-performance-improvement", "grid-protection-system-analysis", "technical-audits-existing-power-plants"],
+    trServices: ["isletme-bakim-performans-iyilestirme", "sebeke-koruma-sistemi-analizi", "mevcut-santraller-icin-teknik-denetim"],
+    focus: "Ariza analizi",
+    equipment: "SCADA olay sirasi, role kaydi, operator notu, bakim gecmisi ve ekipman testleri",
+    risk: "tekrar eden ariza, yanlis koku neden ve gereksiz durus"
+  },
+  {
+    enSlug: "renewable-energy-feasibility-technical-review",
+    trSlug: "yenilenebilir-enerji-fizibilite-teknik-inceleme",
+    enTitle: "Renewable Energy Feasibility Technical Review",
+    trTitle: "Yenilenebilir Enerji Fizibilite Teknik Inceleme: Yatirim Kararindan Once Kanit",
+    enDescription: "Feasibility technical review for renewable energy investments covering production assumptions, grid limits, EPC cost logic, O&M maturity and risk ranking.",
+    trDescription: "Yenilenebilir enerji yatirimlari icin fizibilite teknik inceleme: uretim varsayimi, sebeke limiti, EPC maliyet mantigi, O&M olgunlugu ve risk siralamasi.",
+    category: "Yatirim",
+    categorySlug: "yatirim",
+    enServices: ["renewable-energy-investment-advisory", "epc-technical-advisory", "energy-audit"],
+    trServices: ["yenilenebilir-enerji-yatirim-danismanligi", "epc-teknik-danismanlik-hizmeti", "enerji-denetimi"],
+    focus: "Enerji yatirim danismanligi",
+    equipment: "fizibilite raporu, uretim modeli, grid baglanti gorusu, EPC teklifleri ve O&M varsayimlari",
+    risk: "yatirim oncesi yanlis kabul, gelir sapmasi ve finansman riski"
+  },
+  {
+    enSlug: "grid-protection-audit-renewable-plants",
+    trSlug: "sebeke-koruma-denetimi-yenilenebilir-santraller",
+    enTitle: "Grid and Protection Audit for Renewable Plants",
+    trTitle: "Sebeke ve Koruma Denetimi: Yenilenebilir Santrallerde Acma Analizi",
+    enDescription: "Grid and protection audit guide covering relay settings, event records, transformer constraints, breaker logic and compliance evidence.",
+    trDescription: "Sebeke ve koruma denetimi rehberi: role ayarlari, olay kayitlari, trafo kisitlari, kesici mantigi ve uyum kaniti.",
+    category: "Sebeke",
+    categorySlug: "sebeke",
+    enServices: ["grid-protection-system-analysis", "technical-audits-existing-power-plants", "power-plant-commissioning"],
+    trServices: ["sebeke-koruma-sistemi-analizi", "mevcut-santraller-icin-teknik-denetim", "enerji-santrali-devreye-alma"],
+    focus: "Teknik denetim",
+    equipment: "koruma roleleri, kesici, trafo, bara, tek hat semasi ve olay kayit sistemi",
+    risk: "gereksiz acma, koruma koordinasyon hatasi ve sebeke uyum sorunu"
+  }
+];
+
+const authorityHeadings = {
+  en: [
+    "Why this topic matters for asset value",
+    "Engineering evidence that must be reviewed",
+    "Common field problems",
+    "How the consultant separates facts from assumptions",
+    "Case study example",
+    "Recommended engineering actions",
+    "Internal links for owner-side decisions",
+    "When to request consultancy support"
+  ],
+  tr: [
+    "Bu konu varlik degeri icin neden kritiktir",
+    "Incelenmesi gereken muhendislik kanitlari",
+    "Sahada sik gorulen problemler",
+    "Danisman gercekleri varsayimlardan nasil ayirir",
+    "Vaka ornegi",
+    "Onerilen muhendislik aksiyonlari",
+    "Isveren kararlari icin ic linkler",
+    "Ne zaman danismanlik destegi alinmali"
+  ]
+} satisfies Record<Locale, string[]>;
+
+function buildAuthoritySection(locale: Locale, topic: AuthorityTopic, heading: string, sectionIndex: number) {
+  const en = locale === "en";
+  if (en) {
+    return `${topic.enTitle} should be handled as a structured engineering decision, not as a generic checklist. The consultant first defines the plant boundary, commercial decision, operating history and evidence quality. For this topic, the most important field context is ${topic.equipment}; the most common value risk is ${topic.risk}. A useful review connects design intent, EPC records, commissioning files, SCADA trends, protection settings, operator logs, outage history, maintenance routines and grid interface evidence. Section ${sectionIndex + 1} focuses on ${heading.toLowerCase()} and explains how an owner, EPC contractor or investor can turn incomplete site information into a defensible action plan. In practice, the strongest recommendations rank actions by safety, generation impact, grid compliance, outage requirement, CAPEX exposure, warranty relevance and implementation difficulty. A case example would compare the contractual acceptance evidence with real operating behavior, then identify whether the root issue is design, installation, control logic, O&M response, documentation quality or unresolved handover responsibility. The final output should link directly to consultancy services, define the next test or inspection, and make clear which risk can be accepted, monitored or corrected immediately. A senior review should also test the quality of the assumptions behind the numbers. For hydropower assets this may mean checking net head, tailwater influence, governor response, vibration history, cooling water reliability and reactive power capability under real dispatch conditions. For solar assets it can mean separating irradiation uncertainty from inverter clipping, string mismatch, soiling, transformer losses, availability losses and SCADA data gaps. In EPC advisory work, the same discipline applies to interface registers, design freezes, factory acceptance tests, method statements, protection coordination, energization permits and punch-list closure. The practical consulting value is not only to describe a problem, but to show the owner what can be measured next week, what must wait for an outage, what should be negotiated with the contractor, and what can be monitored through operating discipline without unnecessary CAPEX.`;
+  }
+
+  return `${topic.trTitle} genel bir kontrol listesi olarak degil, yapilandirilmis bir muhendislik karari olarak ele alinmalidir. Danisman once santral sinirini, ticari karari, isletme gecmisini ve kanit kalitesini tanimlar. Bu konuda en kritik saha baglami ${topic.equipment}; en yaygin deger riski ise ${topic.risk}. Yararlı bir inceleme tasarim niyetini, EPC kayitlarini, devreye alma dosyalarini, SCADA trendlerini, koruma ayarlarini, operator loglarini, durus gecmisini, bakim rutinlerini ve sebeke arayuz kanitlarini birlikte okur. ${sectionIndex + 1}. bolum ${heading.toLowerCase()} konusuna odaklanir ve isverenin, EPC yuklenicisinin veya yatirimcinin eksik saha bilgisini nasil savunulabilir aksiyon planina donusturebilecegini aciklar. Pratikte en guclu oneriler; emniyet, uretim etkisi, sebeke uyumu, durus ihtiyaci, CAPEX maruziyeti, garanti ilgisi ve uygulama zorluguna gore siralanir. Vaka orneginde sozlesmesel kabul kaniti gercek isletme davranisiyla karsilastirilir; kok nedenin tasarim, montaj, kontrol mantigi, O&M yaniti, dokumantasyon kalitesi veya kapanmamis teslim sorumlulugu olup olmadigi ayrilir. Nihai cikti dogrudan danismanlik hizmetlerine baglanmali, bir sonraki test veya incelemeyi tanimlamali ve hangi riskin kabul edilecegini, izlenecegini veya hemen duzeltilecegini netlestirmelidir. Tecrubeli bir inceleme sayilarin arkasindaki varsayim kalitesini de test eder. HES varliklarinda bu; net dusu, kuyruksuyu etkisi, governor cevabi, vibrasyon gecmisi, sogutma suyu guvenilirligi ve reaktif guc kabiliyetinin gercek yuk rejiminde okunmasi anlamina gelebilir. GES varliklarinda ise isinim belirsizligi, inverter clipping, string uyumsuzlugu, kirlenme kaybi, trafo kayiplari, emre amadelik kaybi ve SCADA veri bosluklari ayrilmalidir. EPC danismanligi tarafinda ayni disiplin arayuz listesi, tasarim dondurma, fabrika kabul testleri, metot beyanlari, koruma koordinasyonu, enerjilendirme izinleri ve punch-list kapanisi icin uygulanir. Danismanligin pratik degeri sadece problemi tarif etmek degil; isverene gelecek hafta neyin olculebilecegini, neyin durus beklemesi gerektigini, neyin yukleniciyle muzakerelik oldugunu ve hangi konunun gereksiz CAPEX yaratmadan isletme disipliniyle izlenebilecegini gostermektir.`;
+}
+
+function buildAuthorityTopicPost(locale: Locale, topic: AuthorityTopic, index: number): BlogPost {
+  const en = locale === "en";
+  const slug = en ? topic.enSlug : topic.trSlug;
+  const title = en ? topic.enTitle : topic.trTitle;
+  const description = en ? topic.enDescription : topic.trDescription;
+  const serviceLinks = en ? topic.enServices : topic.trServices;
+  const headings = authorityHeadings[locale];
+  const relatedPool = authorityTopics.filter((item) => item !== topic);
+
+  return {
+    slug,
+    title,
+    description,
+    category: topic.category,
+    categorySlug: topic.categorySlug,
+    tags: en ? [topic.focus, "technical audit", "renewable energy consultancy"] : [topic.focus, "teknik denetim", "enerji danismanligi"],
+    author: en ? "Oztoprak Energy engineering desk" : "Oztoprak Enerji muhendislik masasi",
+    featured: index < 3,
+    trending: index < 6,
+    date: `2026-07-${String(index + 1).padStart(2, "0")}`,
+    readingTime: en ? "22 min" : "22 dk",
+    toc: headings,
+    related: relatedPool.slice(index % 5, (index % 5) + 5).map((item) => (en ? item.enSlug : item.trSlug)),
+    serviceLinks,
+    body: [
+      ...headings.map((heading, sectionIndex) => ({
+        heading,
+        content: buildAuthoritySection(locale, topic, heading, sectionIndex)
+      })),
+      {
+        heading: en ? "Consultancy CTA" : "Danismanlik Cagrisi",
+        content: en
+          ? `If ${topic.focus} is connected to an active investment, commissioning gate, EPC dispute, performance loss or acquisition decision, request an independent technical consultation before the evidence becomes harder to recover. Oztoprak Energy can review the available records, define the missing tests, prepare an owner-side risk register and connect the findings to hydropower, solar, EPC, commissioning, technical due diligence and performance analysis services.`
+          : `${topic.focus} aktif bir yatirim, devreye alma kapisi, EPC uyusmazligi, performans kaybi veya satin alma karariyla baglantiliysa kanit toparlanmasi zorlasmadan bagimsiz teknik danismanlik alin. Oztoprak Enerji mevcut kayitlari inceleyebilir, eksik testleri tanimlayabilir, isveren tarafi risk listesi hazirlayabilir ve bulgulari HES danismanligi, GES danismanligi, EPC danismanligi, devreye alma, teknik denetim, enerji yatirim danismanligi ve performans analizi hizmetlerine baglayabilir.`
+      }
+    ],
+    faqs: [
+      {
+        question: en ? `When should an owner request support for ${topic.focus}?` : `${topic.focus} icin ne zaman destek alinmali?`,
+        answer: en
+          ? `Support should be requested before acceptance, acquisition, refinancing, warranty discussion or repeated operating loss. Early review protects evidence quality and prevents weak assumptions from becoming commercial risk.`
+          : `Destek kabul, satin alma, refinansman, garanti gorusmesi veya tekrarlayan isletme kaybi oncesinde alinmalidir. Erken inceleme kanit kalitesini korur ve zayif varsayimlarin ticari riske donusmesini engeller.`
+      },
+      {
+        question: en ? "Which records are most important?" : "Hangi kayitlar en onemlidir?",
+        answer: en
+          ? `The most useful records are commissioning test sheets, SCADA event history, protection files, O&M logs, outage reports, as-built drawings, performance trends and clear ownership of open issues.`
+          : `En faydali kayitlar devreye alma test formlari, SCADA olay gecmisi, koruma dosyalari, O&M loglari, durus raporlari, as-built cizimler, performans trendleri ve acik konularin net sorumlulugudur.`
+      },
+      {
+        question: en ? "What should the final consulting output include?" : "Nihai danismanlik ciktisi ne icermelidir?",
+        answer: en
+          ? `It should include an evidence summary, risk ranking, recommended engineering actions, missing tests, owner-side decisions and a practical implementation sequence.`
+          : `Kanit ozeti, risk siralamasi, onerilen muhendislik aksiyonlari, eksik testler, isveren kararlari ve uygulanabilir is sirasi icermelidir.`
+      }
+    ]
+  };
+}
+
+blogPosts.en.push(...authorityTopics.map((topic, index) => buildAuthorityTopicPost("en", topic, index)));
+blogPosts.tr.push(...authorityTopics.map((topic, index) => buildAuthorityTopicPost("tr", topic, index)));
+
 export function getPosts(locale: Locale) {
   return blogPosts[locale];
 }

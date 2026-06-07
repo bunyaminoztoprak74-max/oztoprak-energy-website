@@ -9,7 +9,29 @@ import { BrandLogo } from "@/components/brand-logo";
 type Dict = ReturnType<typeof getDictionary>;
 
 export function Footer({ locale, dict }: { locale: Locale; dict: Dict }) {
-  const services = getServices(locale).slice(0, 5);
+  const priorityServiceSlugs =
+    locale === "tr"
+      ? [
+          "hes-danismanligi",
+          "ges-danismanligi",
+          "epc-teknik-danismanlik-hizmeti",
+          "mevcut-santraller-icin-teknik-denetim",
+          "enerji-santrali-devreye-alma",
+          "isletme-bakim-performans-iyilestirme",
+          "yenilenebilir-enerji-yatirim-danismanligi"
+        ]
+      : [
+          "hydropower-consulting",
+          "solar-energy-consulting",
+          "epc-technical-advisory",
+          "technical-audits-existing-power-plants",
+          "power-plant-commissioning",
+          "om-performance-improvement",
+          "renewable-energy-investment-advisory"
+        ];
+  const services = priorityServiceSlugs
+    .map((slug) => getServices(locale).find((service) => service.slug === slug))
+    .filter((service): service is NonNullable<typeof service> => Boolean(service));
   const servicesHref = locale === "tr" ? "/tr/hizmetler" : "/en/services";
   const contactHref = locale === "tr" ? "/tr/iletisim" : "/en/contact";
 

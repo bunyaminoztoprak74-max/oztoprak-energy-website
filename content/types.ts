@@ -26,6 +26,11 @@ export type Project = {
   approach?: string;
   actions?: string[];
   lessons?: string[];
+  relatedServices?: string[];
+  faqs?: Array<{ question: string; answer: string }>;
+  beforeAfterMetrics?: Array<{ label: string; before: string; after: string; impact: string }>;
+  calculations?: string[];
+  authorExpertise?: string;
 };
 
 export type BlogPost = {

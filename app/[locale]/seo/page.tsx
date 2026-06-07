@@ -11,12 +11,24 @@ import { collectionPageSchema } from "@/lib/programmatic-schema";
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale: localeParam } = await params;
   const locale = isLocale(localeParam) ? localeParam : "en";
-  return buildMetadata({
+  const metadata = buildMetadata({
     locale,
     path: "/seo",
     title: locale === "en" ? "Programmatic SEO Pages" : "Programatik SEO Sayfaları",
     description: locale === "en" ? "Generated service, location and intent pages for Oztoprak Energy." : "Öztoprak Enerji için üretilen hizmet, lokasyon ve niyet sayfaları."
   });
+
+  return {
+    ...metadata,
+    robots: {
+      index: false,
+      follow: true,
+      googleBot: {
+        index: false,
+        follow: true
+      }
+    }
+  };
 }
 
 export default async function SeoIndexPage({ params }: { params: Promise<{ locale: string }> }) {

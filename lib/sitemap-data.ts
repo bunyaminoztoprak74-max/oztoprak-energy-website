@@ -3,7 +3,7 @@ import { getProjects } from "@/content/projects";
 import { getServices } from "@/content/services";
 import { getClusters, getLocations, getPillars, getProblems } from "@/content/programmatic-seo";
 
-export const sitemapBaseUrl = "https://www.oztoprakenerji.com";
+export const sitemapBaseUrl = "https://oztoprakenerji.com";
 
 type ChangeFrequency = "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never";
 
