@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import type { Locale } from "@/lib/i18n";
 
-const baseUrl = "https://oztoprakenerji.com";
+const baseUrl = "https://www.oztoprakenerji.com";
 const defaultOgImage = "/oztoprak-energy-logo.png";
 const targetKeywords = [
   "hydropower consulting",

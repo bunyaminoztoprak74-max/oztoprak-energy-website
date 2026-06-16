@@ -3,7 +3,7 @@ import path from "node:path";
 
 const root = process.cwd();
 const appDir = path.join(root, ".next", "server", "app");
-const canonicalHost = "https://oztoprakenerji.com";
+const canonicalHost = "https://www.oztoprakenerji.com";
 
 function walk(dir) {
   if (!fs.existsSync(dir)) return [];

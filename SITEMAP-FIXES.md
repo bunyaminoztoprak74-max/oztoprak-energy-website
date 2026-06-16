@@ -5,15 +5,15 @@
 Submit only:
 
 ```text
-https://oztoprakenerji.com/sitemap.xml
+https://www.oztoprakenerji.com/sitemap.xml
 ```
 
 The sitemap index references:
 
 ```text
-https://oztoprakenerji.com/page-sitemap.xml
-https://oztoprakenerji.com/blog-sitemap.xml
-https://oztoprakenerji.com/service-sitemap.xml
+https://www.oztoprakenerji.com/page-sitemap.xml
+https://www.oztoprakenerji.com/blog-sitemap.xml
+https://www.oztoprakenerji.com/service-sitemap.xml
 ```
 
 ## Rules
@@ -30,7 +30,7 @@ https://oztoprakenerji.com/service-sitemap.xml
 Keep only:
 
 ```text
-https://oztoprakenerji.com/sitemap.xml
+https://www.oztoprakenerji.com/sitemap.xml
 ```
 
 Old direct submissions such as `page-sitemap.xml`, `blog-sitemap.xml`, `service-sitemap.xml`, `cspt-service-sitemap.xml`, or `https://www.../sitemap.xml` should be removed if the interface allows it. If they cannot be removed, leave them; Google will eventually prioritize the active canonical sitemap.

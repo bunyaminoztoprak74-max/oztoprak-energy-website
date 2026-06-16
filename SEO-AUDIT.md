@@ -1,12 +1,12 @@
 # SEO Audit - Oztoprak Energy
 
 Audit date: 2026-06-07  
-Canonical domain: `https://oztoprakenerji.com`  
+Canonical domain: `https://www.oztoprakenerji.com`  
 Languages: English `/en`, Turkish `/tr`
 
 ## Executive Findings
 
-- The site had a canonical/domain consistency risk because core SEO helpers still used `https://www.oztoprakenerji.com` while the requested single domain is `https://oztoprakenerji.com`.
+- The site had a canonical/domain consistency risk because core SEO helpers still used `https://www.oztoprakenerji.com` while the requested single domain is `https://www.oztoprakenerji.com`.
 - Google Search Console showed 346 discovered URLs with only 17 indexed. The largest quality/crawl-budget risk is the programmatic `/seo/...` URL set, which can generate hundreds of similar service-location-intent pages.
 - The current sitemap architecture is already split into `page-sitemap.xml`, `blog-sitemap.xml`, and `service-sitemap.xml`; it now needs to serve only apex-domain canonical URLs.
 - Core indexable assets should be the homepage, main service pages, service detail pages, selected blog posts, projects, problem pages, location pages, topic clusters and pillar pages.
@@ -16,9 +16,9 @@ Languages: English `/en`, Turkish `/tr`
 
 | Area | Status | Action Taken |
 | --- | --- | --- |
-| Canonical domain | Fixed | Changed metadata, schema, robots and sitemap host to `https://oztoprakenerji.com`. |
+| Canonical domain | Fixed | Changed metadata, schema, robots and sitemap host to `https://www.oztoprakenerji.com`. |
 | Sitemap host | Fixed | `lib/sitemap-data.ts` now emits apex-domain URLs. |
-| Robots sitemap reference | Fixed | `robots.txt` now references `https://oztoprakenerji.com/sitemap.xml`. |
+| Robots sitemap reference | Fixed | `robots.txt` now references `https://www.oztoprakenerji.com/sitemap.xml`. |
 | Programmatic index bloat | Fixed | `/en/seo`, `/tr/seo` and `/seo/[slug]` pages now return `noindex, follow`. |
 | Duplicate Turkish short URLs | Fixed | Root-level Turkish keyword URLs redirect to canonical Turkish service pages. |
 | Internal linking | Improved | Footer now links to high-value service pages instead of only the first five services. |
@@ -37,7 +37,7 @@ Languages: English `/en`, Turkish `/tr`
 
 2. **Canonical split risk**
    - `www` and apex domain signals can split indexing.
-   - Fix: all core SEO helpers now point to `https://oztoprakenerji.com`.
+   - Fix: all core SEO helpers now point to `https://www.oztoprakenerji.com`.
 
 3. **Service keyword URL duplication risk**
    - URLs such as `/hes-danismanligi` and `/tr/services/hes-danismanligi` could become duplicate if both served content.
@@ -50,10 +50,10 @@ Languages: English `/en`, Turkish `/tr`
 ## Remaining Watch Items
 
 - Run URL Inspection in GSC after deployment for:
-  - `https://oztoprakenerji.com/tr/services/hes-danismanligi`
-  - `https://oztoprakenerji.com/tr/services/ges-danismanligi`
-  - `https://oztoprakenerji.com/tr/services/epc-teknik-danismanlik-hizmeti`
-  - `https://oztoprakenerji.com/tr/services/yenilenebilir-enerji-yatirim-danismanligi`
+  - `https://www.oztoprakenerji.com/tr/services/hes-danismanligi`
+  - `https://www.oztoprakenerji.com/tr/services/ges-danismanligi`
+  - `https://www.oztoprakenerji.com/tr/services/epc-teknik-danismanlik-hizmeti`
+  - `https://www.oztoprakenerji.com/tr/services/yenilenebilir-enerji-yatirim-danismanligi`
 - Remove old sitemap submissions in GSC where possible and keep only:
-  - `https://oztoprakenerji.com/sitemap.xml`
+  - `https://www.oztoprakenerji.com/sitemap.xml`
 - Monitor "Discovered - currently not indexed" for two to four weeks after deployment.

@@ -49,7 +49,7 @@ Reason: these pages are useful for future programmatic SEO expansion, but the cu
 
 ## Applied Fixes
 
-1. Updated canonical domain to `https://oztoprakenerji.com`.
+1. Updated canonical domain to `https://www.oztoprakenerji.com`.
 2. Updated Organization, LocalBusiness, Website and Service schema base URLs.
 3. Updated robots sitemap host.
 4. Set generated `/seo` pages to `noindex, follow`.

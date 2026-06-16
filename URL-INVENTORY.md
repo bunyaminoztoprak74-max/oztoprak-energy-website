@@ -2,7 +2,7 @@
 
 Generated: 2026-06-07T18:16:11.107Z  
 Source: local Next.js production build HTML and generated sitemap XML  
-Canonical domain: `https://oztoprakenerji.com`
+Canonical domain: `https://www.oztoprakenerji.com`
 
 ## Executive Summary
 
@@ -306,7 +306,7 @@ Merge or redirect:
 
 ## Action Plan
 
-1. Keep only `https://oztoprakenerji.com/sitemap.xml` submitted in GSC.
+1. Keep only `https://www.oztoprakenerji.com/sitemap.xml` submitted in GSC.
 2. Keep `/seo/*` out of sitemap and noindex/follow.
 3. Request indexing manually only for the strongest Turkish commercial service pages.
 4. Expand blog and case-study content that links into HES, GES, EPC, technical audit and investment advisory pages.

@@ -23,7 +23,7 @@ export async function generateMetadata({
   const dict = getDictionary(locale);
 
   return {
-    metadataBase: new URL("https://oztoprakenerji.com"),
+    metadataBase: new URL("https://www.oztoprakenerji.com"),
     title: {
       default: dict.seo.siteTitle,
       template: `%s | ${dict.brand.name}`
