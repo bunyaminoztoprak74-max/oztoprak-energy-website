@@ -72,9 +72,30 @@ export const services: Record<Locale, Service[]> = {
       eyebrow: "Owner-side technical control",
       description: "Owner's engineering services that protect project value through independent review, field observations and decision support.",
       keywords: ["owner's engineering", "EPC technical consultancy", "renewable energy project advisory"],
-      outcomes: ["Better owner visibility", "Reduced technical ambiguity", "Stronger contractor alignment"],
-      scope: ["Technical governance", "Contractor deliverable review", "Site progress observations", "Decision memos"],
-      faqs: sharedFaq.en
+      outcomes: ["Better owner visibility", "Reduced technical ambiguity", "Stronger contractor alignment", "Cleaner FAT, SAT and commissioning readiness evidence", "More disciplined project handover controls"],
+      scope: [
+        "Technical governance",
+        "EPC design review and constructability challenge",
+        "Contractor deliverable review",
+        "Factory acceptance test (FAT) and site acceptance test (SAT) evidence review",
+        "Inspection and test plan (ITP) control",
+        "Non-conformance report (NCR) management and closeout follow-up",
+        "Commissioning readiness and energization gate review",
+        "Project handover controls, punch-list discipline and as-built documentation review",
+        "Site progress observations",
+        "Decision memos"
+      ],
+      faqs: [
+        ...sharedFaq.en,
+        {
+          question: "How does owner's engineering reduce EPC risk?",
+          answer: "It gives the owner independent technical control over design submittals, ITP checkpoints, FAT/SAT evidence, NCR closeout, commissioning readiness and handover documentation before issues become delay claims or operational defects."
+        },
+        {
+          question: "Do you review FAT, SAT, ITP and NCR documentation?",
+          answer: "Yes. These records are reviewed as evidence of quality maturity, equipment readiness, interface control and contractor accountability."
+        }
+      ]
     },
     {
       slug: "om-performance-improvement",
@@ -155,6 +176,68 @@ export const services: Record<Locale, Service[]> = {
       outcomes: ["Reduced EPC delivery risk", "Better interface and contractor control", "Stronger commissioning and handover evidence"],
       scope: ["EPC scope and interface review", "Technical risk register", "Contractor deliverable review", "Commissioning readiness challenge", "Owner decision support"],
       faqs: sharedFaq.en
+    },
+    {
+      slug: "technical-due-diligence",
+      title: "Technical Due Diligence for Renewable Energy Assets",
+      eyebrow: "Investor-grade technical risk review",
+      description: "Technical due diligence for hydropower, solar and renewable energy assets covering performance evidence, EPC risk, O&M maturity, grid compliance, CAPEX exposure and acquisition decisions.",
+      keywords: ["technical due diligence renewable energy", "power plant technical due diligence", "solar technical due diligence", "hydropower technical due diligence", "renewable energy investment consulting"],
+      outcomes: ["Investment-ready technical risk register", "Clear CAPEX and O&M exposure priorities", "Evidence-based acquisition or refinancing decision support", "Improved lender and investor confidence"],
+      scope: [
+        "Asset data room and EPC documentation review",
+        "Hydropower and solar performance evidence analysis",
+        "Commissioning records and handover documentation review",
+        "O&M maturity, outage history and availability assessment",
+        "Grid compliance, protection and reactive power evidence review",
+        "CAPEX risk, warranty exposure and corrective action prioritization"
+      ],
+      faqs: [
+        ...sharedFaq.en,
+        {
+          question: "What is included in renewable energy technical due diligence?",
+          answer: "The review typically covers asset condition, generation history, EPC documentation, commissioning evidence, O&M records, grid compliance, technical risks, CAPEX exposure and practical recommendations for investors or owners."
+        },
+        {
+          question: "Is this different from a normal technical audit?",
+          answer: "Yes. A technical audit focuses on asset condition and performance. Technical due diligence connects those findings to an investment, acquisition, refinancing or portfolio decision."
+        },
+        {
+          question: "Can the report support acquisition negotiations?",
+          answer: "Yes. Findings can be structured as risk register items with evidence, severity, likely cost impact, priority and negotiation relevance."
+        }
+      ]
+    },
+    {
+      slug: "hpp-performance-analysis",
+      title: "HPP Performance Analysis",
+      eyebrow: "Hydropower generation loss and efficiency review",
+      description: "HPP performance analysis for hydropower owners who need to understand generation losses, turbine efficiency, governor behavior, AGC response, availability, alarms, trips and O&M improvement priorities.",
+      keywords: ["HPP performance analysis", "hydropower performance analysis", "turbine efficiency loss analysis", "hydropower generation loss analysis", "AGC compliance hydropower"],
+      outcomes: ["Clear hydropower loss diagnosis", "Prioritized turbine, governor and O&M actions", "Improved availability and generation recovery roadmap", "Better evidence for operational and CAPEX decisions"],
+      scope: [
+        "Generation, water availability and availability trend review",
+        "Turbine-generator operating data and efficiency loss analysis",
+        "Governor response, AGC behavior and dispatch performance review",
+        "SCADA alarm, trip and outage history assessment",
+        "Hydraulic constraints, sedimentation signals and auxiliary system observations",
+        "O&M routine, corrective action and performance recovery roadmap"
+      ],
+      faqs: [
+        ...sharedFaq.en,
+        {
+          question: "What data is needed for HPP performance analysis?",
+          answer: "Useful inputs include monthly generation, water availability, unit availability, SCADA trends, alarm logs, trip history, outage records, turbine test data, governor settings and O&M reports."
+        },
+        {
+          question: "Can the analysis identify turbine efficiency loss?",
+          answer: "It can identify likely efficiency loss patterns and recommend the next engineering checks, including operating curve review, water-to-wire loss analysis, runner condition observations and targeted performance testing."
+        },
+        {
+          question: "Does the review include AGC and grid behavior?",
+          answer: "Yes. Setpoint tracking, ramp behavior, governor response, reactive power behavior and grid interface records are reviewed when data is available."
+        }
+      ]
     }
   ],
   tr: [
@@ -287,6 +370,68 @@ export const services: Record<Locale, Service[]> = {
       outcomes: ["Azaltılmış EPC teslim riski", "Daha güçlü arayüz ve yüklenici kontrolü", "Daha sağlam devreye alma ve teslim kanıtları"],
       scope: ["EPC kapsam ve arayüz incelemesi", "Teknik risk listesi", "Yüklenici doküman incelemesi", "Devreye alma hazırlık sorgulaması", "İşveren karar desteği"],
       faqs: sharedFaq.tr
+    },
+    {
+      slug: "teknik-durum-tespiti",
+      title: "Yenilenebilir Enerji Teknik Durum Tespiti",
+      eyebrow: "Yatirimci duzeyinde teknik risk incelemesi",
+      description: "HES, GES ve yenilenebilir enerji varliklari icin performans kaniti, EPC riski, O&M olgunlugu, sebeke uyumu, CAPEX etkisi ve satin alma kararlarini kapsayan teknik durum tespiti.",
+      keywords: ["teknik durum tespiti", "yenilenebilir enerji due diligence", "HES teknik durum tespiti", "GES teknik durum tespiti", "enerji yatirim danismanligi"],
+      outcomes: ["Yatirima hazir teknik risk listesi", "Net CAPEX ve O&M risk oncelikleri", "Satin alma veya refinansman karari icin kanita dayali destek", "Yatirimci ve finans kurumu guveninin artmasi"],
+      scope: [
+        "Varlik data room ve EPC dokumantasyon incelemesi",
+        "HES ve GES performans kaniti analizi",
+        "Devreye alma kayitlari ve teslim dokumantasyonu incelemesi",
+        "O&M olgunlugu, durus gecmisi ve emre amadelik degerlendirmesi",
+        "Sebeke uyumu, koruma ve reaktif guc kaniti incelemesi",
+        "CAPEX riski, garanti etkisi ve duzeltici aksiyon onceliklendirme"
+      ],
+      faqs: [
+        ...sharedFaq.tr,
+        {
+          question: "Yenilenebilir enerji teknik durum tespiti neleri kapsar?",
+          answer: "Inceleme varlik durumu, uretim gecmisi, EPC dokumantasyonu, devreye alma kanitlari, O&M kayitlari, sebeke uyumu, teknik riskler, CAPEX etkisi ve yatirimci icin pratik onerileri kapsar."
+        },
+        {
+          question: "Bu calisma normal teknik denetimden farkli midir?",
+          answer: "Evet. Teknik denetim varlik durumu ve performansa odaklanir. Teknik durum tespiti bu bulgulari satin alma, yatirim, refinansman veya portfoy karariyla iliskilendirir."
+        },
+        {
+          question: "Rapor satin alma gorusmelerini destekler mi?",
+          answer: "Evet. Bulgular kanit, siddet, muhtemel maliyet etkisi, oncelik ve pazarlik etkisi ile risk listesi olarak yapilandirilabilir."
+        }
+      ]
+    },
+    {
+      slug: "hes-performans-analizi",
+      title: "HES Performans Analizi",
+      eyebrow: "Hidroelektrik uretim kaybi ve verimlilik incelemesi",
+      description: "Uretim kaybi, turbin verimi, governor davranisi, AGC tepkisi, emre amadelik, alarmlar, tripler ve O&M iyilestirme onceliklerini anlamak isteyen HES sahipleri icin performans analizi.",
+      keywords: ["HES performans analizi", "hidroelektrik santral performans analizi", "turbin verim kaybi analizi", "HES uretim kaybi analizi", "AGC uyumu HES"],
+      outcomes: ["Net HES kayip teshisi", "Oncelikli turbin, governor ve O&M aksiyonlari", "Emre amadelik ve uretim toparlama yol haritasi", "Operasyonel ve CAPEX kararlari icin daha guclu kanit"],
+      scope: [
+        "Uretim, su geliri ve emre amadelik trend incelemesi",
+        "Turbin-jenerator isletme verisi ve verim kaybi analizi",
+        "Governor tepkisi, AGC davranisi ve yuk tevzi performansi incelemesi",
+        "SCADA alarm, trip ve durus gecmisi degerlendirmesi",
+        "Hidrolik kisitlar, sedimentasyon sinyalleri ve yardimci sistem gozlemleri",
+        "O&M rutini, duzeltici aksiyon ve performans toparlama yol haritasi"
+      ],
+      faqs: [
+        ...sharedFaq.tr,
+        {
+          question: "HES performans analizi icin hangi veriler gerekir?",
+          answer: "Aylik uretim, su geliri, unit emre amadeligi, SCADA trendleri, alarm kayitlari, trip gecmisi, durus kayitlari, turbin test verisi, governor ayarlari ve O&M raporlari faydalidir."
+        },
+        {
+          question: "Analiz turbin verim kaybini belirleyebilir mi?",
+          answer: "Muhtemel verim kaybi paternleri belirlenebilir ve isletme egrisi incelemesi, su-guc kayip analizi, runner durumu gozlemi ve hedefli performans testi gibi sonraki muhendislik kontrolleri onerilebilir."
+        },
+        {
+          question: "AGC ve sebeke davranisi incelenir mi?",
+          answer: "Evet. Veri mevcutsa set noktasi takibi, rampa davranisi, governor tepkisi, reaktif guc davranisi ve sebeke arayuz kayitlari incelenir."
+        }
+      ]
     }
   ]
 };

@@ -123,6 +123,124 @@ function serviceExpansionSections(locale: Locale, service: NonNullable<ReturnTyp
   ];
 }
 
+function specializedServiceSections(locale: Locale, service: NonNullable<ReturnType<typeof getService>>) {
+  const en = locale === "en";
+
+  if (service.slug === "technical-due-diligence" || service.slug === "teknik-durum-tespiti") {
+    return en
+      ? [
+          {
+            heading: "Investor-Grade Data Room Review",
+            content: "A renewable energy technical due diligence review begins with the quality of the evidence. The data room should prove how the project was designed, procured, commissioned, operated and maintained. Oztoprak Energy reviews EPC contracts, technical specifications, as-built documents, commissioning sheets, protection files, performance test records, SCADA exports, outage logs, warranty correspondence, O&M reports and grid connection documents. Weak records are not treated as administration problems; they are risk signals. Missing relay settings, incomplete punch-list closure, unclear test acceptance criteria or inconsistent production records can affect valuation, lender confidence, warranty recovery and post-acquisition CAPEX planning."
+          },
+          {
+            heading: "Performance, Availability and Revenue Risk",
+            content: "Due diligence must connect technical findings to commercial exposure. For hydropower assets, this means separating water availability, turbine-generator efficiency, forced outages, sedimentation signals, governor behavior and dispatch constraints. For solar assets, it means reviewing performance ratio trends, inverter availability, string losses, soiling assumptions, clipping, curtailment and O&M response discipline. The objective is not to produce a long defect list. The objective is to explain whether historical generation is repeatable, which losses are structural, which losses are recoverable and which risks should influence price, warranty negotiations or post-closing improvement budgets."
+          },
+          {
+            heading: "EPC, Commissioning and Handover Risk",
+            content: "Many renewable energy assets look acceptable on a summary dashboard but carry unresolved EPC risk inside the documentation. Technical due diligence checks whether commissioning evidence proves equipment readiness, whether FAT and SAT records align with actual site conditions, whether NCRs were closed with engineering evidence and whether handover documents are complete enough for long-term operations. If energization, synchronization, protection tests, reactive power capability, SCADA points, alarm logic or performance tests were poorly documented, the buyer may inherit uncertainty that only appears after a trip, outage or warranty dispute."
+          },
+          {
+            heading: "Due Diligence Outputs for Decision Makers",
+            content: "The final output should be usable by investors, lenders, asset managers and technical teams. A strong report includes an executive risk summary, evidence-based findings, severity ranking, likely operational or CAPEX impact, recommended clarifications, red flag items, post-closing action priorities and questions for the seller or EPC contractor. Each finding should state what was checked, what evidence was available, what remains uncertain and what action is recommended. That structure helps commercial decision makers avoid overreacting to minor defects while still protecting the transaction from hidden technical exposure."
+          }
+        ]
+      : [
+          {
+            heading: "Yatirimci Duzeyinde Data Room Incelemesi",
+            content: "Yenilenebilir enerji teknik durum tespiti, mevcut kanitin kalitesiyle baslar. Data room; projenin nasil tasarlandigini, satin alindigini, devreye alindigini, isletildigini ve bakiminin nasil yapildigini gostermelidir. Oztoprak Enerji EPC sozlesmelerini, teknik sartnameleri, as-built dokumanlari, devreye alma formlarini, koruma dosyalarini, performans testlerini, SCADA verilerini, durus loglarini, garanti yazismalarini, O&M raporlarini ve sebeke baglanti dokumanlarini inceler. Eksik kayitlar sadece idari problem degildir; degerleme, garanti, CAPEX ve satin alma karari icin teknik risk sinyalidir."
+          },
+          {
+            heading: "Performans, Emre Amadelik ve Gelir Riski",
+            content: "Teknik durum tespiti teknik bulgulari ticari maruziyetle iliskilendirmelidir. HES varliklarinda su geliri, turbin-jenerator verimi, zorunlu duruslar, sedimentasyon sinyalleri, governor davranisi ve yuk tevzi kisitlari ayrilmali olarak incelenir. GES varliklarinda performans orani, inverter emre amadeligi, string kayiplari, kirlenme varsayimlari, clipping, kisinti ve O&M mudahele disiplini degerlendirilir. Amac uzun bir kusur listesi degil; gecmis uretimin tekrarlanabilir olup olmadigini, hangi kayiplarin yapisal, hangilerinin toparlanabilir oldugunu ve hangi risklerin fiyata veya kapanis sonrasi butceye etki edecegini aciklamaktir."
+          },
+          {
+            heading: "EPC, Devreye Alma ve Teslim Riski",
+            content: "Bir varlik ozet gostergelerde iyi gorunebilir ancak dokumantasyon icinde cozulmemis EPC riski tasiyabilir. Teknik durum tespiti; devreye alma kanitlarinin ekipman hazirligini kanitlayip kanitlamadigini, FAT ve SAT kayitlarinin saha kosullariyla uyumunu, NCR kapanislarinin muhendislik kanitiyla yapilip yapilmadigini ve teslim dokumanlarinin uzun vadeli isletme icin yeterli olup olmadigini kontrol eder. Enerjilendirme, senkronizasyon, koruma testleri, reaktif guc kabiliyeti, SCADA noktalari, alarm mantigi veya performans testleri zayif belgelenmisse alici belirsizlik devralir."
+          },
+          {
+            heading: "Karar Vericiler Icin Ciktilar",
+            content: "Son rapor yatirimci, finans kurumu, varlik yoneticisi ve teknik ekip tarafindan kullanilabilir olmalidir. Guclu bir rapor; yonetici risk ozeti, kanita dayali bulgular, siddet siralamasi, muhtemel operasyonel veya CAPEX etkisi, onerilen netlestirme sorulari, kirmizi bayraklar, kapanis sonrasi aksiyon oncelikleri ve satici veya EPC yuklenicisine yoneltilecek sorulari icerir. Her bulgu neyin incelendigini, hangi kanitin mevcut oldugunu, hangi belirsizligin kaldigini ve hangi aksiyonun onerildigini net bicimde soylemelidir."
+          }
+        ];
+  }
+
+  if (service.slug === "hpp-performance-analysis" || service.slug === "hes-performans-analizi") {
+    return en
+      ? [
+          {
+            heading: "Hydropower Loss Separation Method",
+            content: "Useful HPP performance analysis separates losses before recommending action. A low generation month can be caused by water availability, dispatch restrictions, turbine efficiency loss, auxiliary system limitations, forced outages, sedimentation, trash rack losses, governor instability, reactive power constraints or operator procedures. Oztoprak Energy reviews monthly generation, hydrology context, unit availability, operating curves, SCADA trends, alarm history and outage records to separate recoverable technical loss from non-controllable resource variation. That separation is essential because the wrong diagnosis can lead to unnecessary CAPEX or missed operational improvements."
+          },
+          {
+            heading: "Turbine, Governor and AGC Behavior",
+            content: "Hydropower performance is not only a turbine issue. Unit response depends on the interaction between hydraulic conditions, wicket gate position, runner condition, generator loading, governor tuning, AGC setpoint tracking and grid dispatch expectations. The review looks for unstable load response, slow ramping, setpoint deviation, recurring alarms, abnormal vibration signals, cavitation indicators, reactive power limitations and protection-related trips. When available, operating data is compared with expected unit behavior to decide whether the next action should be testing, control tuning, maintenance, hydraulic inspection or operational procedure improvement."
+          },
+          {
+            heading: "SCADA, Alarms and Outage Evidence",
+            content: "Plant teams often know that performance is weak but lack a structured explanation. SCADA trends, alarms, trip logs and maintenance records provide the timeline. A performance review checks whether the same alarm precedes recurring outages, whether forced outage categories are accurate, whether auxiliary systems limit generation, whether manual operation bypasses normal control behavior and whether maintenance actions remove the root cause or only reset the symptom. This evidence-based method converts scattered operating history into a ranked action list that can be used by management, O&M teams and contractors."
+          },
+          {
+            heading: "Recommended HPP Recovery Actions",
+            content: "Recommended actions should be practical and staged. Typical actions include targeted unit performance testing, governor and AGC response review, trash rack and waterway inspection, cooling and auxiliary system checks, protection event review, alarm rationalization, O&M routine correction, spare parts prioritization and updated performance monitoring. The goal is to recover generation where possible, reduce avoidable trips, improve availability and give the owner enough evidence to decide whether a maintenance outage, contractor claim, control tuning or CAPEX intervention is justified."
+          }
+        ]
+      : [
+          {
+            heading: "HES Kayiplarini Ayirma Yontemi",
+            content: "Faydali bir HES performans analizi, aksiyon onermeden once kayiplari ayirir. Dusuk uretim; su geliri, yuk tevzi kisiti, turbin verim kaybi, yardimci sistem limitleri, zorunlu duruslar, sedimentasyon, izgara kayiplari, governor kararsizligi, reaktif guc kisitlari veya operator prosedurlerinden kaynaklanabilir. Oztoprak Enerji aylik uretim, hidroloji baglami, unit emre amadeligi, isletme egrileri, SCADA trendleri, alarm gecmisi ve durus kayitlarini birlikte inceler. Dogru ayrim yapilmazsa gereksiz CAPEX veya kacirilan operasyonel iyilestirme riski dogar."
+          },
+          {
+            heading: "Turbin, Governor ve AGC Davranisi",
+            content: "HES performansi sadece turbin konusu degildir. Unit tepkisi hidrolik kosullar, ayar kanadi pozisyonu, runner durumu, jenerator yuklenmesi, governor ayari, AGC set noktasi takibi ve sebeke yuk tevzi beklentilerinin birlikte davranisina baglidir. Inceleme kararsiz yuk tepkisi, yavas rampa, set noktasi sapmasi, tekrarlayan alarmlar, anormal titresim sinyalleri, kavitasyon gostergeleri, reaktif guc limitleri ve koruma kaynakli tripleri arar. Veri mevcutsa beklenen unit davranisiyla karsilastirma yapilir."
+          },
+          {
+            heading: "SCADA, Alarm ve Durus Kaniti",
+            content: "Saha ekipleri performansin zayif oldugunu cogu zaman bilir; fakat yapilandirilmis aciklama eksiktir. SCADA trendleri, alarmlar, trip loglari ve bakim kayitlari zaman cizgisini verir. Performans incelemesi ayni alarmin tekrarlayan duruslardan once gelip gelmedigini, zorunlu durus kategorilerinin dogru tutulup tutulmadigini, yardimci sistemlerin uretimi sinirlayip sinirlamadigini, manuel isletmenin normal kontrol davranisini baypas edip etmedigini ve bakim aksiyonlarinin kok nedeni mi yoksa belirtiyi mi ortadan kaldirdigini kontrol eder."
+          },
+          {
+            heading: "Onerilen HES Toparlama Aksiyonlari",
+            content: "Oneriler pratik ve asamali olmalidir. Tipik aksiyonlar hedefli unit performans testi, governor ve AGC tepki incelemesi, izgara ve su yolu kontrolu, sogutma ve yardimci sistem kontrolleri, koruma olay incelemesi, alarm rasyonalizasyonu, O&M rutini duzeltme, yedek parca onceliklendirme ve guncellenmis performans izleme olabilir. Amac toparlanabilir uretimi geri almak, onlenebilir tripleri azaltmak, emre amadeligi iyilestirmek ve isverene bakim durusu, yuklenici talebi, kontrol ayari veya CAPEX karari icin kanit saglamaktir."
+          }
+        ];
+  }
+
+  if (service.slug === "owners-engineering" || service.slug === "isveren-muhendisligi") {
+    return en
+      ? [
+          {
+            heading: "EPC Design Review and Constructability Control",
+            content: "Owner's engineering should challenge whether EPC design outputs are buildable, testable and operable. Drawings, specifications, single-line diagrams, control narratives, equipment lists, protection philosophy, civil-electromechanical interfaces and grid connection assumptions are reviewed for gaps that can later affect procurement, installation, commissioning or operations. The value is not only detecting errors; it is forcing technical clarity before the contractor's assumptions become site delays or handover disputes."
+          },
+          {
+            heading: "FAT, SAT, ITP and NCR Discipline",
+            content: "FAT, SAT, ITP and NCR records are the backbone of quality evidence. A mature owner's engineering process checks whether factory tests prove equipment readiness, whether site acceptance tests match actual installation conditions, whether inspection and test plans include meaningful hold points and whether non-conformances are closed with evidence rather than administrative notes. This discipline protects the owner from accepting equipment, systems or documentation that look complete but remain technically unresolved."
+          },
+          {
+            heading: "Commissioning Readiness and Handover Controls",
+            content: "Before energization or synchronization, the owner needs confidence that mechanical completion, electrical testing, protection files, SCADA points, alarm lists, spare parts, training, O&M manuals, punch-list status and test procedures are ready. Handover control is more than collecting documents. It verifies that the plant can be operated, maintained, troubleshot and audited after the EPC team leaves. Strong handover controls reduce early operating failures and protect warranty discussions."
+          }
+        ]
+      : [
+          {
+            heading: "EPC Tasarim Inceleme ve Uygulanabilirlik Kontrolu",
+            content: "Isveren muhendisligi, EPC tasarim ciktisinin insa edilebilir, test edilebilir ve isletilebilir olup olmadigini sorgulamalidir. Cizimler, sartnameler, tek hat semalari, kontrol anlatimlari, ekipman listeleri, koruma felsefesi, insaat-elektromekanik arayuzleri ve sebeke baglanti varsayimlari; satin alma, montaj, devreye alma veya isletme uzerinde etkili olabilecek bosluklar acisindan incelenir."
+          },
+          {
+            heading: "FAT, SAT, ITP ve NCR Disiplini",
+            content: "FAT, SAT, ITP ve NCR kayitlari kalite kanitinin omurgasidir. Olgun bir isveren muhendisligi sureci; fabrika testlerinin ekipman hazirligini kanitlayip kanitlamadigini, saha kabul testlerinin gercek montaj kosullariyla uyumunu, muayene ve test planlarinin anlamli durdurma noktalarina sahip olup olmadigini ve uygunsuzluklarin idari not yerine kanitla kapatilip kapatilmadigini kontrol eder."
+          },
+          {
+            heading: "Devreye Alma Hazirligi ve Teslim Kontrolleri",
+            content: "Enerjilendirme veya senkronizasyon oncesinde isveren; mekanik tamamlama, elektrik testleri, koruma dosyalari, SCADA noktalari, alarm listeleri, yedek parca, egitim, O&M kitaplari, punch-list durumu ve test prosedurlerinin hazir oldugundan emin olmalidir. Teslim kontrolu sadece dokuman toplamak degildir; santralin EPC ekibi ayrildiktan sonra isletilebilir, bakimi yapilabilir ve ariza analizi uygulanabilir oldugunu dogrular."
+          }
+        ];
+  }
+
+  return [];
+}
+
 export function generateStaticParams() {
   return (["en", "tr"] as Locale[]).flatMap((locale) => getServices(locale).map((service) => ({ locale, slug: service.slug })));
 }
@@ -149,7 +267,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
   const dict = getDictionary(locale);
   const service = getService(locale, slug);
   if (!service) notFound();
-  const authoritySections = [...serviceAuthoritySections(locale, service), ...serviceExpansionSections(locale, service)];
+  const authoritySections = [...serviceAuthoritySections(locale, service), ...specializedServiceSections(locale, service), ...serviceExpansionSections(locale, service)];
   const serviceFaqs = [
     ...service.faqs,
     {

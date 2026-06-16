@@ -14,6 +14,8 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dict }) {
       ? [
           "hes-danismanligi",
           "ges-danismanligi",
+          "teknik-durum-tespiti",
+          "hes-performans-analizi",
           "epc-teknik-danismanlik-hizmeti",
           "mevcut-santraller-icin-teknik-denetim",
           "enerji-santrali-devreye-alma",
@@ -23,6 +25,8 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dict }) {
       : [
           "hydropower-consulting",
           "solar-energy-consulting",
+          "technical-due-diligence",
+          "hpp-performance-analysis",
           "epc-technical-advisory",
           "technical-audits-existing-power-plants",
           "power-plant-commissioning",

@@ -97,6 +97,18 @@ const content = {
         text: "Investor-grade technical review for acquisitions, refinancing, asset performance recovery and renewable energy project decisions.",
         href: "/services/renewable-energy-investment-advisory",
         icon: FileSearch
+      },
+      {
+        title: "Technical Due Diligence",
+        text: "Investor-ready assessment of asset condition, EPC evidence, O&M maturity, grid compliance and CAPEX risk before acquisition or refinancing.",
+        href: "/services/technical-due-diligence",
+        icon: SearchCheck
+      },
+      {
+        title: "HPP Performance Analysis",
+        text: "Hydropower generation loss review covering turbine efficiency, governor response, AGC behavior, SCADA alarms and O&M recovery actions.",
+        href: "/services/hpp-performance-analysis",
+        icon: Gauge
       }
     ],
     reasons: [
@@ -202,6 +214,18 @@ const content = {
         text: "Satın alma, refinansman, varlık performans toparlama ve yatırım kararları için yatırımcı düzeyinde teknik inceleme.",
         href: "/services/yenilenebilir-enerji-yatirim-danismanligi",
         icon: FileSearch
+      },
+      {
+        title: "Teknik Durum Tespiti",
+        text: "Satın alma veya refinansman öncesinde varlık durumu, EPC kanıtı, O&M olgunluğu, şebeke uyumu ve CAPEX risk incelemesi.",
+        href: "/services/teknik-durum-tespiti",
+        icon: SearchCheck
+      },
+      {
+        title: "HES Performans Analizi",
+        text: "Türbin verimi, governor tepkisi, AGC davranışı, SCADA alarmları, duruşlar ve O&M toparlama aksiyonları için HES üretim kaybı incelemesi.",
+        href: "/services/hes-performans-analizi",
+        icon: Gauge
       }
     ],
     reasons: [
