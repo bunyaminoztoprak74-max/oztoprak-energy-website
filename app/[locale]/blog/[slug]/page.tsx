@@ -127,15 +127,15 @@ export default async function BlogPostPage({ params }: { params: Promise<{ local
               </div>
             ) : (
               <div className="mt-5 rounded-lg border border-energy-500/30 bg-energy-500/10 p-6">
-                <h2 className="font-semibold text-white">{locale === "en" ? "Newsletter and checklist" : "Bulten ve kontrol listesi"}</h2>
+                <h2 className="font-semibold text-white">{locale === "en" ? "Free savings checklist" : "Ücretsiz tasarruf kontrol listesi"}</h2>
                 <p className="mt-3 text-sm leading-7 text-steel">
                   {locale === "en"
-                    ? "Request the technical assessment checklist and receive practical notes on commissioning, O&M and power plant audit decisions."
-                    : "Teknik degerlendirme kontrol listesini talep edin; devreye alma, O&M ve santral denetimi kararlarina dair pratik notlar alin."}
+                    ? "Download the industrial electricity cost savings checklist — identify reactive penalties, demand charges, tariff gaps and solar feasibility in one sheet."
+                    : "Sanayi elektrik tasarruf kontrol listesini indirin — reaktif cezalar, sözleşme gücü, tarife açıkları ve GES fizibiliteyi tek sayfada belirleyin."}
                 </p>
-                <Link href={locale === "en" ? "/en/contact" : "/tr/iletisim"} className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-energy-500 hover:text-white">
+                <Link href={locale === "en" ? "/en/industrial-savings-checklist" : "/tr/industrial-savings-checklist"} className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-energy-500 hover:text-white">
                   <Share2 className="h-4 w-4" />
-                  {locale === "en" ? "Request checklist" : "Kontrol listesi talep et"}
+                  {locale === "en" ? "View checklist" : "Kontrol listesini gör"}
                 </Link>
               </div>
             )}

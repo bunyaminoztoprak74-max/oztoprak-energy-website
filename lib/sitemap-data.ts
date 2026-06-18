@@ -116,7 +116,9 @@ export function pageSitemapEntries() {
     ...pairedEntries("/en/locations", "/tr/locations", { changeFrequency: "monthly", priority: 0.7 }),
     ...pairedEntries("/en/pillars", "/tr/pillars", { changeFrequency: "monthly", priority: 0.7 }),
     ...pairedEntries("/en/industries", "/tr/industries", { changeFrequency: "monthly", priority: 0.8 }),
-    ...pairedEntries("/en/industrial-bill-review", "/tr/industrial-bill-review", { changeFrequency: "monthly", priority: 0.9 })
+    ...pairedEntries("/en/industrial-bill-review", "/tr/industrial-bill-review", { changeFrequency: "monthly", priority: 0.9 }),
+    ...pairedEntries("/en/reactive-penalty-analysis", "/tr/reactive-penalty-analysis", { changeFrequency: "monthly", priority: 0.85 }),
+    ...pairedEntries("/en/industrial-savings-checklist", "/tr/industrial-savings-checklist", { changeFrequency: "monthly", priority: 0.8 })
   ];
 
   getProjects("en").forEach((project, index) => {
