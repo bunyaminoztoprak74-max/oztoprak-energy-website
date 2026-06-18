@@ -19,8 +19,8 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dict }) {
           "epc-teknik-danismanlik-hizmeti",
           "mevcut-santraller-icin-teknik-denetim",
           "enerji-santrali-devreye-alma",
-          "isletme-bakim-performans-iyilestirme",
-          "yenilenebilir-enerji-yatirim-danismanligi"
+          "yenilenebilir-enerji-yatirim-danismanligi",
+          "endustriyel-enerji-maliyet-optimizasyonu"
         ]
       : [
           "hydropower-consulting",
@@ -30,8 +30,8 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dict }) {
           "epc-technical-advisory",
           "technical-audits-existing-power-plants",
           "power-plant-commissioning",
-          "om-performance-improvement",
-          "renewable-energy-investment-advisory"
+          "renewable-energy-investment-advisory",
+          "industrial-energy-cost-optimization"
         ];
   const services = priorityServiceSlugs
     .map((slug) => getServices(locale).find((service) => service.slug === slug))

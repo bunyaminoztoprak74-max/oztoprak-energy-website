@@ -206,7 +206,47 @@ function specializedServiceSections(locale: Locale, service: NonNullable<ReturnT
         ];
   }
 
-  if (service.slug === "owners-engineering" || service.slug === "isveren-muhendisligi") {
+  if (service.slug === "industrial-energy-cost-optimization" || service.slug === "endustriyel-enerji-maliyet-optimizasyonu") {
+    return en
+      ? [
+          {
+            heading: "Electricity Bill Analysis: Where the Cost Is Really Coming From",
+            content: "Most industrial facilities pay more for electricity than necessary, but the cause is rarely obvious from a single bill line. Reactive power penalties, contract demand overruns, active energy tariff misalignment, time-of-use exposure and metering errors each behave differently and require different corrective actions. Oztoprak Energy reviews the last 12 months of consumption data, reactive power ratios, demand peaks, contracted power levels and tariff components to produce a structured cost breakdown. This analysis shows which cost drivers are controllable, what the savings potential is, and which actions have the fastest payback — before any equipment purchase or contract change is committed."
+          },
+          {
+            heading: "Reactive Power Penalties and Compensation System Review",
+            content: "Reactive power penalties are one of the most common and recoverable electricity cost problems for industrial facilities. A compensation panel that is undersized, incorrectly programmed, poorly maintained or affected by harmonics can fail to keep the power factor within the required range. The review checks the compensation panel capacity, switching response, control settings and harmonic environment. Where the existing system is inadequate, the review provides technical basis for upgrade decisions — right-sized, with protection for the harmonic context and realistic payback estimates rather than generic equipment specifications."
+          },
+          {
+            heading: "Rooftop Solar Feasibility for Industrial Facilities",
+            content: "For factories and commercial buildings with large roof areas and stable daytime electricity consumption, rooftop solar can significantly reduce grid electricity cost and penalty exposure. A sound feasibility study requires accurate consumption baseline analysis, roof condition and area assessment, shading evaluation, self-consumption ratio estimation, grid export constraints, connection upgrade requirements and realistic financial modeling. Oztoprak Energy prepares rooftop solar feasibility analyses that reflect actual operating patterns rather than generic production assumptions, so the investment case can be evaluated on real numbers before any contractor or equipment commitment is made."
+          },
+          {
+            heading: "Contract Power, Demand Charges and Tariff Optimization",
+            content: "Industrial electricity contracts often have misaligned demand levels — either overcontracted, leading to avoidable capacity charges, or undercontracted, leading to penalty exposure from demand overruns. Tariff eligibility for open market supply, time-of-use rates, reactive power allowances and consumption thresholds can also create savings opportunities that are not visible in standard bill review. The analysis looks at whether the contracted power level matches actual demand behavior, whether a different tariff structure would reduce total cost, and whether open market supply eligibility provides a lower blended rate for the facility's consumption profile."
+          }
+        ]
+      : [
+          {
+            heading: "Elektrik Faturası Analizi: Maliyet Gerçekte Nereden Geliyor",
+            content: "Çoğu sanayi tesisi gerekenden fazla elektrik öder; ancak neden, tek bir fatura kaleminden anlaşılamaz. Reaktif güç cezaları, sözleşme gücü aşımı, aktif enerji tarife uyumsuzluğu, zaman dilimine bağlı tüketim açığı ve sayaç hataları farklı mekanizmalarla çalışır ve farklı düzeltici aksiyon gerektirir. Öztoprak Enerji son 12 aylık tüketim verisini, reaktif güç oranlarını, talep zirvelerini, sözleşme gücü düzeylerini ve tarife bileşenlerini inceleyerek yapılandırılmış bir maliyet dağılımı hazırlar. Bu analiz hangi maliyet kalemlerinin kontrol edilebilir olduğunu, tasarruf potansiyelini ve hangi aksiyonun en hızlı geri dönüşü sağlayacağını gösterir."
+          },
+          {
+            heading: "Reaktif Güç Cezası ve Kompanzasyon Sistemi İncelemesi",
+            content: "Reaktif güç cezaları, sanayi tesislerinde en yaygın ve en kolay telafi edilebilir elektrik maliyeti sorunlarından biridir. Yetersiz kapasiteli, hatalı programlanmış, kötü bakımlı veya harmonik bozunum etkisindeki bir kompanzasyon panosu güç faktörünü gerekli aralıkta tutamaz. İnceleme kompanzasyon panosu kapasitesini, anahtarlama tepkisini, kontrol ayarlarını ve harmonik ortamı değerlendirir. Mevcut sistem yetersizse yükseltme kararı için teknik gerekçe sağlanır; genel ekipman önerisi yerine harmonik bağlamına uygun, gerçekçi geri ödeme hesaplı boyutlandırma yapılır."
+          },
+          {
+            heading: "Sanayi Tesisleri İçin Çatı GES Fizibilite",
+            content: "Geniş çatı alanı ve kararlı gündüz elektrik tüketimi olan fabrikalar ve ticari binalar için çatı güneş enerjisi sistemi şebeke elektrik maliyetini ve ceza riskini önemli ölçüde azaltabilir. Sağlam bir fizibilite çalışması gerçek tüketim profili analizi, çatı durumu ve alan değerlendirmesi, gölgelenme analizi, öz tüketim oranı tahmini, şebeke ihracat kısıtları, bağlantı yükseltme gereksinimleri ve gerçekçi finansal model gerektirir. Öztoprak Enerji, genel üretim varsayımları yerine gerçek işletme verilerine dayalı çatı GES fizibilite analizleri hazırlar; böylece herhangi bir yüklenici veya ekipman taahhüdü verilmeden önce yatırım kararı gerçek rakamlara dayanır."
+          },
+          {
+            heading: "Sözleşme Gücü, Talep Fazlası ve Tarife Optimizasyonu",
+            content: "Sanayi elektrik sözleşmeleri çoğunlukla uyumsuz talep düzeyleri içerir. Fazla sözleşme yapılmışsa gereksiz kapasite bedeli, az sözleşme yapılmışsa talep aşımı cezası oluşur. Serbest piyasa uygunluğu, zaman dilimine dayalı tarife, reaktif güç toleransı ve tüketim eşikleri de standart fatura incelemesinde görünmeyen tasarruf fırsatları yaratabilir. Analiz sözleşme gücünün gerçek talep davranışıyla uyumunu, farklı bir tarife yapısının toplam maliyeti düşürüp düşürmeyeceğini ve serbest piyasa uygunluğunun tesisin tüketim profili için daha düşük kWh maliyeti sağlayıp sağlamayacağını değerlendirir."
+          }
+        ];
+  }
+
+    if (service.slug === "owners-engineering" || service.slug === "isveren-muhendisligi") {
     return en
       ? [
           {

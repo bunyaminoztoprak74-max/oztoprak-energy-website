@@ -109,6 +109,12 @@ const content = {
         text: "Hydropower generation loss review covering turbine efficiency, governor response, AGC behavior, SCADA alarms and O&M recovery actions.",
         href: "/services/hpp-performance-analysis",
         icon: Gauge
+      },
+      {
+        title: "Industrial Energy Cost Optimization",
+        text: "Electricity bill analysis, reactive power penalty elimination, contract demand review and rooftop solar feasibility for factories and industrial facilities.",
+        href: "/services/industrial-energy-cost-optimization",
+        icon: Zap
       }
     ],
     reasons: [
@@ -226,6 +232,12 @@ const content = {
         text: "Türbin verimi, governor tepkisi, AGC davranışı, SCADA alarmları, duruşlar ve O&M toparlama aksiyonları için HES üretim kaybı incelemesi.",
         href: "/services/hes-performans-analizi",
         icon: Gauge
+      },
+      {
+        title: "Endüstriyel Enerji Maliyet Optimizasyonu",
+        text: "Fabrikalar ve sanayi tesisleri için elektrik faturası analizi, reaktif ceza giderme, sözleşme gücü incelemesi ve çatı GES fizibilite.",
+        href: "/services/endustriyel-enerji-maliyet-optimizasyonu",
+        icon: Zap
       }
     ],
     reasons: [

@@ -238,6 +238,51 @@ export const services: Record<Locale, Service[]> = {
           answer: "Yes. Setpoint tracking, ramp behavior, governor response, reactive power behavior and grid interface records are reviewed when data is available."
         }
       ]
+    },
+    {
+      slug: "industrial-energy-cost-optimization",
+      title: "Industrial Energy Cost Optimization",
+      eyebrow: "Electricity cost analysis and savings advisory",
+      description: "Energy cost optimization consultancy for factories and industrial facilities facing high electricity bills, reactive power penalties, demand charge exposure, tariff misalignment or rooftop solar feasibility questions.",
+      keywords: ["industrial energy cost optimization", "electricity bill analysis", "reactive power penalty analysis", "industrial energy consultant", "rooftop solar feasibility"],
+      outcomes: [
+        "Identified electricity cost savings potential",
+        "Elimination or significant reduction of reactive power penalties",
+        "Contract demand and tariff optimization",
+        "Realistic rooftop solar payback analysis",
+        "Energy monitoring and cost tracking system recommendation"
+      ],
+      scope: [
+        "Electricity bill and consumption profile analysis",
+        "Reactive power penalty and compensation system review",
+        "Contract demand and excess demand charge assessment",
+        "Tariff structure and open market eligibility analysis",
+        "Rooftop solar feasibility and self-consumption model",
+        "Power quality and metering system observation",
+        "Energy management system implementation prioritization"
+      ],
+      faqs: [
+        {
+          question: "What types of facilities benefit from this service?",
+          answer: "Organized industrial zone factories, textile, food, plastics, metal, cold storage, hospitals, hotels and high-consumption commercial buildings are the primary target audience."
+        },
+        {
+          question: "Can I get an analysis by only sending my electricity bill?",
+          answer: "Yes. The last 12 months of electricity bills are sufficient for a preliminary analysis. Consumption profiles, reactive power measurements and contract details can be added for a deeper review."
+        },
+        {
+          question: "Is it possible to completely eliminate reactive power penalties?",
+          answer: "If the compensation panel is correctly sized and operating well, reactive penalties can be largely or completely eliminated. The review assesses the existing system and recommends upgrades where needed."
+        },
+        {
+          question: "How long does a rooftop solar feasibility study take?",
+          answer: "Based on basic consumption data, roof area and regional solar data, a preliminary feasibility can usually be prepared within 5-7 working days."
+        },
+        {
+          question: "How is this service different from renewable energy consultancy?",
+          answer: "This service targets industrial facilities with high electricity costs, not power plant owners. The goal is to optimize existing consumption and reduce energy costs rather than advise on plant construction or acquisition."
+        }
+      ]
     }
   ],
   tr: [
@@ -430,6 +475,51 @@ export const services: Record<Locale, Service[]> = {
         {
           question: "AGC ve sebeke davranisi incelenir mi?",
           answer: "Evet. Veri mevcutsa set noktasi takibi, rampa davranisi, governor tepkisi, reaktif guc davranisi ve sebeke arayuz kayitlari incelenir."
+        }
+      ]
+    },
+    {
+      slug: "endustriyel-enerji-maliyet-optimizasyonu",
+      title: "Endüstriyel Enerji Maliyet Optimizasyonu",
+      eyebrow: "Elektrik maliyeti analizi ve tasarruf danışmanlığı",
+      description: "Yüksek elektrik faturası, reaktif güç cezası, talep fazlası, tarife uyumsuzluğu ve çatı GES fizibilite konularında fabrikalara ve endüstriyel tesislere yönelik enerji maliyet optimizasyonu danışmanlığı.",
+      keywords: ["endüstriyel enerji maliyet optimizasyonu", "elektrik faturası analizi", "reaktif ceza analizi", "sanayi enerji danışmanlığı", "çatı GES fizibilite"],
+      outcomes: [
+        "Elektrik maliyetinde somut tasarruf potansiyelinin tespiti",
+        "Reaktif güç cezalarının ortadan kaldırılması",
+        "Tarife ve sözleşme gücü optimizasyonu",
+        "Çatı GES yatırımı için gerçekçi geri ödeme analizi",
+        "Enerji izleme ve maliyet takip sistemi önerisi"
+      ],
+      scope: [
+        "Elektrik faturası ve tüketim profili analizi",
+        "Reaktif güç cezası ve kompanzasyon sistemi incelemesi",
+        "Sözleşme gücü ve talep fazlası değerlendirmesi",
+        "Tarife yapısı ve serbest piyasa uygunluk analizi",
+        "Çatı GES fizibilite ve öz tüketim modeli",
+        "Güç kalitesi ve ölçüm sistemi gözlemi",
+        "Enerji yönetim sistemi kurulum önceliklendirmesi"
+      ],
+      faqs: [
+        {
+          question: "Hangi tür tesisler bu hizmetten faydalanabilir?",
+          answer: "Organize sanayi bölgesindeki fabrikalar, tekstil, gıda, plastik, metal, soğuk hava deposu, hastane, otel ve yüksek tüketimli ticari binalar bu hizmetin birincil hedef kitlesidir."
+        },
+        {
+          question: "Sadece fatura göndererek analiz yaptırabilir miyim?",
+          answer: "Evet. Ön analiz için son 12 aya ait elektrik faturası yeterlidir. Daha detaylı inceleme için tüketim profili, reaktif güç ölçümleri ve sözleşme bilgileri de kullanılabilir."
+        },
+        {
+          question: "Reaktif güç cezasını tamamen ortadan kaldırmak mümkün müdür?",
+          answer: "Kompanzasyon paneli uygun kapasitede ve doğru çalışıyorsa reaktif ceza büyük ölçüde veya tamamen ortadan kaldırılabilir. İnceleme mevcut sistemi değerlendirir ve gerekiyorsa güncelleme önerisi sunar."
+        },
+        {
+          question: "Çatı GES için fizibilite ne kadar sürede hazırlanır?",
+          answer: "Temel tüketim verisi, çatı alanı bilgisi ve bölge güneş verisine dayanarak genellikle 5-7 iş günü içinde ön fizibilite hazırlanabilir."
+        },
+        {
+          question: "Bu hizmet yenilenebilir enerji danışmanlığından farklı mıdır?",
+          answer: "Evet. Bu hizmet HES veya GES santrali sahibi değil, yüksek elektrik faturasıyla karşılaşan sanayi tesislerine yöneliktir. Amaç mevcut tüketimi optimize etmek ve enerji maliyetini düşürmektir."
         }
       ]
     }
