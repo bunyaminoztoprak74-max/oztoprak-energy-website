@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Printer, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/container";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { buildMetadata } from "@/lib/seo";
+import { PrintButton } from "@/components/print-button";
 import { isLocale, type Locale } from "@/lib/i18n";
 
 const copy = {
@@ -192,13 +193,7 @@ export default async function IndustrialSavingsChecklist({ params }: { params: P
               <h1 className="max-w-3xl text-balance text-4xl font-bold text-white print:text-black sm:text-5xl">{page.title}</h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-steel print:text-gray-700">{page.description}</p>
             </div>
-            <button
-              onClick={() => window.print()}
-              className="hidden shrink-0 items-center gap-2 rounded-md border border-white/15 bg-white/[0.05] px-4 py-3 text-sm font-semibold text-white hover:border-energy-500 hover:text-energy-500 print:hidden sm:flex"
-            >
-              <Printer className="h-4 w-4" />
-              {page.printLabel}
-            </button>
+            <PrintButton label={page.printLabel} />
           </div>
           <p className="mt-8 max-w-3xl text-sm leading-7 text-steel print:text-gray-600">{page.intro}</p>
         </Container>
