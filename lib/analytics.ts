@@ -4,7 +4,14 @@ export const analyticsEvents = {
   leadMagnetDownload: "lead_magnet_download_click",
   contactFormSubmit: "contact_form_submit",
   blogSearch: "blog_search",
-  servicePageCta: "service_page_cta_click"
+  servicePageCta: "service_page_cta_click",
+  billReviewFormSubmit: "bill_review_form_submit",
+  billReviewCta: "bill_review_cta_click",
+  whatsappClick: "whatsapp_click",
+  phoneClick: "phone_click",
+  emailClick: "email_click",
+  linkedinClick: "linkedin_click",
+  industrialCtaClick: "industrial_cta_click"
 } as const;
 
 export type AnalyticsEventName = (typeof analyticsEvents)[keyof typeof analyticsEvents];

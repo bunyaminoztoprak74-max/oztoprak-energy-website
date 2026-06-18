@@ -22,11 +22,12 @@ type SeoArgs = {
   description: string;
   path: string;
   alternatePath?: string;
+  hasTranslation?: boolean;
   type?: "website" | "article";
   keywords?: string[];
 };
 
-export function buildMetadata({ locale, title, description, path, alternatePath, type = "website", keywords = [] }: SeoArgs): Metadata {
+export function buildMetadata({ locale, title, description, path, alternatePath, hasTranslation = true, type = "website", keywords = [] }: SeoArgs): Metadata {
   const localizedPath = `/${locale}${path === "/" ? "" : path}`;
   const translatedPath = alternatePath ?? path;
   const alternateLocalizedPath = locale === "en" ? `/tr${translatedPath === "/" ? "" : translatedPath}` : `/en${translatedPath === "/" ? "" : translatedPath}`;
@@ -43,11 +44,15 @@ export function buildMetadata({ locale, title, description, path, alternatePath,
     category: "Renewable energy engineering consultancy",
     alternates: {
       canonical: localizedPath,
-      languages: {
-        en: locale === "en" ? localizedPath : alternateLocalizedPath,
-        tr: locale === "tr" ? localizedPath : alternateLocalizedPath,
-        "x-default": "/en"
-      }
+      ...(hasTranslation
+        ? {
+            languages: {
+              en: locale === "en" ? localizedPath : alternateLocalizedPath,
+              tr: locale === "tr" ? localizedPath : alternateLocalizedPath,
+              "x-default": "/en"
+            }
+          }
+        : {})
     },
     openGraph: {
       title,

@@ -24,6 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     locale,
     path: `/blog/category/${category}`,
     alternatePath: translated ? `/blog/category/${translated.slug}` : undefined,
+    hasTranslation: Boolean(translated),
     title: `${found.title} | Blog`,
     description: `Articles about ${found.title} by Oztoprak Energy Consultancy.`
   });

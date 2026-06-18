@@ -171,6 +171,9 @@ export function IndustrialLeadForm({ locale }: { locale: Locale }) {
       setStatus("success");
       setMessage(t.successMsg);
       form.reset();
+      if (typeof window !== "undefined" && typeof (window as Window & { oztoprakTrack?: (e: string, p?: object) => void }).oztoprakTrack === "function") {
+        (window as Window & { oztoprakTrack?: (e: string, p?: object) => void }).oztoprakTrack!("bill_review_form_submit", { locale });
+      }
     } catch {
       setStatus("error");
       setMessage(t.errorMsg);

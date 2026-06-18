@@ -18,10 +18,10 @@ export function ContactPageContent({ locale }: { locale: Locale }) {
             <h1 className="text-balance text-4xl font-bold text-white sm:text-6xl">{dict.contact.title}</h1>
             <p className="mt-6 text-lg leading-8 text-steel">{dict.contact.description}</p>
             <div className="mt-10 grid gap-4">
-              <a href={`mailto:${dict.contact.email}`} className="premium-card flex items-center gap-4 rounded-lg p-5 text-white hover:border-energy-500">
+              <a href={`mailto:${dict.contact.email}`} className="premium-card flex items-center gap-4 rounded-lg p-5 text-white hover:border-energy-500" onClick={() => { if (typeof window !== "undefined" && (window as unknown as { oztoprakTrack?: (e: string) => void }).oztoprakTrack) (window as unknown as { oztoprakTrack: (e: string) => void }).oztoprakTrack("email_click"); }}>
                 <Mail className="h-5 w-5 text-energy-500" /> {dict.contact.email}
               </a>
-              <a href={`tel:${dict.contact.phone.replaceAll(" ", "")}`} className="premium-card flex items-center gap-4 rounded-lg p-5 text-white hover:border-energy-500">
+              <a href={`tel:${dict.contact.phone.replaceAll(" ", "")}`} className="premium-card flex items-center gap-4 rounded-lg p-5 text-white hover:border-energy-500" onClick={() => { if (typeof window !== "undefined" && (window as unknown as { oztoprakTrack?: (e: string) => void }).oztoprakTrack) (window as unknown as { oztoprakTrack: (e: string) => void }).oztoprakTrack("phone_click"); }}>
                 <Phone className="h-5 w-5 text-energy-500" /> {dict.contact.phone}
               </a>
               <a
@@ -29,6 +29,7 @@ export function ContactPageContent({ locale }: { locale: Locale }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="premium-card flex items-center gap-4 rounded-lg p-5 text-white hover:border-energy-500"
+                onClick={() => { if (typeof window !== "undefined" && (window as unknown as { oztoprakTrack?: (e: string) => void }).oztoprakTrack) (window as unknown as { oztoprakTrack: (e: string) => void }).oztoprakTrack("linkedin_click"); }}
               >
                 <Linkedin className="h-5 w-5 text-energy-500" /> LinkedIn
               </a>
