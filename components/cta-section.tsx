@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ButtonLink } from "@/components/button-link";
 import { Container } from "@/components/container";
 import type { Locale } from "@/lib/i18n";
@@ -6,6 +7,8 @@ import { contactPath } from "@/lib/routes";
 
 export function CtaSection({ locale }: { locale: Locale }) {
   const dict = getDictionary(locale);
+  const billReviewHref = locale === "en" ? "/en/industrial-bill-review" : "/tr/industrial-bill-review";
+  const billReviewLabel = locale === "en" ? "Free Electricity Bill Review" : "Ücretsiz Fatura İncelemesi";
 
   return (
     <section className="relative overflow-hidden bg-energy-500 py-16 text-navy-950">
@@ -17,6 +20,12 @@ export function CtaSection({ locale }: { locale: Locale }) {
         </div>
         <div className="relative flex flex-wrap gap-3">
           <ButtonLink href={contactPath(locale)} variant="secondary">{dict.nav.consultation}</ButtonLink>
+          <Link
+            href={billReviewHref}
+            className="rounded-md border-2 border-navy-950/20 bg-navy-950/10 px-5 py-3 text-sm font-bold text-navy-950 transition hover:bg-navy-950/20"
+          >
+            {billReviewLabel}
+          </Link>
         </div>
       </Container>
     </section>

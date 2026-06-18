@@ -19,7 +19,7 @@ export const dictionaries = {
       projects: "Projects",
       blog: "Blog",
       contact: "Contact",
-      consultation: "Request Technical Consultation"
+      consultation: "Request Plant Performance Review"
     },
     labels: {
       years: "Years experience",
@@ -54,7 +54,7 @@ export const dictionaries = {
       expertiseTitle: "Technical Expertise Across the Asset Lifecycle",
       industriesTitle: "Industries Served",
       problemTitle: "From Technical Risk to Bankable Performance",
-      ctaTitle: "Need an independent power plant technical review?",
+      ctaTitle: "Ready to identify what is limiting your plant's performance?",
       ctaText:
         "Request a focused consultation for project feasibility, commissioning risk, O&M performance, grid protection, or acquisition due diligence.",
       industries: [
@@ -88,7 +88,7 @@ export const dictionaries = {
       values: ["Technical independence", "Operational realism", "Investor-grade reporting", "Long-term asset performance"]
     },
     contact: {
-      title: "Request Technical Consultation",
+      title: "Request a Plant Performance Review",
       description:
         "Tell us about your project, asset or technical challenge. We will respond with a practical next step.",
       email: "info@oztoprakenerji.com",
@@ -128,7 +128,7 @@ export const dictionaries = {
       projects: "Projeler",
       blog: "Blog",
       contact: "İletişim",
-      consultation: "Teknik Danışmanlık Talep Et"
+      consultation: "Santral Performans İncelemesi Talep Et"
     },
     labels: {
       years: "Yıl deneyim",
@@ -163,7 +163,7 @@ export const dictionaries = {
       expertiseTitle: "Varlık Yaşam Döngüsü Boyunca Teknik Uzmanlık",
       industriesTitle: "Hizmet Verilen Sektörler",
       problemTitle: "Teknik Riskten Banka Kabul Edilebilir Performansa",
-      ctaTitle: "Bağımsız santral teknik değerlendirmesine mi ihtiyacınız var?",
+      ctaTitle: "Santralinizin performansını sınırlayan etkenler neler?",
       ctaText:
         "Fizibilite, devreye alma riski, işletme bakım performansı, şebeke koruma veya satın alma teknik incelemesi için odaklı danışmanlık talep edin.",
       industries: ["EPC şirketleri", "Yenilenebilir enerji yatırımcıları", "Santral sahipleri", "Endüstriyel tesisler", "Uluslararası enerji şirketleri"],

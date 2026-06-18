@@ -89,6 +89,12 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dict }) {
               <Link href={contactHref} className="rounded-md bg-energy-500 px-4 py-3 text-center text-sm font-bold text-navy-950 shadow-glow hover:bg-white">
                 {dict.nav.consultation}
               </Link>
+              <Link
+                href={locale === "en" ? "/en/industrial-bill-review" : "/tr/industrial-bill-review"}
+                className="rounded-md border border-white/15 bg-white/[0.04] px-4 py-3 text-center text-sm font-semibold text-white hover:border-energy-500 hover:text-energy-500"
+              >
+                {locale === "en" ? "Free Bill Review" : "Ücretsiz Fatura İncelemesi"}
+              </Link>
               <a
                 href={linkedinUrl}
                 target="_blank"
