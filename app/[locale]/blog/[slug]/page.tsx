@@ -172,12 +172,22 @@ export default async function BlogPostPage({ params }: { params: Promise<{ local
                     ? "Send us your last 12 months of electricity invoices. We identify reactive power penalties, contract demand misalignment, tariff optimization opportunities and rooftop solar feasibility — at no charge. Written memo within 5–7 working days."
                     : "Son 12 aylık elektrik faturalarınızı gönderin. Reaktif enerji cezaları, sözleşme gücü uyumsuzluğu, tarife optimizasyon fırsatları ve çatı GES fizibilitesini ücretsiz belirleyelim. Yazılı ön not 5–7 iş günü içinde teslim edilir."}
                 </p>
-                <Link
-                  href={locale === "en" ? "/en/industrial-bill-review" : "/tr/industrial-bill-review"}
-                  className="mt-5 inline-flex items-center gap-2 rounded-md bg-energy-500 px-5 py-3 text-sm font-bold text-navy-950 shadow-glow hover:bg-white"
-                >
-                  {locale === "en" ? "Request Free Bill Review" : "Ücretsiz Fatura İncelemesi Talep Et"}
-                </Link>
+                <div className="mt-5 flex flex-wrap gap-3">
+                  <Link
+                    href={locale === "en" ? "/en/industrial-bill-review" : "/tr/industrial-bill-review"}
+                    className="inline-flex items-center gap-2 rounded-md bg-energy-500 px-5 py-3 text-sm font-bold text-navy-950 shadow-glow hover:bg-white"
+                  >
+                    {locale === "en" ? "Request Free Bill Review" : "Ücretsiz Fatura İncelemesi Talep Et"}
+                  </Link>
+                  {(post.slug === "reactive-penalty-compensation-system-audit" || post.slug === "reaktif-ceza-analizi-kompanzasyon-sistemi") && (
+                    <Link
+                      href={locale === "en" ? "/en/reactive-penalty-analysis" : "/tr/reactive-penalty-analysis"}
+                      className="inline-flex items-center gap-2 rounded-md border border-energy-500/40 bg-transparent px-5 py-3 text-sm font-semibold text-energy-500 hover:bg-energy-500 hover:text-navy-950"
+                    >
+                      {locale === "en" ? "Reactive Penalty Analysis" : "Reaktif Ceza Analizi"}
+                    </Link>
+                  )}
+                </div>
               </section>
             )}
             <h2>{dict.labels.relatedPosts}</h2>

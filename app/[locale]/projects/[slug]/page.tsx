@@ -275,6 +275,37 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           <ContactForm dict={dict} locale={locale} />
         </Container>
       </section>
+      {(project.slug === "industrial-electricity-cost-optimization-case-study" || project.slug === "endustriyel-elektrik-maliyet-optimizasyonu-vaka-calismasi") && (
+        <section className="bg-energy-500/10 border-y border-energy-500/20 py-14">
+          <Container className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-widest text-energy-500">
+                {locale === "en" ? "Apply to Your Facility" : "Kendi Tesisinize Uygulayın"}
+              </p>
+              <h2 className="mt-2 text-2xl font-bold text-white">
+                {locale === "en"
+                  ? "Could Your Facility Achieve Similar Savings?"
+                  : "Tesisiniz de Benzer Tasarruflara Ulaşabilir Mi?"}
+              </h2>
+              <p className="mt-3 max-w-2xl text-sm leading-7 text-steel">
+                {locale === "en"
+                  ? "Send your last 12 months of electricity invoices. We identify your reactive penalty ratio, contract demand exposure and tariff optimization opportunities — at no charge."
+                  : "Son 12 aylık elektrik faturalarınızı gönderin. Reaktif ceza oranınızı, sözleşme gücü riskini ve tarife optimizasyon fırsatlarını ücretsiz belirleyelim."}
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-3 shrink-0">
+              <Link href={locale === "en" ? "/en/industrial-bill-review" : "/tr/industrial-bill-review"}
+                className="rounded-md bg-energy-500 px-6 py-4 text-sm font-bold text-navy-950 shadow-glow hover:bg-white">
+                {locale === "en" ? "Free Bill Review" : "Ücretsiz Fatura İncelemesi"}
+              </Link>
+              <Link href={locale === "en" ? "/en/reactive-penalty-analysis" : "/tr/reactive-penalty-analysis"}
+                className="rounded-md border border-white/20 bg-white/[0.05] px-6 py-4 text-sm font-semibold text-white hover:border-energy-500 hover:text-energy-500">
+                {locale === "en" ? "Reactive Penalty Analysis" : "Reaktif Ceza Analizi"}
+              </Link>
+            </div>
+          </Container>
+        </section>
+      )}
       <CtaSection locale={locale} />
     </>
   );
