@@ -278,6 +278,247 @@ function specializedServiceSections(locale: Locale, service: NonNullable<ReturnT
         ];
   }
 
+
+  if (service.slug === "hydropower-consulting" || service.slug === "hes-danismanligi") {
+    return en
+      ? [
+          {
+            heading: "Hydropower Project Development: Feasibility to Financial Close",
+            content: "Hydropower consulting covers the full development arc: preliminary resource screening, hydrology interpretation, site selection, flow duration curve analysis, conceptual design, environmental permitting, grid connection strategy, EPC scope definition and financial model support. Each stage produces evidence that either builds or narrows the investment case. Oztoprak Energy positions the advisory at the decision boundary — the points where incomplete hydrology, weak grid connection clarity, unresolved water rights or premature equipment commitment create the most project risk. The goal is to give the developer and investor a technically grounded view before CAPEX commitments are locked."
+          },
+          {
+            heading: "Hydrology Analysis and Water Right Assessment",
+            content: "Hydropower energy yield depends on flow duration, seasonal variability, drought-year performance and how the installed capacity is matched to the usable flow envelope. Reliable hydrology requires gauge records, regional comparison, flow duration curve construction, minimum ecological flow obligation, sedimentation assessment and dry-year sensitivity analysis. Water rights, intake license conditions, irrigation priority obligations and downstream user conflicts are also technical inputs. Weak hydrology or unclear water rights create production risk that surfaces in lender due diligence, insurance assessments and post-commissioning performance gaps."
+          },
+          {
+            heading: "Electromechanical Equipment Selection and Specification",
+            content: "Turbine type, runner configuration, operating head range, design flow, generator topology, switchgear arrangement, transformer specification, governor control strategy and auxiliary system design must all be matched to the site hydrology and grid interface requirements. Incorrect design flow selection leaves capacity on the table or overloads the turbine in peak flow events. Weak governor specification creates frequency response problems. Oztoprak Energy reviews EPC technical specifications and equipment proposals to check whether the electromechanical package reflects site reality or relies on generic design assumptions that will require expensive corrections during commissioning."
+          },
+          {
+            heading: "Grid Connection, Protection Philosophy and Grid Code Compliance",
+            content: "Grid connection is consistently the most underestimated technical risk in hydropower development. Connection voltage level, feeder capacity, line losses, reactive power requirements, protection coordination with the network operator, power quality limits, anti-islanding requirements, grid code compliance obligations and connection agreement conditions shape the technical specification and commissioning scope. Connection delays, reactive power limitation orders, curtailment events and protection-related trips are avoidable if the grid interface is designed with field-level clarity rather than generic single-line assumptions. Early grid connection advisory reduces design changes at energization stage and generation losses from dispatch constraints after commissioning."
+          }
+        ]
+      : [
+          {
+            heading: "HES Proje Geliştirme: Fizibilite'den Finansal Kapanışa",
+            content: "HES danışmanlığı tam geliştirme sürecini kapsar: ön kaynak taraması, hidroloji yorumu, saha seçimi, akış süre eğrisi analizi, kavramsal tasarım, çevresel izinleme, şebeke bağlantı stratejisi, EPC kapsam tanımı ve finansal model desteği. Her aşama yatırım kararını pekiştiren veya daraltan kanıt üretir. Öztoprak Enerji danışmanlığı karar sınırında konumlandırır: eksik hidroloji, belirsiz şebeke bağlantısı, çözümsüz su hakları veya erken ekipman taahhütlerinin en fazla proje riski yarattığı noktalarda. Amaç CAPEX taahhütleri kilitlenmeden önce geliştirici ve yatırımcıya teknik temele dayalı görünüm sağlamaktır."
+          },
+          {
+            heading: "Hidroloji Analizi ve Su Hakkı Değerlendirmesi",
+            content: "HES enerji verimi akış süresi, mevsimsel değişkenlik, kuraklık yılı performansı ve kurulu kapasitenin kullanılabilir akış zarfıyla eşleştirilmesine bağlıdır. Güvenilir hidroloji için ölçüm kayıtları, bölgesel karşılaştırma, akış süre eğrisi oluşturma, minimum ekolojik akış yükümlülüğü, sedimentasyon değerlendirmesi ve kuraklık yılı duyarlılık analizi gerekir. Su hakları, alım lisans koşulları, sulama öncelik yükümlülükleri ve mansap kullanıcı çatışmaları da teknik girdi niteliğindedir. Zayıf hidroloji veya belirsiz su hakları kredi teknik durum tespitinde ve devreye alma sonrası performans açığında ortaya çıkan üretim riski yaratır."
+          },
+          {
+            heading: "Elektromekanik Ekipman Seçimi ve Teknik Özellik Belirleme",
+            content: "Türbin tipi, runner konfigürasyonu, işletme düşüsü aralığı, tasarım debisi, jeneratör topolojisi, şalt düzeni, trafo teknik özellikleri, governor kontrol stratejisi ve yardımci sistem tasarımının tümü saha hidrolojisine ve şebeke arayüzü gereksinimlerine göre eşleştirilmelidir. Yanlış tasarım debisi seçimi kapasiteyi gereksiz sınırlar ya da pik akış olaylarında türbini aşırı yükler. Zayıf governor spesifikasyonu frekans tepkisi sorunları yaratır. Öztoprak Enerji EPC teknik şartnamelerini ve ekipman tekliflerini; elektromekanik paketin saha gerçekliğini mi yoksa devreye almada pahalı düzeltme gerektiren genel tasarım varsayımlarını mı yansıttığını kontrol ederek inceler."
+          },
+          {
+            heading: "Şebeke Bağlantısı, Koruma Felsefesi ve Şebeke Kodu Uyumu",
+            content: "Şebeke bağlantısı HES geliştirmede en az tahmin edilen teknik risktir. Bağlantı gerilim seviyesi, besleme kapasitesi, hat kayıpları, reaktif güç gereksinimleri, şebeke işleticisiyle koruma koordinasyonu, güç kalitesi limitleri, ada çalışma önleme gereksinimleri ve şebeke kodu uyum yükümlülükleri teknik şartnameyi ve devreye alma kapsamını şekillendirir. Erken şebeke bağlantı danışmanlığı enerji aşamasındaki tasarım değişikliği ve devreye alma sonrası yük tevzi kısıtından kaynaklanan üretim kayıpları riskini azaltır."
+          }
+        ];
+  }
+
+  if (service.slug === "solar-energy-consulting" || service.slug === "ges-danismanligi") {
+    return en
+      ? [
+          {
+            heading: "Solar Resource Assessment and Energy Yield Modeling",
+            content: "A credible solar energy yield estimate requires more than a GHI map. Oztoprak Energy reviews satellite irradiance datasets, local measurement data where available, horizon shading profiles, albedo conditions, typical meteorological year construction, soiling assumptions, degradation rates, loss modeling methodology and inter-annual variability. The energy yield model must reflect actual site conditions — tilt, azimuth, row spacing, backtracking settings, clipping ratio and inverter loading — not default software assumptions. Yield estimates that carry weak meteorological support or undisclosed assumptions become liabilities in lender due diligence, insurance assessments and post-commissioning performance gap disputes."
+          },
+          {
+            heading: "Inverter Selection, String Architecture and DC/AC Ratio",
+            content: "Solar plant electrical design decisions — central versus string inverters, DC/AC ratio, string configuration, cable sizing, combiner boxes, DC fusing, grounding strategy, transformer topology and medium-voltage arrangement — have long-term performance and O&M consequences. An aggressive DC/AC ratio increases clipping but also increases low-irradiance generation; the optimal point depends on the irradiance distribution, grid export limits and dispatch strategy. String architecture determines troubleshooting granularity and mismatch loss risk. Oztoprak Energy reviews electrical design proposals to verify that the design logic matches the site-specific financial model assumptions and that O&M access, safety clearances and metering points are planned for the plant's full operating life."
+          },
+          {
+            heading: "Grid Connection, Protection and Power Quality Requirements",
+            content: "Solar plant grid connection requirements — connection voltage, short-circuit contribution, reactive power capability, ride-through obligations, anti-islanding, harmonic distortion limits, protection relay settings and SCADA telemetry interface — must be agreed with the grid operator early and translated accurately into the plant design. Reactive power capability and voltage regulation obligations affect inverter selection, transformer sizing and control settings. Power quality non-compliance after commissioning is difficult and expensive to correct. Oztoprak Energy reviews connection agreement conditions, technical specification responses and commissioning test plans to confirm that the design and protection settings will satisfy both grid operator requirements and long-term plant operations stability."
+          },
+          {
+            heading: "O&M Strategy, Soiling and Long-Term Performance Management",
+            content: "Solar plant long-term performance is primarily determined by how soiling, degradation, inverter availability, string fault response and vegetation management are handled. A soiling strategy that relies on rainfall alone in a dust-exposed location can cause performance ratio losses that eliminate the margin between project IRR and financing cost. Inverter availability targets require spare parts planning and service response agreements that the O&M model must cost realistically. Oztoprak Energy helps owners structure O&M performance guarantees, KPI frameworks, monitoring system specifications and corrective maintenance response criteria that are technically defensible and commercially meaningful."
+          }
+        ]
+      : [
+          {
+            heading: "Güneş Kaynağı Değerlendirmesi ve Enerji Verimi Modellemesi",
+            content: "Güvenilir güneş enerji verimi tahmini yalnızca GHI haritasından ibaret değildir. Öztoprak Enerji uydu ışınım veri setlerini, mevcut yerel ölçüm verilerini, ufuk gölgelenme profillerini, albedo koşullarını, tipik meteorolojik yıl yapısını, kirlenme varsayımlarını, bozulma oranlarını, kayıp modelleme metodolojisini ve yıllar arası değişkenliği inceler. Enerji verimi modeli gerçek saha koşullarını yansıtmalıdır: eğim, azimut, sıra aralığı, backtracking ayarları, kırpma oranı ve invertör yükleme. Zayıf meteorolojik desteğe dayanan verim tahminleri kredi teknik durum tespiti, sigorta değerlendirmesi ve devreye alma sonrası performans açığı anlaşmazlıklarında yükümlülüğe dönüşür."
+          },
+          {
+            heading: "İnvertör Seçimi, String Mimarisi ve DC/AC Oranı",
+            content: "Güneş santrali elektrik tasarım kararları — merkezi veya string invertör, DC/AC oranı, string konfigürasyonu, kablo boyutlandırma, kombiner kutular, DC sigortalama, topraklama stratejisi, trafo topolojisi ve orta gerilim düzeni — uzun vadeli performans ve O&M sonuçları doğurur. Agresif DC/AC oranı kırpmayı artırır ama aynı zamanda düşük ışınımdaki üretimi de iyileştirir; optimum nokta ışınım dağılımına, şebeke ihracat limitine ve yük tevzi stratejisine bağlıdır. Öztoprak Enerji elektrik tasarım tekliflerini; tasarım mantığının sahaya özgü finansal model varsayımlarıyla uyumunu ve O&M erişiminin tüm işletme ömrü için planlanıp planlanmadığını doğrulayarak inceler."
+          },
+          {
+            heading: "Şebeke Bağlantısı, Koruma ve Güç Kalitesi Gereksinimleri",
+            content: "Güneş santrali şebeke bağlantısı gereksinimleri — bağlantı gerilimi, kısa devre katkısı, reaktif güç kabiliyeti, ride-through yükümlülükleri, ada çalışma önleme, harmonik bozulma limitleri, koruma rölesi ayarları ve SCADA telemetri arayüzü — şebeke işleticisiyle erken aşamada mutabık kalınmalı ve santral tasarımına doğru aktarılmalıdır. Reaktif güç kabiliyeti ve gerilim düzenleme yükümlülükleri invertör seçimini, trafo boyutlandırmasını ve kontrol ayarlarını etkiler. Devreye alma sonrasında güç kalitesi uyumsuzluğunu düzeltmek güç ve pahalıdır. Öztoprak Enerji bağlantı anlaşması koşullarını ve devreye alma test planlarını; tasarım ve koruma ayarlarının şebeke işleticisi gereksinimlerini karşılayıp karşılamayacağını teyit ederek inceler."
+          },
+          {
+            heading: "O&M Stratejisi, Kirlenme Yönetimi ve Uzun Vadeli Performans",
+            content: "Güneş santrali uzun vadeli performansı öncelikle kirlenme, bozulma, invertör emre amadeliği, string hata tepkisi ve bitki örtüsü yönetiminin nasıl ele alındığına bağlıdır. Toz maruziyetinin yüksek olduğu bir konumda yalnızca yağışa güvenen kirlenme stratejisi proje IRR'si ile finansman maliyeti arasındaki marjı ortadan kaldıran performans oranı kayıplarına yol açabilir. İnvertör emre amadeliği hedefleri O&M modelinin gerçekçi maliyetlendirmesi gereken yedek parça planlaması ve servis müdahale anlaşmalarını gerektirir. Öztoprak Enerji işverenlerin teknik olarak savunulabilir O&M performans garantileri, KPI çerçeveleri ve düzeltici bakım müdahale kriterleri oluşturmalarına yardımcı olur."
+          }
+        ];
+  }
+
+  if (service.slug === "epc-technical-advisory" || service.slug === "epc-teknik-danismanlik-hizmeti") {
+    return en
+      ? [
+          {
+            heading: "EPC Contract Technical Scope, Interface Definition and Risk Allocation",
+            content: "EPC contract risk lives in the interface definitions. Civil completion criteria, electromechanical installation readiness, grid connection ownership, protection settings responsibility, commissioning acceptance criteria, performance test methodology, final acceptance milestone and handover document completeness must all have unambiguous technical descriptions. Ambiguous scope boundaries become delay claims, cost variations and handover disputes. Oztoprak Energy reviews EPC technical scope documents, interface risk matrices, schedule logic and acceptance test definitions to identify gaps where risk is implicitly carried by the owner or where the contractor obligations are not technically testable — before those gaps become contract events."
+          },
+          {
+            heading: "Design Review, Submittals and Engineering Change Management",
+            content: "EPC design review is the owner's technical gate for confirming that the contractor's design choices are buildable, compliant, operable and maintainable — and that deviations from the specification are evaluated before they become field installations. Oztoprak Energy reviews design submittals across civil, electromechanical, electrical, control, protection and SCADA disciplines, checking alignment between design assumptions, specifications, equipment datasheet compliance and site conditions. Engineering change management discipline — how changes are proposed, evaluated, documented and approved — determines whether the as-built plant matches the designed plant and whether change costs are supportable under contract."
+          },
+          {
+            heading: "Construction Quality, ITP Hold Points and NCR Management",
+            content: "Construction quality is controlled through inspection and test plan hold points, witness and review activities, non-conformance tracking and material certification. An ITP that only covers visual inspections does not adequately control installation quality for electrical, protection or control systems. Hold points routinely released without verification create documentation gaps that surface in commissioning, warranty discussions or refinancing due diligence. Oztoprak Energy supports owner-side ITP development, site inspection representation, NCR documentation review and closure verification — ensuring quality evidence is built during construction rather than retrospectively assembled before handover."
+          },
+          {
+            heading: "Commissioning Readiness, Acceptance Testing and Final Handover",
+            content: "Commissioning readiness means all prerequisite systems, documentation, test procedures and personnel are in place before energization or synchronization is attempted. Pre-commissioning checklists, energization procedures, protection relay commissioning records, FAT and SAT evidence, punch-list status, spare parts inventory, O&M training records and handover document completeness must all be confirmed before the owner accepts generation risk. Performance acceptance testing must use agreed methodology, measurement accuracy and correction factor conventions. Final handover should transfer not just physical assets but also all technical knowledge required for safe, reliable and efficient long-term plant operations."
+          }
+        ]
+      : [
+          {
+            heading: "EPC Sözleşme Teknik Kapsamı, Arayüz Tanımı ve Risk Dağılımı",
+            content: "EPC sözleşme riski arayüz tanımlarında yaşar. İnşaat tamamlama kriterleri, elektromekanik montaj hazırlığı, şebeke bağlantısı sahipliği, koruma ayarları sorumluluğu, devreye alma kabul kriterleri, performans test metodolojisi, nihai kabul dönüm noktası ve teslim belge tamlığının tümünün açık teknik tanımları olmalıdır. Belirsiz kapsam sınırları gecikme taleplerini, maliyet değişikliklerini ve teslim anlaşmazlıklarını doğurur. Öztoprak Enerji EPC teknik kapsam belgelerini, arayüz risk matrislerini, takvim mantığını ve kabul testi tanımlarını; riskin örtük olarak işverende kaldığı boşlukları sözleşme olayına dönüşmeden tespit ederek inceler."
+          },
+          {
+            heading: "Tasarım İncelemesi, Teknik Sunumlar ve Mühendislik Değişiklik Yönetimi",
+            content: "EPC tasarım incelemesi yüklenicinin tasarım seçimlerinin inşa edilebilir, uyumlu, işletilebilir ve bakımı yapılabilir olduğunu doğrulayan; teknik şartnameden sapmaların saha montajına dönüşmeden değerlendirilmesini sağlayan işveren teknik geçişidir. Öztoprak Enerji inşaat, elektromekanik, elektrik, kontrol, koruma ve SCADA disiplinlerinde tasarım sunumlarını; tasarım varsayımları, şartnameler ve saha koşulları arasındaki uyumu kontrol ederek inceler. Mühendislik değişiklik yönetimi disiplini as-built santralin tasarlanan santrale uyumunu ve değişiklik maliyetlerinin sözleşme kapsamında desteklenebilirliğini belirler."
+          },
+          {
+            heading: "İnşaat Kalitesi, ITP Durdurma Noktaları ve NCR Yönetimi",
+            content: "İnşaat kalitesi muayene ve test planı durdurma noktaları, tanıklık ve inceleme faaliyetleri, uygunsuzluk takibi ve malzeme sertifikasyonu aracılığıyla kontrol edilir. Yalnızca görsel muayeneyi kapsayan bir ITP elektrik, koruma veya kontrol sistemleri için montaj kalitesini yeterince kontrol edemez. Rutin olarak doğrulama yapılmadan serbest bırakılan durdurma noktaları devreye alma ve teknik durum tespitinde ortaya çıkan dokümantasyon boşlukları yaratır. Öztoprak Enerji işveren taraflı ITP geliştirme, saha muayene temsili, NCR belgesi incelemesi ve kapanış doğrulamasını destekler; teslim öncesinde geriye dönük değil inşaat sırasında kanıt oluşturulmasını sağlar."
+          },
+          {
+            heading: "Devreye Alma Hazırlığı, Kabul Testi ve Final Teslim",
+            content: "Devreye alma hazırlığı tüm ön koşul sistemlerin, belgelerin, test prosedürlerinin ve personelin enerjilendirme veya senkronizasyon girişiminden önce hazır olduğu anlamına gelir. Devreye alma öncesi kontrol listeleri, koruma rölesi kayıtları, FAT ve SAT kanıtları, punch-list durumu, yedek parça envanteri, O&M eğitim kayıtları ve teslim belgesi tamlığı işveren üretim riskini kabul etmeden önce doğrulanmalıdır. Performans kabul testi mutabık kalınmış metodoloji ve ölçüm doğruluğunu kullanmalıdır. Final teslim yalnızca fiziksel varlıkları değil güvenli, güvenilir ve verimli uzun vadeli santral işletmesi için gerekli tüm teknik bilgiyi aktarmalıdır."
+          }
+        ];
+  }
+
+  if (service.slug === "technical-audits-existing-power-plants" || service.slug === "mevcut-santraller-icin-teknik-denetim") {
+    return en
+      ? [
+          {
+            heading: "On-Site Audit Methodology: Evidence Collection and Risk Classification",
+            content: "A credible technical audit of an existing power plant begins with evidence collection protocol, not a generic checklist. The audit scope is defined by the owner's decision: pre-acquisition assessment, refinancing technical review, post-failure root cause investigation, warranty claim support or periodic safety audit. Evidence collected during site inspection is cross-referenced with design documents, commissioning records, O&M logs, protection settings files, SCADA trend exports, maintenance work orders and contractor correspondence. Findings are classified by severity: safety-critical, generation-impacting, reliability-risk, compliance-gap and monitoring-priority. That classification drives the action plan structure and allows the owner to prioritize resources without overreacting to cosmetic observations."
+          },
+          {
+            heading: "Mechanical and Civil Structure Condition Assessment",
+            content: "For hydropower plants, the audit covers penstock condition, turbine runner and wicket gate wear, bearing state, seal conditions, cooling system performance, draft tube flow patterns, trash rack blocking frequency and cavitation observation records. Civil structure integrity checks include dam body, headworks, forebay and powerhouse structural condition, crack monitoring, drainage system function and settlement indicators. For solar plants, the assessment covers module mounting structure integrity, ground anchoring, tracker mechanism condition, cable management and physical damage patterns. Each finding is evaluated not as a standalone defect but as an indicator of maintenance maturity, operational discipline and long-term reliability trajectory."
+          },
+          {
+            heading: "Electrical, Protection and SCADA System Review",
+            content: "Protection relay settings, calibration records and protection coordination studies must be current, documented and aligned with network operator requirements. Out-of-date relay settings, missing protection test records or coordination gaps that developed after a transformer change or grid topology modification create both safety and compliance risk. SCADA system review covers alarm rationalization, analog signal calibration, data historian accuracy and remote access security. Metering accuracy — class specification, calibration interval compliance, test records and potential transformer ratio verification — directly affects revenue and is a frequent audit finding. Oztoprak Energy checks the gap between protection and metering documentation on paper and the actual configuration operating in the field."
+          },
+          {
+            heading: "O&M Maturity Assessment and Improvement Roadmap",
+            content: "O&M maturity determines whether a plant's technical condition improves, holds steady or slowly degrades between major inspections. The maturity assessment reviews preventive maintenance plan completeness, actual maintenance execution discipline, outage planning and scheduling quality, spare parts inventory adequacy, contractor management scope, work permit system application and incident reporting quality. Low O&M maturity is rarely visible from generation statistics alone — it becomes visible in the accumulation of deferred maintenance, the inability to explain recurring alarms and the gap between planned and actual maintenance activities. The improvement roadmap produced by the audit is sequenced by safety priority, generation impact, implementation cost and required organizational change."
+          }
+        ]
+      : [
+          {
+            heading: "Saha Denetimi Metodolojisi: Kanıt Toplama ve Risk Sınıflandırması",
+            content: "Mevcut bir enerji santralinin güvenilir teknik denetimi genel kontrol listesiyle değil kanıt toplama protokolüyle başlar. Denetim kapsamı işverenin kararına göre tanımlanır: satın alma öncesi değerlendirme, refinansman teknik incelemesi, arıza sonrası kök neden araştırması, garanti talebi desteği veya periyodik güvenlik denetimi. Saha incelemesi sırasında toplanan kanıtlar tasarım belgeleri, devreye alma kayıtları, O&M logları, koruma ayar dosyaları, SCADA trend dışa aktarımları ve bakım iş emirleriyle çapraz referanslanır. Bulgular güvenlik kritik, üretim etkili, güvenilirlik riski, uyum açığı ve izleme öncelikli olarak sınıflandırılır. Bu sınıflandırma aksiyon planı yapısını belirler ve işverenin kaynakları doğru önceliklendirmesini sağlar."
+          },
+          {
+            heading: "Mekanik ve İnşaat Yapısı Durum Değerlendirmesi",
+            content: "Hidroelektrik santrallerde denetim cebri boru durumunu, türbin runner ve ayar kanadı aşınmasını, yatak durumunu, salmastra koşullarını, soğutma sistemi performansını, emme borusu akış düzenini, ızgara tıkanma sıklığını ve kavitasyon gözlem kayıtlarını kapsar. İnşaat yapısı bütünlük kontrolleri baraj gövdesini, su alma yapısını, ön havuzu ve santral binası yapısal durumunu, çatlak izlemeyi ve drenaj sistemi işlevini içerir. Güneş santrallerinde değerlendirme modül montaj yapısı bütünlüğünü, zemin ankrajını, tracker mekanizma durumunu ve fiziksel hasar düzenlerini kapsar. Her bulgu bağımsız kusur değil bakım olgunluğu ve uzun vadeli güvenilirlik yörüngesinin göstergesi olarak değerlendirilir."
+          },
+          {
+            heading: "Elektrik, Koruma ve SCADA Sistemi İncelemesi",
+            content: "Koruma rölesi ayarları, kalibrasyon kayıtları ve koruma koordinasyon etüdleri güncel, belgelenmiş ve şebeke işleticisi gereksinimleriyle uyumlu olmalıdır. Güncel olmayan röle ayarları, eksik koruma test kayıtları veya trafo değişikliği sonrası gelişen koordinasyon boşlukları hem güvenlik hem uyum riski yaratır. SCADA sistem incelemesi alarm rasyonalizasyonunu, analog sinyal kalibrasyonunu, veri tarihçisi doğruluğunu ve uzaktan erişim güvenliğini kapsar. Sayaç doğruluğu geliri doğrudan etkiler ve sık karşılaşılan denetim bulgusudur. Öztoprak Enerji kağıt üzerindeki koruma ve sayaç belgesiyle sahada gerçekte çalışan konfigürasyon arasındaki boşluğu kontrol eder."
+          },
+          {
+            heading: "O&M Olgunluğu Değerlendirmesi ve İyileştirme Yol Haritası",
+            content: "O&M olgunluğu santralin teknik durumunun büyük muayeneler arasında iyileşip iyileşmediğini, sabit kalıp kalmadığını veya yavaşça bozulup bozulmadığını belirler. Olgunluk değerlendirmesi önleyici bakım planı tamlığını, gerçek bakım uygulama disiplinini, duruş planlama kalitesini, yedek parça envanteri yeterliliğini ve olay raporlama kalitesini inceler. Düşük O&M olgunluğu nadiren üretim istatistiklerinden görünür; ertelenmiş bakım birikiminde ve tekrarlayan alarmları açıklayamamada ortaya çıkar. Denetimin ürettiği iyileştirme yol haritası güvenlik önceliği, üretim etkisi, uygulama maliyeti ve gerekli organizasyonel değişime göre sıralanır."
+          }
+        ];
+  }
+
+  if (service.slug === "power-plant-commissioning" || service.slug === "enerji-santrali-devreye-alma") {
+    return en
+      ? [
+          {
+            heading: "Pre-Commissioning Readiness: What Must Be Resolved Before First Energization",
+            content: "Commissioning failures at first energization are expensive and reputationally damaging. The most common causes are not equipment defects — they are preparation gaps: protection relay settings not verified against the coordination study, SCADA I/O list not reconciled with installed signals, mechanical punch-list items still open, grid operator FAT evidence not accepted, auxiliary power systems not fully commissioned and testing documentation not available at the switchyard. Oztoprak Energy supports pre-commissioning readiness reviews that systematically check whether civil, electromechanical, electrical, control, protection, auxiliary and grid interface systems are genuinely ready — before the first energization attempt creates a safety event, equipment damage or significant schedule regression."
+          },
+          {
+            heading: "Protection, Control and SCADA Commissioning",
+            content: "Protection relay commissioning requires secondary injection testing, coordination verification, trip circuit continuity checks and network operator witness acceptance. Missing or poorly documented protection commissioning is a persistent audit finding that affects both safety and grid compliance. Control system commissioning requires logic verification, interlock testing, operator display review and alarm rationalization before load is applied. SCADA commissioning requires I/O verification, analog signal calibration, data historian startup, remote access testing and telemetry signal acceptance by the network operator. Each of these streams creates documentation that becomes the plant's baseline evidence for future O&M troubleshooting, protection review and regulatory audits."
+          },
+          {
+            heading: "Synchronization, Load Testing and Performance Run Acceptance",
+            content: "Synchronization requires confirmed voltage, frequency, phase angle and phase sequence matching, with automatic synchronizer function verified and manual sync backup confirmed. Load testing must follow a staged progression — light load stability check, governor response verification, reactive power capability test, load rejection test, AVR response check and full-load run — before the performance run begins. The performance run acceptance protocol must define measurement method, correction factors, ambient condition limits, data averaging period and minimum run duration. Ambiguous performance run acceptance criteria create disputes between owner and EPC contractor at the most commercially sensitive moment of the project — when the generation meter starts running but the commercial milestone is not yet confirmed."
+          },
+          {
+            heading: "Commissioning Documentation, Punch-List Closure and Handover Evidence",
+            content: "Commissioning documentation is the technical foundation for everything that follows: O&M, warranty claims, protection updates, insurance assessments, performance disputes and regulatory audits. Every test must have a date-stamped, signed, revision-controlled record. Punch-list closure must be evidence-based, not administrative. Open items carried past handover must be listed with priority, responsibility and completion date, reviewed by the owner with full understanding of their operational and safety implications. The handover evidence package that leaves with the EPC team is the last moment to capture knowledge that was obvious on site but was never written down — and that knowledge gap is what creates the first year of unexplained operational problems."
+          }
+        ]
+      : [
+          {
+            heading: "Devreye Alma Öncesi Hazırlık: İlk Enerjilendirmeden Önce Çözülmesi Gerekenler",
+            content: "İlk enerjilendirmede yaşanan devreye alma arızaları pahalı ve itibar zedeleyicidir. En yaygın nedenler ekipman kusuru değil hazırlık boşluklarıdır: koordinasyon etüdüne göre doğrulanmamış koruma rölesi ayarları, kurulu sinyallerle uzlaştırılmamış SCADA G/Ç listesi, hala açık mekanik punch-list kalemleri, şebeke işleticisinin kabul etmediği FAT kanıtları ve tam devreye alınmamış yardımci güç sistemleri. Öztoprak Enerji inşaat, elektromekanik, elektrik, kontrol, koruma, yardımci ve şebeke arayüz sistemlerinin gerçekten hazır olup olmadığını sistematik biçimde kontrol eden devreye alma öncesi hazırlık incelemelerini destekler."
+          },
+          {
+            heading: "Koruma, Kontrol ve SCADA Devreye Alma",
+            content: "Koruma rölesi devreye alması ikincil enjeksiyon testi, koordinasyon doğrulaması, trip devresi süreklilik kontrolleri ve şebeke işleticisi tanıklık kabulü gerektirir. Eksik veya zayıf belgelenmiş koruma devreye alması hem güvenlik hem şebeke uyumunu etkileyen kalıcı denetim bulgusudur. Kontrol sistemi devreye alması yük uygulanmadan önce mantık doğrulaması, kilit testi ve alarm rasyonalizasyonu gerektirir. SCADA devreye alması G/Ç doğrulaması, analog sinyal kalibrasyonu, veri tarihçisi başlatma ve şebeke işleticisinin telemetri sinyali kabulünü kapsar. Bu akışların her biri gelecekteki O&M arıza giderme, koruma incelemesi ve düzenleyici denetimlerin temel kanıtı haline gelen belgeler üretir."
+          },
+          {
+            heading: "Senkronizasyon, Yük Testi ve Performans Koşusu Kabulü",
+            content: "Senkronizasyon doğrulanmış gerilim, frekans, faz açısı ve faz sırası eşleşmesini; otomatik senkronizör işlevi doğrulamasını ve manuel senkronizasyon yedeğinin onaylanmasını gerektirir. Yük testi performans koşusuna başlamadan önce aşamalı ilerlemeyi takip etmelidir: hafif yük kararlılık kontrolü, governor tepkisi doğrulama, reaktif güç kabiliyeti testi, yük atma testi, AVR tepki kontrolü ve tam yük koşusu. Belirsiz performans koşusu kabul kriterleri işveren ve EPC yüklenicisi arasında ticari açıdan en hassas anda anlaşmazlık yaratır."
+          },
+          {
+            heading: "Devreye Alma Dokümantasyonu, Punch-List Kapanışı ve Teslim Kanıtı",
+            content: "Devreye alma dokümantasyonu sonraki her şeyin teknik temelidir: O&M, garanti talepleri, koruma güncellemeleri, sigorta değerlendirmeleri ve düzenleyici denetimler. Her testin tarih damgalı, imzalı, revizyon kontrollü kaydı olmalıdır. Punch-list kapanışı idari değil kanıt tabanlı olmalıdır. Teslimden sonraki açık kalemler öncelik, sorumluluk ve tamamlama tarihleriyle listelenmeli ve işveren tarafından operasyonel ve güvenlik sonuçları tam anlaşılarak incelenmelidir. EPC ekibiyle birlikte giden teslim kanıtı paketi sahada bariz olan ama hiç yazıya dökülmeyen bilgiyi yakalamak için son fırsattır."
+          }
+        ];
+  }
+
+  if (service.slug === "renewable-energy-investment-advisory" || service.slug === "yenilenebilir-enerji-yatirim-danismanligi") {
+    return en
+      ? [
+          {
+            heading: "Project Screening and Investment Criteria Definition",
+            content: "Investment advisory begins before the technical review — with a clear definition of what the investor is trying to achieve and what technical threshold a project must clear to qualify for deeper evaluation. Screening criteria should cover resource quality, site control status, grid connection clarity, permitting stage, EPC contractor availability, technology risk, country regulatory framework and timeline to financial close. Oztoprak Energy helps investors define technically grounded screening criteria that filter out projects with structurally unreachable assumptions before significant due diligence cost is committed — and helps developers understand what a technically sophisticated investor will scrutinize, so development resources are directed at real risks."
+          },
+          {
+            heading: "Technical Risk Assessment Supporting Investment Decisions",
+            content: "Technical risk in renewable energy investment is not a binary pass/fail assessment. It is a ranked view of which project characteristics — hydrology uncertainty, grid connection exposure, EPC contractor capability, equipment supply chain risk, commissioning timeline realism, O&M cost assumptions and performance guarantee enforceability — represent material financial exposure. Oztoprak Energy produces technical risk assessments structured around the investment decision: what risks can be mitigated before financial close, what risks should influence price or structure, what risks must be covered by contractual protections and what risks remain in the owner's portfolio after all mitigations. This framing allows commercial and technical teams to work from the same risk map."
+          },
+          {
+            heading: "CAPEX, OPEX and Long-Term Revenue Model Validation",
+            content: "Financial models for renewable energy investments often carry optimistic assumptions that are technically unsupportable: energy yield estimates without inter-annual variability, OPEX budgets without realistic spare parts and unplanned maintenance allowances, degradation curves that do not reflect site conditions, transformer and switchgear lifecycle assumptions without replacement provisions, and availability targets that exceed what the O&M contract actually guarantees. Oztoprak Energy reviews the technical assumptions behind CAPEX, OPEX and yield inputs in the financial model — identifying where optimism creates a gap between the modeled return and the technically defensible return — without replacing the financial analyst but by providing the technical evidence base they need."
+          },
+          {
+            heading: "Lender Technical Advisor Requirements and Due Diligence Coordination",
+            content: "Project finance lenders require an independent technical advisor to review energy yield assessment, EPC contract technical adequacy, commissioning plan, performance test methodology, O&M structure, insurance provisions and drawdown conditions. The technical advisor report must satisfy lender requirements while remaining technically honest. Understanding what lenders expect, what questions independent technical advisors consistently raise and how to structure project documentation to minimize conditionality risk is a material advantage in reaching financial close efficiently. Oztoprak Energy helps project developers and owners prepare for the lender independent technical advisor process by identifying and resolving typical documentation gaps before the formal review begins."
+          }
+        ]
+      : [
+          {
+            heading: "Proje Tarama ve Yatırım Kriterleri Tanımı",
+            content: "Yatırım danışmanlığı teknik incelemeden önce başlar: yatırımcının neyi başarmaya çalıştığını ve bir projenin daha derin değerlendirme için hangi teknik eşiği geçmesi gerektiğini net biçimde tanımlamayla. Tarama kriterleri kaynak kalitesini, saha kontrol durumunu, şebeke bağlantısı netliğini, izinleme aşamasını, EPC yüklenicisi kullanılabilirliğini, teknoloji riskini, ülke düzenleyici çerçevesini ve finansal kapanışa kadar geçen süreyi kapsamalıdır. Öztoprak Enerji yatırımcıların yapısal olarak ulaşılamayan varsayımları olan projeleri önemli teknik durum tespiti maliyeti taahhüt edilmeden elemelerine yardımcı olan teknik temele dayalı tarama kriterleri belirlemelerine yardımcı olur."
+          },
+          {
+            heading: "Yatırım Kararlarını Destekleyen Teknik Risk Değerlendirmesi",
+            content: "Yenilenebilir enerji yatırımında teknik risk ikili geçer/kalır değerlendirmesi değildir. Hidroloji belirsizliği, şebeke bağlantısı riski, EPC yüklenicisi kapasitesi, ekipman tedarik zinciri riski, devreye alma takvimi gerçekçiliği, O&M maliyet varsayımları ve performans garantisi uygulanabilirliği gibi hangi proje özelliklerinin önemli finansal maruziyet teşkil ettiğine dair sıralı bir bakıştır. Öztoprak Enerji teknik risk değerlendirmelerini yatırım kararı etrafında yapılandırarak üretir: hangi riskler finansal kapanıştan önce azaltılabilir, hangileri fiyatı veya yapıyı etkilemeli ve tüm azaltmalar sonrasında hangi riskler işveren portföyünde kalır."
+          },
+          {
+            heading: "CAPEX, OPEX ve Uzun Vadeli Gelir Modeli Doğrulama",
+            content: "Yenilenebilir enerji yatırımlarına yönelik finansal modeller çoğu zaman teknik olarak desteklenemeyen iyimser varsayımlar taşır: yıllar arası değişkenlik olmadan enerji verimi tahminleri, gerçekçi yedek parça ve planlanmamış bakım ödenekleri olmadan OPEX bütçeleri, saha koşullarını yansıtmayan bozulma eğrileri ve O&M sözleşmesinin gerçekte garanti ettiği düzeyi aşan emre amadelik hedefleri. Öztoprak Enerji finansal analistin yerine geçmeksizin onun ihtiyaç duyduğu teknik kanıt tabanını sağlayarak finansal modeldeki teknik varsayımları inceler ve iyimserliğin modellenen getiri ile teknik olarak savunulabilir getiri arasında boşluk yarattığı yerleri tespit eder."
+          },
+          {
+            heading: "Kredi Kuruluşu Bağımsız Teknik Danışman Gereksinimleri ve Koordinasyon",
+            content: "Proje finansmanı kredi kuruluşları enerji verimi değerlendirmesini, EPC sözleşmesi teknik yeterliliğini, devreye alma planını, performans testi metodolojisini, O&M yapısını, sigorta hükümlerini ve çekiş koşullarını incelemek üzere bağımsız teknik danışman talep eder. Bağımsız teknik danışman raporu kredi kuruluşu gereksinimlerini karşılamalı ancak teknik açıdan dürüst kalmalıdır. Kredi kuruluşlarının ne beklediğini ve proje dokümantasyonunun koşulluluk riskini en aza indirecek şekilde nasıl yapılandırılacağını bilmek finansal kapanışa etkin biçimde ulaşmada önemli avantaj sağlar. Öztoprak Enerji proje geliştiricilerinin tipik dokümantasyon boşluklarını resmi bağımsız teknik danışman incelemesi başlamadan tespit edip çözerek sürece hazırlanmalarına yardımcı olur."
+          }
+        ];
+  }
+
   return [];
 }
 
