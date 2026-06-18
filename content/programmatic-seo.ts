@@ -6,6 +6,7 @@ import type { PillarPage, ProgrammaticSeoPage, SeoEntity, TopicCluster } from "@
 type ProgrammaticData = {
   problems: SeoEntity[];
   locations: SeoEntity[];
+  industries: SeoEntity[];
   pillars: PillarPage[];
   clusters: TopicCluster[];
 };
@@ -389,7 +390,15 @@ export const programmaticSeoData: Record<Locale, ProgrammaticData> = {
       { slug: "konya", label: "Konya", description: "Solar PV performance and EPC advisory for high-resource regions around Konya.", keywords: ["solar power plant consultancy Konya", "GES consultant Konya"] },
       { slug: "antalya", label: "Antalya", description: "Renewable energy technical consultancy for solar and industrial facilities around Antalya.", keywords: ["solar consultant Antalya", "renewable energy consultancy Antalya"] },
       { slug: "europe", label: "Europe", description: "International EPC and renewable energy advisory for European project teams.", keywords: ["renewable energy consultant Europe", "EPC technical consultancy Europe"] },
-      { slug: "middle-east", label: "Middle East", description: "Technical consultancy for renewable energy investors and EPC companies in Middle East markets.", keywords: ["renewable energy consultant Middle East", "EPC consultancy Middle East"] }
+      { slug: "middle-east", label: "Middle East", description: "Technical consultancy for renewable energy investors and EPC companies in Middle East markets.", keywords: ["renewable energy consultant Middle East", "EPC consultancy Middle East"] },
+      { slug: "bursa", label: "Bursa", description: "Industrial electricity cost optimization and renewable energy consultancy for automotive and manufacturing facilities in Bursa.", keywords: ["energy consultancy Bursa", "industrial electricity optimization Bursa", "reactive penalty Bursa"] },
+      { slug: "kocaeli", label: "Kocaeli", description: "Industrial electricity and renewable energy consultancy for the Kocaeli industrial belt including Gebze and Dilovasi organized industrial zones.", keywords: ["energy consultancy Kocaeli", "industrial energy Kocaeli", "OSB electricity optimization Kocaeli"] },
+      { slug: "gaziantep", label: "Gaziantep", description: "Industrial electricity cost optimization and solar feasibility consultancy for manufacturing and industrial facilities in Gaziantep.", keywords: ["energy consultancy Gaziantep", "industrial electricity Gaziantep", "solar feasibility Gaziantep"] }
+    ],
+    industries: [
+      { slug: "organized-industrial-zones", label: "Organized Industrial Zones", description: "Industrial electricity cost optimization, reactive penalty elimination and rooftop solar feasibility for facilities in organized industrial zones.", keywords: ["organized industrial zone electricity", "OSB reactive penalty", "industrial zone electricity cost", "OSB energy optimization"] },
+      { slug: "manufacturing-facilities", label: "Manufacturing Facilities", description: "Electricity cost analysis, compensation system review and demand charge optimization for manufacturing and processing facilities.", keywords: ["manufacturing electricity cost", "factory reactive penalty", "manufacturing energy optimization", "factory electricity bill analysis"] },
+      { slug: "food-processing-plants", label: "Food Processing Plants", description: "Industrial electricity cost reduction for food and beverage processing plants through reactive penalty elimination, demand management and rooftop solar feasibility.", keywords: ["food processing energy cost", "food plant electricity optimization", "food factory reactive penalty", "food processing solar"] }
     ],
     pillars: [
       {
@@ -511,7 +520,15 @@ export const programmaticSeoData: Record<Locale, ProgrammaticData> = {
       { slug: "konya", label: "Konya", description: "Konya ve çevresindeki yüksek kaynaklı bölgeler için GES performans ve EPC danışmanlığı.", keywords: ["GES danışmanlığı Konya", "solar danışmanlık Konya"] },
       { slug: "antalya", label: "Antalya", description: "Antalya çevresindeki GES ve endüstriyel tesisler için yenilenebilir enerji teknik danışmanlığı.", keywords: ["GES danışmanı Antalya", "yenilenebilir enerji danışmanlığı Antalya"] },
       { slug: "avrupa", label: "Avrupa", description: "Avrupa proje ekipleri için uluslararası EPC ve yenilenebilir enerji danışmanlığı.", keywords: ["yenilenebilir enerji danışmanı Avrupa", "EPC teknik danışmanlık Avrupa"] },
-      { slug: "orta-dogu", label: "Orta Doğu", description: "Orta Doğu pazarlarındaki yatırımcılar ve EPC şirketleri için teknik danışmanlık.", keywords: ["yenilenebilir enerji danışmanı Orta Doğu", "EPC danışmanlığı Orta Doğu"] }
+      { slug: "orta-dogu", label: "Orta Doğu", description: "Orta Doğu pazarlarındaki yatırımcılar ve EPC şirketleri için teknik danışmanlık.", keywords: ["yenilenebilir enerji danışmanı Orta Doğu", "EPC danışmanlığı Orta Doğu"] },
+      { slug: "bursa", label: "Bursa", description: "Bursa'daki otomotiv ve üretim tesisleri için endüstriyel elektrik maliyet optimizasyonu ve yenilenebilir enerji danışmanlığı.", keywords: ["enerji danışmanlığı Bursa", "endüstriyel elektrik optimizasyonu Bursa", "reaktif ceza analizi Bursa"] },
+      { slug: "kocaeli", label: "Kocaeli", description: "Gebze ve Dilovası organize sanayi bölgeleri dahil Kocaeli sanayi kuşağındaki tesisler için endüstriyel elektrik ve yenilenebilir enerji danışmanlığı.", keywords: ["enerji danışmanlığı Kocaeli", "endüstriyel enerji Kocaeli", "OSB elektrik optimizasyonu Kocaeli"] },
+      { slug: "gaziantep", label: "Gaziantep", description: "Gaziantep'teki imalat ve sanayi tesisleri için endüstriyel elektrik maliyet optimizasyonu ve çatı GES fizibilite danışmanlığı.", keywords: ["enerji danışmanlığı Gaziantep", "endüstriyel elektrik Gaziantep", "çatı GES fizibilite Gaziantep"] }
+    ],
+    industries: [
+      { slug: "organize-sanayi-bolgeleri", label: "Organize Sanayi Bölgeleri", description: "Organize sanayi bölgelerindeki tesisler için endüstriyel elektrik maliyet optimizasyonu, reaktif ceza giderme ve çatı GES fizibilite.", keywords: ["OSB elektrik maliyeti", "organize sanayi bölgesi reaktif ceza", "OSB enerji optimizasyonu", "sanayi bölgesi elektrik faturası"] },
+      { slug: "imalat-tesisleri", label: "İmalat Tesisleri", description: "İmalat ve proses tesisleri için elektrik faturası analizi, kompanzasyon sistemi incelemesi ve talep yükü optimizasyonu.", keywords: ["imalat tesisi elektrik maliyeti", "fabrika reaktif ceza", "imalat enerji optimizasyonu", "fabrika elektrik faturası analizi"] },
+      { slug: "gida-uretim-tesisleri", label: "Gıda Üretim Tesisleri", description: "Reaktif ceza giderme, talep yönetimi ve çatı GES fizibilite aracılığıyla gıda ve içecek üretim tesisleri için elektrik maliyeti azaltma.", keywords: ["gıda tesisi enerji maliyeti", "gıda fabrikası elektrik optimizasyonu", "gıda üretim reaktif ceza", "gıda fabrikası çatı GES"] }
     ],
     pillars: [
       {
@@ -602,6 +619,14 @@ export function getLocations(locale: Locale) {
 
 export function getLocation(locale: Locale, slug: string) {
   return getLocations(locale).find((location) => location.slug === slug);
+}
+
+export function getIndustries(locale: Locale) {
+  return programmaticSeoData[locale].industries;
+}
+
+export function getIndustry(locale: Locale, slug: string) {
+  return getIndustries(locale).find((industry) => industry.slug === slug);
 }
 
 export function getPillars(locale: Locale) {
