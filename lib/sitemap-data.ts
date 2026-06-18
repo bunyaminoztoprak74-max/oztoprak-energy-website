@@ -1,7 +1,7 @@
 import { getCategories, getPosts } from "@/content/blog";
 import { getProjects } from "@/content/projects";
 import { getServices } from "@/content/services";
-import { getClusters, getLocations, getPillars, getProblems } from "@/content/programmatic-seo";
+import { getClusters, getIndustries, getLocations, getPillars, getProblems } from "@/content/programmatic-seo";
 
 export const sitemapBaseUrl = "https://www.oztoprakenerji.com";
 
@@ -114,7 +114,8 @@ export function pageSitemapEntries() {
     ...pairedEntries("/en/topics", "/tr/topics", { changeFrequency: "monthly", priority: 0.7 }),
     ...pairedEntries("/en/problems", "/tr/problems", { changeFrequency: "monthly", priority: 0.7 }),
     ...pairedEntries("/en/locations", "/tr/locations", { changeFrequency: "monthly", priority: 0.7 }),
-    ...pairedEntries("/en/pillars", "/tr/pillars", { changeFrequency: "monthly", priority: 0.7 })
+    ...pairedEntries("/en/pillars", "/tr/pillars", { changeFrequency: "monthly", priority: 0.7 }),
+    ...pairedEntries("/en/industries", "/tr/industries", { changeFrequency: "monthly", priority: 0.8 })
   ];
 
   getProjects("en").forEach((project, index) => {
@@ -172,6 +173,17 @@ export function pageSitemapEntries() {
     );
   });
 
+  getIndustries("en").forEach((industry, index) => {
+    const trIndustry = getIndustries("tr")[index];
+    if (!trIndustry) return;
+    entries.push(
+      ...pairedEntries(`/en/industries/${industry.slug}`, `/tr/industries/${trIndustry.slug}`, {
+        changeFrequency: "monthly",
+        priority: 0.8
+      })
+    );
+  });
+
   return dedupeEntries(entries);
 }
 
@@ -208,19 +220,4 @@ export function blogSitemapEntries() {
 
 export function serviceSitemapEntries() {
   const entries: SitemapEntry[] = [
-    ...pairedEntries("/en/services", "/tr/hizmetler", { changeFrequency: "monthly", priority: 0.9 })
-  ];
-
-  getServices("en").forEach((service, index) => {
-    const trService = getServices("tr")[index];
-    if (!trService) return;
-    entries.push(
-      ...pairedEntries(`/en/services/${service.slug}`, `/tr/services/${trService.slug}`, {
-        changeFrequency: "monthly",
-        priority: 0.9
-      })
-    );
-  });
-
-  return dedupeEntries(entries);
-}
+    ...pa
