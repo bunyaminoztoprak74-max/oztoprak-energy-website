@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Container } from "@/components/container";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { CtaSection } from "@/components/cta-section";
 import { getDictionary } from "@/content/dictionaries";
 import { buildMetadata } from "@/lib/seo";
 import { isLocale, type Locale } from "@/lib/i18n";
+import { linkedinUrl } from "@/lib/social";
 
 const copy = {
   en: {
@@ -35,7 +37,10 @@ const copy = {
         text: "The role is not to produce generic marketing reports. The objective is to help owners, EPC contractors and investors separate measured facts from assumptions, prioritize corrective actions, reduce generation loss and improve the quality of technical decisions before commercial, contractual or operational risk becomes expensive."
       }
     ],
-    values: ["Hydropower consultancy", "Solar power plant consultancy", "EPC technical advisory", "Commissioning and operational readiness", "Technical due diligence", "Power plant performance analysis"]
+    values: ["Hydropower consultancy", "Solar power plant consultancy", "EPC technical advisory", "Commissioning and operational readiness", "Technical due diligence", "Power plant performance analysis", "Industrial electricity cost optimization"],
+    linkedinLabel: "Connect on LinkedIn",
+    casestudiesLabel: "View Case Studies",
+    casestudiesHref: "/en/projects"
   },
   tr: {
     title: "Oztoprak Enerji Danismanlik Hakkinda",
@@ -65,7 +70,10 @@ const copy = {
         text: "Amac genel tanitim raporu uretmek degildir. Hedef; isverenlerin, EPC yuklenicilerinin ve yatirimcilarin olculmus gercekleri varsayimlardan ayirmasina, duzeltici aksiyonlari onceliklendirmesine, uretim kaybini azaltmasina ve ticari, sozlesmesel veya operasyonel risk pahali hale gelmeden teknik karar kalitesini artirmasina yardim etmektir."
       }
     ],
-    values: ["HES danismanligi", "GES danismanligi", "EPC teknik danismanlik", "Devreye alma ve operasyonel hazirlik", "Teknik durum tespiti", "Santral performans analizi"]
+    values: ["HES danismanligi", "GES danismanligi", "EPC teknik danismanlik", "Devreye alma ve operasyonel hazirlik", "Teknik durum tespiti", "Santral performans analizi", "Endustriyel elektrik maliyet optimizasyonu"],
+    linkedinLabel: "LinkedIn'de Bağlan",
+    casestudiesLabel: "Vaka Çalışmalarını Gör",
+    casestudiesHref: "/tr/projects"
   }
 } satisfies Record<Locale, {
   title: string;
@@ -75,6 +83,9 @@ const copy = {
   metrics: Array<[string, string]>;
   sections: Array<{ title: string; text: string }>;
   values: string[];
+  linkedinLabel: string;
+  casestudiesLabel: string;
+  casestudiesHref: string;
 }>;
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -114,19 +125,4 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           <div className="grid gap-4">
             {page.metrics.map(([value, label]) => (
               <div key={label} className="rounded-lg border border-energy-500/25 bg-energy-500/10 p-6">
-                <p className="text-3xl font-bold text-white">{value}</p>
-                <p className="mt-2 text-sm leading-6 text-steel">{label}</p>
-              </div>
-            ))}
-            {page.values.map((value) => (
-              <div key={value} className="premium-card rounded-lg p-6 text-lg font-semibold text-white">
-                {value}
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-      <CtaSection locale={locale} />
-    </>
-  );
-}
+   

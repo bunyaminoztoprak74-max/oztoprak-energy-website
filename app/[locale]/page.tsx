@@ -128,7 +128,8 @@ const content = {
       { name: "Hydropower Commissioning Case Study", country: "Anonymized international HPP", capacity: "64 MW", role: "Commissioning Advisor", technology: "Hydropower", slug: "hydropower-commissioning-case-study" },
       { name: "Plant Performance Improvement Case Study", country: "Anonymized portfolio", capacity: "92 MW", role: "Performance Consultant", technology: "Hydropower + Solar", slug: "plant-performance-improvement-case-study" },
       { name: "Solar Plant Technical Audit Case Study", country: "Anonymized PV asset", capacity: "48 MWp", role: "Independent Auditor", technology: "Solar PV", slug: "solar-plant-technical-audit-case-study" },
-      { name: "EPC Owner-Side Technical Control Case Study", country: "Anonymized EPC project", capacity: "71 MW", role: "Owner-side Advisor", technology: "Renewable Power", slug: "epc-owner-side-technical-control-case-study" }
+      { name: "EPC Owner-Side Technical Control Case Study", country: "Anonymized EPC project", capacity: "71 MW", role: "Owner-side Advisor", technology: "Renewable Power", slug: "epc-owner-side-technical-control-case-study" },
+      { name: "Industrial Electricity Cost Optimization Case Study", country: "Anonymized industrial facility, Turkey", capacity: "6,200 kW demand", role: "Energy Cost Advisor", technology: "Industrial Facility", slug: "industrial-electricity-cost-optimization-case-study" }
     ],
     workflow: [
       ["Site inspection", "Walk down civil, mechanical, electrical, control and protection interfaces with attention to operating evidence."],
@@ -251,7 +252,8 @@ const content = {
       { name: "HES Devreye Alma Vaka Çalışması", country: "Anonim uluslararası HES", capacity: "64 MW", role: "Devreye Alma Danışmanı", technology: "Hidroelektrik", slug: "hes-devreye-alma-vaka-calismasi" },
       { name: "Santral Performans İyileştirme Vaka Çalışması", country: "Anonim portföy", capacity: "92 MW", role: "Performans Danışmanı", technology: "HES + GES", slug: "santral-performans-iyilestirme-vaka-calismasi" },
       { name: "GES Teknik Denetim Vaka Çalışması", country: "Anonim GES varlığı", capacity: "48 MWp", role: "Bağımsız Denetçi", technology: "Güneş PV", slug: "ges-teknik-denetim-vaka-calismasi" },
-      { name: "EPC İşveren Tarafı Teknik Kontrol Vaka Çalışması", country: "Anonim EPC projesi", capacity: "71 MW", role: "İşveren Tarafı Danışman", technology: "Yenilenebilir Enerji", slug: "epc-isveren-tarafi-teknik-kontrol-vaka-calismasi" }
+      { name: "EPC İşveren Tarafı Teknik Kontrol Vaka Çalışması", country: "Anonim EPC projesi", capacity: "71 MW", role: "İşveren Tarafı Danışman", technology: "Yenilenebilir Enerji", slug: "epc-isveren-tarafi-teknik-kontrol-vaka-calismasi" },
+      { name: "Endüstriyel Elektrik Maliyet Optimizasyonu Vaka Çalışması", country: "Anonim sanayi tesisi, Türkiye", capacity: "6.200 kW talep", role: "Enerji Maliyet Danışmanı", technology: "Sanayi Tesisi", slug: "endustriyel-elektrik-maliyet-optimizasyonu-vaka-calismasi" }
     ],
     workflow: [
       ["Saha incelemesi", "İnşaat, mekanik, elektrik, kontrol ve koruma arayüzleri işletme kanıtlarıyla birlikte sahada incelenir."],
@@ -544,19 +546,4 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-energy-500">
               {locale === "en" ? "EPC Advisory Team" : "EPC Danışmanlık Ekibi"}
             </p>
-            <h2 className="mt-3 max-w-4xl text-3xl font-semibold leading-tight sm:text-4xl">{page.ctaTitle}</h2>
-            <p className="mt-4 max-w-3xl leading-8 text-steel">{page.ctaText}</p>
-          </div>
-          <div className="flex flex-wrap gap-3">
-            <ButtonLink href={contactHref}>{page.consultation}</ButtonLink>
-            <ButtonLink href={servicesHref} variant="secondary">
-              {locale === "en" ? "Review Services" : "Hizmetleri İncele"}
-            </ButtonLink>
-          </div>
-        </Container>
-      </section>
-
-      <CtaSection locale={locale} />
-    </>
-  );
-}
+            <h2 className="mt-3 max-w-4xl text-3x
