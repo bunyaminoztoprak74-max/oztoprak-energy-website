@@ -115,7 +115,8 @@ export function pageSitemapEntries() {
     ...pairedEntries("/en/problems", "/tr/problems", { changeFrequency: "monthly", priority: 0.7 }),
     ...pairedEntries("/en/locations", "/tr/locations", { changeFrequency: "monthly", priority: 0.7 }),
     ...pairedEntries("/en/pillars", "/tr/pillars", { changeFrequency: "monthly", priority: 0.7 }),
-    ...pairedEntries("/en/industries", "/tr/industries", { changeFrequency: "monthly", priority: 0.8 })
+    ...pairedEntries("/en/industries", "/tr/industries", { changeFrequency: "monthly", priority: 0.8 }),
+    ...pairedEntries("/en/industrial-bill-review", "/tr/industrial-bill-review", { changeFrequency: "monthly", priority: 0.9 })
   ];
 
   getProjects("en").forEach((project, index) => {
@@ -220,4 +221,19 @@ export function blogSitemapEntries() {
 
 export function serviceSitemapEntries() {
   const entries: SitemapEntry[] = [
-    ...pa
+    ...pairedEntries("/en/services", "/tr/hizmetler", { changeFrequency: "monthly", priority: 0.9 })
+  ];
+
+  getServices("en").forEach((service, index) => {
+    const trService = getServices("tr")[index];
+    if (!trService) return;
+    entries.push(
+      ...pairedEntries(`/en/services/${service.slug}`, `/tr/services/${trService.slug}`, {
+        changeFrequency: "monthly",
+        priority: 0.9
+      })
+    );
+  });
+
+  return dedupeEntries(entries);
+}

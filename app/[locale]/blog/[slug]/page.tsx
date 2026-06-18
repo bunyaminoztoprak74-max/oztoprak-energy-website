@@ -108,18 +108,37 @@ export default async function BlogPostPage({ params }: { params: Promise<{ local
                 </Link>
               </div>
             </div>
-            <div className="mt-5 rounded-lg border border-energy-500/30 bg-energy-500/10 p-6">
-              <h2 className="font-semibold text-white">{locale === "en" ? "Newsletter and checklist" : "Bulten ve kontrol listesi"}</h2>
-              <p className="mt-3 text-sm leading-7 text-steel">
-                {locale === "en"
-                  ? "Request the technical assessment checklist and receive practical notes on commissioning, O&M and power plant audit decisions."
-                  : "Teknik degerlendirme kontrol listesini talep edin; devreye alma, O&M ve santral denetimi kararlarina dair pratik notlar alin."}
-              </p>
-              <Link href={locale === "en" ? "/en/contact" : "/tr/iletisim"} className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-energy-500 hover:text-white">
-                <Share2 className="h-4 w-4" />
-                {locale === "en" ? "Request checklist" : "Kontrol listesi talep et"}
-              </Link>
-            </div>
+            {(post.serviceLinks.includes("industrial-energy-cost-optimization") || post.serviceLinks.includes("endustriyel-enerji-maliyet-optimizasyonu")) ? (
+              <div className="mt-5 rounded-lg border border-energy-500/30 bg-energy-500/10 p-6">
+                <p className="text-xs font-semibold uppercase tracking-widest text-energy-500">
+                  {locale === "en" ? "Free Offer" : "Ücretsiz Teklif"}
+                </p>
+                <h2 className="mt-2 font-semibold text-white">
+                  {locale === "en" ? "Free Electricity Bill Review" : "Ücretsiz Fatura İncelemesi"}
+                </h2>
+                <p className="mt-3 text-sm leading-7 text-steel">
+                  {locale === "en"
+                    ? "Send your last 12 months of bills. We identify reactive penalties, contract demand risk and solar feasibility — at no cost."
+                    : "Son 12 aylık faturalarınızı gönderin. Reaktif cezalar, sözleşme gücü riski ve GES fizibiliteyi ücretsiz belirleyelim."}
+                </p>
+                <Link href={locale === "en" ? "/en/industrial-bill-review" : "/tr/industrial-bill-review"} className="mt-5 inline-flex items-center gap-2 rounded-md bg-energy-500 px-4 py-2.5 text-sm font-bold text-navy-950 hover:bg-white">
+                  {locale === "en" ? "Request Free Review" : "Ücretsiz İnceleme Talep Et"}
+                </Link>
+              </div>
+            ) : (
+              <div className="mt-5 rounded-lg border border-energy-500/30 bg-energy-500/10 p-6">
+                <h2 className="font-semibold text-white">{locale === "en" ? "Newsletter and checklist" : "Bulten ve kontrol listesi"}</h2>
+                <p className="mt-3 text-sm leading-7 text-steel">
+                  {locale === "en"
+                    ? "Request the technical assessment checklist and receive practical notes on commissioning, O&M and power plant audit decisions."
+                    : "Teknik degerlendirme kontrol listesini talep edin; devreye alma, O&M ve santral denetimi kararlarina dair pratik notlar alin."}
+                </p>
+                <Link href={locale === "en" ? "/en/contact" : "/tr/iletisim"} className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-energy-500 hover:text-white">
+                  <Share2 className="h-4 w-4" />
+                  {locale === "en" ? "Request checklist" : "Kontrol listesi talep et"}
+                </Link>
+              </div>
+            )}
           </aside>
           <article className="prose prose-invert max-w-none prose-headings:text-white prose-p:text-steel prose-p:leading-8 prose-a:text-energy-500">
             {post.body.map((section) => (
@@ -138,6 +157,29 @@ export default async function BlogPostPage({ params }: { params: Promise<{ local
                   : "Gercek santral incelemelerinde en faydali sonuc genellikle tek bir KPI degildir. Asil deger; test kaniti, alarm kaydi, operator logu, sebeke olayi ve yeni guvenilirlik riski yaratmadan uygulanabilecek duzeltici aksiyon arasindaki baglantidadir."}
               </p>
             </section>
+            {(post.serviceLinks.includes("industrial-energy-cost-optimization") || post.serviceLinks.includes("endustriyel-enerji-maliyet-optimizasyonu")) && (
+              <section className="not-prose my-10 rounded-xl border border-energy-500/20 bg-energy-500/5 p-6">
+                <p className="text-xs font-semibold uppercase tracking-widest text-energy-500">
+                  {locale === "en" ? "Free Offer — No Obligation" : "Ücretsiz Teklif — Yükümlülük Yok"}
+                </p>
+                <h2 className="mt-2 text-xl font-bold text-white">
+                  {locale === "en"
+                    ? "Get a Free Preliminary Electricity Bill Review"
+                    : "Ücretsiz Ön Elektrik Faturası İncelemesi Alın"}
+                </h2>
+                <p className="mt-3 text-sm leading-7 text-steel">
+                  {locale === "en"
+                    ? "Send us your last 12 months of electricity invoices. We identify reactive power penalties, contract demand misalignment, tariff optimization opportunities and rooftop solar feasibility — at no charge. Written memo within 5–7 working days."
+                    : "Son 12 aylık elektrik faturalarınızı gönderin. Reaktif enerji cezaları, sözleşme gücü uyumsuzluğu, tarife optimizasyon fırsatları ve çatı GES fizibilitesini ücretsiz belirleyelim. Yazılı ön not 5–7 iş günü içinde teslim edilir."}
+                </p>
+                <Link
+                  href={locale === "en" ? "/en/industrial-bill-review" : "/tr/industrial-bill-review"}
+                  className="mt-5 inline-flex items-center gap-2 rounded-md bg-energy-500 px-5 py-3 text-sm font-bold text-navy-950 shadow-glow hover:bg-white"
+                >
+                  {locale === "en" ? "Request Free Bill Review" : "Ücretsiz Fatura İncelemesi Talep Et"}
+                </Link>
+              </section>
+            )}
             <h2>{dict.labels.relatedPosts}</h2>
             <ul>
               {relatedPosts.map((related) => related ? (

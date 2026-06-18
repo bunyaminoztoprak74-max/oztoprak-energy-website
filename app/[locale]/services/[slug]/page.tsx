@@ -662,6 +662,33 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
         </Container>
       </section>
       <ConversionFunnel locale={locale} />
+      {(service.slug === "industrial-energy-cost-optimization" || service.slug === "endustriyel-enerji-maliyet-optimizasyonu") && (
+        <section className="bg-energy-500/10 border-y border-energy-500/20 py-14">
+          <Container className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-widest text-energy-500">
+                {locale === "en" ? "Free Offer" : "Ücretsiz Teklif"}
+              </p>
+              <h2 className="mt-2 text-2xl font-bold text-white">
+                {locale === "en"
+                  ? "Get a Free Electricity Bill Review"
+                  : "Ücretsiz Elektrik Faturası İncelemesi Alın"}
+              </h2>
+              <p className="mt-3 max-w-2xl text-sm leading-7 text-steel">
+                {locale === "en"
+                  ? "Send us your last 12 months of electricity bills. We will identify reactive penalties, contract demand risks, tariff optimization opportunities and rooftop solar feasibility — at no charge. Preliminary memo delivered within 5–7 working days."
+                  : "Son 12 aylık elektrik faturalarınızı gönderin. Reaktif enerji cezaları, sözleşme gücü riskleri, tarife optimizasyon fırsatları ve çatı GES fizibilitesini ücretsiz olarak belirleyelim. Ön not 5–7 iş günü içinde teslim edilir."}
+              </p>
+            </div>
+            <Link
+              href={locale === "en" ? "/en/industrial-bill-review" : "/tr/industrial-bill-review"}
+              className="shrink-0 rounded-md bg-energy-500 px-6 py-4 text-sm font-bold text-navy-950 shadow-glow hover:bg-white"
+            >
+              {locale === "en" ? "Request Free Review" : "Ücretsiz İnceleme Talep Et"}
+            </Link>
+          </Container>
+        </section>
+      )}
       <section className="bg-navy-950 py-20">
         <Container className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
           <div>
