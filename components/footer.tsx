@@ -78,6 +78,8 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dict }) {
               <Link href={`/${locale}/about`} className="text-sm text-steel hover:text-energy-500">{dict.nav.about}</Link>
               <Link href={`/${locale}/projects`} className="text-sm text-steel hover:text-energy-500">{dict.nav.projects}</Link>
               <Link href={`/${locale}/blog`} className="text-sm text-steel hover:text-energy-500">{dict.nav.blog}</Link>
+              <Link href={locale === "en" ? "/en/reactive-penalty-analysis" : "/tr/reactive-penalty-analysis"} className="text-sm text-steel hover:text-energy-500">{locale === "en" ? "Reactive Penalty Analysis" : "Reaktif Ceza Analizi"}</Link>
+              <Link href={locale === "en" ? "/en/industrial-savings-checklist" : "/tr/industrial-savings-checklist"} className="text-sm text-steel hover:text-energy-500">{locale === "en" ? "Savings Checklist" : "Tasarruf Kontrol Listesi"}</Link>
               <Link href={`/${locale}/privacy-policy`} className="text-sm text-steel hover:text-energy-500">{dict.footer.privacy}</Link>
               <Link href={`/${locale}/terms`} className="text-sm text-steel hover:text-energy-500">{dict.footer.terms}</Link>
             </div>

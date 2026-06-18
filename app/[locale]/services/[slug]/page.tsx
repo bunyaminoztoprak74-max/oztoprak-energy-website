@@ -680,12 +680,20 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
                   : "Son 12 aylık elektrik faturalarınızı gönderin. Reaktif enerji cezaları, sözleşme gücü riskleri, tarife optimizasyon fırsatları ve çatı GES fizibilitesini ücretsiz olarak belirleyelim. Ön not 5–7 iş günü içinde teslim edilir."}
               </p>
             </div>
-            <Link
-              href={locale === "en" ? "/en/industrial-bill-review" : "/tr/industrial-bill-review"}
-              className="shrink-0 rounded-md bg-energy-500 px-6 py-4 text-sm font-bold text-navy-950 shadow-glow hover:bg-white"
-            >
-              {locale === "en" ? "Request Free Review" : "Ücretsiz İnceleme Talep Et"}
-            </Link>
+            <div className="flex flex-col gap-3 shrink-0">
+              <Link
+                href={locale === "en" ? "/en/industrial-bill-review" : "/tr/industrial-bill-review"}
+                className="rounded-md bg-energy-500 px-6 py-4 text-center text-sm font-bold text-navy-950 shadow-glow hover:bg-white"
+              >
+                {locale === "en" ? "Request Free Review" : "Ücretsiz İnceleme Talep Et"}
+              </Link>
+              <Link
+                href={locale === "en" ? "/en/reactive-penalty-analysis" : "/tr/reactive-penalty-analysis"}
+                className="rounded-md border border-white/20 bg-white/[0.05] px-6 py-3 text-center text-sm font-semibold text-white hover:border-energy-500 hover:text-energy-500"
+              >
+                {locale === "en" ? "Reactive Penalty Analysis" : "Reaktif Ceza Analizi"}
+              </Link>
+            </div>
           </Container>
         </section>
       )}
