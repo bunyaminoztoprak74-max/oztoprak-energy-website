@@ -430,6 +430,41 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         </Container>
       </section>
 
+      {/* Industrial Lead Funnel Strip */}
+      <section className="border-y border-energy-500/20 bg-gradient-to-r from-energy-500/10 via-energy-500/5 to-transparent py-14">
+        <Container className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-widest text-energy-500">
+              {locale === "en" ? "Free — No Obligation" : "Ücretsiz — Yükümlülük Yok"}
+            </p>
+            <h2 className="mt-2 text-2xl font-bold text-white sm:text-3xl">
+              {locale === "en"
+                ? "Is Your Factory Paying Too Much for Electricity?"
+                : "Fabrikanız Elektrik İçin Fazla mı Ödüyor?"}
+            </h2>
+            <p className="mt-3 max-w-2xl text-sm leading-7 text-steel">
+              {locale === "en"
+                ? "Send us your last 12 months of electricity invoices. We identify reactive power penalties, contract demand risks and rooftop solar feasibility — free written memo delivered in 5–7 working days."
+                : "Son 12 aylık elektrik faturalarınızı gönderin. Reaktif cezalar, sözleşme gücü riskleri ve çatı GES fizibilitesini ücretsiz belirleyelim. 5–7 iş günü içinde yazılı ön not teslim edilir."}
+            </p>
+            <div className="mt-4 flex flex-wrap gap-4 text-sm text-steel">
+              {[
+                locale === "en" ? "✓ Reactive penalty analysis" : "✓ Reaktif ceza analizi",
+                locale === "en" ? "✓ Contract demand review" : "✓ Sözleşme gücü incelemesi",
+                locale === "en" ? "✓ Tariff optimization check" : "✓ Tarife optimizasyon kontrolü",
+                locale === "en" ? "✓ Rooftop solar indicator" : "✓ Çatı GES göstergesi"
+              ].map(item => <span key={item}>{item}</span>)}
+            </div>
+          </div>
+          <Link
+            href={locale === "en" ? "/en/industrial-bill-review" : "/tr/industrial-bill-review"}
+            className="shrink-0 rounded-md bg-energy-500 px-7 py-4 text-base font-bold text-navy-950 shadow-glow transition hover:bg-white"
+          >
+            {locale === "en" ? "Request Free Bill Review" : "Ücretsiz Fatura İncelemesi"}
+          </Link>
+        </Container>
+      </section>
+
       <section className="bg-navy-950 section-pad">
         <Container className="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
           <div>
