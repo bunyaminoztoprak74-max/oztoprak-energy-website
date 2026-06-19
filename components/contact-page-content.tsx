@@ -1,3 +1,4 @@
+"use client";
 import { Mail, Phone, CalendarDays, Linkedin } from "lucide-react";
 import { Container } from "@/components/container";
 import { Breadcrumbs } from "@/components/breadcrumbs";
