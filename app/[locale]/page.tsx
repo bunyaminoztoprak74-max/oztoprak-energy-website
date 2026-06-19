@@ -20,7 +20,6 @@ import { ButtonLink } from "@/components/button-link";
 import { SectionHeading } from "@/components/section-heading";
 import { MotionReveal } from "@/components/motion-reveal";
 import { FeatureCard } from "@/components/cards";
-import { CtaSection } from "@/components/cta-section";
 import { buildMetadata } from "@/lib/seo";
 import { isLocale, type Locale } from "@/lib/i18n";
 import Link from "next/link";
