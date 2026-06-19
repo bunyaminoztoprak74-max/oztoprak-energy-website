@@ -23,6 +23,7 @@ import { FeatureCard } from "@/components/cards";
 import { CtaSection } from "@/components/cta-section";
 import { buildMetadata } from "@/lib/seo";
 import { isLocale, type Locale } from "@/lib/i18n";
+import Link from "next/link";
 
 const content = {
   en: {
@@ -581,4 +582,12 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-energy-500">
               {locale === "en" ? "EPC Advisory Team" : "EPC Danışmanlık Ekibi"}
             </p>
-            <h2 className="mt-3 max-w-4xl text-3x
+            <h2 className="mt-3 max-w-4xl text-3xl font-bold text-white">{page.ctaTitle}</h2>
+            <p className="mt-4 max-w-2xl text-sm leading-7 text-white/80">{page.ctaText}</p>
+          </div>
+          <ButtonLink href={contactHref}>{page.advisory}</ButtonLink>
+        </Container>
+      </section>
+    </>
+  );
+}

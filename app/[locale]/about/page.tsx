@@ -125,4 +125,27 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           <div className="grid gap-4">
             {page.metrics.map(([value, label]) => (
               <div key={label} className="rounded-lg border border-energy-500/25 bg-energy-500/10 p-6">
-   
+                   <p className="text-3xl font-bold text-white">{value}</p>
+                <p className="mt-2 text-sm leading-6 text-steel">{label}</p>
+              </div>
+            ))}
+            {page.values.map((value) => (
+              <div key={value} className="premium-card rounded-lg p-6 text-lg font-semibold text-white">
+                {value}
+              </div>
+            ))}
+            <div className="mt-2 grid gap-3">
+              <Link href={page.casestudiesHref} className="rounded-md bg-energy-500 px-4 py-3 text-center text-sm font-bold text-navy-950 shadow-glow hover:bg-white">
+                {page.casestudiesLabel}
+              </Link>
+              <a href={linkedinUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-md border border-white/15 bg-white/[0.05] px-4 py-3 text-sm font-semibold text-white hover:border-energy-500 hover:text-energy-500">
+                {page.linkedinLabel}
+              </a>
+            </div>
+          </div>
+        </Container>
+      </section>
+      <CtaSection locale={locale} />
+    </>
+  );
+}
