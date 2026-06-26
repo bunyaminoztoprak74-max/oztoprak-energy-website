@@ -27,6 +27,9 @@ export function middleware(request: NextRequest) {
     "/en/iletisim": "/en/contact",
     "/tr/contact": "/tr/iletisim"
   };
+  if (pathname === "/cardbook-ai") {
+    return NextResponse.rewrite(new URL("/cardbook-ai/index.html", request.url));
+  }
   const target = redirects[pathname];
 
   if (target) {
