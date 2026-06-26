@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CardBook AI - Business Card Scanner & Manager</title>
+  <meta name="description" content="CardBook AI scans business cards, extracts contact details with AI-powered OCR, and helps professionals manage their network in one simple Android app." />
+  <link rel="canonical" href="https://oztoprakenerji.com/cardbook-ai" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="CardBook AI" />
+  <meta property="og:description" content="Business Card Scanner & Manager with OCR, organization, export, and optional AI features." />
+  <meta property="og:url" content="https://oztoprakenerji.com/cardbook-ai" />
+  <meta property="og:image" content="https://oztoprakenerji.com/cardbook-ai/cardbook-ai-logo.png" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0d0f14;
+      --surface: #181c24;
+      --card: #20242e;
+      --line: rgba(255,255,255,.1);
+      --gold: #d4af37;
+      --gold-2: #f2c95b;
+      --blue: #2f80ff;
+      --blue-soft: rgba(47,128,255,.15);
+      --text: #eef2f7;
+      --muted: #a8b0bf;
+      --dim: #778092;
+      --radius: 18px;
+      --max: 1120px;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background:
+        radial-gradient(circle at 75% 8%, rgba(212,175,55,.18), transparent 30%),
+        radial-gradient(circle at 15% 12%, rgba(47,128,255,.16), transparent 30%),
+        var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    header { border-bottom: 1px solid var(--line); background: rgba(13,15,20,.78); backdrop-filter: blur(18px); position: sticky; top: 0; z-index: 10; }
+    .nav { max-width: var(--max); margin: 0 auto; padding: 16px 22px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
+    .brand img { width: 42px; height: 42px; border-radius: 11px; box-shadow: 0 12px 28px rgba(0,0,0,.35); }
+    .brand-title { color: var(--text); font-size: 16px; font-weight: 800; line-height: 1.15; }
+    .brand-sub { color: var(--muted); font-size: 12px; line-height: 1.2; }
+    .nav-links { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+    .nav-link, .ghost-btn, .primary-btn, .store-btn { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; font-size: 14px; font-weight: 800; }
+    .nav-link { color: var(--muted); padding: 0 10px; }
+    .nav-link:hover { color: var(--text); }
+    .primary-btn { background: linear-gradient(135deg, var(--gold), var(--gold-2)); color: #111318; padding: 0 18px; box-shadow: 0 14px 34px rgba(212,175,55,.23); }
+    .ghost-btn { border: 1px solid var(--line); color: var(--text); padding: 0 18px; background: rgba(255,255,255,.04); }
+    .store-btn { border: 1px solid rgba(212,175,55,.38); color: var(--gold-2); padding: 0 18px; background: rgba(212,175,55,.1); }
+    main { overflow: hidden; }
+    .hero { max-width: var(--max); margin: 0 auto; padding: 76px 22px 54px; display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(320px, .92fr); gap: 52px; align-items: center; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; color: var(--gold-2); border: 1px solid rgba(212,175,55,.32); background: rgba(212,175,55,.09); border-radius: 999px; padding: 6px 12px; font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: .06em; }
+    h1 { margin-top: 22px; color: var(--text); font-size: clamp(44px, 8vw, 82px); line-height: .95; font-weight: 950; }
+    .subtitle { margin-top: 14px; color: var(--gold-2); font-size: clamp(18px, 3vw, 25px); font-weight: 800; }
+    .hero-copy { margin-top: 20px; max-width: 650px; color: var(--muted); font-size: clamp(17px, 2vw, 21px); line-height: 1.55; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .privacy-note { margin-top: 24px; color: var(--muted); border-left: 3px solid var(--gold); padding-left: 14px; max-width: 690px; font-size: 14px; }
+    .visual { position: relative; min-height: 500px; display: grid; place-items: center; }
+    .phone { width: min(335px, 88vw); aspect-ratio: 9 / 18.5; border-radius: 42px; border: 1px solid rgba(255,255,255,.14); background: linear-gradient(180deg, #11151d, #080a0f); box-shadow: 0 36px 90px rgba(0,0,0,.55); padding: 18px; position: relative; }
+    .phone::before { content: ""; position: absolute; top: 12px; left: 50%; width: 92px; height: 18px; transform: translateX(-50%); border-radius: 999px; background: #05060a; }
+    .screen { height: 100%; border-radius: 30px; border: 1px solid rgba(255,255,255,.08); background: linear-gradient(180deg, #141924, #090b10); padding: 40px 18px 18px; overflow: hidden; }
+    .app-icon { width: 108px; height: 108px; border-radius: 24px; display: block; margin: 0 auto 22px; box-shadow: 0 18px 42px rgba(0,0,0,.42); }
+    .scan-card { border-radius: 18px; background: #f3eee2; color: #151515; padding: 18px; transform: rotate(-2deg); box-shadow: 0 18px 34px rgba(0,0,0,.32); }
+    .scan-card strong { display: block; font-size: 18px; line-height: 1.2; }
+    .scan-card span { display: block; color: #585247; font-size: 12px; margin-top: 4px; }
+    .scan-lines { margin-top: 16px; display: grid; gap: 8px; }
+    .scan-lines i { display: block; height: 8px; border-radius: 99px; background: linear-gradient(90deg, var(--gold), rgba(212,175,55,.24)); }
+    .floating-card { position: absolute; right: 6px; bottom: 62px; width: 210px; border-radius: 18px; border: 1px solid rgba(47,128,255,.35); background: rgba(12,19,34,.88); box-shadow: 0 22px 60px rgba(0,0,0,.45); padding: 16px; }
+    .floating-card b { color: var(--blue); font-size: 13px; }
+    .floating-card p { color: var(--muted); font-size: 13px; margin-top: 6px; }
+    section { max-width: var(--max); margin: 0 auto; padding: 54px 22px; }
+    .section-head { max-width: 720px; margin-bottom: 24px; }
+    .section-kicker { color: var(--gold-2); font-size: 12px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+    h2 { color: var(--text); font-size: clamp(28px, 4vw, 42px); line-height: 1.12; margin-top: 8px; }
+    .section-head p { color: var(--muted); margin-top: 12px; font-size: 17px; }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .feature { border: 1px solid var(--line); background: rgba(24,28,36,.84); border-radius: var(--radius); padding: 22px; min-height: 190px; }
+    .feature-icon { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; background: rgba(212,175,55,.12); color: var(--gold-2); font-weight: 950; margin-bottom: 18px; }
+    .feature h3 { font-size: 18px; color: var(--text); margin-bottom: 9px; }
+    .feature p { color: var(--muted); font-size: 14.5px; }
+    .privacy-panel { border: 1px solid rgba(52,211,153,.24); border-radius: 22px; background: linear-gradient(135deg, rgba(52,211,153,.11), rgba(47,128,255,.08)); padding: 28px; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; }
+    .privacy-panel h2 { margin: 0; }
+    .privacy-panel p { color: var(--text); margin-top: 12px; max-width: 780px; }
+    footer { border-top: 1px solid var(--line); padding: 30px 22px; text-align: center; color: var(--dim); font-size: 13px; }
+    footer a { color: var(--muted); }
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; padding-top: 54px; gap: 34px; }
+      .visual { min-height: 420px; }
+      .grid { grid-template-columns: 1fr; }
+      .privacy-panel { grid-template-columns: 1fr; }
+      .nav { align-items: flex-start; flex-direction: column; }
+      .nav-links { justify-content: flex-start; }
+    }
+    @media (max-width: 520px) {
+      .hero { padding-left: 18px; padding-right: 18px; }
+      section { padding-left: 18px; padding-right: 18px; }
+      .nav-link { padding-left: 0; }
+      .primary-btn, .ghost-btn, .store-btn { width: 100%; }
+      .actions { width: 100%; }
+      .phone { width: min(300px, 92vw); }
+      .floating-card { right: 0; width: 185px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav" aria-label="CardBook AI navigation">
+      <a class="brand" href="/cardbook-ai" aria-label="CardBook AI home">
+        <img src="/cardbook-ai/cardbook-ai-logo.png" alt="CardBook AI app icon" />
+        <span><span class="brand-title">CardBook AI</span><span class="brand-sub">Business Card Scanner & Manager</span></span>
+      </a>
+      <div class="nav-links">
+        <a class="nav-link" href="#features">Features</a>
+        <a class="nav-link" href="#privacy">Privacy</a>
+        <a class="ghost-btn" href="/cardbook-ai/privacy-policy">Privacy Policy</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <div class="eyebrow">Google Play Ready</div>
+        <h1 id="hero-title">CardBook AI</h1>
+        <p class="subtitle">Business Card Scanner & Manager</p>
+        <p class="hero-copy">Scan business cards, extract contact details with AI-powered OCR, and manage your professional network in one simple app.</p>
+        <div class="actions">
+          <span class="store-btn">Coming soon on Google Play</span>
+          <a class="primary-btn" href="/cardbook-ai/privacy-policy">Privacy Policy</a>
+          <a class="ghost-btn" href="mailto:info@oztoprakenerji.com">Contact</a>
+        </div>
+        <p class="privacy-note">Business card photos are processed locally for OCR. Optional AI features are disabled by default and require user consent and the user's own API key.</p>
+      </div>
+
+      <div class="visual" aria-label="CardBook AI product preview">
+        <div class="phone">
+          <div class="screen">
+            <img class="app-icon" src="/cardbook-ai/cardbook-ai-logo.png" alt="CardBook AI logo" />
+            <div class="scan-card">
+              <strong>John Smith</strong>
+              <span>CEO, TechCorp Solutions</span>
+              <div class="scan-lines"><i></i><i style="width:82%"></i><i style="width:56%"></i></div>
+            </div>
+          </div>
+        </div>
+        <div class="floating-card"><b>AI OCR</b><p>Extract names, emails, phone numbers, companies, titles and websites from business cards.</p></div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="section-head">
+        <div class="section-kicker">What It Does</div>
+        <h2>Built for professionals who meet people often.</h2>
+        <p>CardBook AI turns paper cards into searchable digital contacts, then keeps them organized for follow-up, export, and sharing.</p>
+      </div>
+      <div class="grid">
+        <article class="feature"><div class="feature-icon">01</div><h3>Scan Business Cards</h3><p>Capture a business card with the camera or choose an image from the gallery, then review the result before saving.</p></article>
+        <article class="feature"><div class="feature-icon">02</div><h3>Smart OCR</h3><p>Use on-device text recognition to extract names, emails, phone numbers, companies, titles, websites and addresses.</p></article>
+        <article class="feature"><div class="feature-icon">03</div><h3>Organize Contacts</h3><p>Search, tag, favorite and edit saved business cards so your professional network stays easy to manage.</p></article>
+        <article class="feature"><div class="feature-icon">04</div><h3>Export CSV / Excel / vCard</h3><p>Export your contacts when you need them for spreadsheets, CRM workflows, backups or standard vCard sharing.</p></article>
+        <article class="feature"><div class="feature-icon">05</div><h3>Optional AI Features</h3><p>Enable AI only when you choose. Optional AI requires consent and your own API key for supported providers.</p></article>
+        <article class="feature"><div class="feature-icon">06</div><h3>Privacy First</h3><p>Saved cards are local by default, photos are processed locally for OCR, and there are no ads or tracking SDKs.</p></article>
+      </div>
+    </section>
+
+    <section id="privacy">
+      <div class="privacy-panel">
+        <div>
+          <div class="section-kicker">Privacy First</div>
+          <h2>Your business card data stays under your control.</h2>
+          <p>Business card photos are processed locally for OCR. Optional AI features are disabled by default and require user consent and the user's own API key.</p>
+        </div>
+        <a class="primary-btn" href="/cardbook-ai/privacy-policy">Read Privacy Policy</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>2026 CardBook AI. <a href="/cardbook-ai/privacy-policy">Privacy Policy</a> - <a href="mailto:info@oztoprakenerji.com">Contact</a></p>
+  </footer>
+</body>
+</html>
