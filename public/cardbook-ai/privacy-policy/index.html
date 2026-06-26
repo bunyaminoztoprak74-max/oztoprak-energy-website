@@ -3,652 +3,208 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- SEO -->
-  <title>Privacy Policy – CardBook AI</title>
-  <meta name="description" content="CardBook AI Privacy Policy. Learn how we handle your data, camera permissions, OCR processing, subscriptions, and your rights under GDPR." />
+  <title>Privacy Policy - CardBook AI</title>
+  <meta name="description" content="CardBook AI Privacy Policy. Learn how business card data is stored locally, how optional AI features work, and how Google Play Billing is used." />
   <link rel="canonical" href="https://oztoprakenerji.com/cardbook-ai/privacy-policy" />
   <meta name="robots" content="index, follow" />
-
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Privacy Policy – CardBook AI" />
-  <meta property="og:description" content="CardBook AI Privacy Policy. Your data stays on your device. No selling, no tracking." />
+  <meta property="og:title" content="Privacy Policy - CardBook AI" />
+  <meta property="og:description" content="CardBook AI stores saved cards locally by default. Optional AI features require consent and your own API key." />
   <meta property="og:url" content="https://oztoprakenerji.com/cardbook-ai/privacy-policy" />
-
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg: #0f1117;
-      --surface: #181c26;
-      --border: rgba(255,255,255,0.08);
-      --accent: #4f8ef7;
-      --accent-soft: rgba(79,142,247,0.12);
-      --text: #e2e8f0;
-      --muted: #8b95a8;
-      --heading: #f8fafc;
-      --green: #34d399;
-      --green-soft: rgba(52,211,153,0.10);
-      --radius: 12px;
-      --max-w: 780px;
-    }
-
+    :root { --bg:#0f1117; --surface:#181c26; --border:rgba(255,255,255,.08); --accent:#4f8ef7; --accent-soft:rgba(79,142,247,.12); --text:#e2e8f0; --muted:#8b95a8; --heading:#f8fafc; --green:#34d399; --green-soft:rgba(52,211,153,.10); --radius:12px; --max-w:780px; }
     html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      font-size: 16px;
-      line-height: 1.75;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* ── Header ─────────────────────────────── */
-    header {
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-      padding: 18px 24px;
-    }
-    .header-inner {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .logo-mark {
-      width: 36px;
-      height: 36px;
-      background: var(--accent);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    .logo-mark svg { width: 20px; height: 20px; fill: #fff; }
-    .logo-text { font-size: 17px; font-weight: 700; color: var(--heading); }
-    .logo-sub { font-size: 13px; color: var(--muted); }
-
-    /* ── Hero ────────────────────────────────── */
-    .hero {
-      background: linear-gradient(160deg, rgba(79,142,247,0.06) 0%, transparent 60%);
-      border-bottom: 1px solid var(--border);
-      padding: 56px 24px 40px;
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: clamp(26px, 5vw, 36px);
-      font-weight: 800;
-      color: var(--heading);
-      letter-spacing: -0.5px;
-      line-height: 1.2;
-    }
-    .hero p {
-      margin-top: 12px;
-      color: var(--muted);
-      font-size: 15px;
-    }
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: var(--green-soft);
-      border: 1px solid rgba(52,211,153,0.25);
-      color: var(--green);
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      padding: 4px 12px;
-      border-radius: 999px;
-      margin-bottom: 20px;
-      text-transform: uppercase;
-    }
-    .badge svg { width: 13px; height: 13px; fill: currentColor; }
-
-    /* ── Layout ──────────────────────────────── */
-    main {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 48px 24px 80px;
-    }
-
-    /* ── Sections ────────────────────────────── */
-    .section {
-      margin-bottom: 48px;
-    }
-    .section-number {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 8px;
-    }
-    h2 {
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--heading);
-      margin-bottom: 16px;
-      line-height: 1.3;
-    }
-    p { color: var(--text); margin-bottom: 14px; font-size: 15px; }
-    p:last-child { margin-bottom: 0; }
-
-    /* ── Permission cards ────────────────────── */
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 12px;
-      margin-top: 16px;
-    }
-    .perm-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 18px 20px;
-    }
-    .perm-card-header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 8px;
-    }
-    .perm-icon {
-      width: 32px;
-      height: 32px;
-      border-radius: 8px;
-      background: var(--accent-soft);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    .perm-icon svg { width: 16px; height: 16px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-    .perm-name {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--heading);
-    }
-    .perm-desc { font-size: 13.5px; color: var(--muted); line-height: 1.6; }
-
-    /* ── Info box ────────────────────────────── */
-    .info-box {
-      background: var(--accent-soft);
-      border: 1px solid rgba(79,142,247,0.2);
-      border-radius: var(--radius);
-      padding: 18px 20px;
-      margin-top: 16px;
-    }
-    .info-box p { color: var(--text); font-size: 14.5px; margin: 0; }
-    .info-box strong { color: var(--heading); }
-
-    .notice-box {
-      background: var(--green-soft);
-      border: 1px solid rgba(52,211,153,0.2);
-      border-radius: var(--radius);
-      padding: 18px 20px;
-      margin-top: 16px;
-    }
-    .notice-box p { color: var(--text); font-size: 14.5px; margin: 0; }
-    .notice-box strong { color: var(--green); }
-
-    /* ── List ────────────────────────────────── */
-    ul.policy-list {
-      list-style: none;
-      margin-top: 12px;
-    }
-    ul.policy-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 14.5px;
-      color: var(--text);
-      padding: 7px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    ul.policy-list li:last-child { border-bottom: none; }
-    ul.policy-list li::before {
-      content: "";
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--accent);
-      flex-shrink: 0;
-      margin-top: 8px;
-    }
-
-    /* ── Contact card ────────────────────────── */
-    .contact-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 24px;
-      margin-top: 16px;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-    .contact-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
-      background: var(--accent-soft);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    .contact-icon svg { width: 20px; height: 20px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-    .contact-label { font-size: 12px; color: var(--muted); margin-bottom: 4px; }
-    .contact-value { font-size: 15px; font-weight: 600; color: var(--heading); }
-    .contact-value a { color: var(--accent); text-decoration: none; }
-    .contact-value a:hover { text-decoration: underline; }
-
-    /* ── Divider ─────────────────────────────── */
-    hr {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 40px 0;
-    }
-
-    /* ── Footer ──────────────────────────────── */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 28px 24px;
-      text-align: center;
-    }
-    footer p { color: var(--muted); font-size: 13px; margin: 0; }
-    footer a { color: var(--accent); text-decoration: none; }
-    footer a:hover { text-decoration: underline; }
-
-    /* ── TOC ─────────────────────────────────── */
-    .toc {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 20px 24px;
-      margin-bottom: 48px;
-    }
-    .toc-title { font-size: 13px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 12px; }
-    .toc ol { padding-left: 20px; }
-    .toc ol li { font-size: 14px; padding: 3px 0; }
-    .toc ol li a { color: var(--text); text-decoration: none; }
-    .toc ol li a:hover { color: var(--accent); }
-
-    @media (max-width: 600px) {
-      .card-grid { grid-template-columns: 1fr; }
-      .contact-card { flex-direction: column; align-items: flex-start; }
-    }
+    body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; font-size: 16px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+    header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 18px 24px; }
+    .header-inner { max-width: var(--max-w); margin: 0 auto; display:flex; align-items:center; gap:12px; }
+    .logo-mark { width:36px; height:36px; background:var(--accent); border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .logo-mark svg { width:20px; height:20px; fill:#fff; }
+    .logo-text { font-size:17px; font-weight:700; color:var(--heading); }
+    .logo-sub { font-size:13px; color:var(--muted); }
+    .hero { background: linear-gradient(160deg, rgba(79,142,247,.06) 0%, transparent 60%); border-bottom:1px solid var(--border); padding:56px 24px 40px; text-align:center; }
+    .hero h1 { font-size: clamp(26px, 5vw, 36px); font-weight:800; color:var(--heading); line-height:1.2; }
+    .hero p { margin-top:12px; color:var(--muted); font-size:15px; }
+    .badge { display:inline-flex; align-items:center; gap:6px; background:var(--green-soft); border:1px solid rgba(52,211,153,.25); color:var(--green); font-size:12px; font-weight:600; letter-spacing:.04em; padding:4px 12px; border-radius:999px; margin-bottom:20px; text-transform:uppercase; }
+    main { max-width:var(--max-w); margin:0 auto; padding:48px 24px 80px; }
+    .section { margin-bottom:48px; }
+    .section-number { display:inline-block; font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--accent); margin-bottom:8px; }
+    h2 { font-size:20px; font-weight:700; color:var(--heading); margin-bottom:16px; line-height:1.3; }
+    p { color:var(--text); margin-bottom:14px; font-size:15px; }
+    a { color:var(--accent); text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    hr { border:none; border-top:1px solid var(--border); margin:40px 0; }
+    .toc { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:20px 24px; margin-bottom:48px; }
+    .toc-title { font-size:13px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; margin-bottom:12px; }
+    .toc ol { padding-left:20px; }
+    .toc li { font-size:14px; padding:3px 0; }
+    .toc a { color:var(--text); }
+    .notice-box { background:var(--green-soft); border:1px solid rgba(52,211,153,.2); border-radius:var(--radius); padding:18px 20px; margin-top:16px; }
+    .info-box { background:var(--accent-soft); border:1px solid rgba(79,142,247,.2); border-radius:var(--radius); padding:18px 20px; margin-top:16px; }
+    ul.policy-list { list-style:none; margin-top:12px; }
+    ul.policy-list li { display:flex; align-items:flex-start; gap:10px; font-size:14.5px; color:var(--text); padding:7px 0; border-bottom:1px solid var(--border); }
+    ul.policy-list li:last-child { border-bottom:none; }
+    ul.policy-list li::before { content:""; width:6px; height:6px; border-radius:50%; background:var(--accent); flex-shrink:0; margin-top:8px; }
+    .card-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:12px; margin-top:16px; }
+    .perm-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:18px 20px; }
+    .perm-name { font-size:14px; font-weight:700; color:var(--heading); margin-bottom:8px; }
+    .perm-desc { font-size:13.5px; color:var(--muted); line-height:1.6; }
+    .contact-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:24px; margin-top:16px; }
+    .contact-label { font-size:12px; color:var(--muted); margin-bottom:4px; }
+    .contact-value { font-size:15px; font-weight:600; color:var(--heading); }
+    footer { border-top:1px solid var(--border); padding:28px 24px; text-align:center; }
+    footer p { color:var(--muted); font-size:13px; margin:0; }
   </style>
 </head>
 <body>
-
 <header>
   <div class="header-inner">
-    <div class="logo-mark">
-      <!-- Business card icon -->
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10" style="stroke:#fff;stroke-width:1.5;fill:none"/><line x1="6" y1="14" x2="12" y2="14" style="stroke:#fff;stroke-width:1.5;fill:none"/></svg>
-    </div>
-    <div>
-      <div class="logo-text">CardBook AI</div>
-      <div class="logo-sub">Business Card Scanner & Manager</div>
-    </div>
+    <div class="logo-mark"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10" style="stroke:#fff;stroke-width:1.5;fill:none"/><line x1="6" y1="14" x2="12" y2="14" style="stroke:#fff;stroke-width:1.5;fill:none"/></svg></div>
+    <div><div class="logo-text">CardBook AI</div><div class="logo-sub">Business Card Scanner & Manager</div></div>
   </div>
 </header>
-
 <div class="hero">
-  <div class="badge">
-    <svg viewBox="0 0 16 16"><path d="M8 1l1.5 3 3.5.5-2.5 2.5.5 3.5L8 9l-3 1.5.5-3.5L3 4.5l3.5-.5z"/></svg>
-    GDPR Compliant · Google Play Ready
-  </div>
+  <div class="badge">Google Play Ready</div>
   <h1>Privacy Policy</h1>
-  <p>Last updated: <strong style="color:#e2e8f0">June 26, 2026</strong>&ensp;·&ensp;Effective date: June 26, 2026</p>
+  <p>Last updated: <strong style="color:#e2e8f0">June 26, 2026</strong> - Effective date: June 26, 2026</p>
 </div>
-
 <main>
-
-  <!-- Table of Contents -->
   <div class="toc">
     <div class="toc-title">Contents</div>
     <ol>
       <li><a href="#overview">Overview</a></li>
       <li><a href="#permissions">Device Permissions</a></li>
-      <li><a href="#ocr">OCR Processing (Google ML Kit)</a></li>
+      <li><a href="#ocr">OCR Processing</a></li>
+      <li><a href="#optional-ai">Optional AI Features</a></li>
       <li><a href="#storage">Local Data Storage</a></li>
-      <li><a href="#export">Data Export (CSV, Excel, vCard)</a></li>
-      <li><a href="#sharing">QR Code Sharing</a></li>
-      <li><a href="#billing">Subscriptions &amp; Billing</a></li>
+      <li><a href="#export">Export, Import, Backup, Sharing</a></li>
+      <li><a href="#billing">Google Play Billing</a></li>
       <li><a href="#third-parties">Third-Party Services</a></li>
-      <li><a href="#no-sale">We Do Not Sell Your Data</a></li>
-      <li><a href="#rights">Your Rights (GDPR)</a></li>
-      <li><a href="#children">Children's Privacy</a></li>
-      <li><a href="#retention">Data Retention</a></li>
-      <li><a href="#changes">Changes to This Policy</a></li>
+      <li><a href="#data-safety">Google Play Data Safety</a></li>
+      <li><a href="#deletion">Account and Data Deletion</a></li>
       <li><a href="#contact">Contact Us</a></li>
     </ol>
   </div>
 
-  <!-- 1. Overview -->
   <div class="section" id="overview">
     <span class="section-number">01</span>
     <h2>Overview</h2>
-    <p>CardBook AI is developed and operated by <strong>Bünyamin Öztoprak</strong>, Türkiye. This Privacy Policy explains how CardBook AI collects, uses, stores and protects information when you use the application.</p>
-    <p>We are committed to protecting your privacy. <strong>The vast majority of your data is stored locally on your device</strong> and never transmitted to our servers. We do not sell, rent, or share your personal data with third parties for advertising purposes.</p>
-    <div class="notice-box">
-      <p><strong>Short version:</strong> Your business card data and contacts stay on your device. We use Google ML Kit for on-device OCR. We use RevenueCat only to manage your subscription status. We never sell your data.</p>
-    </div>
+    <p>CardBook AI is developed and operated by Oztoprak Energy. This Privacy Policy explains how CardBook AI handles information when you use the Android application.</p>
+    <div class="notice-box"><p><strong>Short version:</strong> Saved business cards stay on your device by default. Optional AI features are disabled by default and only send OCR text or contact fields to the AI provider selected by the user after explicit consent and user API key entry. Business card photos/images are processed locally for OCR and are not uploaded by the app.</p></div>
   </div>
 
   <hr>
 
-  <!-- 2. Permissions -->
   <div class="section" id="permissions">
     <span class="section-number">02</span>
     <h2>Device Permissions We Request</h2>
-    <p>CardBook AI requests the following device permissions. Each permission is used only for the stated purpose and is never used to collect data beyond what is described here.</p>
-
     <div class="card-grid">
-
-      <div class="perm-card">
-        <div class="perm-card-header">
-          <div class="perm-icon">
-            <!-- Camera -->
-            <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-          </div>
-          <div class="perm-name">Camera</div>
-        </div>
-        <p class="perm-desc">Used to capture photos of business cards directly within the app. Images are processed on-device by Google ML Kit and are never uploaded to external servers.</p>
-      </div>
-
-      <div class="perm-card">
-        <div class="perm-card-header">
-          <div class="perm-icon">
-            <!-- Photo library -->
-            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          </div>
-          <div class="perm-name">Photo Library Access</div>
-        </div>
-        <p class="perm-desc">Used to import existing photos of business cards from your device gallery. Access is read-only. Selected images are processed locally and not stored on any server.</p>
-      </div>
-
-      <div class="perm-card">
-        <div class="perm-card-header">
-          <div class="perm-icon">
-            <!-- Storage / file -->
-            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-          </div>
-          <div class="perm-name">Storage (Android)</div>
-        </div>
-        <p class="perm-desc">Required on older Android versions to write exported CSV, Excel, and vCard files to your device's Downloads folder. We do not read any files outside the app's own directory.</p>
-      </div>
-
-    </div>
-
-    <div class="info-box" style="margin-top:20px">
-      <p><strong>Permission principle:</strong> We request permissions at the time you first use a feature that requires it, not at app launch. You can revoke any permission at any time through your device Settings → Apps → CardBook AI → Permissions.</p>
+      <div class="perm-card"><div class="perm-name">Camera</div><p class="perm-desc">Used when you choose to capture a business card photo. Images are processed on-device by Google ML Kit and are not uploaded by the app for OCR.</p></div>
+      <div class="perm-card"><div class="perm-name">Photo Library Access</div><p class="perm-desc">Used when you choose an existing business card image from your device gallery. Selected images are processed locally.</p></div>
+      <div class="perm-card"><div class="perm-name">Contacts</div><p class="perm-desc">Requested only when you explicitly choose to export a saved card to Android Contacts. CardBook AI does not read or upload your existing address book.</p></div>
     </div>
   </div>
 
   <hr>
 
-  <!-- 3. OCR -->
   <div class="section" id="ocr">
     <span class="section-number">03</span>
-    <h2>OCR Processing — Google ML Kit</h2>
-    <p>CardBook AI uses <strong>Google ML Kit Text Recognition</strong> to extract text from business card images. This processing is performed <strong>entirely on your device (on-device inference)</strong>. The business card image and the extracted text are not transmitted to Google's servers or to our servers during OCR processing.</p>
-
+    <h2>OCR Processing - Google ML Kit</h2>
+    <p>CardBook AI uses Google ML Kit Text Recognition to extract text from business card images. OCR processing is performed on-device. Business card photos/images are not uploaded by the app for OCR.</p>
     <ul class="policy-list">
-      <li>ML Kit's on-device model runs locally — no internet connection is required for OCR</li>
-      <li>Business card images used for OCR are not retained after text extraction unless you explicitly save the card</li>
-      <li>Google ML Kit may collect anonymous usage statistics about API usage. Refer to Google's Privacy Policy for details: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:var(--accent)">policies.google.com/privacy</a></li>
+      <li>Google ML Kit's on-device model runs locally for OCR.</li>
+      <li>Business card photos/images are not sent to OpenAI, Google Gemini, Anthropic/Claude, OpenRouter, Google servers, or CardBook AI servers for OCR.</li>
+      <li>OCR text may be sent to a selected external AI provider only if optional AI is enabled by the user as described below.</li>
     </ul>
   </div>
 
   <hr>
 
-  <!-- 4. Local Storage -->
-  <div class="section" id="storage">
+  <div class="section" id="optional-ai">
     <span class="section-number">04</span>
-    <h2>Local Database Storage</h2>
-    <p>All contact cards you save in CardBook AI are stored in a <strong>local database on your device</strong>. We use a secure local database (SQLite / Room) to store:</p>
-
-    <ul class="policy-list">
-      <li>Business card contact details (name, company, phone, email, address, website, notes)</li>
-      <li>Card images you choose to save</li>
-      <li>Tags, folders, and organizational metadata you create</li>
-      <li>Scan history and import records</li>
-    </ul>
-
-    <p>This data does not leave your device unless you explicitly use an export feature (see Section 5) or synchronization features (if enabled). We do not have access to your locally stored contacts. All locally stored data is protected by Android's built-in application sandbox and encrypted transport is used whenever data is transmitted.</p>
-
-    <div class="info-box">
-      <p><strong>Backup:</strong> If you have Android Auto Backup enabled in your device settings, your app data may be backed up to your Google Drive under your Google account. This is controlled by you and Google, not by CardBook AI. You can disable this in Android settings.</p>
-    </div>
+    <h2>Optional AI Features</h2>
+    <p>CardBook AI includes optional AI features for app functionality, such as improving OCR extraction or generating a contact summary. These AI features are disabled by default.</p>
+    <p>AI features only run if you explicitly enable AI consent in the app and enter your own API key. If enabled, OCR text and contact fields such as name, email address, phone number, address, company, title, website, notes, and tags may be sent directly to the external AI provider you select.</p>
+    <p>Supported optional AI providers are OpenAI, Google Gemini, Anthropic/Claude, and OpenRouter. CardBook AI does not send OCR text or contact fields to these providers unless AI consent is enabled and an API key is provided by you.</p>
   </div>
 
   <hr>
 
-  <!-- 5. Export -->
-  <div class="section" id="export">
+  <div class="section" id="storage">
     <span class="section-number">05</span>
-    <h2>Data Export — CSV, Excel &amp; vCard</h2>
-    <p>CardBook AI allows you to export your contact data in multiple formats for portability and backup. All exports are generated locally on your device and saved to your chosen storage location.</p>
-
-    <div class="card-grid">
-
-      <div class="perm-card">
-        <div class="perm-card-header">
-          <div class="perm-icon">
-            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-          </div>
-          <div class="perm-name">CSV Export</div>
-        </div>
-        <p class="perm-desc">Exports all contact fields to a comma-separated values file. Saved to your device's Downloads folder or a location you choose. Not transmitted anywhere.</p>
-      </div>
-
-      <div class="perm-card">
-        <div class="perm-card-header">
-          <div class="perm-icon">
-            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M3 15h18M9 3v18"/></svg>
-          </div>
-          <div class="perm-name">Excel Export (.xlsx)</div>
-        </div>
-        <p class="perm-desc">Exports your contacts to Microsoft Excel format with formatted columns. Generated locally on your device. Not uploaded to any server.</p>
-      </div>
-
-      <div class="perm-card">
-        <div class="perm-card-header">
-          <div class="perm-icon">
-            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          </div>
-          <div class="perm-name">vCard Import / Export</div>
-        </div>
-        <p class="perm-desc">Import .vcf contact files from your device or export individual cards as .vcf files to share or back up contacts. All processing is local. Import reads only the file you select.</p>
-      </div>
-
-    </div>
-
-    <p style="margin-top:16px">You are solely responsible for the exported files. Once exported, the files are under your control and subject to the privacy settings of the platform or app you use to share them.</p>
+    <h2>Local Data Storage</h2>
+    <p>Saved contact cards are stored locally on your Android device using AsyncStorage/local app storage. This includes business card contact details, card images you choose to save, tags, notes, favorites, and local timestamps.</p>
+    <p>Saved data remains local by default. Optional AI requests may transmit OCR text or contact fields only after explicit user consent and user API key entry.</p>
   </div>
 
   <hr>
 
-  <!-- 6. QR Sharing -->
-  <div class="section" id="sharing">
+  <div class="section" id="export">
     <span class="section-number">06</span>
-    <h2>QR Code Sharing</h2>
-    <p>CardBook AI can generate a QR code containing your contact information (vCard data) for sharing with others. The QR code is generated <strong>locally on your device</strong>. No data is sent to external servers to generate the QR code.</p>
-
-    <ul class="policy-list">
-      <li>QR codes encode contact data in standard vCard format</li>
-      <li>The person scanning your QR code will receive the contact fields you chose to include</li>
-      <li>You control which fields are included in each QR code before sharing</li>
-      <li>QR codes can be saved as images or shared directly via your device's share sheet</li>
-    </ul>
+    <h2>Export, Import, Backup, And Sharing</h2>
+    <p>CSV export, Excel export, vCard import/export, backup/restore, QR sharing, and Android share-sheet actions are user-initiated. Files are generated, selected, imported, exported, or shared locally under your control. CardBook AI does not upload files or documents to its own server.</p>
   </div>
 
   <hr>
 
-  <!-- 7. Billing -->
   <div class="section" id="billing">
     <span class="section-number">07</span>
-    <h2>Subscriptions &amp; Billing</h2>
-
-    <p>CardBook AI offers optional premium subscriptions processed through <strong>Google Play Billing</strong> and managed via <strong>RevenueCat</strong>.</p>
-
-    <div class="card-grid">
-
-      <div class="perm-card">
-        <div class="perm-card-header">
-          <div class="perm-icon">
-            <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-          </div>
-          <div class="perm-name">Google Play Billing</div>
-        </div>
-        <p class="perm-desc">All payments are processed by Google Play. CardBook AI never sees or stores your payment card details. Billing is handled entirely by Google. Google's Privacy Policy governs payment data.</p>
-      </div>
-
-      <div class="perm-card">
-        <div class="perm-card-header">
-          <div class="perm-icon">
-            <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-          </div>
-          <div class="perm-name">RevenueCat</div>
-        </div>
-        <p class="perm-desc">We use RevenueCat to manage and verify subscription status across devices. RevenueCat receives a pseudonymous user ID and subscription status — not your name, email, or payment details. See: <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener" style="color:var(--accent)">revenuecat.com/privacy</a></p>
-      </div>
-
-    </div>
-
-    <p style="margin-top:16px">Subscription data shared with RevenueCat is limited to: a randomly generated user identifier, the app bundle ID, subscription product ID, and purchase validation token. <strong>No payment card data or personal identity information is shared with RevenueCat.</strong></p>
-
-    <p>To cancel a subscription, go to Google Play → Subscriptions → CardBook AI → Cancel. Cancellation takes effect at the end of the current billing period.</p>
+    <h2>Google Play Billing</h2>
+    <p>CardBook AI offers an optional premium purchase through Google Play Billing. The app uses Google Play Billing / expo-iap and does not use a third-party purchase management SDK.</p>
+    <p>Payments are handled by Google Play. CardBook AI does not receive or store payment card data.</p>
   </div>
 
   <hr>
 
-  <!-- 8. Third Parties -->
   <div class="section" id="third-parties">
     <span class="section-number">08</span>
     <h2>Third-Party Services</h2>
-    <p>The following third-party services are integrated into CardBook AI. Each processes only the minimum data necessary for its function:</p>
-
     <ul class="policy-list">
-      <li><strong>Google ML Kit (Text Recognition)</strong> — on-device OCR; no data transmitted for inference. Subject to <a href="https://developers.google.com/ml-kit/terms" target="_blank" rel="noopener" style="color:var(--accent)">Google ML Kit Terms</a></li>
-      <li><strong>Google Play Billing</strong> — payment processing. Subject to <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:var(--accent)">Google Privacy Policy</a></li>
-      <li><strong>RevenueCat</strong> — subscription management. Receives pseudonymous ID and subscription status only. Subject to <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener" style="color:var(--accent)">RevenueCat Privacy Policy</a></li>
+      <li>Google ML Kit Text Recognition - on-device OCR.</li>
+      <li>Google Play Billing - payment processing for optional CardBook AI Pro Lifetime purchase.</li>
+      <li>OpenAI, Google Gemini, Anthropic/Claude, and OpenRouter - optional AI providers selected by the user; OCR text and contact fields may be sent only after explicit consent and user API key entry.</li>
     </ul>
-
-    <p>We do not use advertising SDKs, social media SDKs, or behavioral analytics tools within CardBook AI.</p>
+    <p>CardBook AI does not use advertising SDKs, social media SDKs, behavioral analytics tools, Crashlytics, Sentry, Bugsnag, or diagnostics SDKs.</p>
   </div>
 
   <hr>
 
-  <!-- 9. No Sale -->
-  <div class="section" id="no-sale">
+  <div class="section" id="data-safety">
     <span class="section-number">09</span>
-    <h2>We Do Not Sell Your Data</h2>
-    <div class="notice-box">
-      <p><strong>We do not sell, rent, trade, or otherwise transfer your personal data or contact information to third parties for commercial or advertising purposes — ever.</strong> This applies to data you scan, import, manually enter, or export using CardBook AI.</p>
-    </div>
-    <p style="margin-top:16px">We have no advertising business model. Our revenue comes solely from optional premium subscriptions processed through Google Play. Your contacts and scanned card data have no commercial value to us beyond powering the features you use.</p>
+    <h2>Google Play Data Safety Alignment</h2>
+    <p>For Google Play Data Safety, optional AI features may require the following personal information types to be marked as collected and shared for app functionality, optional/user choice:</p>
+    <ul class="policy-list">
+      <li>Name</li>
+      <li>Email address</li>
+      <li>Phone number</li>
+      <li>Address</li>
+      <li>Other personal information, such as company, title, website, notes, tags, and OCR text</li>
+    </ul>
+    <p>Photos, files and documents, contacts, device IDs, app performance, financial info, location, app activity, and web browsing are not collected or shared by CardBook AI according to the current app behavior.</p>
   </div>
 
   <hr>
 
-  <!-- 10. Rights -->
-  <div class="section" id="rights">
+  <div class="section" id="deletion">
     <span class="section-number">10</span>
-    <h2>Your Rights (GDPR &amp; Data Subject Rights)</h2>
-    <p>If you are located in the European Economic Area (EEA), United Kingdom, or other jurisdictions with applicable data protection laws, you have the following rights:</p>
-
-    <ul class="policy-list">
-      <li><strong>Right of Access</strong> — You can view all data CardBook AI holds about you directly within the app at any time.</li>
-      <li><strong>Right to Rectification</strong> — You can edit any contact card or personal data stored in the app.</li>
-      <li><strong>Right to Erasure (Right to be Forgotten)</strong> — You can delete individual cards, groups, or all data from within the app. You can also uninstall the app to remove all locally stored data.</li>
-      <li><strong>Right to Data Portability</strong> — You can export all your data at any time via CSV, Excel, or vCard export.</li>
-      <li><strong>Right to Object / Withdraw Consent</strong> — You can revoke device permissions (camera, photo library) at any time through your device settings.</li>
-      <li><strong>Right to Lodge a Complaint</strong> — You have the right to lodge a complaint with your local data protection authority.</li>
-    </ul>
-
-    <h2 id="deletion" style="margin-top:28px">Account and Data Deletion</h2>
-    <p>To delete all your data from CardBook AI:</p>
-    <ul class="policy-list">
-      <li><strong>In-app deletion:</strong> Go to Settings → Privacy → Delete All Data. This permanently removes all cards, images, and settings from your device.</li>
-      <li><strong>Email request:</strong> Contact us at <a href="mailto:info@oztoprakenerji.com" style="color:var(--accent)">info@oztoprakenerji.com</a> with the subject line "Data Deletion Request". We will confirm deletion within 30 days.</li>
-      <li><strong>Subscription data:</strong> RevenueCat anonymized records are deleted upon request to RevenueCat or automatically after the applicable retention period per their policy.</li>
-    </ul>
+    <h2>Account And Data Deletion</h2>
+    <p>CardBook AI does not require user accounts. Users can delete individual saved business cards inside the app. Users can remove all local app data by uninstalling CardBook AI or by clearing app data from Android system settings.</p>
+    <p>Users can also contact <a href="mailto:info@oztoprakenerji.com">info@oztoprakenerji.com</a> for data deletion questions related to optional AI or support requests.</p>
   </div>
 
   <hr>
 
-  <!-- 11. Children -->
-  <div class="section" id="children">
-    <span class="section-number">11</span>
-    <h2>Children's Privacy</h2>
-    <p>CardBook AI is not directed at children under the age of 13 (or 16 in the EEA). We do not knowingly collect personal information from children. If you believe a child has used the app and provided personal data, please contact us at <a href="mailto:info@oztoprakenerji.com" style="color:var(--accent)">info@oztoprakenerji.com</a> and we will take appropriate steps to delete the data.</p>
-  </div>
-
-  <hr>
-
-  <!-- 12. Retention -->
-  <div class="section" id="retention">
-    <span class="section-number">12</span>
-    <h2>Data Retention</h2>
-    <p>Because most data is stored locally on your device, <strong>you control data retention entirely</strong>. Data is kept until you delete it within the app or uninstall the app.</p>
-    <ul class="policy-list">
-      <li>Local card data — retained until you delete it or uninstall the app</li>
-      <li>RevenueCat subscription records — retained for the period required by their policy, typically up to 3 years for tax and legal compliance, then deleted</li>
-      <li>Google Play purchase tokens — retained by Google per their standard retention policy</li>
-    </ul>
-  </div>
-
-  <hr>
-
-  <!-- 13. Changes -->
-  <div class="section" id="changes">
-    <span class="section-number">13</span>
-    <h2>Changes to This Policy</h2>
-    <p>We may update this Privacy Policy from time to time to reflect changes in the app, applicable laws, or third-party services. When we make material changes, we will:</p>
-    <ul class="policy-list">
-      <li>Update the "Last updated" date at the top of this page</li>
-      <li>Display an in-app notice or prompt on your next app launch</li>
-      <li>For significant changes, send a notification if we have a means to reach you</li>
-    </ul>
-    <p>Continued use of the app after the effective date of any update constitutes acceptance of the revised Privacy Policy.</p>
-  </div>
-
-  <hr>
-
-  <!-- 14. Contact -->
   <div class="section" id="contact">
-    <span class="section-number">14</span>
+    <span class="section-number">11</span>
     <h2>Contact Us</h2>
-    <p>If you have questions about this Privacy Policy, want to exercise a data right, or need to report a concern, please contact us:</p>
-
     <div class="contact-card">
-      <div class="contact-icon">
-        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-      </div>
-      <div>
-        <div class="contact-label">Privacy enquiries &amp; data deletion requests</div>
-        <div class="contact-value"><a href="mailto:info@oztoprakenerji.com">info@oztoprakenerji.com</a></div>
-      </div>
+      <div class="contact-label">Privacy enquiries and data deletion questions</div>
+      <div class="contact-value"><a href="mailto:info@oztoprakenerji.com">info@oztoprakenerji.com</a></div>
     </div>
-
-    <p style="margin-top:16px">We aim to respond to all privacy-related enquiries within <strong>5 business days</strong> and to complete data deletion requests within <strong>30 days</strong>.</p>
   </div>
-
 </main>
-
 <footer>
-  <p>© 2026 CardBook AI. All rights reserved.&ensp;·&ensp;<a href="/cardbook-ai/privacy-policy">Privacy Policy</a>&ensp;·&ensp;<a href="mailto:info@oztoprakenerji.com">Contact</a></p>
-  <p style="margin-top:6px">Last updated: June 26, 2026</p>
+  <p>2026 CardBook AI. All rights reserved. <a href="/cardbook-ai/privacy-policy">Privacy Policy</a> - <a href="mailto:info@oztoprakenerji.com">Contact</a></p>
 </footer>
-
 </body>
 </html>
