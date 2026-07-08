@@ -150,9 +150,9 @@ const content = {
     ]
   },
   tr: {
-    metaTitle: "Öztoprak Enerji Danışmanlık | Uluslararası EPC ve Yenilenebilir Enerji Danışmanı",
+    metaTitle: "HES, GES ve EPC Danışmanlık | Öztoprak Enerji — 28 Yıl Santral Deneyimi",
     metaDescription:
-      "Yatırımcılar, santral sahipleri ve uluslararası EPC ekipleri için HES, GES, devreye alma, şebeke uyumu ve yenilenebilir enerji teknik danışmanlığı.",
+      "HES teknik denetimi, GES danışmanlığı, EPC kontrolü ve işveren mühendisliği. 275+ MW yönetilen kapasite deneyimi. Türkiye ve uluslararası enerji projeleri için bağımsız teknik danışman.",
     heroKicker: "Bağımsız EPC ve yenilenebilir enerji teknik danışmanlığı",
     heroTitle: "28+ Yıllık Enerji Santrali İşletme ve EPC Deneyimi",
     heroText:

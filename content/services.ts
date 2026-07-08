@@ -159,10 +159,10 @@ export const services: Record<Locale, Service[]> = {
     },
     {
       slug: "solar-energy-consulting",
-      title: "Solar Energy Consulting",
+      title: "Solar Power Plant Consulting",
       eyebrow: "Solar PV performance, EPC quality and O&M recovery",
-      description: "Solar energy consulting for PV investors, owners and EPC teams requiring performance ratio analysis, technical audit support and lifecycle asset optimization.",
-      keywords: ["solar energy consulting", "solar plant technical audit", "solar performance ratio analysis", "renewable energy consultancy"],
+      description: "Solar power plant consulting for PV investors, owners and EPC teams — performance ratio analysis, EPC quality review, technical audit and lifecycle asset optimization.",
+      keywords: ["solar power plant consulting", "solar energy consulting", "solar plant technical audit", "solar performance ratio analysis", "renewable energy consultancy"],
       outcomes: ["Clear PR and loss diagnosis", "Improved EPC and O&M accountability", "Practical solar recovery action plan"],
       scope: ["Performance ratio analysis", "Inverter and string-level review", "EPC quality evidence assessment", "O&M response and cleaning routine review", "Solar technical due diligence"],
       faqs: sharedFaq.en
@@ -410,7 +410,7 @@ export const services: Record<Locale, Service[]> = {
       slug: "epc-teknik-danismanlik-hizmeti",
       title: "EPC Teknik Danışmanlık Hizmeti",
       eyebrow: "İşveren tarafı EPC risk, kalite ve teslim kontrolü",
-      description: "Tasarım, arayüzler, devreye alma ve teslim süreçlerinde bağımsız teknik kontrol ihtiyacı olan yenilenebilir enerji projeleri için EPC teknik danışmanlık hizmeti.",
+      description: "HES, GES ve yenilenebilir enerji projeleri için EPC teknik danışmanlık: tasarım inceleme, arayüz kontrolü, yüklenici denetimi, devreye alma hazırlığı ve teslim desteği.",
       keywords: ["EPC teknik danışmanlık", "işveren mühendisliği", "yenilenebilir enerji danışmanlığı", "santral devreye alma"],
       outcomes: ["Azaltılmış EPC teslim riski", "Daha güçlü arayüz ve yüklenici kontrolü", "Daha sağlam devreye alma ve teslim kanıtları"],
       scope: ["EPC kapsam ve arayüz incelemesi", "Teknik risk listesi", "Yüklenici doküman incelemesi", "Devreye alma hazırlık sorgulaması", "İşveren karar desteği"],
