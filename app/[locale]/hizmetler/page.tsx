@@ -13,8 +13,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     locale,
     path: "/hizmetler",
     alternatePath: "/services",
-    title: `${dict.nav.services} | ${dict.brand.legal}`,
-    description: dict.seo.siteDescription
+    title: `Enerji Danışmanlık Hizmetleri | HES, GES, EPC ve İşveren Mühendisliği`,
+    description: "HES, GES ve yenilenebilir enerji santralleri için EPC teknik danışmanlık, işveren mühendisliği, devreye alma, teknik denetim ve işletme bakım optimizasyon hizmetleri."
   });
 }
 

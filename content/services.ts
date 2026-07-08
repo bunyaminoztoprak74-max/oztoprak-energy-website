@@ -328,9 +328,9 @@ export const services: Record<Locale, Service[]> = {
     },
     {
       slug: "isveren-muhendisligi",
-      title: "İşveren Mühendisliği",
+      title: "İşveren Mühendisliği | HES ve GES Projelerinde Bağımsız Teknik Kontrol",
       eyebrow: "İşveren tarafı teknik kontrol",
-      description: "Bağımsız inceleme, saha gözlemleri ve karar desteği ile proje değerini koruyan işveren mühendisliği hizmetleri.",
+      description: "HES, GES ve yenilenebilir enerji projelerinde işveren mühendisliği: bağımsız EPC incelemesi, saha gözlemleri, yüklenici doküman kontrolü ve karar desteği. Proje değerini koruyun.",
       keywords: ["işveren mühendisliği", "EPC teknik danışmanlık", "enerji santrali danışmanlığı"],
       outcomes: ["Daha yüksek işveren görünürlüğü", "Azalan teknik belirsizlik", "Güçlü yüklenici uyumu"],
       scope: ["Teknik yönetişim", "Yüklenici doküman incelemesi", "Saha ilerleme gözlemleri", "Karar notları"],
