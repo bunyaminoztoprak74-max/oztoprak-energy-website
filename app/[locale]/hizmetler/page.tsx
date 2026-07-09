@@ -13,8 +13,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     locale,
     path: "/hizmetler",
     alternatePath: "/services",
-    title: `HES, GES ve EPC Teknik Danışmanlık Hizmetleri | Öztoprak Enerji`,
-    description: "Santral sahipleri ve EPC yüklenicileri için HES teknik denetimi, GES danışmanlığı, devreye alma, işveren mühendisliği ve teknik denetim. 28 yıl saha deneyimi — ücretsiz ilk değerlendirme talep edin."
+    title: `${dict.nav.services} | ${dict.brand.legal}`,
+    description: dict.seo.siteDescription
   });
 }
 
