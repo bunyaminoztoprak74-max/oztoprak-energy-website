@@ -51,19 +51,21 @@ export const blogPosts: Record<Locale, BlogPost[]> = {
       description: "How solar PR analysis should be interpreted with EPC evidence, O&M routines, inverter behavior and real field conditions.",
       category: "Solar",
       categorySlug: "solar",
-      date: "2026-05-03",
-      readingTime: "7 min",
-      toc: ["What PR can and cannot explain", "EPC evidence and inverter behavior", "Turning PR findings into action"],
+      date: "2026-07-10",
+      readingTime: "8 min",
+      toc: ["What PR can and cannot explain", "EPC evidence and inverter behavior", "Typical PR benchmarks by plant type", "Turning PR findings into action"],
       related: ["how-epc-delays-affect-power-plant-revenue", "power-plant-operational-readiness-checklist"],
       serviceLinks: ["solar-energy-consulting", "energy-audit", "epc-technical-advisory"],
       body: [
         { heading: "What PR can and cannot explain", content: "Performance ratio is a useful solar KPI, but it cannot explain asset performance alone. Irradiance quality, curtailment, temperature, soiling, inverter availability, string-level faults and metering accuracy must be reviewed before conclusions are drawn." },
         { heading: "EPC evidence and inverter behavior", content: "Solar underperformance often begins with a handover evidence gap. As-built records, commissioning tests, punch-list closure, inverter event logs and warranty boundaries should be reviewed together to separate delivery issues from operational degradation." },
+        { heading: "Typical PR benchmarks by plant type", content: "As a general reference point for well-executed utility-scale ground-mount plants, first-year PR in the 80-84% range is typical, with well-maintained assets holding 78%+ after degradation through year 10-15. Rooftop and distributed systems often run 2-5 points lower due to shading and mixed orientation. These figures are reference points only — they do not replace a site-specific EPC and O&M evidence review before drawing conclusions about a specific asset." },
         { heading: "Turning PR findings into action", content: "A good PR analysis creates a prioritized recovery plan. Actions may include monitoring corrections, cleaning logic, inverter troubleshooting, string inspections, O&M response improvements and EPC warranty follow-up." }
       ],
       faqs: [
         { question: "Is low PR always an EPC problem?", answer: "No. Low PR can result from resource variation, curtailment, soiling, equipment faults, poor O&M response or EPC quality issues. Evidence is needed before assigning responsibility." },
-        { question: "How often should PR be reviewed?", answer: "PR should be monitored continuously and formally reviewed when losses persist, after major faults, before acquisition, or when O&M performance is questioned." }
+        { question: "How often should PR be reviewed?", answer: "PR should be monitored continuously and formally reviewed when losses persist, after major faults, before acquisition, or when O&M performance is questioned." },
+        { question: "What is a good performance ratio for a solar power plant?", answer: "As a general benchmark, 80% or higher in year one is considered strong for a utility-scale ground-mount plant, with 75-78% still reasonable after a decade of degradation. Rooftop and distributed installations typically run several points lower. Always treat these as reference ranges rather than a pass/fail threshold — a proper solar power plant consulting review looks at irradiance data, EPC evidence and O&M logs together before drawing conclusions." }
       ]
     },
     {
