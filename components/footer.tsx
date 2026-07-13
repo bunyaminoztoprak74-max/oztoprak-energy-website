@@ -78,6 +78,13 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dict }) {
               <Link href={`/${locale}/about`} className="text-sm text-steel hover:text-energy-500">{dict.nav.about}</Link>
               <Link href={`/${locale}/projects`} className="text-sm text-steel hover:text-energy-500">{dict.nav.projects}</Link>
               <Link href={`/${locale}/blog`} className="text-sm text-steel hover:text-energy-500">{dict.nav.blog}</Link>
+              <Link href={`/${locale}/resources`} className="text-sm text-steel hover:text-energy-500">{locale === "en" ? "Free Resources" : "Ücretsiz Kaynaklar"}</Link>
+              <Link href={`/${locale}/free-consultation`} className="text-sm text-steel hover:text-energy-500">{locale === "en" ? "Free Consultation" : "Ücretsiz Danışmanlık"}</Link>
+              <Link href={`/${locale}/international`} className="text-sm text-steel hover:text-energy-500">{locale === "en" ? "International Investors" : "Uluslararası Yatırımcılar"}</Link>
+              <Link href={`/${locale}/hydrogen`} className="text-sm text-steel hover:text-energy-500">{locale === "en" ? "Green Hydrogen" : "Yeşil Hidrojen"}</Link>
+              <Link href={`/${locale}/battery-storage`} className="text-sm text-steel hover:text-energy-500">{locale === "en" ? "Battery Storage" : "Batarya Depolama"}</Link>
+              <Link href={`/${locale}/ai-energy`} className="text-sm text-steel hover:text-energy-500">{locale === "en" ? "AI & Energy" : "YZ ve Enerji"}</Link>
+              <Link href={`/${locale}/microgrids`} className="text-sm text-steel hover:text-energy-500">{locale === "en" ? "Microgrids" : "Mikro Şebekeler"}</Link>
               <Link href={locale === "en" ? "/en/reactive-penalty-analysis" : "/tr/reactive-penalty-analysis"} className="text-sm text-steel hover:text-energy-500">{locale === "en" ? "Reactive Penalty Analysis" : "Reaktif Ceza Analizi"}</Link>
               <Link href={locale === "en" ? "/en/industrial-savings-checklist" : "/tr/industrial-savings-checklist"} className="text-sm text-steel hover:text-energy-500">{locale === "en" ? "Savings Checklist" : "Tasarruf Kontrol Listesi"}</Link>
               <Link href={`/${locale}/privacy-policy`} className="text-sm text-steel hover:text-energy-500">{dict.footer.privacy}</Link>
@@ -90,6 +97,12 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dict }) {
             <div className="mt-5 grid gap-3">
               <Link href={contactHref} className="rounded-md bg-energy-500 px-4 py-3 text-center text-sm font-bold text-navy-950 shadow-glow hover:bg-white">
                 {dict.nav.consultation}
+              </Link>
+              <Link
+                href={`/${locale}/resources`}
+                className="rounded-md border border-white/15 bg-white/[0.04] px-4 py-3 text-center text-sm font-semibold text-white hover:border-energy-500 hover:text-energy-500"
+              >
+                {locale === "en" ? "Free Resources" : "Ücretsiz Kaynaklar"}
               </Link>
               <Link
                 href={locale === "en" ? "/en/industrial-bill-review" : "/tr/industrial-bill-review"}

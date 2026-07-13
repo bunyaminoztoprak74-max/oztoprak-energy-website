@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Linkedin, Mail, Share2 } from "lucide-react";
+import { Linkedin, Mail } from "lucide-react";
 import { Container } from "@/components/container";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { CtaSection } from "@/components/cta-section";
@@ -62,10 +62,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ local
           <p className="mt-6 max-w-3xl text-lg leading-8 text-steel">{post.description}</p>
           <div className="mt-7 flex flex-wrap gap-3 text-sm text-white/80">
             <span className="rounded-md border border-white/10 bg-white/[0.04] px-4 py-2">
-              {locale === "en" ? "Author: Oztoprak Energy engineering desk" : "Yazar: Oztoprak Enerji muhendislik masasi"}
+              {locale === "en" ? "Author: Bünyamin Öztoprak" : "Yazar: Bünyamin Öztoprak"}
             </span>
             <span className="rounded-md border border-white/10 bg-white/[0.04] px-4 py-2">
-              {locale === "en" ? "Reviewed for EPC and plant operations context" : "EPC ve santral isletme baglami icin incelendi"}
+              {locale === "en" ? "Electrical & Power Engineering · 28+ yr" : "Elektrik ve Güç Mühendisliği · 28+ yıl"}
             </span>
           </div>
         </Container>
@@ -93,18 +93,27 @@ export default async function BlogPostPage({ params }: { params: Promise<{ local
               </div>
             </div>
             <div className="mt-5 premium-card rounded-lg p-6">
-              <h2 className="font-semibold text-white">{locale === "en" ? "Author Profile" : "Yazar Profili"}</h2>
+              <h2 className="font-semibold text-white">{locale === "en" ? "Author" : "Yazar"}</h2>
+              <p className="mt-2 text-sm font-semibold text-energy-500">Bünyamin Öztoprak</p>
+              <p className="mt-1 text-xs text-steel/70">
+                {locale === "en"
+                  ? "Founder · Electrical & Power Engineering"
+                  : "Kurucu · Elektrik ve Güç Mühendisliği"}
+              </p>
               <p className="mt-3 text-sm leading-7 text-steel">
                 {locale === "en"
-                  ? "Prepared by the Oztoprak Energy engineering desk with a focus on plant operations, EPC delivery, commissioning evidence and owner-side technical decisions."
-                  : "Oztoprak Enerji muhendislik masasi tarafindan; santral isletme, EPC teslim, devreye alma kaniti ve isveren tarafi teknik kararlar odaginda hazirlanmistir."}
+                  ? "28+ years in hydropower, solar EPC, commissioning, grid compliance and technical due diligence across Turkish renewable energy projects."
+                  : "Türk yenilenebilir enerji projelerinde 28+ yıl HES, GES EPC, devreye alma, şebeke uyumu ve teknik durum tespiti deneyimi."}
               </p>
-              <div className="mt-5 flex gap-2">
-                <Link href={`mailto:${dict.contact.email}`} className="rounded-md border border-white/10 p-2 text-steel hover:border-energy-500 hover:text-energy-500">
-                  <Mail className="h-4 w-4" />
+              <div className="mt-4 flex gap-2">
+                <Link href={`/${locale}/about`} className="rounded-md border border-white/10 px-3 py-2 text-xs font-semibold text-steel hover:border-energy-500 hover:text-energy-500">
+                  {locale === "en" ? "Profile" : "Profil"}
                 </Link>
                 <Link href="https://www.linkedin.com/company/oztoprakenerji/" target="_blank" rel="noopener noreferrer" className="rounded-md border border-white/10 p-2 text-steel hover:border-energy-500 hover:text-energy-500">
                   <Linkedin className="h-4 w-4" />
+                </Link>
+                <Link href={`mailto:${dict.contact.email}`} className="rounded-md border border-white/10 p-2 text-steel hover:border-energy-500 hover:text-energy-500">
+                  <Mail className="h-4 w-4" />
                 </Link>
               </div>
             </div>
@@ -127,15 +136,16 @@ export default async function BlogPostPage({ params }: { params: Promise<{ local
               </div>
             ) : (
               <div className="mt-5 rounded-lg border border-energy-500/30 bg-energy-500/10 p-6">
-                <h2 className="font-semibold text-white">{locale === "en" ? "Free savings checklist" : "Ücretsiz tasarruf kontrol listesi"}</h2>
+                <h2 className="font-semibold text-white">
+                  {locale === "en" ? "Free Engineering Checklists" : "Ücretsiz Mühendislik Kontrol Listeleri"}
+                </h2>
                 <p className="mt-3 text-sm leading-7 text-steel">
                   {locale === "en"
-                    ? "Download the industrial electricity cost savings checklist — identify reactive penalties, demand charges, tariff gaps and solar feasibility in one sheet."
-                    : "Sanayi elektrik tasarruf kontrol listesini indirin — reaktif cezalar, sözleşme gücü, tarife açıkları ve GES fizibiliteyi tek sayfada belirleyin."}
+                    ? "Download free technical checklists for TDD, Owner's Engineering, grid compliance, FAT/SAT, and EPC tender review — developed from real field inspections."
+                    : "TDD, İşveren Mühendisliği, şebeke uyumu, FAT/SAT ve EPC ihale incelemesi için ücretsiz teknik kontrol listeleri indirin — gerçek saha denetimlerinden geliştirildi."}
                 </p>
-                <Link href={locale === "en" ? "/en/industrial-savings-checklist" : "/tr/industrial-savings-checklist"} className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-energy-500 hover:text-white">
-                  <Share2 className="h-4 w-4" />
-                  {locale === "en" ? "View checklist" : "Kontrol listesini gör"}
+                <Link href={`/${locale}/resources`} className="mt-5 inline-flex items-center gap-2 rounded-md bg-energy-500 px-4 py-2.5 text-sm font-bold text-navy-950 hover:bg-white transition">
+                  {locale === "en" ? "View Free Resources" : "Ücretsiz Kaynakları Gör"}
                 </Link>
               </div>
             )}

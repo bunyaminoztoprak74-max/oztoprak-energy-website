@@ -283,6 +283,306 @@ export const services: Record<Locale, Service[]> = {
           answer: "This service targets industrial facilities with high electricity costs, not power plant owners. The goal is to optimize existing consumption and reduce energy costs rather than advise on plant construction or acquisition."
         }
       ]
+    },
+    {
+      slug: "reactive-power-audit",
+      title: "Reactive Power Audit",
+      eyebrow: "Penalty elimination and compensation review",
+      description: "Reactive power audit for industrial facilities and renewable energy plants incurring TEİAŞ reactive power penalties — identifying root cause, sizing compensation, and calculating payback period.",
+      keywords: ["reactive power audit", "reactive power penalty turkey", "reactive energy penalty analysis", "power factor correction turkey", "TEİAŞ reactive penalty"],
+      outcomes: ["Reactive penalty root cause identified", "Compensation system correctly sized", "Payback period calculated", "Penalty elimination roadmap delivered"],
+      scope: ["Power factor and reactive power measurement review", "TEİAŞ invoice and penalty calculation analysis", "Compensation panel capacity and control assessment", "Harmonic environment observation", "Upgrade specification and payback analysis"],
+      faqs: [
+        ...sharedFaq.en,
+        {
+          question: "What causes reactive power penalties in Turkey?",
+          answer: "Reactive penalties occur when the power factor at the grid connection point falls outside the TEİAŞ-required range, typically due to undersized or malfunctioning compensation equipment, harmonic distortion, or incorrect panel settings."
+        },
+        {
+          question: "Can a free analysis be conducted from invoices alone?",
+          answer: "Yes. A preliminary reactive penalty analysis can be conducted from the last 12 months of TEİAŞ electricity invoices. Site measurement adds accuracy but is not always required for the initial assessment."
+        },
+        {
+          question: "How quickly can reactive penalties be eliminated?",
+          answer: "If the existing compensation panel is resized and correctly configured, penalties can often be reduced within one billing cycle. Where new equipment is needed, the typical timeline is 4–8 weeks from decision to installation."
+        }
+      ]
+    },
+    {
+      slug: "independent-engineer",
+      title: "Independent Engineer",
+      eyebrow: "Lender and investor technical oversight",
+      description: "Independent Engineer services for renewable energy project finance — providing lenders, bond trustees and investors with neutral technical oversight from pre-construction through performance testing and completion.",
+      keywords: ["independent engineer renewable energy turkey", "independent engineer solar project finance", "IE appointment hydropower turkey", "independent engineer report project finance"],
+      outcomes: ["Neutral technical opinion for lenders", "Drawdown conditions verified", "Completion certificate issued", "Bankable independent engineer report delivered"],
+      scope: ["Pre-construction feasibility and EPC contract review", "Monthly site visit reports during construction", "FAT and SAT witnessing", "Commissioning readiness assessment", "Performance test witness and certification", "Completion certificate issuance"],
+      faqs: [
+        ...sharedFaq.en,
+        {
+          question: "When is an Independent Engineer required?",
+          answer: "Most Turkish project finance structures — including development bank loans from Ziraat, Halkbank, Garanti BBVA and international facilities from EBRD and IFC — require an IE appointment as a loan condition."
+        },
+        {
+          question: "Who does the Independent Engineer represent?",
+          answer: "The IE is appointed by and reports to the lender or bond trustee — not the developer or EPC contractor. This independence is the basis of the IE's credibility with the financing bank."
+        },
+        {
+          question: "What is included in an IE completion certificate?",
+          answer: "The completion certificate confirms that the project has reached commercial operation, performance tests have been completed satisfactorily, and all lender conditions precedent for final drawdown have been met."
+        }
+      ]
+    },
+    {
+      slug: "lenders-engineer",
+      title: "Lender's Engineer",
+      eyebrow: "Bank-side technical oversight for project finance",
+      description: "Lender's Engineer services for Turkish and international banks financing renewable energy projects — providing technical due diligence, construction monitoring, drawdown verification and completion certification.",
+      keywords: ["lenders engineer solar turkey", "lenders technical advisor renewable energy", "lenders engineer hydropower turkey", "bank technical advisor project finance"],
+      outcomes: ["Lender-side technical opinion delivered", "Drawdown conditions independently verified", "Construction progress and quality confirmed", "Completion certificate issued for final drawdown"],
+      scope: ["Pre-financial-close technical due diligence", "EPC contract technical adequacy review", "Energy yield and grid connection assessment", "Monthly construction monitoring reports", "Drawdown condition verification", "Completion and performance test certification"],
+      faqs: [
+        ...sharedFaq.en,
+        {
+          question: "What is the difference between Lender's Engineer and Independent Engineer?",
+          answer: "The terms are often used interchangeably. Lender's Engineer emphasises the bank-side appointment — the primary client is the financing institution, not the project developer. Both roles provide neutral technical oversight throughout the project lifecycle."
+        },
+        {
+          question: "Which banks does Oztoprak Energy work with?",
+          answer: "We have experience supporting project finance structures for Turkish development banks including Ziraat, Halkbank and Garanti BBVA, as well as international financing institutions and private lenders."
+        },
+        {
+          question: "How frequently are monitoring reports produced?",
+          answer: "Monthly progress reports are standard during the construction phase. Milestone reports are produced at key events: financial close, mechanical completion, first energization, commissioning completion and commercial operation."
+        }
+      ]
+    },
+    {
+      slug: "bank-technical-advisor",
+      title: "Bank Technical Advisor",
+      eyebrow: "Pre-financial-close technical opinion",
+      description: "Bank Technical Advisor (BTA) services for lenders and credit committees requiring an independent technical opinion on renewable energy project feasibility, EPC contract adequacy, yield assumptions and grid connection plan before financial close.",
+      keywords: ["bank technical advisor renewable energy", "BTA solar project turkey", "bank technical advisory report", "pre-financial close technical review"],
+      outcomes: ["Independent technical opinion for credit committee", "EPC contract technical gaps identified", "Yield and grid connection assumptions challenged", "BTA report structured for lender's facility agreement"],
+      scope: ["Technical feasibility review", "EPC contract scope and risk allocation analysis", "Energy yield assessment review", "Grid connection plan and permit adequacy", "Environmental and permitting status", "Technical risk summary for credit committee"],
+      faqs: [
+        ...sharedFaq.en,
+        {
+          question: "What is the difference between a BTA and an Independent Engineer?",
+          answer: "A BTA produces a one-time technical opinion at the pre-financial-close stage. An Independent Engineer is appointed for the full project lifecycle — construction, commissioning and completion. Many projects require both: a BTA for credit approval, then an IE appointment post-financial-close."
+        },
+        {
+          question: "How long does a BTA review take?",
+          answer: "A typical BTA review takes 3–6 weeks depending on data room completeness, site visit requirements and lender reporting obligations."
+        }
+      ]
+    },
+    {
+      slug: "portfolio-technical-review",
+      title: "Portfolio Technical Review",
+      eyebrow: "Multi-asset technical risk assessment",
+      description: "Portfolio Technical Review for infrastructure investors and private equity funds owning multiple renewable assets — providing consolidated risk assessment, performance benchmarking and priority action matrix across the portfolio.",
+      keywords: ["renewable portfolio technical review", "solar portfolio due diligence turkey", "renewable energy portfolio review", "multi-asset technical assessment"],
+      outcomes: ["Portfolio-level risk aggregation completed", "Assets benchmarked against each other", "Systematic risks identified across portfolio", "Priority action matrix delivered"],
+      scope: ["Individual asset technical condition review", "Portfolio-level risk aggregation and correlation analysis", "Performance benchmarking across assets", "Systematic O&M, EPC and grid compliance issue identification", "Portfolio technical dashboard and priority action matrix"],
+      faqs: [
+        ...sharedFaq.en,
+        {
+          question: "How is a portfolio review different from individual asset due diligence?",
+          answer: "A portfolio review identifies risks that are correlated across assets — such as a common EPC contractor with recurring defect patterns, or a shared grid operator issue affecting multiple plants. This view is not visible from individual asset reviews."
+        },
+        {
+          question: "What size portfolio does this service target?",
+          answer: "Portfolio reviews are most valuable for investors with 3 or more renewable assets. The consolidated approach produces efficiency benefits and reveals systematic patterns that individual asset reviews miss."
+        }
+      ]
+    },
+    {
+      slug: "expert-witness",
+      title: "Expert Witness",
+      eyebrow: "Technical opinions for legal proceedings",
+      description: "Expert Witness services for renewable energy disputes in court and arbitration proceedings — providing independent written technical opinions on performance shortfall, delay causation, EPC specification compliance and commissioning defects.",
+      keywords: ["expert witness renewable energy turkey", "expert witness power plant dispute", "expert witness solar energy", "technical expert ICC arbitration turkey"],
+      outcomes: ["Independent technical opinion prepared", "Expert report suitable for court or arbitration", "Technical facts clearly presented for legal counsel", "Opinion defensible under cross-examination"],
+      scope: ["Technical document and evidence review", "Independent engineering opinion preparation", "Performance shortfall analysis", "Delay causation technical assessment", "EPC specification compliance review", "Expert report drafting and revision for legal proceedings"],
+      faqs: [
+        ...sharedFaq.en,
+        {
+          question: "What types of disputes require an Expert Witness?",
+          answer: "Common disputes include EPC performance guarantee shortfall, construction delay causation, defect liability, grid connection failure responsibility, commissioning defects, and O&M contract performance disputes."
+        },
+        {
+          question: "What legal frameworks apply?",
+          answer: "We have experience with ICC Arbitration, ICSID proceedings, Turkish courts, and international arbitration seated in London, Paris and Stockholm. The expert report format and disclosure obligations vary by jurisdiction."
+        }
+      ]
+    },
+    {
+      slug: "technical-arbitration-support",
+      title: "Technical Arbitration Support",
+      eyebrow: "Engineering evidence for dispute resolution",
+      description: "Technical arbitration support for renewable energy EPC disputes — reviewing technical documents, preparing independent engineering opinions, and assisting legal counsel with technical arguments and evidence strategy.",
+      keywords: ["technical arbitration renewable energy turkey", "engineering dispute support solar", "EPC arbitration technical expert", "renewable energy dispute support"],
+      outcomes: ["Independent technical position established", "Technical documents reviewed for strength and weakness", "Legal counsel supported with engineering facts", "Expert opinion prepared for arbitration proceedings"],
+      scope: ["Technical document and evidence review", "Independent engineering position preparation", "Performance shortfall and delay causation analysis", "Specification compliance and defect assessment", "Legal counsel briefing and technical strategy support", "Expert witness report preparation if required"],
+      faqs: [
+        ...sharedFaq.en,
+        {
+          question: "How is arbitration support different from expert witness?",
+          answer: "Arbitration support assists one party in understanding and presenting the technical facts of their case. An Expert Witness provides a formal independent opinion for the tribunal. Arbitration support often precedes and informs the Expert Witness appointment."
+        },
+        {
+          question: "How long do arbitration engagements typically last?",
+          answer: "Technical arbitration support for renewable energy disputes typically runs 6–24 months, depending on the complexity of the technical issues, the number of expert reports required, and the arbitration timeline."
+        }
+      ]
+    },
+    {
+      slug: "factory-acceptance-test",
+      title: "Factory Acceptance Test (FAT) Witnessing",
+      eyebrow: "Equipment verification before shipment",
+      description: "FAT witnessing services for renewable energy equipment — verifying that inverters, transformers, protection relays and SCADA hardware meet technical specifications at the manufacturer's facility before shipment to site.",
+      keywords: ["FAT inspection solar inverter turkey", "factory acceptance test renewable energy", "FAT witnessing transformer", "FAT inspection commissioning"],
+      outcomes: ["Equipment defects identified before shipment", "FAT report delivered with technical evidence", "Technical specification compliance verified", "Commissioning risk reduced by early defect detection"],
+      scope: ["Inverter FAT witnessing and report", "Power transformer FAT (IEC 60076 routine tests)", "Protection relay FAT and settings verification", "SCADA and control system factory testing", "FAT punch-list management and closure verification"],
+      faqs: [
+        ...sharedFaq.en,
+        {
+          question: "Why is FAT witnessing important?",
+          answer: "Defects found at FAT cost 10–50x less to resolve than defects found during site commissioning or operation. FAT witnessing also creates baseline documentation for warranty claims and future troubleshooting."
+        },
+        {
+          question: "Which standards do you apply during FAT?",
+          answer: "IEC 60076 for power transformers, IEC 62109 for inverters, IEC 60255 series for protection relays, and manufacturer-specific test procedures agreed with the owner during pre-FAT documentation review."
+        }
+      ]
+    },
+    {
+      slug: "site-acceptance-test",
+      title: "Site Acceptance Test (SAT) Supervision",
+      eyebrow: "Pre-handover installation verification",
+      description: "SAT supervision services for solar and hydropower plants — verifying that installed equipment functions correctly in its installed environment before handover, covering string testing, inverter commissioning, protection verification and SCADA check.",
+      keywords: ["SAT site acceptance test solar plant", "site acceptance test commissioning turkey", "SAT supervision renewable energy", "IEC 62446 solar SAT"],
+      outcomes: ["Installed equipment function verified", "SAT certificate issued with evidence", "Commissioning punch-list managed", "IEC 62446 documentation requirements met"],
+      scope: ["Solar string testing and IV curve tracing", "Inverter functional test verification", "Protection relay on-site testing", "SCADA commissioning check and I/O verification", "SAT certificate and punch-list management", "IEC 62446 documentation compliance review"],
+      faqs: [
+        ...sharedFaq.en,
+        {
+          question: "What is the difference between FAT and SAT?",
+          answer: "FAT verifies equipment at the manufacturer's facility. SAT verifies that the same equipment, once installed, functions correctly at the site — accounting for cable runs, earthing, auxiliary supplies and interaction with other systems."
+        },
+        {
+          question: "Is SAT required for TEİAŞ grid connection approval?",
+          answer: "TEİAŞ requires protection relay commissioning evidence and SCADA telemetry verification as part of the energization approval process. SAT documentation supports these requirements directly."
+        }
+      ]
+    },
+    {
+      slug: "performance-guarantee-verification",
+      title: "Performance Guarantee Verification",
+      eyebrow: "Independent measurement against EPC contract guarantee",
+      description: "Performance Guarantee Verification for solar and renewable energy plants — independently measuring actual plant performance against the EPC contractual guarantee using IEC 61724 methodology to resolve disputes or confirm compliance.",
+      keywords: ["performance guarantee verification solar plant", "EPC performance test witness", "solar performance ratio test", "IEC 61724 performance test"],
+      outcomes: ["Actual performance independently measured", "Performance Ratio calculated per IEC 61724", "Contractual guarantee compliance determined", "Bankable performance test report delivered"],
+      scope: ["Performance measurement setup and calibration", "IEC 61724 methodology application", "Irradiance, temperature and generation data collection", "Performance Ratio calculation with correction factors", "Comparison with EPC guaranteed values", "Performance Test Report suitable for legal and commercial use"],
+      faqs: [
+        ...sharedFaq.en,
+        {
+          question: "Why is independent performance verification needed?",
+          answer: "EPC contractors calculate their own performance against their own guarantee — a clear conflict of interest. Independent verification ensures the test methodology, correction factors and measurement accuracy are not biased toward the contractor."
+        },
+        {
+          question: "Which standard applies to solar performance testing?",
+          answer: "IEC 61724-1 (PV system performance monitoring) defines measurement and reporting requirements. IEC 61724-3 defines the energy evaluation methodology used for guarantee verification."
+        }
+      ]
+    },
+    {
+      slug: "construction-monitoring",
+      title: "Construction Monitoring",
+      eyebrow: "Owner-side quality during construction",
+      description: "Construction monitoring for renewable energy projects — on-site inspection of critical installation milestones, workmanship verification against approved drawings, NCR documentation, and ITP hold point witnessing on behalf of owners or lenders.",
+      keywords: ["construction monitoring solar plant turkey", "EPC construction supervision", "renewable energy construction quality", "construction monitoring owner lender"],
+      outcomes: ["Installation quality verified against specifications", "NCRs documented and tracked to closure", "ITP hold points witnessed with evidence", "Construction defects identified before commissioning"],
+      scope: ["DC and AC electrical installation inspection", "Civil and mounting structure quality verification", "Grid connection and transformer installation review", "ITP hold point and witness point attendance", "NCR documentation and closure tracking", "Interface with EPC quality plan"],
+      faqs: [
+        ...sharedFaq.en,
+        {
+          question: "How is construction monitoring different from project monitoring?",
+          answer: "Construction monitoring involves Oztoprak Energy engineers being on-site during critical installation milestones to physically inspect workmanship and verify against approved drawings. Project monitoring is less intensive — typically monthly progress visits and written reports without detailed physical inspection."
+        }
+      ]
+    },
+    {
+      slug: "project-monitoring",
+      title: "Project Monitoring",
+      eyebrow: "Regular progress reporting for lenders and investors",
+      description: "Project monitoring for renewable energy construction — regular site visits, written progress reports, schedule compliance assessment, and early-warning technical issue identification on behalf of lenders and investors.",
+      keywords: ["project monitoring renewable energy construction turkey", "technical monitoring solar construction", "construction progress reporting lender", "project monitoring report"],
+      outcomes: ["Regular progress reports delivered", "Schedule compliance assessed", "Early technical issues flagged", "Lender-ready monitoring reports produced"],
+      scope: ["Monthly or milestone-based site visits", "Physical progress and quality assessment", "Schedule compliance review", "Contractor deliverable status review", "Early-warning technical issue identification", "Written progress reports for lenders and investors"],
+      faqs: [
+        ...sharedFaq.en,
+        {
+          question: "How frequently are project monitoring visits conducted?",
+          answer: "Typically monthly during the active construction period. Visits can be adjusted to milestone frequency — for example, at civil completion, electromechanical installation, energization readiness, and commissioning milestones."
+        }
+      ]
+    },
+    {
+      slug: "grid-compliance-audit",
+      title: "Grid Compliance Audit",
+      eyebrow: "TEİAŞ requirements verification",
+      description: "Grid Compliance Audit for solar and hydropower plants — systematic review of TEİAŞ grid connection requirements including protection relay settings, reactive power compensation, fault ride-through compliance and technical documentation.",
+      keywords: ["grid compliance audit solar turkey", "TEİAŞ compliance review", "grid compliance renewable energy turkey", "FRT compliance audit"],
+      outcomes: ["Compliance gaps identified with evidence", "TEİAŞ requirement alignment confirmed or challenged", "Remediation schedule produced", "Grid compliance report suitable for regulatory review"],
+      scope: ["Protection relay settings review against TEİAŞ requirements", "Reactive power and power factor compliance check", "Fault ride-through (FRT) evidence review", "Grid connection documentation audit", "Anti-islanding and SCADA telemetry compliance", "Remediation recommendations and schedule"],
+      faqs: [
+        ...sharedFaq.en,
+        {
+          question: "What happens if a plant fails a grid compliance audit?",
+          answer: "Non-compliant settings or missing documentation create regulatory risk — TEİAŞ can issue improvement notices or curtailment orders. The audit report includes a prioritized remediation schedule so the plant can achieve compliance before a regulatory review occurs."
+        },
+        {
+          question: "Which TEİAŞ regulations are covered?",
+          answer: "The audit covers TEİAŞ Sistem İşletim Yönetmeliği requirements including protection coordination, reactive power limits, FRT profiles, anti-islanding obligations and SCADA telemetry interface requirements."
+        }
+      ]
+    },
+    {
+      slug: "power-quality-audit",
+      title: "Power Quality Audit",
+      eyebrow: "Harmonic and voltage compliance measurement",
+      description: "Power Quality Audit for renewable energy plants and industrial facilities — measuring harmonic distortion, voltage imbalance, flicker, and frequency deviation at the grid connection point against IEEE 519 and TEİAŞ requirements.",
+      keywords: ["power quality audit turkey", "harmonics voltage flicker renewable energy", "IEEE 519 compliance turkey", "power quality measurement solar"],
+      outcomes: ["Power quality measurements completed", "Compliance status against IEEE 519 and TEİAŞ confirmed", "Non-compliance root cause identified", "Remediation recommendations provided"],
+      scope: ["Harmonic distortion measurement (voltage and current)", "Voltage imbalance and flicker assessment", "Frequency deviation review", "IEEE 519 and IEC 61000-3-x compliance check", "TEİAŞ power quality limit verification", "Root cause analysis and remediation recommendations"],
+      faqs: [
+        ...sharedFaq.en,
+        {
+          question: "What equipment is used for power quality measurement?",
+          answer: "Calibrated Class A power quality analyzers compliant with IEC 61000-4-30 are used for all site measurements. Measurement duration is typically 7 days to capture weekly variation patterns as required by standards."
+        }
+      ]
+    },
+    {
+      slug: "asset-management",
+      title: "Technical Asset Management",
+      eyebrow: "Ongoing performance oversight for owners",
+      description: "Technical Asset Management for renewable energy portfolios — ongoing yield monitoring, O&M contractor oversight, performance benchmarking, compliance tracking, and annual technical review for owners who want consistent asset performance.",
+      keywords: ["renewable energy asset management turkey", "solar plant technical asset management", "technical asset management hydropower", "O&M oversight renewable energy"],
+      outcomes: ["Consistent performance monitoring in place", "O&M contractor performance tracked against KPIs", "Annual technical review delivered", "Compliance and regulatory issues identified early"],
+      scope: ["Monthly yield and availability monitoring", "Performance benchmarking against budget and peers", "O&M contractor KPI tracking and oversight", "Grid compliance and regulatory status monitoring", "Annual technical review with prioritized action plan", "Incident and defect escalation management"],
+      faqs: [
+        ...sharedFaq.en,
+        {
+          question: "Is this financial asset management?",
+          answer: "No. Oztoprak Energy provides technical asset management only — engineering oversight, performance monitoring, O&M contractor management and compliance tracking. Financial asset management (fund administration, distributions, financial reporting) is outside our scope."
+        },
+        {
+          question: "What is included in the annual technical review?",
+          answer: "The annual review covers 12-month generation performance, availability trends, O&M quality assessment, equipment condition observations, grid compliance status, outstanding defects, and a prioritized action plan for the next 12 months."
+        }
+      ]
     }
   ],
   tr: [
@@ -328,9 +628,9 @@ export const services: Record<Locale, Service[]> = {
     },
     {
       slug: "isveren-muhendisligi",
-      title: "İşveren Mühendisliği",
+      title: "İşveren Mühendisliği | HES ve GES Projelerinde Bağımsız Teknik Kontrol",
       eyebrow: "İşveren tarafı teknik kontrol",
-      description: "Bağımsız inceleme, saha gözlemleri ve karar desteği ile proje değerini koruyan işveren mühendisliği hizmetleri.",
+      description: "HES, GES ve yenilenebilir enerji projelerinde işveren mühendisliği: bağımsız EPC incelemesi, saha gözlemleri, yüklenici doküman kontrolü ve karar desteği. Proje değerini koruyun.",
       keywords: ["işveren mühendisliği", "EPC teknik danışmanlık", "enerji santrali danışmanlığı"],
       outcomes: ["Daha yüksek işveren görünürlüğü", "Azalan teknik belirsizlik", "Güçlü yüklenici uyumu"],
       scope: ["Teknik yönetişim", "Yüklenici doküman incelemesi", "Saha ilerleme gözlemleri", "Karar notları"],
@@ -522,6 +822,156 @@ export const services: Record<Locale, Service[]> = {
           answer: "Evet. Bu hizmet HES veya GES santrali sahibi değil, yüksek elektrik faturasıyla karşılaşan sanayi tesislerine yöneliktir. Amaç mevcut tüketimi optimize etmek ve enerji maliyetini düşürmektir."
         }
       ]
+    },
+    {
+      slug: "reaktif-guc-denetimi",
+      title: "Reaktif Güç Denetimi",
+      eyebrow: "Ceza eliminasyonu ve kompanzasyon incelemesi",
+      description: "TEİAŞ reaktif güç cezası ödeyen sanayi tesisleri ve yenilenebilir enerji santralleri için reaktif güç denetimi — kök neden tespiti, kompanzasyon boyutlandırma ve geri ödeme hesabı.",
+      keywords: ["reaktif güç denetimi", "reaktif güç cezası türkiye", "reaktif enerji ceza analizi", "güç faktörü düzeltme türkiye", "TEİAŞ reaktif ceza"],
+      outcomes: ["Reaktif ceza kök nedeni tespit edildi", "Kompanzasyon sistemi doğru boyutlandırıldı", "Geri ödeme süresi hesaplandı", "Ceza eliminasyon yol haritası teslim edildi"],
+      scope: ["Güç faktörü ve reaktif güç ölçüm incelemesi", "TEİAŞ fatura ve ceza hesap analizi", "Kompanzasyon panosu kapasite ve kontrol değerlendirmesi", "Harmonik ortam gözlemi", "Güncelleme spesifikasyonu ve geri ödeme analizi"],
+      faqs: sharedFaq.tr
+    },
+    {
+      slug: "bagimsiz-muhendis",
+      title: "Bağımsız Mühendis",
+      eyebrow: "Kredi ve yatırımcı teknik denetimi",
+      description: "Yenilenebilir enerji proje finansmanı için bağımsız mühendis hizmetleri — kredi kuruluşlarına, tahvil mütevellilerine ve yatırımcılara ön yapımdan performans testine ve tamamlanmaya kadar tarafsız teknik denetim.",
+      keywords: ["bağımsız mühendis yenilenebilir enerji türkiye", "bağımsız mühendis GES proje finansmanı", "IE atama HES türkiye", "bağımsız mühendis raporu proje finansmanı"],
+      outcomes: ["Kredi kuruluşları için tarafsız teknik görüş", "Çekiş koşulları doğrulandı", "Tamamlama sertifikası düzenlendi", "Bankable bağımsız mühendis raporu teslim edildi"],
+      scope: ["Ön yapım fizibilite ve EPC sözleşme incelemesi", "İnşaat sürecinde aylık saha ziyareti raporları", "FAT ve SAT tanıklığı", "Devreye alma hazırlık değerlendirmesi", "Performans testi tanıklığı ve sertifikasyonu", "Tamamlama sertifikası düzenlenmesi"],
+      faqs: sharedFaq.tr
+    },
+    {
+      slug: "finans-kurulusu-muhendisi",
+      title: "Finans Kuruluşu Mühendisi",
+      eyebrow: "Proje finansmanı için banka taraflı teknik denetim",
+      description: "Yenilenebilir enerji projelerini finanse eden Türk ve uluslararası bankalar için finans kuruluşu mühendisliği hizmetleri — teknik durum tespiti, inşaat izleme, çekiş doğrulama ve tamamlama sertifikasyonu.",
+      keywords: ["finans kuruluşu mühendisi GES türkiye", "banka teknik danışmanı proje finansmanı", "lenders engineer HES türkiye"],
+      outcomes: ["Banka taraflı teknik görüş teslim edildi", "Çekiş koşulları bağımsız olarak doğrulandı", "İnşaat ilerlemesi ve kalitesi onaylandı", "Son çekiş için tamamlama sertifikası düzenlendi"],
+      scope: ["Finansal kapanış öncesi teknik durum tespiti", "EPC sözleşmesi teknik yeterlilik incelemesi", "Enerji verimi ve şebeke bağlantısı değerlendirmesi", "Aylık inşaat izleme raporları", "Çekiş koşulu doğrulama", "Tamamlama ve performans testi sertifikasyonu"],
+      faqs: sharedFaq.tr
+    },
+    {
+      slug: "banka-teknik-danismani",
+      title: "Banka Teknik Danışmanı",
+      eyebrow: "Finansal kapanış öncesi teknik görüş",
+      description: "Yenilenebilir enerji projesinin fizibilitesi, EPC sözleşmesi yeterliliği, verim varsayımları ve şebeke bağlantısı planı hakkında finansal kapanış öncesi bağımsız teknik görüş isteyen kredi kuruluşları ve kredi komiteleri için banka teknik danışmanlığı.",
+      keywords: ["banka teknik danışmanı yenilenebilir enerji", "BTA GES proje türkiye", "banka teknik danışmanlık raporu", "finansal kapanış öncesi teknik inceleme"],
+      outcomes: ["Kredi komitesi için bağımsız teknik görüş", "EPC sözleşmesi teknik boşlukları tespit edildi", "Verim ve şebeke bağlantısı varsayımları sorgulandı", "BTA raporu kredi sözleşmesine uygun yapılandırıldı"],
+      scope: ["Teknik fizibilite incelemesi", "EPC sözleşme kapsamı ve risk dağılımı analizi", "Enerji verimi değerlendirmesi incelemesi", "Şebeke bağlantı planı ve izin yeterliliği", "Çevresel ve izinleme durumu", "Kredi komitesi için teknik risk özeti"],
+      faqs: sharedFaq.tr
+    },
+    {
+      slug: "portfoy-teknik-incelemesi",
+      title: "Portföy Teknik İncelemesi",
+      eyebrow: "Çok varlıklı teknik risk değerlendirmesi",
+      description: "Birden fazla yenilenebilir enerji varlığına sahip altyapı yatırımcıları ve özel sermaye fonları için portföy teknik incelemesi — portföy genelinde konsolide risk değerlendirmesi, performans karşılaştırması ve öncelik eylem matrisi.",
+      keywords: ["yenilenebilir enerji portföy teknik incelemesi", "GES portföy due diligence türkiye", "çok varlıklı teknik değerlendirme"],
+      outcomes: ["Portföy düzeyinde risk agregasyonu tamamlandı", "Varlıklar karşılıklı kıyaslandı", "Portföy genelinde sistemik riskler tespit edildi", "Öncelik eylem matrisi teslim edildi"],
+      scope: ["Bireysel varlık teknik durum incelemesi", "Portföy düzeyinde risk agregasyonu ve korelasyon analizi", "Varlıklar arası performans karşılaştırması", "Sistematik O&M, EPC ve şebeke uyum sorunlarının tespiti", "Portföy teknik gösterge paneli ve öncelik eylem matrisi"],
+      faqs: sharedFaq.tr
+    },
+    {
+      slug: "bilirkisi",
+      title: "Bilirkişi Hizmetleri",
+      eyebrow: "Hukuki süreçler için teknik görüş",
+      description: "Yenilenebilir enerji uyuşmazlıklarında mahkeme ve tahkim süreçleri için bilirkişi hizmetleri — performans açığı, gecikme nedenselliği, EPC şartname uyumu ve devreye alma kusurları hakkında bağımsız yazılı teknik görüş.",
+      keywords: ["bilirkişi yenilenebilir enerji türkiye", "bilirkişi enerji santrali uyuşmazlığı", "teknik uzman ICC tahkimi türkiye"],
+      outcomes: ["Bağımsız teknik görüş hazırlandı", "Mahkeme veya tahkime uygun uzman raporu", "Hukuk müşavirlerine teknik gerçekler açıkça sunuldu", "Çapraz sorgulamaya dayanıklı görüş"],
+      scope: ["Teknik doküman ve kanıt incelemesi", "Bağımsız mühendislik görüşü hazırlanması", "Performans açığı analizi", "Gecikme nedenselliği teknik değerlendirmesi", "EPC şartname uyum incelemesi", "Hukuki süreçler için uzman raporu taslağı ve revizyonu"],
+      faqs: sharedFaq.tr
+    },
+    {
+      slug: "teknik-tahkim-destegi",
+      title: "Teknik Tahkim Desteği",
+      eyebrow: "Uyuşmazlık çözümü için mühendislik kanıtı",
+      description: "Yenilenebilir enerji EPC uyuşmazlıkları için teknik tahkim desteği — teknik dokümanların incelenmesi, bağımsız mühendislik görüşlerinin hazırlanması ve hukuk müşavirlerine teknik argüman ve kanıt stratejisinde yardım.",
+      keywords: ["teknik tahkim yenilenebilir enerji türkiye", "mühendislik uyuşmazlık desteği GES", "EPC tahkimi teknik uzman"],
+      outcomes: ["Bağımsız teknik pozisyon oluşturuldu", "Teknik belgeler güçlü ve zayıf yönleriyle incelendi", "Hukuk müşavirleri mühendislik gerçekleriyle desteklendi", "Tahkim sürecine hazır uzman görüşü hazırlandı"],
+      scope: ["Teknik doküman ve kanıt incelemesi", "Bağımsız mühendislik pozisyonu hazırlanması", "Performans açığı ve gecikme nedenselliği analizi", "Şartname uyumu ve kusur değerlendirmesi", "Hukuk müşaviri brifing ve teknik strateji desteği", "Gerektiğinde bilirkişi raporu hazırlanması"],
+      faqs: sharedFaq.tr
+    },
+    {
+      slug: "fabrika-kabul-testi",
+      title: "Fabrika Kabul Testi (FAT) Tanıklığı",
+      eyebrow: "Sevk öncesi ekipman doğrulama",
+      description: "Yenilenebilir enerji ekipmanları için FAT tanıklık hizmetleri — invertörler, transformatörler, koruma röleleri ve SCADA donanımının saha sevkinden önce üretici tesisinde teknik şartnameye uygunluğunun doğrulanması.",
+      keywords: ["FAT tanıklığı GES invertör türkiye", "fabrika kabul testi yenilenebilir enerji", "FAT transformatör tanıklığı", "FAT devreye alma"],
+      outcomes: ["Sevk öncesi ekipman kusurları tespit edildi", "Teknik kanıtlarla FAT raporu teslim edildi", "Teknik şartname uyumu doğrulandı", "Erken kusur tespiti ile devreye alma riski azaltıldı"],
+      scope: ["İnvertör FAT tanıklığı ve raporu", "Güç transformatörü FAT (IEC 60076 rutin testleri)", "Koruma rölesi FAT ve ayar doğrulaması", "SCADA ve kontrol sistemi fabrika testleri", "FAT eksik iş yönetimi ve kapanış doğrulaması"],
+      faqs: sharedFaq.tr
+    },
+    {
+      slug: "saha-kabul-testi",
+      title: "Saha Kabul Testi (SAT) Denetimi",
+      eyebrow: "Teslim öncesi kurulum doğrulama",
+      description: "GES ve HES'ler için SAT denetim hizmetleri — teslimden önce kurulu ekipmanın kurulu ortamda doğru çalıştığının doğrulanması; string testleri, invertör devreye alma, koruma doğrulaması ve SCADA kontrolü.",
+      keywords: ["SAT saha kabul testi GES türkiye", "saha kabul testi devreye alma türkiye", "SAT denetimi yenilenebilir enerji", "IEC 62446 GES SAT"],
+      outcomes: ["Kurulu ekipman işlevi doğrulandı", "Kanıtlarla SAT sertifikası düzenlendi", "Devreye alma eksik iş yönetildi", "IEC 62446 dokümantasyon gereksinimleri karşılandı"],
+      scope: ["GES string testi ve IV eğrisi izleme", "İnvertör fonksiyonel test doğrulaması", "Koruma rölesi saha testleri", "SCADA devreye alma kontrolü ve G/Ç doğrulaması", "SAT sertifikası ve eksik iş yönetimi", "IEC 62446 dokümantasyon uyum incelemesi"],
+      faqs: sharedFaq.tr
+    },
+    {
+      slug: "performans-garantisi-dogrulama",
+      title: "Performans Garantisi Doğrulama",
+      eyebrow: "EPC sözleşme garantisine karşı bağımsız ölçüm",
+      description: "GES ve yenilenebilir enerji santralleri için performans garantisi doğrulama — uyuşmazlıkları çözmek veya uyumu teyit etmek amacıyla IEC 61724 metodolojisi kullanılarak gerçek santral performansının EPC sözleşme garantisine karşı bağımsız ölçümü.",
+      keywords: ["performans garantisi doğrulama GES türkiye", "EPC performans testi tanıklığı", "GES performans oranı testi", "IEC 61724 performans testi"],
+      outcomes: ["Gerçek performans bağımsız olarak ölçüldü", "IEC 61724 uyarınca Performans Oranı hesaplandı", "Sözleşme garantisi uyumu belirlendi", "Bankable performans testi raporu teslim edildi"],
+      scope: ["Performans ölçüm kurulumu ve kalibrasyonu", "IEC 61724 metodolojisi uygulaması", "Işınım, sıcaklık ve üretim verisi toplanması", "Düzeltme faktörleriyle Performans Oranı hesabı", "EPC garantili değerlerle karşılaştırma", "Hukuki ve ticari kullanıma uygun Performans Testi Raporu"],
+      faqs: sharedFaq.tr
+    },
+    {
+      slug: "insaat-izleme",
+      title: "İnşaat İzleme",
+      eyebrow: "İnşaat sürecinde işveren taraflı kalite",
+      description: "Yenilenebilir enerji projeleri için inşaat izleme — kritik kurulum kilometre taşlarında saha incelemesi, onaylı çizimlere karşı işçilik doğrulaması, NCR belgelemesi ve işveren veya kredi kuruluşu adına ITP durdurma noktası tanıklığı.",
+      keywords: ["inşaat izleme GES türkiye", "EPC inşaat denetimi", "yenilenebilir enerji inşaat kalitesi", "inşaat izleme işveren kredi kuruluşu"],
+      outcomes: ["Kurulum kalitesi teknik şartnameye göre doğrulandı", "NCR'lar belgelendi ve kapanışa kadar takip edildi", "ITP durdurma noktaları kanıtlarla tanıklandı", "İnşaat kusurları devreye almadan önce tespit edildi"],
+      scope: ["DC ve AC elektrik kurulum incelemesi", "İnşaat ve montaj yapısı kalite doğrulaması", "Şebeke bağlantısı ve transformatör kurulum incelemesi", "ITP durdurma noktası ve tanıklık noktası katılımı", "NCR belgeleme ve kapanış takibi", "EPC kalite planıyla arayüz"],
+      faqs: sharedFaq.tr
+    },
+    {
+      slug: "proje-izleme",
+      title: "Proje İzleme",
+      eyebrow: "Kredi kuruluşları ve yatırımcılar için düzenli ilerleme raporlaması",
+      description: "Yenilenebilir enerji inşaatı için proje izleme — kredi kuruluşları ve yatırımcılar adına düzenli saha ziyaretleri, yazılı ilerleme raporları, takvim uyum değerlendirmesi ve erken uyarı teknik sorun tespiti.",
+      keywords: ["proje izleme yenilenebilir enerji inşaatı türkiye", "teknik izleme GES inşaatı", "inşaat ilerleme raporlaması kredi kuruluşu"],
+      outcomes: ["Düzenli ilerleme raporları teslim edildi", "Takvim uyumu değerlendirildi", "Erken teknik sorunlar işaret edildi", "Kredi kuruluşuna uygun izleme raporları üretildi"],
+      scope: ["Aylık veya kilometre taşı bazlı saha ziyaretleri", "Fiziksel ilerleme ve kalite değerlendirmesi", "Takvim uyum incelemesi", "Yüklenici doküman durum incelemesi", "Erken uyarı teknik sorun tespiti", "Kredi kuruluşları ve yatırımcılar için yazılı ilerleme raporları"],
+      faqs: sharedFaq.tr
+    },
+    {
+      slug: "sebeke-uyum-denetimi",
+      title: "Şebeke Uyum Denetimi",
+      eyebrow: "TEİAŞ gereksinimleri doğrulama",
+      description: "GES ve HES'ler için şebeke uyum denetimi — koruma rölesi ayarları, reaktif güç kompanzasyonu, hata ridelthrough uyumu ve teknik dokümantasyon dahil TEİAŞ şebeke bağlantısı gereksinimlerinin sistematik incelemesi.",
+      keywords: ["şebeke uyum denetimi GES türkiye", "TEİAŞ uyum incelemesi", "şebeke uyumu yenilenebilir enerji türkiye", "FRT uyum denetimi"],
+      outcomes: ["Uyum boşlukları kanıtlarla tespit edildi", "TEİAŞ gereksinim uyumu doğrulandı veya sorgulandı", "Düzeltme takvimi üretildi", "Düzenleyici incelemeye uygun şebeke uyum raporu"],
+      scope: ["Koruma rölesi ayarlarının TEİAŞ gereksinimlerine göre incelenmesi", "Reaktif güç ve güç faktörü uyum kontrolü", "Hata geçiş (FRT) kanıt incelemesi", "Şebeke bağlantısı dokümantasyon denetimi", "Ada önleme ve SCADA telemetri uyumu", "Düzeltme önerileri ve takvimi"],
+      faqs: sharedFaq.tr
+    },
+    {
+      slug: "guc-kalitesi-denetimi",
+      title: "Güç Kalitesi Denetimi",
+      eyebrow: "Harmonik ve gerilim uyum ölçümü",
+      description: "Yenilenebilir enerji santralleri ve sanayi tesisleri için güç kalitesi denetimi — IEEE 519 ve TEİAŞ gereksinimlerine karşı şebeke bağlantı noktasında harmonik bozunum, gerilim dengesizliği, flicker ve frekans sapması ölçümü.",
+      keywords: ["güç kalitesi denetimi türkiye", "harmonik gerilim flicker yenilenebilir enerji", "IEEE 519 uyum türkiye", "güç kalitesi ölçümü GES"],
+      outcomes: ["Güç kalitesi ölçümleri tamamlandı", "IEEE 519 ve TEİAŞ uyum durumu doğrulandı", "Uyumsuzluk kök nedeni tespit edildi", "Düzeltme önerileri sunuldu"],
+      scope: ["Harmonik bozunum ölçümü (gerilim ve akım)", "Gerilim dengesizliği ve flicker değerlendirmesi", "Frekans sapması incelemesi", "IEEE 519 ve IEC 61000-3-x uyum kontrolü", "TEİAŞ güç kalitesi limiti doğrulama", "Kök neden analizi ve düzeltme önerileri"],
+      faqs: sharedFaq.tr
+    },
+    {
+      slug: "teknik-varlik-yonetimi",
+      title: "Teknik Varlık Yönetimi",
+      eyebrow: "İşverenler için süregelen performans denetimi",
+      description: "Yenilenebilir enerji portföyleri için teknik varlık yönetimi — tutarlı varlık performansı isteyen işverenler için süregelen verim izleme, O&M yüklenici denetimi, performans karşılaştırması, uyum takibi ve yıllık teknik inceleme.",
+      keywords: ["yenilenebilir enerji varlık yönetimi türkiye", "GES teknik varlık yönetimi", "teknik varlık yönetimi HES", "O&M denetimi yenilenebilir enerji"],
+      outcomes: ["Tutarlı performans izleme sistemde", "O&M yüklenici performansı KPI'lara göre takip edildi", "Yıllık teknik inceleme teslim edildi", "Uyum ve düzenleyici sorunlar erken tespit edildi"],
+      scope: ["Aylık verim ve emre amadelik izleme", "Bütçe ve emsallere karşı performans karşılaştırması", "O&M yüklenici KPI takibi ve denetimi", "Şebeke uyumu ve düzenleyici durum izleme", "Öncelikli aksiyon planıyla yıllık teknik inceleme", "Olay ve kusur yükseltme yönetimi"],
+      faqs: sharedFaq.tr
     }
   ]
 };

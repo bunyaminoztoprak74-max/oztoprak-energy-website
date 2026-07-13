@@ -163,6 +163,49 @@ export function faqSchema(faqs: Array<{ question: string; answer: string }>) {
   };
 }
 
+export function personSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${baseUrl}/#person-bunyamin-oztoprak`,
+    name: "Bünyamin Öztoprak",
+    jobTitle: "Renewable Energy Engineering Consultant",
+    url: `${baseUrl}/en/about`,
+    sameAs: [linkedinUrl],
+    worksFor: {
+      "@type": "Organization",
+      "@id": baseUrl + "/#organization",
+      name: "Oztoprak Energy Consultancy"
+    },
+    knowsAbout: [
+      "Hydropower plant operations",
+      "Solar PV plant engineering",
+      "EPC contract management",
+      "Power plant commissioning",
+      "Grid protection systems",
+      "Renewable energy due diligence",
+      "Owner's engineering",
+      "TEİAŞ grid connection requirements",
+      "IEC 61724 performance monitoring",
+      "IEC 62446 PV system commissioning",
+      "Reactive power compensation",
+      "Power quality analysis"
+    ],
+    hasCredential: [
+      {
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "degree",
+        recognizedBy: {
+          "@type": "Organization",
+          name: "Turkish Chamber of Electrical Engineers (EMO)"
+        }
+      }
+    ],
+    description:
+      "Independent renewable energy engineering consultant with 28+ years of experience in hydropower, solar, EPC advisory, commissioning and technical due diligence in Turkey and internationally."
+  };
+}
+
 export function articleSchema(locale: Locale, post: BlogPost) {
   return {
     "@context": "https://schema.org",
@@ -170,8 +213,9 @@ export function articleSchema(locale: Locale, post: BlogPost) {
     headline: post.title,
     description: post.description,
     author: {
-      "@type": "Organization",
-      name: "Oztoprak Energy Consultancy"
+      "@type": "Person",
+      "@id": `${baseUrl}/#person-bunyamin-oztoprak`,
+      name: "Bünyamin Öztoprak"
     },
     publisher: {
       "@type": "Organization",

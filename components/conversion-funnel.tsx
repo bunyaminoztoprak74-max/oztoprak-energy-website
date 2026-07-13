@@ -7,18 +7,26 @@ const copy = {
   en: {
     title: "Start with a focused technical assessment",
     text: "Share the plant type, capacity, current decision point and the main technical concern. The first response can define whether the next step should be a desktop review, site audit, commissioning readiness check or EPC advisory session.",
-    items: ["Request Technical Consultation", "Book Initial Assessment", "Download Consultation Brief"]
+    items: [
+      { label: "Request Technical Consultation", href: null },
+      { label: "Book Initial Assessment", href: null },
+      { label: "Free Checklists & Guides", href: "resources" }
+    ]
   },
   tr: {
     title: "Odakli teknik degerlendirme ile baslayin",
     text: "Santral turunu, kapasiteyi, mevcut karar noktasini ve ana teknik problemi paylasin. Ilk geri donus, sonraki adimin masa basi inceleme, saha denetimi, devreye alma hazirlik kontrolu veya EPC danismanlik oturumu olup olmadigini netlestirebilir.",
-    items: ["Teknik Danismanlik Talep Et", "Ilk Degerlendirme Planla", "Danismanlik Bilgi Notu"]
+    items: [
+      { label: "Teknik Danismanlik Talep Et", href: null },
+      { label: "Ilk Degerlendirme Planla", href: null },
+      { label: "Ücretsiz Kontrol Listeleri", href: "resources" }
+    ]
   }
-} satisfies Record<Locale, { title: string; text: string; items: string[] }>;
+} satisfies Record<Locale, { title: string; text: string; items: Array<{ label: string; href: string | null }> }>;
 
 export function ConversionFunnel({ locale }: { locale: Locale }) {
   const c = copy[locale];
-  const href = contactPath(locale);
+  const contactHref = contactPath(locale);
   const icons = [MessageSquareText, CalendarDays, Download];
 
   return (
@@ -31,10 +39,11 @@ export function ConversionFunnel({ locale }: { locale: Locale }) {
         <div className="grid gap-4 sm:grid-cols-3">
           {c.items.map((item, index) => {
             const Icon = icons[index];
+            const href = item.href ? `/${locale}/${item.href}` : contactHref;
             return (
-              <Link key={item} href={href} className="rounded-lg border border-white/10 bg-white/[0.045] p-5 transition hover:-translate-y-1 hover:border-energy-500/60 hover:bg-white/[0.07]">
+              <Link key={item.label} href={href} className="rounded-lg border border-white/10 bg-white/[0.045] p-5 transition hover:-translate-y-1 hover:border-energy-500/60 hover:bg-white/[0.07]">
                 <Icon className="h-5 w-5 text-energy-500" />
-                <span className="mt-5 block text-sm font-semibold leading-6 text-white">{item}</span>
+                <span className="mt-5 block text-sm font-semibold leading-6 text-white">{item.label}</span>
               </Link>
             );
           })}

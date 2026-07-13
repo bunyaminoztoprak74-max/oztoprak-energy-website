@@ -327,6 +327,29 @@ export const blogPosts: Record<Locale, BlogPost[]> = {
         { question: "How long before electricity cost reductions appear on the bill?", answer: "Reactive penalty reductions and demand charge corrections typically appear in the first full billing cycle after the technical fix is implemented. For re-contracting, the new rate applies from the contract revision date." },
         { question: "Is an energy audit required before implementing cost reduction measures?", answer: "A formal energy audit is not always required, but a structured bill analysis and technical review of the compensation and metering systems is essential to ensure the right problems are addressed in the right order." }
       ]
+    },
+    {
+      slug: "independent-engineer-turkish-renewable-energy",
+      title: "What Does an Independent Engineer Do in Turkish Renewable Energy Projects?",
+      description: "The role, scope, and deliverables of an independent engineer appointed by lenders, investors, and development banks in Turkish solar and hydropower transactions.",
+      category: "Project Finance",
+      categorySlug: "project-finance",
+      date: "2026-06-20",
+      readingTime: "9 min",
+      toc: ["What the Independent Engineer role covers", "Lender's Engineer vs. Owner's Engineer", "Key deliverables in a Turkish renewable energy transaction", "TEİAŞ and grid compliance — what banks miss", "How to appoint an Independent Engineer"],
+      related: ["technical-due-diligence-renewable-energy-investments", "how-epc-delays-affect-power-plant-revenue", "solar-plant-performance-ratio-analysis"],
+      serviceLinks: ["independent-engineer", "lenders-engineer", "bank-technical-advisor", "technical-due-diligence"],
+      body: [
+        { heading: "What the Independent Engineer role covers", content: "An Independent Engineer (IE) is appointed by the financing party — not the developer or EPC contractor — to provide technical assurance throughout a renewable energy transaction. In Turkish solar and hydropower projects, the IE typically reviews the feasibility study and energy yield assumptions, assesses the EPC contract scope and contractor capability, monitors construction progress and milestone completion, witnesses key tests such as FAT and commissioning, confirms the conditions precedent to financial drawdown, and reports directly to the lender or investor. The IE is not the same as the owner's technical team or the EPC engineer. Their obligation is to the financing party, which means their reports need to be independent, documented, and defensible against third-party scrutiny." },
+        { heading: "Lender's Engineer vs. Owner's Engineer", content: "The terms are sometimes used interchangeably, but they have distinct obligations. A Lender's Engineer works for the bank or DFI and focuses on drawdown conditions, EPC progress confirmation, and financial close readiness. An Owner's Engineer works for the developer or owner and provides technical management during project development, procurement, and construction. In Turkish practice, the same consultant can serve both roles on different projects but never simultaneously on the same project. The distinction matters because banks require the IE to be genuinely independent — if there is any prior commercial relationship with the developer or EPC contractor, the appointment is likely to be challenged during due diligence." },
+        { heading: "Key deliverables in a Turkish renewable energy transaction", content: "A complete IE engagement for a project finance transaction in Turkey will typically produce: an initial technical due diligence report covering site conditions, yield analysis, technology risk, permitting status, and EPC scope; an EPC contract review with a risk matrix and red-line comments; a monitoring plan with milestone trigger events and inspection points; monthly or quarterly construction monitoring reports during the build; a commissioning monitoring report with test evidence review; and a completion certificate or technical completion confirmation for final drawdown. For acquisitions, the TDD report will also include a condition assessment of existing equipment, a review of historical performance data, O&M contract adequacy, regulatory compliance, and a risk register with monetized estimates." },
+        { heading: "TEİAŞ and grid compliance — what banks miss", content: "One of the most frequently underestimated risks in Turkish renewable energy transactions is grid compliance. Turkey's grid operator TEİAŞ enforces reactive power requirements through a financial penalty mechanism that can add 10–20% to annual electricity cost for non-compliant plants. Grid connection agreements in Turkey contain FRT (Fault Ride-Through) capability requirements, protection relay setting obligations, and AGC participation requirements for plants above certain capacity thresholds. These requirements are often not fully reflected in EPC contract technical specifications, creating exposure that only becomes visible after commissioning. A competent IE will specifically check whether the protection design, inverter or generator reactive power capability, and control system configuration are consistent with the grid connection agreement and TEİAŞ technical codes — before the lender releases funds." },
+        { heading: "How to appoint an Independent Engineer", content: "The IE appointment process in Turkish project finance is initiated by the financing bank, which typically requires the developer to propose two or three candidates from a pre-approved list. The bank selects based on technical relevance, local market experience, and absence of conflicts of interest. Costs are normally paid by the developer or borrower. For smaller transactions or portfolio acquisitions where a full IE panel is not required, a technical advisor scope is often sufficient — covering the TDD and acquisition phase without the ongoing monitoring obligation. International investors and DFIs working in Turkey for the first time should prioritize candidates with direct experience of TEİAŞ grid connection processes, Turkish EPC market contractor quality, and HES or GES commissioning evidence — not only general renewable energy credentials." }
+      ],
+      faqs: [
+        { question: "Is an Independent Engineer required for all Turkish renewable energy projects?", answer: "An IE is typically required by project finance lenders for any transaction with a project loan. Equity-only acquisitions can proceed with a TDD report instead, though development banks such as EBRD and IFC typically require an IE appointment regardless of the financing structure." },
+        { question: "Can the same firm act as Owner's Engineer and Independent Engineer?", answer: "No. The two roles have conflicting obligations. The IE must be genuinely independent of the developer, EPC contractor, and owner's team. Any prior or concurrent engagement for any party in the transaction will disqualify the candidate." }
+      ]
     }
   ],
   tr: [
@@ -652,6 +675,29 @@ export const blogPosts: Record<Locale, BlogPost[]> = {
         { question: "Elektrik maliyet azaltmalar faturada ne zaman görünür?", answer: "Reaktif ceza azaltmaları ve talep yükü düzeltmeleri genellikle teknik düzeltmenin uygulandığı tarihten sonraki ilk tam fatura döneminde görünür." },
         { question: "Maliyet azaltma önlemleri uygulamadan önce enerji denetimi gerekli midir?", answer: "Resmi enerji denetimi her zaman gerekli değildir; ancak doğru sorunların doğru sırayla ele alınmasını sağlamak için yapılandırılmış fatura analizi ve kompanzasyon ile sayaç sistemlerinin teknik incelemesi şarttır." }
       ]
+    },
+    {
+      slug: "turk-yenilenebilir-enerji-projelerinde-bagimsiz-muhendis",
+      title: "Türk Yenilenebilir Enerji Projelerinde Bağımsız Mühendis Ne Yapar?",
+      description: "Türk GES ve HES işlemlerinde kredi kuruluşları, yatırımcılar ve kalkınma bankaları tarafından atanan bağımsız mühendisinin rolü, kapsamı ve teslim edilebilirleri.",
+      category: "Proje Finansmanı",
+      categorySlug: "proje-finansmani",
+      date: "2026-06-20",
+      readingTime: "9 dk",
+      toc: ["Bağımsız Mühendis rolünün kapsamı", "Kredi Kuruluşu Mühendisi ile İşveren Mühendisi farkı", "Türk işlemlerinde temel teslim edilebilirler", "TEİAŞ ve şebeke uyumu — bankaların gözden kaçırdıkları", "Bağımsız Mühendis nasıl atanır"],
+      related: ["yenilenebilir-enerji-yatirimlari-teknik-due-diligence", "epc-gecikmeleri-santral-gelirini-nasil-etkiler", "ges-performans-orani-analizi"],
+      serviceLinks: ["bagimsiz-muhendis", "finans-kurulusu-muhendisi", "banka-teknik-danismani", "teknik-durum-tespiti"],
+      body: [
+        { heading: "Bağımsız Mühendis rolünün kapsamı", content: "Bağımsız Mühendis (BM), bir yenilenebilir enerji işlemi boyunca teknik güvence sağlamak için finansman tarafı tarafından — geliştirici veya EPC yüklenicisi tarafından değil — atanır. Türk GES ve HES projelerinde BM genellikle fizibilite etüdünü ve enerji verimi varsayımlarını inceler, EPC sözleşme kapsamını ve yüklenici kapasitesini değerlendirir, inşaat ilerlemesini ve kilometre taşı tamamlanmasını izler, FAT ve devreye alma gibi kritik testlere tanıklık eder, finansal çekim ön koşullarını onaylar ve doğrudan kredi kuruluşuna veya yatırımcıya rapor verir. BM, işverenin teknik ekibi veya EPC mühendisiyle aynı değildir. Yükümlülükleri finansman tarafınadır; bu da raporlarının bağımsız, belgelenmiş ve üçüncü taraf incelemesine dayanıklı olması gerektiği anlamına gelir." },
+        { heading: "Kredi Kuruluşu Mühendisi ile İşveren Mühendisi farkı", content: "Terimler zaman zaman birbirinin yerine kullanılsa da farklı yükümlülükleri vardır. Kredi Kuruluşu Mühendisi banka veya KFİ için çalışır ve çekim koşulları, EPC ilerleme onayı ve finansal kapanış hazırlığına odaklanır. İşveren Mühendisi ise geliştirici veya işveren için çalışır ve proje geliştirme, tedarik ve inşaat sırasında teknik yönetim sağlar. Türk uygulamasında aynı danışman farklı projelerde her iki rolü de üstlenebilir; ancak aynı proje üzerinde asla eş zamanlı olarak üstlenemez. Ayrım önemlidir çünkü bankalar BM'nin gerçekten bağımsız olmasını şart koşar — geliştirici veya EPC yüklenicisiyle önceki veya devam eden herhangi bir ticari ilişki varsa atama durum tespiti sırasında muhtemelen itirazla karşılaşır." },
+        { heading: "Türk işlemlerinde temel teslim edilebilirler", content: "Türkiye'de proje finansmanı işlemi için eksiksiz bir BM çalışması genellikle şunları üretir: saha koşullarını, verim analizini, teknoloji riskini, izin durumunu ve EPC kapsamını kapsayan ilk teknik durum tespiti raporu; risk matrisi ve kırmızı hat yorumlarıyla EPC sözleşme incelemesi; kilometre taşı tetikleyici olayları ve denetim noktalarıyla izleme planı; inşaat süresince aylık veya üç aylık izleme raporları; test kanıtı incelemesiyle devreye alma izleme raporu; ve son çekim için tamamlanma sertifikası veya teknik tamamlanma teyidi. Satın almalar için TDD raporu ayrıca mevcut ekipmanın durum değerlendirmesini, tarihsel performans verilerinin incelemesini, O&M sözleşmesi yeterliliğini, mevzuat uyumunu ve parasal tahminli bir risk sicilini de kapsar." },
+        { heading: "TEİAŞ ve şebeke uyumu — bankaların gözden kaçırdıkları", content: "Türk yenilenebilir enerji işlemlerinde en sık hafife alınan risklerden biri şebeke uyumudur. Türkiye'nin şebeke operatörü TEİAŞ, uyumsuz santrallere yıllık elektrik maliyetine %10-20 ekleyebilecek finansal ceza mekanizması aracılığıyla reaktif güç gereksinimlerini uygular. Türkiye'deki şebeke bağlantısı anlaşmaları; belirli kapasite eşiklerinin üzerindeki santraller için FRT (Arıza Geçişi) kapasite gereksinimleri, koruma rölesi ayar yükümlülükleri ve AGC katılım gereksinimleri içerir. Bu gereksinimler genellikle EPC sözleşmesi teknik şartnamelerine tam olarak yansıtılmaz; devreye almadan sonra ancak görünür hale gelen maruziyet yaratır. Yetkin bir BM, kredi kuruluşu fonları serbest bırakmadan önce koruma tasarımının, inverter veya jeneratör reaktif güç kapasitesinin ve kontrol sistemi konfigürasyonunun şebeke bağlantısı anlaşması ve TEİAŞ teknik kodlarıyla tutarlı olup olmadığını özellikle kontrol eder." },
+        { heading: "Bağımsız Mühendis nasıl atanır", content: "Türk proje finansmanında BM atama süreci, finansman bankası tarafından başlatılır; banka genellikle geliştiriciden önceden onaylanmış listeden iki veya üç aday önermesini ister. Banka; teknik uygunluğa, yerel pazar deneyimine ve çıkar çatışması olmamasına göre seçim yapar. Maliyetler normalde geliştirici veya borçlu tarafından karşılanır. Tam BM panelinin gerekmediği küçük işlemler veya portföy satın alımları için teknik danışman kapsamı çoğunlukla yeterlidir — devam eden izleme yükümlülüğü olmaksızın TDD ve satın alma aşamasını kapsar. Türkiye'ye ilk kez giren uluslararası yatırımcılar ve KFİ'ler, yalnızca genel yenilenebilir enerji kimlik bilgilerine değil; TEİAŞ şebeke bağlantısı süreçleri, Türk EPC piyasası yüklenici kalitesi ve HES veya GES devreye alma kanıtı konusunda doğrudan deneyimi olan adaylara öncelik vermelidir." }
+      ],
+      faqs: [
+        { question: "Tüm Türk yenilenebilir enerji projeleri için Bağımsız Mühendis zorunlu mu?", answer: "BM genellikle proje kredisi olan her işlem için proje finansmanı kredi kuruluşları tarafından talep edilir. Yalnızca öz sermayeyle gerçekleştirilen satın almalar bunun yerine TDD raporu ile ilerleyebilir; ancak EBRD ve IFC gibi kalkınma bankaları finansman yapısından bağımsız olarak genellikle BM ataması şart koşar." },
+        { question: "Aynı firma İşveren Mühendisi ve Bağımsız Mühendis olarak görev yapabilir mi?", answer: "Hayır. İki rolün çatışan yükümlülükleri vardır. BM'nin geliştirici, EPC yüklenicisi ve işveren ekibinden gerçekten bağımsız olması gerekir. İşlemdeki herhangi bir tarafla önceki veya devam eden bir çalışma, adayı diskalifiye eder." }
+      ]
     }
   ]
 };
@@ -692,7 +738,7 @@ function buildAuthorityArticle(locale: Locale, topic: (typeof longFormTopics)[Lo
     category,
     categorySlug,
     tags: [...tags],
-    author: en ? "Oztoprak Energy engineering desk" : "Oztoprak Enerji muhendislik masasi",
+    author: "Bünyamin Öztoprak",
     featured: index === 0,
     trending: index < 3,
     date: `2026-06-${String(index + 1).padStart(2, "0")}`,
@@ -1123,7 +1169,7 @@ function buildAuthorityTopicPost(locale: Locale, topic: AuthorityTopic, index: n
     category: topic.category,
     categorySlug: topic.categorySlug,
     tags: en ? [topic.focus, "technical audit", "renewable energy consultancy"] : [topic.focus, "teknik denetim", "enerji danismanligi"],
-    author: en ? "Oztoprak Energy engineering desk" : "Oztoprak Enerji muhendislik masasi",
+    author: "Bünyamin Öztoprak",
     featured: index < 3,
     trending: index < 6,
     date: `2026-07-${String(index + 1).padStart(2, "0")}`,

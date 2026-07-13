@@ -118,7 +118,20 @@ export function pageSitemapEntries() {
     ...pairedEntries("/en/industries", "/tr/industries", { changeFrequency: "monthly", priority: 0.8 }),
     ...pairedEntries("/en/industrial-bill-review", "/tr/industrial-bill-review", { changeFrequency: "monthly", priority: 0.9 }),
     ...pairedEntries("/en/reactive-penalty-analysis", "/tr/reactive-penalty-analysis", { changeFrequency: "monthly", priority: 0.85 }),
-    ...pairedEntries("/en/industrial-savings-checklist", "/tr/industrial-savings-checklist", { changeFrequency: "monthly", priority: 0.8 })
+    ...pairedEntries("/en/industrial-savings-checklist", "/tr/industrial-savings-checklist", { changeFrequency: "monthly", priority: 0.8 }),
+    // Lead magnets & conversion pages
+    ...pairedEntries("/en/resources", "/tr/resources", { changeFrequency: "monthly", priority: 0.85 }),
+    ...pairedEntries("/en/free-consultation", "/tr/free-consultation", { changeFrequency: "monthly", priority: 0.9 }),
+    ...pairedEntries("/en/free-epc-review", "/tr/free-epc-review", { changeFrequency: "monthly", priority: 0.85 }),
+    ...pairedEntries("/en/free-solar-review", "/tr/free-solar-review", { changeFrequency: "monthly", priority: 0.85 }),
+    ...pairedEntries("/en/free-hepp-review", "/tr/free-hepp-review", { changeFrequency: "monthly", priority: 0.85 }),
+    // International positioning
+    ...pairedEntries("/en/international", "/tr/international", { changeFrequency: "monthly", priority: 0.9 }),
+    // Vision expansion
+    ...pairedEntries("/en/hydrogen", "/tr/hydrogen", { changeFrequency: "monthly", priority: 0.8 }),
+    ...pairedEntries("/en/battery-storage", "/tr/battery-storage", { changeFrequency: "monthly", priority: 0.8 }),
+    ...pairedEntries("/en/ai-energy", "/tr/ai-energy", { changeFrequency: "monthly", priority: 0.75 }),
+    ...pairedEntries("/en/microgrids", "/tr/microgrids", { changeFrequency: "monthly", priority: 0.75 })
   ];
 
   getProjects("en").forEach((project, index) => {

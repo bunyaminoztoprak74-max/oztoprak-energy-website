@@ -7,6 +7,7 @@ import { getDictionary } from "@/content/dictionaries";
 import { buildMetadata } from "@/lib/seo";
 import { isLocale, type Locale } from "@/lib/i18n";
 import { linkedinUrl } from "@/lib/social";
+import { breadcrumbSchema, personSchema, organizationSchema } from "@/lib/schema";
 
 const copy = {
   en: {
@@ -101,8 +102,18 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
   const dict = getDictionary(locale);
   const page = copy[locale];
 
+  const schemas = [
+    breadcrumbSchema([
+      { name: dict.labels.breadcrumbsHome, url: `/${locale}` },
+      { name: dict.nav.about, url: `/${locale}/about` }
+    ]),
+    personSchema(),
+    organizationSchema(locale)
+  ];
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }} />
       <section className="energy-grid bg-navy-950 py-20">
         <Container>
           <Breadcrumbs locale={locale} items={[{ label: dict.nav.about }]} />
@@ -140,6 +151,65 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
               </Link>
               <a href={linkedinUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-md border border-white/15 bg-white/[0.05] px-4 py-3 text-sm font-semibold text-white hover:border-energy-500 hover:text-energy-500">
                 {page.linkedinLabel}
+              </a>
+            </div>
+          </div>
+        </Container>
+      </section>
+      <section className="bg-navy-950 py-16">
+        <Container>
+          <div className="mx-auto max-w-3xl rounded-xl border border-white/10 bg-white/[0.04] p-8">
+            <p className="text-sm font-semibold uppercase tracking-widest text-energy-500">
+              {locale === "en" ? "Principal Engineer" : "Baş Mühendis"}
+            </p>
+            <h2 className="mt-3 text-2xl font-bold text-white">Bünyamin Öztoprak</h2>
+            <p className="mt-1 text-sm font-medium text-energy-500/80">
+              {locale === "en"
+                ? "Founder · Electrical & Power Engineering"
+                : "Kurucu · Elektrik ve Güç Mühendisliği"}
+            </p>
+            <p className="mt-5 text-sm leading-7 text-steel">
+              {locale === "en"
+                ? "28+ years of hands-on experience in renewable energy engineering — covering hydropower plant operations, solar PV commissioning and performance analysis, EPC contract management, grid protection systems, and owner-side technical advisory. Based in Turkey with international project experience."
+                : "Yenilenebilir enerji mühendisliğinde 28+ yıllık uygulamalı deneyim — HES işletmesi, GES devreye alma ve performans analizi, EPC sözleşme yönetimi, şebeke koruma sistemleri ve işveren tarafı teknik danışmanlık alanlarını kapsamaktadır. Türkiye merkezli, uluslararası proje deneyimi mevcuttur."}
+            </p>
+            <div className="mt-6 grid gap-3 sm:grid-cols-2">
+              {(locale === "en"
+                ? [
+                    "Hydropower (run-of-river HEPP)",
+                    "Solar PV commissioning & performance",
+                    "EPC technical advisory",
+                    "Owner's Engineering",
+                    "Grid compliance (TEİAŞ)",
+                    "Technical due diligence",
+                    "Reactive power & power quality",
+                    "Project finance technical advisory"
+                  ]
+                : [
+                    "Hidroelektrik (nehir tipi HES)",
+                    "GES devreye alma ve performans",
+                    "EPC teknik danışmanlık",
+                    "İşveren Mühendisliği",
+                    "Şebeke uyumu (TEİAŞ)",
+                    "Teknik durum tespiti",
+                    "Reaktif güç ve güç kalitesi",
+                    "Proje finansmanı teknik danışmanlığı"
+                  ]
+              ).map((item) => (
+                <div key={item} className="flex items-center gap-2 text-sm text-steel">
+                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-energy-500" />
+                  {item}
+                </div>
+              ))}
+            </div>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <a
+                href={linkedinUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-md bg-energy-500 px-4 py-2.5 text-sm font-bold text-navy-950 shadow-glow hover:bg-white transition"
+              >
+                {locale === "en" ? "Connect on LinkedIn" : "LinkedIn'de Bağlan"}
               </a>
             </div>
           </div>

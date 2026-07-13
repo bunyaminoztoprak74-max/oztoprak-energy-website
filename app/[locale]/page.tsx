@@ -18,6 +18,9 @@ import {
 import { Container } from "@/components/container";
 import { ButtonLink } from "@/components/button-link";
 import { SectionHeading } from "@/components/section-heading";
+import { MobileStickyCtaBar } from "@/components/mobile-sticky-cta-bar";
+import { InvestorTrustBlock } from "@/components/investor-trust-block";
+import { EngineeringCredentials } from "@/components/engineering-credentials";
 import { MotionReveal } from "@/components/motion-reveal";
 import { FeatureCard } from "@/components/cards";
 import { buildMetadata } from "@/lib/seo";
@@ -337,6 +340,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
   return (
     <>
+      <MobileStickyCtaBar locale={locale} />
       <section className="hero-industrial relative overflow-hidden bg-navy-950">
         <Container className="relative z-10 grid min-h-[70vh] items-center py-14 sm:py-16 lg:py-20">
           <div className="grid gap-10 lg:grid-cols-[1.02fr_0.72fr] lg:items-center">
@@ -573,6 +577,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </div>
         </Container>
       </section>
+
+      <InvestorTrustBlock locale={locale} />
+      <EngineeringCredentials locale={locale} />
 
       <section className="relative overflow-hidden bg-[linear-gradient(135deg,#081426,#0b2136_52%,#07111f)] py-16 text-white">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_20%,rgba(47,183,255,0.2),transparent_26rem)]" />

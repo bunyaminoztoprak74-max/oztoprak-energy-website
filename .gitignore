@@ -6,3 +6,13 @@ dev.err
 tsconfig.tsbuildinfo
 *.log
 
+
+.vercel
+
+# Local API credentials and generated integration caches
+gsc-credentials.json
+gsc-token.json
+gsc-query.py
+affiliate-links.json
+cj-advertisers-cache.json
+cj-config.json

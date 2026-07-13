@@ -10,6 +10,7 @@ import { AuthorityMetrics } from "@/components/authority-metrics";
 import { ConversionFunnel } from "@/components/conversion-funnel";
 import { EngineeringVisualBlocks } from "@/components/engineering-visual-blocks";
 import { StickyConsultationCta } from "@/components/sticky-consultation-cta";
+import { MobileStickyCtaBar } from "@/components/mobile-sticky-cta-bar";
 import { getDictionary } from "@/content/dictionaries";
 import { getService, getServices } from "@/content/services";
 import { buildMetadata } from "@/lib/seo";
@@ -519,6 +520,352 @@ function specializedServiceSections(locale: Locale, service: NonNullable<ReturnT
         ];
   }
 
+  if (service.slug === "reactive-power-audit" || service.slug === "reaktif-guc-denetimi") {
+    return en ? [
+      {
+        heading: "How Reactive Power Penalties Are Calculated in Turkey",
+        content: "TEİAŞ bills reactive power penalties when the inductive or capacitive reactive energy exchanged at the grid connection point exceeds the allowed threshold relative to active energy consumption. The penalty rate increases progressively as the power factor moves further from the target range. Most facilities do not realise the penalty accumulation until the annual total becomes significant. A reactive power audit calculates the exact monthly penalty exposure, identifies the source (load behavior, compensation panel failure, harmonic injection, or incorrect capacitor bank switching), and determines whether the problem can be resolved through panel adjustment, expansion, or replacement."
+      },
+      {
+        heading: "Compensation Panel Assessment and Right-Sizing",
+        content: "A compensation panel that is correctly sized for the original load profile may become inadequate as the facility expands, as load composition changes, or as harmonic levels increase from variable speed drives, LED lighting, or inverter-based equipment. The audit reviews the panel's rated capacity, the number and size of capacitor steps, the reactive power controller setpoints, the switching response time, and the harmonic filter configuration if present. Where harmonics are above safe levels for standard capacitor banks, the audit flags the risk of capacitor overload and recommends appropriately rated detuned reactors or active filter solutions."
+      },
+      {
+        heading: "Free Reactive Power Analysis — Initial Assessment from Invoices",
+        content: "The most common barrier to starting a reactive power audit is uncertainty about whether the problem is serious enough to justify a site visit. Oztoprak Energy offers a free initial analysis based on the last 12 months of TEİAŞ electricity invoices. This analysis calculates the annual reactive penalty total, the average power factor per month, the trend over time, and a preliminary estimate of potential savings from correct compensation. In most cases, this is enough to determine whether a site visit and formal audit are justified — and what the payback period on a compensation upgrade would be."
+      }
+    ] : [
+      {
+        heading: "Türkiye'de Reaktif Güç Cezaları Nasıl Hesaplanır",
+        content: "TEİAŞ, şebeke bağlantı noktasında değiştirilen endüktif veya kapasitif reaktif enerji, aktif enerji tüketimine oranla izin verilen eşiği aştığında reaktif güç cezası uygular. Ceza oranı, güç faktörü hedef aralıktan uzaklaştıkça kademeli olarak artar. Çoğu tesis yıllık toplam önemli bir düzeye ulaşana kadar ceza birikiminin farkında olmaz. Reaktif güç denetimi, her ay ödenecek cezayı tam olarak hesaplar, kaynağı (yük davranışı, kompanzasyon panosu arızası, harmonik enjeksiyonu veya hatalı kondansatör grubu anahtarlaması) tespit eder ve sorunun pano ayarı, genişletme veya değiştirme yoluyla çözülüp çözülemeyeceğini belirler."
+      },
+      {
+        heading: "Kompanzasyon Panosu Değerlendirmesi ve Doğru Boyutlandırma",
+        content: "Orijinal yük profiline göre doğru boyutlandırılmış bir kompanzasyon panosu, tesis genişledikçe, yük bileşimi değiştikçe veya harmonik düzeyleri değişken hız sürücüleri, LED aydınlatma veya invertör tabanlı ekipmanlar nedeniyle arttıkça yetersiz kalabilir. Denetim, pano anma kapasitesini, kondansatör kademelerinin sayısını ve boyutunu, reaktif güç kontrol cihazı set noktalarını, anahtarlama tepki süresini ve varsa harmonik filtre konfigürasyonunu inceler. Harmoniklerin standart kondansatör bankaları için güvenli düzeyin üzerinde olduğu durumlarda denetim, kondansatör aşırı yükleme riskini işaret eder ve uygun şekilde derecelendirilmiş detune reaktör veya aktif filtre çözümleri önerir."
+      },
+      {
+        heading: "Ücretsiz Reaktif Güç Analizi — Faturalardan İlk Değerlendirme",
+        content: "Reaktif güç denetimine başlamanın önündeki en yaygın engel, sorunun saha ziyaretini haklı kılacak kadar ciddi olup olmadığı konusundaki belirsizliktir. Öztoprak Enerji, son 12 aylık TEİAŞ elektrik faturalarına dayalı ücretsiz bir ön analiz sunmaktadır. Bu analiz, yıllık reaktif ceza toplamını, aylık ortalama güç faktörünü, zaman içindeki trendi ve doğru kompanzasyondan elde edilecek potansiyel tasarrufun ön tahminini hesaplar. Çoğu durumda bu, bir saha ziyareti ve resmi denetimin haklı olup olmadığını ve bir kompanzasyon güncellemesinin geri ödeme süresinin ne olacağını belirlemek için yeterlidir."
+      }
+    ];
+  }
+
+  if (service.slug === "independent-engineer" || service.slug === "bagimsiz-muhendis") {
+    return en ? [
+      {
+        heading: "Independent Engineer Role in Turkish Project Finance",
+        content: "An Independent Engineer (IE) appointment is a standard condition in renewable energy project finance in Turkey. Development banks, including Ziraat Bankası, Halkbank and Garanti BBVA, and international financial institutions including EBRD and IFC, require an IE to be appointed before loan disbursement can begin. The IE's role is to give the lender confidence that the project is technically sound, that the EPC contractor can deliver, and that the plant will generate the yields needed to service the debt. The IE is appointed by the lender — not the developer — and reports to the lender throughout the project lifecycle."
+      },
+      {
+        heading: "IE Appointment Scope: Pre-Construction Through Completion",
+        content: "A typical IE appointment covers three phases. Pre-financial-close review: the IE reviews the EPC contract technical scope, energy yield assessment, grid connection plan, permits and environmental documentation before the lender commits to the loan. Construction phase: the IE conducts monthly site visits, prepares written progress reports, witnesses FAT and SAT inspections, and verifies drawdown conditions before each loan disbursement. Completion phase: the IE witnesses the performance test, reviews the results against the contracted guarantee, and issues the completion certificate that triggers the final drawdown. The quality of the IE's reports directly affects the lender's confidence in disbursing funds."
+      },
+      {
+        heading: "IFC Performance Standards and Equator Principles Context",
+        content: "For projects financed by IFC, EBRD or Equator Principles-compliant banks, the IE report must also address environmental and social risk assessment, ESAP (Environmental and Social Action Plan) compliance, and stakeholder engagement adequacy. Oztoprak Energy structures IE reports for both Turkish development bank requirements and IFC Performance Standards compliance, so the same engagement satisfies both domestic and international lender requirements without requiring a second IE appointment."
+      }
+    ] : [
+      {
+        heading: "Türk Proje Finansmanında Bağımsız Mühendis Rolü",
+        content: "Bağımsız Mühendis (BM) atama, Türkiye'deki yenilenebilir enerji proje finansmanında standart bir koşuldur. Ziraat Bankası, Halkbank ve Garanti BBVA dahil kalkınma bankaları ile EBRD ve IFC dahil uluslararası finansal kuruluşlar, kredi kullandırımına başlamadan önce BM atanmasını şart koşar. BM'nin rolü, kredi kuruluşuna projenin teknik açıdan sağlam olduğu, EPC yüklenicisinin teslim edebileceği ve santralin borç servisine yetecek getiriyi üreteceği konusunda güvence vermektir. BM, geliştirici değil kredi kuruluşu tarafından atanır ve proje yaşam döngüsü boyunca kredi kuruluşuna rapor verir."
+      },
+      {
+        heading: "BM Atama Kapsamı: Ön Yapımdan Tamamlamaya",
+        content: "Tipik bir BM ataması üç aşamayı kapsar. Finansal kapanış öncesi inceleme: BM, kredi kuruluşu kredi taahhüdü vermeden önce EPC sözleşmesi teknik kapsamını, enerji verimi değerlendirmesini, şebeke bağlantı planını, izinleri ve çevresel belgeleri inceler. İnşaat aşaması: BM aylık saha ziyaretleri yapar, yazılı ilerleme raporları hazırlar, FAT ve SAT denetimlerine tanıklık eder ve her kredi kullandırımından önce çekiş koşullarını doğrular. Tamamlama aşaması: BM performans testine tanıklık eder, sonuçları sözleşme garantisine karşı inceler ve son çekimi tetikleyen tamamlama sertifikasını düzenler."
+      },
+      {
+        heading: "IFC Performans Standartları ve Ekvator İlkeleri Bağlamı",
+        content: "IFC, EBRD veya Ekvator İlkeleri uyumlu bankalarca finanse edilen projeler için BM raporu aynı zamanda çevresel ve sosyal risk değerlendirmesini, ÇSEP (Çevresel ve Sosyal Eylem Planı) uyumunu ve paydaş katılımı yeterliliğini kapsamalıdır. Öztoprak Enerji BM raporlarını hem Türk kalkınma bankası gereksinimleri hem de IFC Performans Standartları uyumu için yapılandırır."
+      }
+    ];
+  }
+
+  if (service.slug === "lenders-engineer" || service.slug === "finans-kurulusu-muhendisi") {
+    return en ? [
+      {
+        heading: "Drawdown Conditions and Verification",
+        content: "The Lender's Engineer plays a critical role in the disbursement process. Before each construction drawdown, the LE verifies that the conditions precedent specified in the facility agreement have been met — including physical progress milestones, quality evidence, EPC contract compliance, environmental and social requirements, and insurance certificate currency. The LE's verification is the bank's technical gating mechanism: without a positive LE confirmation, the disbursement does not proceed. This makes the LE's reporting discipline, site visit quality, and technical judgment directly material to the project's financing timeline."
+      },
+      {
+        heading: "Reporting Standards for Turkish and International Lenders",
+        content: "Turkish development bank LE reports typically follow a structured template covering physical progress percentage, photographic evidence, EPC contractor compliance, schedule variance, open issues register, and confirmation of drawdown condition compliance. International LE reports for IFC, EBRD or private lenders typically include an additional section on environmental and social monitoring, community engagement evidence, and compliance with lender-specific environmental covenants. Oztoprak Energy prepares LE reports that meet both Turkish regulatory standards and international lender quality expectations."
+      }
+    ] : [
+      {
+        heading: "Çekiş Koşulları ve Doğrulama",
+        content: "Finans Kuruluşu Mühendisi, kullandırım sürecinde kritik bir rol oynar. Her inşaat çekişinden önce FK Mühendisi, kredi anlaşmasında belirtilen ön koşulların karşılandığını doğrular: fiziksel ilerleme kilometre taşları, kalite kanıtı, EPC sözleşme uyumu, çevresel ve sosyal gereksinimler ve sigorta sertifikası güncelliği dahil. FK Mühendisinin doğrulaması bankanın teknik geçiş mekanizmasıdır: FK'nın olumlu teyidi olmadan kullandırım gerçekleşmez. Bu durum FK'nın raporlama disiplinini, saha ziyareti kalitesini ve teknik yargısını projenin finansman takvimi açısından doğrudan önemli kılar."
+      },
+      {
+        heading: "Türk ve Uluslararası Kredi Kuruluşları için Raporlama Standartları",
+        content: "Türk kalkınma bankası FK raporları genellikle fiziksel ilerleme yüzdesi, fotoğraf kanıtı, EPC yüklenici uyumu, takvim sapması, açık sorunlar kaydı ve çekiş koşulu uyum teyidini kapsayan yapılandırılmış bir şablonu izler. IFC, EBRD veya özel kredi kuruluşları için uluslararası FK raporları genellikle çevresel ve sosyal izleme, toplum katılımı kanıtı ve kredi kuruluşuna özgü çevresel taahhütlerle uyumu kapsayan ek bir bölüm içerir."
+      }
+    ];
+  }
+
+  if (service.slug === "bank-technical-advisor" || service.slug === "banka-teknik-danismani") {
+    return en ? [
+      {
+        heading: "What a BTA Report Must Cover",
+        content: "A Bank Technical Advisor report for a renewable energy project finance transaction typically covers: energy yield assessment review (methodology, datasets, P50 vs P90 sensitivity, inter-annual variability), EPC contract technical adequacy (scope definition, interface risks, performance guarantee enforceability, liquidated damages structure), grid connection plan (TEİAŞ connection conditions, protection requirements, FRT obligations, reactive power compliance), permitting status (generation licence, connection agreement, environmental permits, land access), and technical risk summary ranked by severity and mitigation status. The report must be structured around the technical schedules of the lender's facility agreement."
+      },
+      {
+        heading: "Timeline and Process for BTA Engagement",
+        content: "A typical BTA engagement takes 3–6 weeks from data room access to final report. The process begins with a data room review and initial information request list. This is followed by a site visit (1–2 days) to verify physical conditions, meet the project team, and observe the grid connection interface. The draft report is reviewed by the lender's legal team and typically requires one round of clarifications before the final version is issued for the credit committee. Oztoprak Energy has structured BTA reports that have been accepted by Turkish development banks and international project finance lenders."
+      }
+    ] : [
+      {
+        heading: "BTA Raporu Neleri Kapsamalıdır",
+        content: "Yenilenebilir enerji proje finansmanı işlemi için banka teknik danışmanı raporu genellikle şunları kapsar: enerji verimi değerlendirmesi incelemesi (metodoloji, veri setleri, P50'ye karşı P90 duyarlılığı, yıllar arası değişkenlik), EPC sözleşmesi teknik yeterliliği (kapsam tanımı, arayüz riskleri, performans garantisi uygulanabilirliği, gecikme cezası yapısı), şebeke bağlantısı planı (TEİAŞ bağlantı koşulları, koruma gereksinimleri, FRT yükümlülükleri, reaktif güç uyumu), izinleme durumu (üretim lisansı, bağlantı anlaşması, çevresel izinler, arazi erişimi) ve şiddet ve azaltım durumuna göre sıralanmış teknik risk özeti."
+      },
+      {
+        heading: "BTA Çalışması için Süreç ve Zaman Çizelgesi",
+        content: "Tipik bir BTA çalışması, data room erişiminden nihai rapora kadar 3-6 hafta sürer. Süreç bir data room incelemesi ve ilk bilgi talep listesiyle başlar. Bunu fiziksel koşulları doğrulamak, proje ekibiyle görüşmek ve şebeke bağlantı arayüzünü gözlemlemek için bir saha ziyareti (1-2 gün) izler. Taslak rapor kredi kuruluşunun hukuk ekibi tarafından incelenir ve genellikle kredi komitesi için nihai versiyon düzenlenmeden önce bir tur açıklama gerektir."
+      }
+    ];
+  }
+
+  if (service.slug === "portfolio-technical-review" || service.slug === "portfoy-teknik-incelemesi") {
+    return en ? [
+      {
+        heading: "Why Portfolio Reviews Find Risks Asset Reviews Miss",
+        content: "Individual asset technical reviews are designed to assess one plant's condition against its own standards. Portfolio reviews are designed to find patterns across multiple assets that no individual review can see. Common portfolio-level findings include: the same EPC contractor delivered multiple plants with the same commissioning documentation gap; a shared grid operator applies inconsistent reactive power compliance enforcement across different plants in the portfolio; O&M contractors for different assets use different maintenance intervals, creating variable risk exposure; or the same protection relay firmware version is running across multiple sites with a known vulnerability. These systematic risks only become visible when assets are reviewed together."
+      },
+      {
+        heading: "Deliverable: Portfolio Technical Dashboard and Priority Matrix",
+        content: "The portfolio technical review delivers a consolidated view of technical performance, risk exposure, and compliance status across all assets in the portfolio. The dashboard summarizes generation performance (actual vs. budget, PR trends), availability (actual vs. O&M contract targets), open defects (by severity, asset and responsible party), grid compliance status, and outstanding corrective actions. The priority action matrix ranks issues across the portfolio by financial impact, safety risk, and implementation urgency — allowing the asset management team to allocate resources to where they create the most portfolio value."
+      }
+    ] : [
+      {
+        heading: "Portföy İncelemesinin Varlık İncelemesinin Kaçırdığı Riskleri Neden Bulduğu",
+        content: "Bireysel varlık teknik incelemeleri, tek bir santralin durumunu kendi standartlarına göre değerlendirmek için tasarlanmıştır. Portföy incelemeleri, hiçbir bireysel incelemenin göremeyeceği çoklu varlıklardaki kalıpları bulmak için tasarlanmıştır. Yaygın portföy düzeyindeki bulgular şunlardır: aynı EPC yüklenicisi aynı devreye alma dokümantasyonu boşluğuyla birden fazla santral teslim etti; paylaşılan bir şebeke işleticisi portföydeki farklı santrallerde tutarsız reaktif güç uyum uygulaması yapıyor; farklı varlıklar için O&M yüklenicileri farklı bakım aralıkları kullanıyor ve bu da değişken risk maruziyeti yaratıyor."
+      },
+      {
+        heading: "Teslim Edilecek: Portföy Teknik Gösterge Paneli ve Öncelik Matrisi",
+        content: "Portföy teknik incelemesi, portföydeki tüm varlıklarda teknik performans, risk maruziyeti ve uyum durumunun konsolide bir görünümünü sunar. Gösterge paneli üretim performansını (gerçek bütçeye karşı, PR trendleri), emre amadeliği (gerçek O&M sözleşme hedeflerine karşı), açık kusurları (şiddet, varlık ve sorumlu tarafa göre), şebeke uyum durumunu ve bekleyen düzeltici aksiyonları özetler. Öncelik eylem matrisi, portföy genelindeki sorunları finansal etki, güvenlik riski ve uygulama aciliyetine göre sıralayarak varlık yönetim ekibinin kaynakları en fazla portföy değeri yaratan alanlara tahsis etmesine olanak tanır."
+      }
+    ];
+  }
+
+  if (service.slug === "expert-witness" || service.slug === "bilirkisi") {
+    return en ? [
+      {
+        heading: "Common Renewable Energy Disputes That Require Expert Witnesses",
+        content: "The most common technical disputes in renewable energy that require an Expert Witness include: EPC performance guarantee shortfall (the plant generates less than the contracted guarantee and the parties dispute whether the shortfall is the contractor's responsibility); construction delay causation (the project reached commercial operation late and the parties dispute which delays were caused by the EPC contractor versus owner-caused or force majeure events); commissioning defects (equipment installed by the EPC contractor fails within the defect liability period and the parties dispute whether the failure is a commissioning defect or an O&M issue); and grid connection failure responsibility (the plant cannot achieve the required grid connection technical standards and the parties dispute whether the fault lies with the EPC contractor, the equipment supplier, or the grid operator)."
+      },
+      {
+        heading: "Independence and Impartiality",
+        content: "An Expert Witness in legal or arbitration proceedings has a duty to the tribunal — not to the party that appointed them. This duty of independence is a professional and legal obligation that overrides the commercial interest of the appointing party. Oztoprak Energy structures Expert Witness engagements to maintain this independence: we do not accept instructions to produce a predetermined conclusion, we disclose any potential conflicts of interest, and our reports state the factual basis for each opinion clearly. A report that is not independently defensible will be challenged successfully in cross-examination — which damages the appointing party's case more than having no expert at all."
+      }
+    ] : [
+      {
+        heading: "Bilirkişi Gerektiren Yaygın Yenilenebilir Enerji Uyuşmazlıkları",
+        content: "Bilirkişi gerektiren en yaygın yenilenebilir enerji teknik uyuşmazlıkları şunlardır: EPC performans garantisi açığı (santral, sözleşme garantisinden daha az üretim yapıyor ve taraflar açığın yüklenicinin sorumluluğunda olup olmadığını tartışıyor); inşaat gecikmesi nedenselliği (proje ticari işletmeye geç ulaştı ve taraflar hangi gecikmelerin EPC yüklenicisi tarafından mı yoksa işveren kaynaklı mı ya da force majeure olaylarından mı kaynaklandığını tartışıyor); devreye alma kusurları (EPC yüklenicisi tarafından kurulan ekipman kusur sorumluluk dönemi içinde arıza yapıyor ve taraflar arızanın devreye alma kusuru mu yoksa O&M sorunu mu olduğunu tartışıyor)."
+      },
+      {
+        heading: "Bağımsızlık ve Tarafsızlık",
+        content: "Hukuki veya tahkim süreçlerindeki bir bilirkişinin, onu atayan taraf değil mahkeme veya tahkim kuruluna karşı görevi vardır. Bu bağımsızlık görevi, atayan tarafın ticari çıkarının önüne geçen mesleki ve hukuki bir yükümlülüktür. Öztoprak Enerji bilirkişi çalışmalarını bu bağımsızlığı koruyacak şekilde yapılandırır: önceden belirlenmiş bir sonuç üretme talimatı kabul etmiyor, olası çıkar çatışmalarını açıklıyor ve raporlarımız her görüşün gerçek dayanağını net olarak belirtiyor."
+      }
+    ];
+  }
+
+  if (service.slug === "technical-arbitration-support" || service.slug === "teknik-tahkim-destegi") {
+    return en ? [
+      {
+        heading: "Understanding the Technical Facts of an EPC Dispute",
+        content: "Before any legal strategy can be developed, the technical facts of a renewable energy EPC dispute must be established. What does the EPC contract actually require? What did the contractor deliver? How do the two compare? Where performance fell short of the contractual guarantee, what caused the shortfall — and can that cause be attributed to the contractor, the owner, the equipment supplier, or external conditions? These questions require someone with field experience of how renewable energy plants are built, commissioned, and operated — and how EPC contracts allocate technical risk between parties. This is the core value of technical arbitration support: providing that engineering clarity before legal strategy is committed."
+      },
+      {
+        heading: "Supporting Legal Counsel Without Replacing Legal Advice",
+        content: "Technical arbitration support is engineering advice — it is not legal advice. The role of Oztoprak Energy in a dispute is to help legal counsel understand the technical facts clearly enough to develop and test legal strategy: to identify which technical arguments are sustainable, which evidence supports each position, where the technical weaknesses are in the client's case, and what questions should be asked of the opposing party's technical experts. The legal strategy — choice of arbitration venue, timing, procedural steps, settlement decisions — remains entirely with the client and their legal counsel."
+      }
+    ] : [
+      {
+        heading: "Bir EPC Uyuşmazlığının Teknik Gerçeklerini Anlamak",
+        content: "Herhangi bir hukuki strateji geliştirilebilmeden önce, yenilenebilir enerji EPC uyuşmazlığının teknik gerçekleri ortaya konulmalıdır. EPC sözleşmesi gerçekte ne gerektiriyor? Yüklenici ne teslim etti? İkisi nasıl karşılaştırılıyor? Performans sözleşme garantisinin altında kaldığında, açığa ne sebep oldu — ve bu neden yükleniciye, işverene, ekipman tedarikçisine veya dış koşullara atfedilebilir mi? Bu sorular, yenilenebilir enerji santrallerinin nasıl inşa edildiği, devreye alındığı ve işletildiği konusunda saha deneyimi gerektirir. Teknik tahkim desteğinin temel değeri budur: hukuki strateji taahhüt edilmeden önce mühendislik netliği sağlamak."
+      },
+      {
+        heading: "Hukuki Danışmanlığın Yerine Geçmeden Hukuk Müşavirlerine Destek",
+        content: "Teknik tahkim desteği mühendislik tavsiyesidir — hukuki tavsiye değildir. Öztoprak Enerji'nin bir uyuşmazlıktaki rolü, hukuk müşavirlerinin teknik gerçekleri hukuki strateji geliştirmek ve test etmek için yeterince net anlamalarına yardımcı olmaktır: hangi teknik argümanların sürdürülebilir olduğunu, her pozisyonu hangi kanıtların desteklediğini, müvekkil davasındaki teknik zayıflıkların nerede olduğunu ve karşı tarafın teknik uzmanlarına hangi soruların yöneltilmesi gerektiğini belirlemek. Hukuki strateji — tahkim mekanı seçimi, zamanlama, usul adımları, uzlaşma kararları — tamamen müvekkil ve hukuk müşavirlerine aittir."
+      }
+    ];
+  }
+
+  if (service.slug === "factory-acceptance-test" || service.slug === "fabrika-kabul-testi") {
+    return en ? [
+      {
+        heading: "FAT Agenda and Typical Duration",
+        content: "A FAT for a solar inverter typically covers: visual inspection of manufacturing quality and labelling, functional test of all control inputs and outputs, protection relay integration test, communication protocol test (Modbus, DNP3 or IEC 61850 as specified), insulation resistance and high-voltage withstand test, efficiency measurement at multiple load points, harmonic distortion measurement, anti-islanding function test, and SCADA integration verification. Duration depends on the equipment type: inverter FAT typically takes 1–2 days per unit or batch, transformer FAT takes 1–3 days depending on the extent of routine testing required, and protection relay FAT takes 0.5–1 day per unit. Oztoprak Energy attends FATs with calibrated test equipment and produces a signed FAT report with test results and photographic evidence."
+      },
+      {
+        heading: "FAT vs. SAT: Why Both Are Required",
+        content: "FAT and SAT are complementary, not alternatives. FAT verifies that the equipment meets its specification in the controlled environment of the manufacturer's facility. SAT verifies that the same equipment, once installed at the site, operates correctly in its actual environment — which includes cable runs, earthing systems, auxiliary power supplies, ambient temperature and humidity, interaction with other plant systems, and the specific software configuration for the plant's operating conditions. Defects that pass FAT and emerge at SAT are typically installation or interface issues rather than manufacturing defects. Both stages of testing are required for a complete evidence record."
+      }
+    ] : [
+      {
+        heading: "FAT Programı ve Tipik Süre",
+        content: "Bir GES invertörü için FAT genellikle şunları kapsar: üretim kalitesi ve etiketlemenin görsel incelemesi, tüm kontrol giriş ve çıkışlarının fonksiyonel testi, koruma rölesi entegrasyon testi, iletişim protokolü testi (belirtilen şekilde Modbus, DNP3 veya IEC 61850), yalıtım direnci ve yüksek gerilim dayanma testi, birden fazla yük noktasında verimlilik ölçümü, harmonik bozunum ölçümü, ada önleme fonksiyon testi ve SCADA entegrasyon doğrulaması. Süre ekipman türüne bağlıdır: invertör FAT genellikle birim veya parti başına 1-2 gün, transformatör FAT gereken rutin test kapsamına göre 1-3 gün, koruma rölesi FAT birim başına 0,5-1 gün sürer."
+      },
+      {
+        heading: "FAT ve SAT: Her İkisi Neden Gereklidir",
+        content: "FAT ve SAT alternatif değil, tamamlayıcıdır. FAT, ekipmanın üreticinin tesisinin kontrollü ortamında teknik şartnameyi karşıladığını doğrular. SAT, aynı ekipmanın sahaya kurulduktan sonra gerçek ortamında — kablo güzergahları, topraklama sistemleri, yardımcı güç kaynakları, ortam sıcaklığı ve nemi, diğer santral sistemleriyle etkileşim ve santralin işletme koşulları için özel yazılım konfigürasyonu dahil — doğru çalıştığını doğrular. FAT'ı geçen ve SAT'ta ortaya çıkan kusurlar genellikle imalat hatası değil kurulum veya arayüz sorunlarıdır."
+      }
+    ];
+  }
+
+  if (service.slug === "site-acceptance-test" || service.slug === "saha-kabul-testi") {
+    return en ? [
+      {
+        heading: "SAT Scope for Solar Plants",
+        content: "For solar plants, the SAT scope typically covers: DC side string testing (open circuit voltage, short circuit current, insulation resistance per IEC 62446), IV curve tracing for representative strings to identify shading, soiling, mismatch or bypass diode failure, inverter commissioning verification (startup sequence, protection settings, reactive power capability, LVRT and FRT function), MV collection network testing (cable continuity, cable insulation, transformer earthing, protection relay settings verification), SCADA commissioning (I/O verification, data historian startup, alarm configuration, telemetry interface to grid operator), performance ratio measurement for one representative day as a baseline, and punch-list management to close all open items before handover sign-off."
+      },
+      {
+        heading: "IEC 62446 Documentation Requirements",
+        content: "IEC 62446-1 (Grid-connected photovoltaic systems — minimum requirements for system documentation, commissioning tests and inspection) defines the documentation that must be produced and retained as evidence of SAT completion. Required documents include: design documentation (single-line diagram, system schematic, array layout), inspection and testing records (visual inspection, electrical tests, performance measurements), commissioning test results (signed test sheets with pass/fail criteria), and operational documentation (system manual, maintenance schedule, fault diagnosis guide). Oztoprak Energy's SAT reports are structured to meet IEC 62446-1 requirements so the documentation is acceptable for grid connection approval, insurance assessments and future due diligence reviews."
+      }
+    ] : [
+      {
+        heading: "GES için SAT Kapsamı",
+        content: "GES'ler için SAT kapsamı genellikle şunları kapsar: DC tarafı string testi (IEC 62446 uyarınca açık devre gerilimi, kısa devre akımı, yalıtım direnci), gölgelenme, kirlenme, uyumsuzluk veya bypass diyotu arızasını tespit etmek için temsili string IV eğrisi izleme, invertör devreye alma doğrulaması (başlatma sırası, koruma ayarları, reaktif güç kabiliyeti, LVRT ve FRT fonksiyonu), OG koleksiyon ağı testi (kablo sürekliliği, kablo yalıtımı, trafo topraklaması, koruma rölesi ayarları doğrulaması), SCADA devreye alma (G/Ç doğrulaması, veri tarihçisi başlatma, alarm konfigürasyonu, şebeke işleticisine telemetri arayüzü), referans için bir temsili günde performans oranı ölçümü ve teslim onayından önce tüm açık kalemleri kapatmak için eksik iş yönetimi."
+      },
+      {
+        heading: "IEC 62446 Dokümantasyon Gereksinimleri",
+        content: "IEC 62446-1, SAT tamamlanmasının kanıtı olarak üretilmesi ve saklanması gereken dokümantasyonu tanımlar. Gerekli belgeler şunlardır: tasarım dokümantasyonu (tek hat şeması, sistem şeması, dizi düzeni), muayene ve test kayıtları (görsel inceleme, elektriksel testler, performans ölçümleri), devreye alma testi sonuçları (geçer/kalır kriterleriyle imzalı test formları) ve operasyonel dokümantasyon (sistem kılavuzu, bakım takvimi, arıza teşhis kılavuzu). Öztoprak Enerji'nin SAT raporları IEC 62446-1 gereksinimlerini karşılayacak şekilde yapılandırılmıştır."
+      }
+    ];
+  }
+
+  if (service.slug === "performance-guarantee-verification" || service.slug === "performans-garantisi-dogrulama") {
+    return en ? [
+      {
+        heading: "Performance Ratio and Energy Yield: What the EPC Guarantee Covers",
+        content: "EPC contracts for solar plants typically guarantee one or more of the following: Performance Ratio (the ratio of actual AC energy output to the theoretically expected output for the same irradiation conditions), Energy Yield (the absolute AC energy production over a defined test period), or Availability (the percentage of time the plant is available for generation). The most common guarantee metric is Performance Ratio because it normalises for irradiation variation — but the methodology for calculating PR, the correction factors applied, and the measurement standards used must be clearly defined in the contract to avoid disputes. If the contract is ambiguous about test methodology, both parties will calculate different results from the same measurement data."
+      },
+      {
+        heading: "IEC 61724 Methodology and Measurement Setup",
+        content: "IEC 61724-1 defines the minimum requirements for PV system performance monitoring: measurement equipment specifications, data sampling intervals, sensor calibration requirements, and data quality criteria. IEC 61724-3 defines the energy evaluation method used for performance guarantee verification. Oztoprak Energy sets up the measurement system with calibrated Class A irradiance sensors (pyranometers or reference cells), calibrated temperature sensors, and calibrated revenue-grade energy meters before the test period begins. The measurement duration must be sufficient to achieve statistical confidence — typically a minimum of 30 days at full capacity, avoiding periods with significant curtailment, shading events, or grid operator restrictions that would distort the result."
+      }
+    ] : [
+      {
+        heading: "Performans Oranı ve Enerji Verimi: EPC Garantisi Neleri Kapsıyor",
+        content: "GES'ler için EPC sözleşmeleri genellikle şunlardan birini veya birkaçını garanti eder: Performans Oranı (aynı ışınım koşulları için teorik olarak beklenen çıktıya karşı gerçek AC enerji çıktısının oranı), Enerji Verimi (tanımlı test dönemi boyunca mutlak AC enerji üretimi) veya Emre Amadelik (santralin üretim için müsait olduğu sürenin yüzdesi). En yaygın garanti metriği, ışınım değişkenliğini normalleştirdiği için Performans Oranıdır. Ancak PR hesaplamak için kullanılan metodoloji, uygulanan düzeltme faktörleri ve kullanılan ölçüm standartları, uyuşmazlıklardan kaçınmak için sözleşmede açıkça tanımlanmalıdır."
+      },
+      {
+        heading: "IEC 61724 Metodolojisi ve Ölçüm Kurulumu",
+        content: "IEC 61724-1, FV sistem performansı izleme için asgari gereksinimleri tanımlar: ölçüm ekipmanı spesifikasyonları, veri örnekleme aralıkları, sensör kalibrasyon gereksinimleri ve veri kalitesi kriterleri. IEC 61724-3, performans garantisi doğrulaması için kullanılan enerji değerlendirme yöntemini tanımlar. Öztoprak Enerji, test dönemi başlamadan önce kalibre edilmiş A Sınıfı ışınım sensörleri, kalibre sıcaklık sensörleri ve kalibre gelir sınıfı enerji sayaçlarıyla ölçüm sistemini kurar. Ölçüm süresi istatistiksel güven elde etmek için yeterli olmalıdır — genellikle tam kapasitede minimum 30 gün."
+      }
+    ];
+  }
+
+  if (service.slug === "construction-monitoring" || service.slug === "insaat-izleme") {
+    return en ? [
+      {
+        heading: "Critical Construction Inspection Points",
+        content: "Construction monitoring focuses on the installation phases where mistakes are most expensive to correct after completion. For solar plants, these include: tracker system anchor installation (incorrect depth or spacing creates long-term structural risk), DC cable routing and labelling (incorrect polarity, inadequate bend radii, or missing conduit protection create fire and performance risk), combiner box connections and fusing (loose connections or incorrect fuse ratings create heat and failure risk), MV cable termination (incorrect heat shrink application, missing armour earthing, or inadequate ferrule crimping create insulation failure risk), and protection relay wiring and settings verification (incorrect CT polarity or relay settings create protection failure risk at energization). Each of these is a hold point in the ITP where Oztoprak Energy witnesses and documents the work before it is covered up."
+      },
+      {
+        heading: "Non-Conformance Report Management",
+        content: "A well-managed construction phase produces NCRs — that is a sign of a disciplined quality process, not a sign that the project is in trouble. The NCR process identifies deviations from the approved drawings, specifications or quality procedures, requires the EPC contractor to investigate the root cause, propose a corrective action, and close the NCR with evidence that the correction has been implemented. Oztoprak Energy tracks open NCRs across categories (safety, quality, documentation) and ensures they are closed before handover. NCRs carried past handover without closure evidence transfer technical and commercial risk to the owner."
+      }
+    ] : [
+      {
+        heading: "Kritik İnşaat Denetim Noktaları",
+        content: "İnşaat izleme, tamamlanmanın ardından hataların düzeltilmesinin en pahalı olduğu kurulum aşamalarına odaklanır. GES'ler için bunlar şunlardır: tracker sistemi ankraj kurulumu (yanlış derinlik veya aralık uzun vadeli yapısal risk yaratır), DC kablo güzergahı ve etiketleme (yanlış polarite, yetersiz bükme radyusleri veya eksik kanal koruması yangın ve performans riski yaratır), kombiner kutu bağlantıları ve sigortalama (gevşek bağlantılar veya yanlış sigorta değerlendirmeleri ısı ve arıza riski yaratır), OG kablo sonlandırma (yanlış ısı büzme uygulaması, eksik zırh topraklaması veya yetersiz kıkırdak baskı yalıtım arıza riski yaratır) ve koruma rölesi kablo bağlantısı ve ayar doğrulaması. Bunların her biri, Öztoprak Enerji'nin kapatılmadan önce işi tanıklık ettiği ve belgelediği ITP'deki bir durdurma noktasıdır."
+      },
+      {
+        heading: "Uygunsuzluk Raporu Yönetimi",
+        content: "İyi yönetilen bir inşaat aşaması NCR'lar üretir — bu disiplinli bir kalite sürecinin işaretidir, projenin sorun yaşadığının değil. NCR süreci, onaylı çizimlerden, şartnamelerden veya kalite prosedürlerinden sapmaları tespit eder, EPC yüklenicisinin kök nedeni araştırmasını, düzeltici eylem önermesini ve düzeltmenin uygulandığının kanıtıyla NCR'ı kapatmasını gerektirir. Öztoprak Enerji açık NCR'ları kategoriler bazında (güvenlik, kalite, dokümantasyon) takip eder ve teslimden önce kapatılmalarını sağlar."
+      }
+    ];
+  }
+
+  if (service.slug === "project-monitoring" || service.slug === "proje-izleme") {
+    return en ? [
+      {
+        heading: "What a Monthly Progress Report Covers",
+        content: "A monthly project monitoring report for a lender or investor typically covers: physical progress percentage (civil, electromechanical, electrical, grid connection — each as a percentage of total), photographic evidence of progress since the last visit, schedule variance analysis (actual vs. baseline programme), contractor workforce and equipment levels on site, material delivery and procurement status, quality issues or NCRs raised since the last report, environmental and social compliance status (if applicable), drawdown condition compliance confirmation, and a risk and issue register update. The report is structured so the bank's credit officer can quickly assess whether the project is on track without needing to interpret raw construction data."
+      },
+      {
+        heading: "Early Warning Identification",
+        content: "The most valuable function of project monitoring is early warning — identifying technical, schedule or quality issues before they become delays or disputes. Common early warnings identified during project monitoring include: civil subcontractor mobilisation delays suggesting later electrical installation pressure, incorrect anchor bolt positions not visible once grouted, discrepancies between ordered and delivered equipment specifications, grid operator approval timeline slipping without contractor action, and commissioning test equipment not ordered when needed. These issues are low-cost to resolve when identified 4–8 weeks before they become critical, and high-cost when they reach handover undiscovered."
+      }
+    ] : [
+      {
+        heading: "Aylık İlerleme Raporu Neler Kapsar",
+        content: "Bir kredi kuruluşu veya yatırımcı için aylık proje izleme raporu genellikle şunları kapsar: fiziksel ilerleme yüzdesi (inşaat, elektromekanik, elektrik, şebeke bağlantısı — her biri toplam yüzdesi olarak), son ziyaretten bu yana ilerlemenin fotoğraf kanıtı, takvim sapma analizi (gerçekleşen ile referans programa karşı), sahada yüklenici iş gücü ve ekipman düzeyleri, malzeme teslimat ve tedarik durumu, son rapordan bu yana ortaya çıkan kalite sorunları veya NCR'lar, çevresel ve sosyal uyum durumu (varsa), çekiş koşulu uyum teyidi ve risk ve sorun kaydı güncellemesi."
+      },
+      {
+        heading: "Erken Uyarı Tespiti",
+        content: "Proje izlemenin en değerli işlevi erken uyarıdır — teknik, takvim veya kalite sorunlarını gecikmelere veya uyuşmazlıklara dönüşmeden tespit etmek. Proje izleme sırasında tespit edilen yaygın erken uyarılar şunlardır: inşaat alt yüklenicisinin seferberlik gecikmeleri, daha sonraki elektrik kurulum baskısını öngörür; yanlış ankraj cıvatası konumları harçlandıktan sonra görünmez; sipariş edilen ve teslim edilen ekipman özellikleri arasındaki tutarsızlıklar; yüklenici eylemi olmadan şebeke işleticisi onay takviminin kayması ve gerektiğinde sipariş edilmemiş devreye alma test ekipmanı. Bu sorunlar kritik hale gelmeden 4-8 hafta önce tespit edildiğinde düşük maliyetle çözülebilir."
+      }
+    ];
+  }
+
+  if (service.slug === "grid-compliance-audit" || service.slug === "sebeke-uyum-denetimi") {
+    return en ? [
+      {
+        heading: "TEİAŞ Requirements Covered in the Audit",
+        content: "The grid compliance audit reviews the plant's compliance with the key requirements of the TEİAŞ Sistem İşletim Yönetmeliği (System Operation Regulation). Specific requirements reviewed include: protection relay settings (overcurrent, earth fault, under/overvoltage, under/overfrequency, loss-of-mains protection) calibrated against the network operator's coordination study; reactive power capability (the plant must be able to operate within the required power factor range at all generation levels); fault ride-through (FRT) performance (the plant must remain connected through voltage dips as specified in the connection agreement); anti-islanding protection (the plant must detect and disconnect from an islanded section of the network); SCADA telemetry interface (the plant must provide the specified real-time data to TEİAŞ); and grid connection documentation (connection agreement, approval for energization, protection coordination study approval)."
+      },
+      {
+        heading: "Common Compliance Gaps in Operating Plants",
+        content: "The most frequently identified compliance gaps in operating solar and hydropower plants in Turkey include: protection relay settings that have drifted from the originally approved values without documentation or re-approval from the network operator; reactive power compensation that is undersized or not functioning correctly, causing the plant to operate below the minimum required power factor; FRT settings that do not match the voltage-time profile specified in the connection agreement; SCADA telemetry signals that are not updated or calibrated, causing discrepancies between the plant's reported output and the network operator's measurement; and documentation gaps where the as-installed configuration does not match the approved design."
+      }
+    ] : [
+      {
+        heading: "Denetimde Kapsanan TEİAŞ Gereksinimleri",
+        content: "Şebeke uyum denetimi, santralin TEİAŞ Sistem İşletim Yönetmeliği'nin temel gereksinimleriyle uyumunu inceler. İncelenen spesifik gereksinimler şunlardır: şebeke işleticisinin koordinasyon etüdüne göre kalibre edilmiş koruma rölesi ayarları; reaktif güç kabiliyeti (santral tüm üretim düzeylerinde gerekli güç faktörü aralığında çalışabilmelidir); hata geçiş (FRT) performansı (santral bağlantı anlaşmasında belirtilen gerilim çöküntüleri boyunca bağlı kalmalıdır); ada önleme koruması; SCADA telemetri arayüzü ve şebeke bağlantısı dokümantasyonu."
+      },
+      {
+        heading: "İşletmedeki Santrallerde Yaygın Uyum Boşlukları",
+        content: "Türkiye'deki işletmedeki GES ve HES'lerde en sık tespit edilen uyum boşlukları şunlardır: şebeke işleticisinden belgeleme veya yeniden onay alınmadan başlangıçta onaylanan değerlerden sapan koruma rölesi ayarları; santralin minimum gerekli güç faktörünün altında çalışmasına neden olan yetersiz boyutlandırılmış veya doğru çalışmayan reaktif güç kompanzasyonu; bağlantı anlaşmasında belirtilen gerilim-zaman profilini karşılamayan FRT ayarları; santralin raporlanan çıktısı ile şebeke işleticisinin ölçümü arasında tutarsızlıklara neden olan güncellenmeyen veya kalibre edilmeyen SCADA telemetri sinyalleri."
+      }
+    ];
+  }
+
+  if (service.slug === "power-quality-audit" || service.slug === "guc-kalitesi-denetimi") {
+    return en ? [
+      {
+        heading: "Power Quality Issues That Affect Renewable Plants",
+        content: "The most common power quality problems affecting renewable energy plants and industrial facilities in Turkey include: harmonic distortion (created by inverters, variable speed drives, and switching equipment — can cause transformer overheating, capacitor bank failure, relay maloperation, and metering errors); voltage imbalance (unbalanced loading or asymmetric faults create negative sequence voltage that reduces generator and motor efficiency and life); flicker (rapid voltage fluctuations caused by arc furnaces, spot welders or wind turbines can affect sensitive equipment and violate grid connection limits); and frequency deviation (relevant for islanded systems or plants with synchronous generators operating at partial load). Each of these has specific limits defined in IEEE 519, IEC 61000-3-x, and TEİAŞ grid connection requirements."
+      },
+      {
+        heading: "Measurement Duration and Data Interpretation",
+        content: "Power quality measurement is not a one-day snapshot. IEC 61000-4-30 Class A measurement requires a minimum of 7 days of continuous measurement to capture the full weekly load variation pattern. Harmonic levels vary significantly with load level, time of day, and season — a measurement taken during a low-load weekend will underestimate the harmonic exposure during a high-load weekday. The measurement report must present 10-minute aggregated statistics (per IEC 61000-4-30), 95th percentile values for comparison with limits, and identification of the times and operating conditions associated with limit exceedances. Oztoprak Energy interprets measurement data against the specific grid connection agreement limits rather than generic standard limits, since connection agreement limits are the ones that have legal and contractual relevance."
+      }
+    ] : [
+      {
+        heading: "Yenilenebilir Enerji Santrallerini Etkileyen Güç Kalitesi Sorunları",
+        content: "Türkiye'deki yenilenebilir enerji santralleri ve sanayi tesislerini etkileyen en yaygın güç kalitesi sorunları şunlardır: harmonik bozunum (invertörler, değişken hız sürücüleri ve anahtarlama ekipmanları tarafından oluşturulan — trafo aşırı ısınması, kondansatör grubu arızası, röle hatalı çalışması ve sayaç hatalarına neden olabilir); gerilim dengesizliği (dengesiz yükleme veya asimetrik arızalar jeneratör ve motor verimliliğini ve ömrünü azaltan negatif sıra gerilimi yaratır); flicker (ark ocakları, nokta kaynak makineleri veya rüzgar türbinlerinden kaynaklanan hızlı gerilim dalgalanmaları hassas ekipmanı etkileyebilir); frekans sapması (kısmi yükte çalışan senkron jeneratörlere sahip izole sistemler veya santraller için geçerlidir). Bunların her birinin IEEE 519, IEC 61000-3-x ve TEİAŞ şebeke bağlantısı gereksinimlerinde tanımlanmış spesifik limitleri vardır."
+      },
+      {
+        heading: "Ölçüm Süresi ve Veri Yorumlama",
+        content: "Güç kalitesi ölçümü tek günlük bir anlık görüntü değildir. IEC 61000-4-30 A Sınıfı ölçümü, tam haftalık yük değişim modelini yakalamak için minimum 7 gün sürekli ölçüm gerektirir. Harmonik düzeyler yük düzeyine, günün saatine ve mevsime göre önemli ölçüde değişir — düşük yük hafta sonu esnasında alınan bir ölçüm, yüksek yük hafta içi günündeki harmonik maruziyetini küçümser. Öztoprak Enerji ölçüm verilerini genel standart limitlerinden ziyade spesifik şebeke bağlantı anlaşması limitlerine karşı yorumlar, zira bağlantı anlaşması limitleri hukuki ve sözleşmesel ilgiye sahip olanlardır."
+      }
+    ];
+  }
+
+  if (service.slug === "asset-management" || service.slug === "teknik-varlik-yonetimi") {
+    return en ? [
+      {
+        heading: "What Performance Monitoring Actually Measures",
+        content: "Effective technical asset management begins with measuring the right things — not just total generation. The key performance indicators that drive asset management decisions include: Performance Ratio (PR) trend over time against a weather-corrected baseline (declining PR indicates soiling, degradation, or equipment issues); specific yield (kWh/kWp) compared to the energy yield assessment P50 (persistent underperformance against P50 means the original yield estimate or the plant design is not being achieved); availability (actual plant availability vs. O&M contract target — gaps indicate contractor underperformance); forced outage rate (frequency and duration of unplanned outages — trends indicate equipment aging or O&M quality issues); and reactive power compliance status (TEİAŞ penalty exposure)."
+      },
+      {
+        heading: "O&M Contractor Oversight and KPI Management",
+        content: "An O&M contract that is not actively monitored provides little protection. Common O&M contractor failures that technical asset management identifies include: preventive maintenance activities completed on paper but not on site; response times for fault clearance exceeding contract SLAs without escalation; spare parts not stocked as required by the contract; soiling cleaning intervals not adhered to during critical generation periods; and maintenance reports produced that do not reflect actual site conditions. Oztoprak Energy reviews O&M performance against the specific KPIs in the O&M contract — not generic benchmarks — and produces evidence-based performance assessments that allow owners to enforce contract obligations or negotiate justified scope reductions."
+      }
+    ] : [
+      {
+        heading: "Performans İzlemenin Gerçekte Neyi Ölçtüğü",
+        content: "Etkin teknik varlık yönetimi doğru şeyleri ölçmekle başlar — sadece toplam üretimi değil. Varlık yönetimi kararlarını yönlendiren temel performans göstergeleri şunlardır: hava düzeltmeli referans eğrisine karşı zaman içindeki Performans Oranı (PR) trendi (düşen PR kirlenme, bozulma veya ekipman sorunlarını gösterir); enerji verimi değerlendirmesi P50'ye karşı spesifik verim (kWh/kWp) (P50'ye karşı süregelen düşük performans, orijinal verim tahmininin veya santral tasarımının elde edilemediği anlamına gelir); emre amadelik (gerçek santral emre amadeliği ile O&M sözleşme hedefine karşı — boşluklar yüklenici düşük performansını gösterir); ve reaktif güç uyum durumu (TEİAŞ ceza maruziyeti)."
+      },
+      {
+        heading: "O&M Yüklenici Denetimi ve KPI Yönetimi",
+        content: "Aktif olarak izlenmeyen bir O&M sözleşmesi çok az koruma sağlar. Teknik varlık yönetiminin tespit ettiği yaygın O&M yüklenici başarısızlıkları şunlardır: kağıt üzerinde tamamlanan ama sahada yapılmayan önleyici bakım faaliyetleri; sözleşme SLA'larını aşan arıza giderme yanıt süreleri; sözleşmenin gerektirdiği şekilde depolanmayan yedek parçalar; kritik üretim dönemlerinde uyulunmayen temizlik aralıkları; ve gerçek saha koşullarını yansıtmayan bakım raporları. Öztoprak Enerji O&M performansını genel referanslara değil O&M sözleşmesindeki spesifik KPI'lara karşı inceler."
+      }
+    ];
+  }
+
   return [];
 }
 
@@ -578,6 +925,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
   return (
     <>
       <StickyConsultationCta locale={locale} />
+      <MobileStickyCtaBar locale={locale} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }} />
       <section className="bg-navy-950 py-20">
         <Container>
