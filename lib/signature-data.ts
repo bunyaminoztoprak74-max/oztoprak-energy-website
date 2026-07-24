@@ -32,8 +32,8 @@ export const SIGNATURE_PERSON = {
   email: "info@oztoprakenerji.com",
   website: "https://www.oztoprakenerji.com",
   websiteLabel: "www.oztoprakenerji.com",
-  linkedin: "https://www.linkedin.com/company/oztoprak-enerji-danismanlik",
-  linkedinLabel: "linkedin.com/company/oztoprak-enerji-danismanlik",
+  linkedin: "https://www.linkedin.com/company/oztoprakenerji",
+  linkedinLabel: "linkedin.com/company/oztoprakenerji",
   whatsapp: "https://wa.me/905456113320",
   googleMaps:
     "https://www.google.com/maps/search/?api=1&query=Balgat+Mah.+Ziyabey+Cad.+No:30+%C4%B0%C3%A7+Kap%C4%B1+No:4+%C3%87ankaya+Ankara+T%C3%BCrkiye",
