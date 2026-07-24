@@ -35,8 +35,6 @@ export const SIGNATURE_PERSON = {
   linkedin: "https://www.linkedin.com/company/oztoprakenerji",
   linkedinLabel: "linkedin.com/company/oztoprakenerji",
   whatsapp: "https://wa.me/905456113320",
-  googleMaps:
-    "https://www.google.com/maps/search/?api=1&query=Balgat+Mah.+Ziyabey+Cad.+No:30+%C4%B0%C3%A7+Kap%C4%B1+No:4+%C3%87ankaya+Ankara+T%C3%BCrkiye",
   addressLines: ["Balgat Mah. Ziyabey Cad. No:30 İç Kapı No:4", "Çankaya / Ankara, Türkiye"],
   tagline: "Enerji Projelerinde Güvenilir Çözüm Ortağınız",
   logoUrl: "https://www.oztoprakenerji.com/email/logo.png",
@@ -50,8 +48,7 @@ export const SIGNATURE_PERSON = {
 export const SIGNATURE_ACTION_LINKS: SignatureLink[] = [
   { label: "Web Sitesi", href: SIGNATURE_PERSON.website },
   { label: "LinkedIn", href: SIGNATURE_PERSON.linkedin },
-  { label: "WhatsApp", href: SIGNATURE_PERSON.whatsapp },
-  { label: "Google Maps", href: SIGNATURE_PERSON.googleMaps }
+  { label: "WhatsApp", href: SIGNATURE_PERSON.whatsapp }
 ];
 
 export const signatureLogoDisplayHeight = Math.round(
