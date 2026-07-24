@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "seo:audit": "node scripts/seo-quality-audit.mjs"
+    "seo:audit": "node scripts/seo-quality-audit.mjs",
+    "signature:assets": "node scripts/generate-signature-assets.mjs"
   },
   "dependencies": {
     "@next/mdx": "^15.3.3",
@@ -17,6 +18,7 @@
     "framer-motion": "^12.12.1",
     "lucide-react": "^0.511.0",
     "next": "^15.3.3",
+    "qrcode": "^1.5.4",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
