@@ -27,6 +27,30 @@ const sharedFaq = {
 export const services: Record<Locale, Service[]> = {
   en: [
     {
+      slug: "energy-consultancy",
+      title: "Energy Consultancy",
+      eyebrow: "Independent decisions for the energy sector",
+      description: "Independent energy consultancy for investors, asset owners and industrial companies covering renewable energy projects, power plant performance, technical due diligence, EPC oversight and energy cost reduction.",
+      keywords: ["energy consultancy", "energy sector consultancy", "renewable energy consultancy", "energy consultant Turkey", "power plant consulting"],
+      outcomes: ["Clear investment and technical decisions", "Reduced project and operating risk", "Prioritized performance and cost improvements"],
+      scope: ["Energy project and investment advisory", "HPP and SPP technical consultancy", "EPC and owner's engineering support", "Technical due diligence and asset review", "Power plant performance and O&M improvement", "Industrial energy cost reduction"],
+      faqs: [
+        {
+          question: "What does energy consultancy include?",
+          answer: "Energy consultancy turns technical, commercial and operational evidence into decision-ready actions. The scope can include renewable energy investments, HPP and SPP projects, EPC oversight, technical due diligence, commissioning, plant performance and industrial energy cost reduction."
+        },
+        {
+          question: "Who is energy sector consultancy for?",
+          answer: "It is designed for investors, lenders, plant owners, industrial companies, EPC contractors and management teams that need independent engineering evidence before an investment, contract, acquisition or operational decision."
+        },
+        {
+          question: "How does an energy consultancy engagement begin?",
+          answer: "The engagement starts with the decision to be supported, available project or operating data and the required timeline. Oztoprak Energy then defines a focused review plan, evidence list, deliverables and decision gates."
+        },
+        ...sharedFaq.en
+      ]
+    },
+    {
       slug: "epc-technical-consultancy",
       title: "EPC Technical Consultancy",
       eyebrow: "Risk, quality and constructability",
@@ -586,6 +610,30 @@ export const services: Record<Locale, Service[]> = {
     }
   ],
   tr: [
+    {
+      slug: "enerji-danismanligi",
+      title: "Enerji Danışmanlığı",
+      eyebrow: "Enerji sektörü için bağımsız karar desteği",
+      description: "Enerji danışmanlığı ve enerji sektörü danışmanlığı kapsamında yatırımcılara, santral sahiplerine ve sanayi kuruluşlarına; yenilenebilir enerji projeleri, santral performansı, teknik durum tespiti, EPC denetimi ve enerji maliyetlerini azaltma konularında bağımsız mühendislik desteği.",
+      keywords: ["enerji danışmanlığı", "enerji sektörü danışmanlığı", "enerji danışmanlık şirketi", "yenilenebilir enerji danışmanlığı", "enerji danışmanı"],
+      outcomes: ["Net yatırım ve teknik kararlar", "Azaltılmış proje ve işletme riski", "Önceliklendirilmiş performans ve maliyet iyileştirmeleri"],
+      scope: ["Enerji projesi ve yatırım danışmanlığı", "HES ve GES teknik danışmanlığı", "EPC ve işveren mühendisliği desteği", "Teknik durum tespiti ve varlık incelemesi", "Santral performansı ve O&M iyileştirme", "Sanayide enerji maliyeti azaltma"],
+      faqs: [
+        {
+          question: "Enerji danışmanlığı nedir?",
+          answer: "Enerji danışmanlığı; teknik, ticari ve operasyonel verileri yatırım ve işletme kararlarına dönüştüren bağımsız uzmanlık hizmetidir. Yenilenebilir enerji yatırımları, HES ve GES projeleri, EPC denetimi, teknik durum tespiti, devreye alma, santral performansı ve enerji maliyeti azaltma çalışmalarını kapsayabilir."
+        },
+        {
+          question: "Enerji sektörü danışmanlığı kimler için uygundur?",
+          answer: "Yatırımcılar, finans kuruluşları, santral sahipleri, sanayi kuruluşları, EPC yüklenicileri ve yatırım, sözleşme, satın alma ya da işletme kararı öncesinde bağımsız mühendislik kanıtına ihtiyaç duyan yönetim ekipleri için uygundur."
+        },
+        {
+          question: "Enerji danışmanlığı süreci nasıl başlar?",
+          answer: "Süreç desteklenecek kararın, mevcut proje veya işletme verilerinin ve hedef takvimin belirlenmesiyle başlar. Öztoprak Enerji ardından odaklı inceleme planını, gerekli kanıt listesini, teslimatları ve karar kapılarını tanımlar."
+        },
+        ...sharedFaq.tr
+      ]
+    },
     {
       slug: "epc-teknik-danismanlik",
       title: "EPC Teknik Danışmanlık",
