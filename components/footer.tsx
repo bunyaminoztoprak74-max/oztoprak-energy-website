@@ -12,6 +12,7 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dict }) {
   const priorityServiceSlugs =
     locale === "tr"
       ? [
+          "enerji-danismanligi",
           "hes-danismanligi",
           "ges-danismanligi",
           "teknik-durum-tespiti",
@@ -23,6 +24,7 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dict }) {
           "endustriyel-enerji-maliyet-optimizasyonu"
         ]
       : [
+          "energy-consultancy",
           "hydropower-consulting",
           "solar-energy-consulting",
           "technical-due-diligence",
