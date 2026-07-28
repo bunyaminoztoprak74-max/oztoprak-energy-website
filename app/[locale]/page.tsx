@@ -66,6 +66,12 @@ const content = {
     advisory: "Contact EPC Advisory Team",
     services: [
       {
+        title: "Energy Consultancy",
+        text: "Independent energy sector consultancy for investment, EPC, power plant performance, technical due diligence and industrial energy cost decisions.",
+        href: "/services/energy-consultancy",
+        icon: Globe2
+      },
+      {
         title: "Hydropower Technical Audit",
         text: "Independent review of turbine-generator condition, hydraulic constraints, protection issues, historical alarms and O&M routines.",
         href: "/services/hydropower-plant-optimization",
@@ -189,6 +195,12 @@ const content = {
     assessment: "Ücretsiz İlk Değerlendirme Planla",
     advisory: "EPC Danışmanlık Ekibiyle İletişime Geç",
     services: [
+      {
+        title: "Enerji Danışmanlığı",
+        text: "Yatırım, EPC, santral performansı, teknik durum tespiti ve sanayide enerji maliyeti kararları için bağımsız enerji sektörü danışmanlığı.",
+        href: "/services/enerji-danismanligi",
+        icon: Globe2
+      },
       {
         title: "HES Teknik Denetimi",
         text: "Türbin-jeneratör durumu, hidrolik kısıtlar, koruma problemleri, geçmiş alarmlar ve O&M rutinleri için bağımsız inceleme.",
