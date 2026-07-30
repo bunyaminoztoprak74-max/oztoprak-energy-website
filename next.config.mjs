@@ -39,7 +39,30 @@ const nextConfig = {
       { source: "/en/hizmetler", destination: "/en/services", permanent: true },
       { source: "/tr/services", destination: "/tr/hizmetler", permanent: true },
       { source: "/en/iletisim", destination: "/en/contact", permanent: true },
-      { source: "/tr/contact", destination: "/tr/iletisim", permanent: true }
+      { source: "/tr/contact", destination: "/tr/iletisim", permanent: true },
+
+      // Consolidate overlapping service URLs around the pages that already
+      // receive Search Console impressions/clicks.
+      {
+        source: "/tr/services/epc-teknik-danismanlik",
+        destination: "/tr/services/epc-teknik-danismanlik-hizmeti",
+        permanent: true
+      },
+      {
+        source: "/en/services/epc-technical-consultancy",
+        destination: "/en/services/epc-technical-advisory",
+        permanent: true
+      },
+      {
+        source: "/tr/services/gunes-enerjisi-danismanligi",
+        destination: "/tr/services/ges-danismanligi",
+        permanent: true
+      },
+      {
+        source: "/en/services/solar-energy-consulting",
+        destination: "/en/services/solar-power-plant-consultancy",
+        permanent: true
+      }
     ];
   },
   images: {
