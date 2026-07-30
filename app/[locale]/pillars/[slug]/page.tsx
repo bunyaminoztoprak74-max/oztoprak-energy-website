@@ -44,7 +44,7 @@ export default async function PillarPage({ params }: { params: Promise<{ locale:
     <ProgrammaticPage
       locale={locale}
       title={pillar.title}
-      eyebrow={locale === "en" ? "SEO Pillar Page" : "SEO Pillar Sayfası"}
+      eyebrow={locale === "en" ? "Strategic Engineering Guide" : "Stratejik Mühendislik Rehberi"}
       description={pillar.description}
       intro={
         locale === "en"

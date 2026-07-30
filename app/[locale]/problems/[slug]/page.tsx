@@ -72,7 +72,7 @@ export default async function ProblemPage({ params }: { params: Promise<{ locale
       schema={[...problemPageSchema(locale, problem), faqSchema(faqs)]}
       bullets={[
         locale === "en" ? "Maps the technical symptom to likely EPC, commissioning, O&M or grid causes." : "Teknik belirtiyi olası EPC, devreye alma, O&M veya şebeke nedenleriyle eşleştirir.",
-        locale === "en" ? "Builds internal links toward matching services, topic clusters and technical articles." : "İlgili hizmetlere, konu kümelerine ve teknik yazılara iç linkler oluşturur.",
+        locale === "en" ? "Connects the symptom to matching services, engineering evidence and technical guidance." : "Belirtiyi ilgili hizmetlere, mühendislik kanıtlarına ve teknik rehberliğe bağlar.",
         ...problem.keywords
       ]}
       sections={[

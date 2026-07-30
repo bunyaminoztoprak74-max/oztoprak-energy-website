@@ -102,8 +102,8 @@ function serviceExpansionSections(locale: Locale, service: NonNullable<ReturnTyp
         content: `EPC value is protected through disciplined interface control. Civil readiness, electromechanical installation, automation logic, grid connection, protection settings, auxiliary systems, spare parts, training and handover documents must mature together. If one stream moves without the others, delay risk and claim exposure increase. For ${service.title}, owner-side review checks whether submittals, site progress, test plans and acceptance criteria tell the same technical story before unresolved project risk becomes schedule loss, generation loss or a handover dispute.`
       },
       {
-        heading: "Long-Term SEO and Knowledge Architecture",
-        content: `This page is structured as a topic-cluster asset for hydropower consulting, solar energy consulting, EPC technical advisory, power plant commissioning, technical due diligence, owner engineering and power plant audits. It links related services, case studies, blog articles, problem pages and topical clusters so a technical visitor can move from a broad concern to a specific consultation path without hitting a dead end. That internal structure supports organic traffic growth while keeping the content useful for engineers, owners and investors.`
+        heading: "Related Engineering Decision Paths",
+        content: `Power plant decisions rarely belong to one isolated discipline. Hydropower and solar performance, EPC interfaces, commissioning evidence, technical due diligence, owner engineering and plant audits often affect the same investment or operating decision. This service connects those related scopes so owners, engineers and investors can move from an initial concern to the correct evidence, specialist review and practical next action.`
       }
     ];
   }
@@ -118,8 +118,8 @@ function serviceExpansionSections(locale: Locale, service: NonNullable<ReturnTyp
       content: `EPC projelerinde teknik deger disiplinli arayuz kontrolu ile korunur. Insaat hazirligi, elektromekanik montaj, otomasyon mantigi, sebeke baglantisi, koruma ayarlari, yardimci sistemler, yedek parca, egitim ve teslim dokumanlari birlikte olgunlasmalidir. Bir akis digerlerinden kopuk ilerlerse gecikme riski ve talep uyusmazligi artar. ${service.title} kapsaminda isveren tarafi inceleme; teknik sunumlarin, saha ilerlemesinin, test planlarinin ve kabul kriterlerinin ayni teknik hikayeyi anlatip anlatmadigina odaklanir.`
     },
     {
-      heading: "Uzun Vadeli SEO ve Bilgi Mimarisi Degeri",
-      content: `Bu icerik HES danismanligi, GES danismanligi, EPC teknik danismanlik, santral devreye alma, teknik durum tespiti, isveren muhendisligi ve santral denetimleri icin konu kumesi varligi olarak yapilandirilmistir. Sayfa ilgili hizmetlere, vaka calismalarina, blog yazilarina, problem sayfalarina ve konu kumelerine baglanir; teknik ziyaretci genis bir sorundan belirli bir danismanlik yoluna kolayca ilerler.`
+      heading: "İlgili Mühendislik Karar Yolları",
+      content: `Enerji santrali kararları çoğu zaman tek bir disiplinle sınırlı değildir. HES ve GES performansı, EPC arayüzleri, devreye alma kanıtları, teknik durum tespiti, işveren mühendisliği ve santral denetimleri aynı yatırım veya işletme kararını etkileyebilir. Bu hizmet, işverenin ilk teknik endişeden doğru kanıta, uzman incelemesine ve uygulanabilir sonraki aksiyona ilerlemesini sağlar.`
     }
   ];
 }
