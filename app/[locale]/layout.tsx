@@ -33,7 +33,8 @@ export async function generateMetadata({
       canonical: `/${locale}`,
       languages: {
         en: "/en",
-        tr: "/tr"
+        tr: "/tr",
+        "x-default": "/tr"
       }
     },
     manifest: "/manifest.webmanifest",

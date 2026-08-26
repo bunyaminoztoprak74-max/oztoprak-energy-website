@@ -51,7 +51,7 @@ function dedupeEntries(entries: SitemapEntry[]) {
 }
 
 function pairedEntries(en: string, tr: string, options: Omit<SitemapEntry, "path" | "alternates"> = {}) {
-  const alternates = { en, tr, xDefault: en };
+  const alternates = { en, tr, xDefault: tr };
   return [
     { path: en, alternates, ...options },
     { path: tr, alternates, ...options }

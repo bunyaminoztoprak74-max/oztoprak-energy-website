@@ -159,17 +159,17 @@ const content = {
     ]
   },
   tr: {
-    metaTitle: "Öztoprak Enerji Danışmanlık | Uluslararası EPC ve Yenilenebilir Enerji Danışmanı",
+    metaTitle: "Enerji Danışmanlığı | HES, GES, Santral ve Maliyet Yönetimi",
     metaDescription:
-      "Yatırımcılar, santral sahipleri ve uluslararası EPC ekipleri için HES, GES, devreye alma, şebeke uyumu ve yenilenebilir enerji teknik danışmanlığı.",
-    heroKicker: "Bağımsız EPC ve yenilenebilir enerji teknik danışmanlığı",
-    heroTitle: "28+ Yıllık Enerji Santrali İşletme ve EPC Deneyimi",
+      "Türkiye genelinde yatırımcılar, santral sahipleri ve sanayi kuruluşları için enerji danışmanlığı; HES, GES, teknik inceleme ve enerji maliyeti desteği.",
+    heroKicker: "Türkiye genelinde bağımsız enerji ve santral danışmanlığı",
+    heroTitle: "Enerji Danışmanlığı ve Santral Teknik Çözümleri",
     heroText:
       "Öztoprak Enerji Danışmanlık; santral sahipleri, yatırımcılar ve EPC yüklenicileri için HES, GES, devreye alma, şebeke uyumu ve operasyonel optimizasyon alanlarında sahaya dayalı mühendislik desteği sağlar.",
     proof: "8 başarıyla tamamlanmış enerji santrali projesinde 275+ MW yönetilen kapasite deneyimi.",
     heroSignals: ["HES teknik denetimleri", "İşveren tarafı EPC inceleme", "Devreye alma ve şebeke hazırlığı"],
     servicesEyebrow: "Temel Danışmanlık Hizmetleri",
-    servicesTitle: "Yenilenebilir Enerji Kararları İçin Teknik Danışmanlık",
+    servicesTitle: "Enerji Danışmanlığı Hizmetleri",
     servicesText:
       "Her çalışma saha incelemesi, işletme verisi, devreye alma kayıtları ve EPC dokümantasyonu üzerine kurulur; böylece öneriler işveren, finans kuruluşu ve proje ekipleri için uygulanabilir olur.",
     projectsEyebrow: "Uluslararası Proje Profili",

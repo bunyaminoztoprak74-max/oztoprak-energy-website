@@ -49,7 +49,7 @@ export function buildMetadata({ locale, title, description, path, alternatePath,
             languages: {
               en: locale === "en" ? localizedPath : alternateLocalizedPath,
               tr: locale === "tr" ? localizedPath : alternateLocalizedPath,
-              "x-default": "/en"
+              "x-default": locale === "tr" ? localizedPath : alternateLocalizedPath
             }
           }
         : {})
