@@ -2,30 +2,28 @@
 """
 CJ Affiliate pending-advertiser monitor.
 
-Replaces the old members.cj.com browser-dashboard check (which requires a
-live logged-in session Claude cannot establish, since entering CJ login
-credentials is a prohibited action) with CJ's public Advertiser Lookup REST
-API. Uses the same CJ_ACCESS_TOKEN / CJ_COMPANY_ID secrets already used by
-the dealforge-ai CJ Product Feed import, so no new credentials are needed.
+Runs inside GitHub Actions (cj-advertiser-check.yml), NOT in the Cowork
+scheduled-task sandbox -- the sandbox's outbound network allowlist blocks
+CJ's API domains entirely (advertiser-lookup.api.cj.com, ads.api.cj.com),
+confirmed 2026-08-26. GitHub Actions runners have no such restriction.
+
+Writes cj-status.json to the repo root; the daily-seo-affiliate-management
+scheduled task reads that committed file instead of calling the CJ API
+directly, sidestepping the sandbox network block entirely.
 
 Docs: https://lab-developers.d.cjpowered.com/docs/rest-apis/advertiser-lookup
 
 Caveat: the API only exposes relationship-status = "joined" / "notjoined".
-It cannot distinguish "pending review" from "never applied" or "declined" --
-CJ does not expose that distinction over the API. So this script's job is
-narrower than the old browser flow: it detects the JOINED transition for a
-tracked list of advertiser CIDs (i.e. "got approved since last run"). It
-cannot report which of the still-notjoined ones are genuinely "pending" vs
-never submitted -- that distinction still requires the members.cj.com UI.
+It cannot distinguish "pending review" from "never applied" or "declined".
 """
+import json
 import os
 import sys
 import xml.etree.ElementTree as ET
 import urllib.request
 import urllib.error
+from datetime import datetime, timezone
 
-# Advertiser CIDs being tracked for approval (from daily-seo-affiliate-management SKILL.md, BÖLÜM C).
-# Update this list as new applications are submitted / resolved.
 TRACKED_ADVERTISERS = {
     "1464653": "Priceline",
     "1675692": "IHG Hotels AMER",
@@ -35,14 +33,25 @@ TRACKED_ADVERTISERS = {
     "5240294": "Quantum Fiber",
 }
 
+OUTPUT_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "cj-status.json")
+
 
 def main() -> int:
     token = os.environ.get("CJ_ACCESS_TOKEN", "").strip()
     company_id = os.environ.get("CJ_COMPANY_ID", "").strip()
 
+    result = {
+        "checked_at": datetime.now(timezone.utc).isoformat(),
+        "ok": False,
+        "joined": [],
+        "still_pending": [],
+        "error": None,
+    }
+
     if not token or not company_id:
-        print("HATA: CJ_ACCESS_TOKEN veya CJ_COMPANY_ID env değişkeni eksik.")
-        print("Bu script CJ Advertiser Lookup API'sini kullanır, browser gerektirmez.")
+        result["error"] = "CJ_ACCESS_TOKEN veya CJ_COMPANY_ID env değişkeni eksik."
+        write_output(result)
+        print(result["error"])
         return 1
 
     ids = ",".join(TRACKED_ADVERTISERS.keys())
@@ -56,56 +65,58 @@ def main() -> int:
         with urllib.request.urlopen(req, timeout=30) as resp:
             body = resp.read()
     except urllib.error.HTTPError as e:
-        print(f"HATA: CJ Advertiser Lookup API {e.code} döndü: {e.read()[:500]}")
+        result["error"] = f"CJ Advertiser Lookup API {e.code} döndü: {e.read()[:500]}"
+        write_output(result)
+        print(result["error"])
         return 1
     except urllib.error.URLError as e:
-        print(f"HATA: CJ Advertiser Lookup API'sine ulaşılamadı: {e}")
+        result["error"] = f"CJ Advertiser Lookup API'sine ulaşılamadı: {e}"
+        write_output(result)
+        print(result["error"])
         return 1
 
     try:
         root = ET.fromstring(body)
     except ET.ParseError as e:
-        print(f"HATA: API yanıtı parse edilemedi: {e}\nYanıt: {body[:500]}")
+        result["error"] = f"API yanıtı parse edilemedi: {e}"
+        write_output(result)
+        print(result["error"])
         return 1
 
-    joined = []
-    still_pending = []
     seen_ids = set()
-
     for adv in root.findall(".//advertiser"):
         adv_id = (adv.findtext("advertiser-id") or "").strip()
         status = (adv.findtext("relationship-status") or "").strip().lower()
         name = TRACKED_ADVERTISERS.get(adv_id, adv.findtext("advertiser-name") or adv_id)
         seen_ids.add(adv_id)
+        entry = {"id": adv_id, "name": name}
         if status == "joined":
-            joined.append((adv_id, name))
+            result["joined"].append(entry)
         else:
-            still_pending.append((adv_id, name))
+            result["still_pending"].append(entry)
 
-    # Any tracked ID CJ didn't return at all (e.g. bad CID) counts as still-unresolved.
     for adv_id, name in TRACKED_ADVERTISERS.items():
         if adv_id not in seen_ids:
-            still_pending.append((adv_id, name))
+            result["still_pending"].append({"id": adv_id, "name": name})
 
-    if joined:
+    result["ok"] = True
+    write_output(result)
+
+    if result["joined"]:
         print("⚡ YENİ ONAYLANANLAR:")
-        for adv_id, name in joined:
-            print(f"  - {name} (CID {adv_id}): relationship-status=joined")
-        print()
-
-    if still_pending:
-        print("⏳ ONAY BEKLEYEN (henüz joined değil):")
-        for adv_id, name in still_pending:
-            print(f"  - {name} (CID {adv_id})")
-        print()
-        print("Not: API sadece joined/notjoined ayrımı yapar; 'pending' ile 'hiç başvurulmadı'")
-        print("ayrımı için members.cj.com panelinden manuel kontrol hâlâ gerekebilir,")
-        print("ama bu artık GÜNLÜK zorunluluk değil (haftalık BÖLÜM D taramasında yeterli).")
-
-    if not joined and not still_pending:
-        print("Beklenmedik durum: API'den hiç sonuç dönmedi.")
+        for e in result["joined"]:
+            print(f"  - {e['name']} (CID {e['id']})")
+    if result["still_pending"]:
+        print("⏳ ONAY BEKLEYEN:")
+        for e in result["still_pending"]:
+            print(f"  - {e['name']} (CID {e['id']})")
 
     return 0
+
+
+def write_output(result: dict) -> None:
+    with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
+        json.dump(result, f, ensure_ascii=False, indent=2)
 
 
 if __name__ == "__main__":

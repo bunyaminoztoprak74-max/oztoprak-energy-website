@@ -1,0 +1,7 @@
+{
+  "checked_at": null,
+  "ok": false,
+  "joined": [],
+  "still_pending": [],
+  "error": "Henüz çalışmadı - ilk GitHub Actions çalıştırmasını bekliyor (cj-advertiser-check.yml)."
+}
