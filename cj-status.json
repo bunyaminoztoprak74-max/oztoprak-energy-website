@@ -1,7 +1,33 @@
 {
-  "checked_at": null,
-  "ok": false,
-  "joined": [],
-  "still_pending": [],
-  "error": "Henüz çalışmadı - ilk GitHub Actions çalıştırmasını bekliyor (cj-advertiser-check.yml)."
+  "checked_at": "2026-08-26T17:23:10.670100+00:00",
+  "ok": true,
+  "joined": [
+    {
+      "id": "4381309",
+      "name": "IHG Europe"
+    }
+  ],
+  "still_pending": [
+    {
+      "id": "2271086",
+      "name": "Intuit QuickBooks"
+    },
+    {
+      "id": "1675692",
+      "name": "IHG Hotels AMER"
+    },
+    {
+      "id": "3014150",
+      "name": "Qatar Airways"
+    },
+    {
+      "id": "5240294",
+      "name": "Quantum Fiber"
+    },
+    {
+      "id": "1464653",
+      "name": "Priceline"
+    }
+  ],
+  "error": null
 }
