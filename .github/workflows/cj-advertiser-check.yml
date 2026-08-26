@@ -1,0 +1,22 @@
+name: CJ Advertiser Check
+on:
+  schedule:
+    - cron: "0 5 * * *"
+  workflow_dispatch:
+jobs:
+  check-advertisers:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      CJ_ACCESS_TOKEN: ${{ secrets.CJ_ACCESS_TOKEN }}
+      CJ_COMPANY_ID: ${{ secrets.CJ_COMPANY_ID }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 cj-monitor.py
+      - name: Commit cj-status.json if changed
+        run: |
+          git config user.name "cj-monitor-bot"
+          git config user.email "bunyamin.oztoprak74@gmail.com"
+          git add cj-status.json
+          git diff --cached --quiet || git commit -m "chore: update CJ advertiser status [skip ci]"
+          git push
