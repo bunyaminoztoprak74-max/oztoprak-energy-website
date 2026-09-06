@@ -47,7 +47,7 @@ export type BlogPost = {
   readingTime: string;
   toc: string[];
   related: string[];
-  body: Array<{ heading: string; content: string }>;
+  body: Array<{ heading: string; content: string; links?: Array<{ label: string; href: string }> }>;
   serviceLinks: string[];
   faqs?: Array<{ question: string; answer: string }>;
 };

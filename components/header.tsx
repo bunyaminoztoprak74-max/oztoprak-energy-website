@@ -5,6 +5,7 @@ import type { getDictionary } from "@/content/dictionaries";
 import { ButtonLink } from "@/components/button-link";
 import { linkedinUrl } from "@/lib/social";
 import { BrandLogo } from "@/components/brand-logo";
+import { InvestmentNavigation } from "@/components/investment-navigation";
 
 type Dict = ReturnType<typeof getDictionary>;
 
@@ -28,7 +29,8 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dict }) {
         >
           <BrandLogo locale={locale} />
         </Link>
-        <nav className="hidden items-center gap-6 xl:gap-7 lg:flex">
+        <nav className="hidden items-center gap-4 xl:gap-5 xl:flex">
+          {locale === "tr" && <InvestmentNavigation />}
           {nav.map((item) => (
             <Link key={item.href} href={item.href} className="text-sm font-semibold text-white/78 transition hover:text-energy-500">
               {item.label}
@@ -57,13 +59,14 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dict }) {
           </div>
         </div>
       </div>
-      <nav className="flex gap-5 overflow-x-auto border-t border-white/10 px-5 py-2.5 lg:hidden">
+      <nav className="flex gap-5 overflow-x-auto border-t border-white/10 px-5 py-2.5 xl:hidden">
         {nav.map((item) => (
           <Link key={item.href} href={item.href} className="shrink-0 text-sm font-semibold text-white/82">
             {item.label}
           </Link>
         ))}
       </nav>
+      {locale === "tr" && <InvestmentNavigation mobile />}
     </header>
   );
 }

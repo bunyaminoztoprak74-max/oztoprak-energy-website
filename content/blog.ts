@@ -1,5 +1,6 @@
 import type { Locale } from "@/lib/i18n";
 import type { BlogPost } from "@/content/types";
+import { investmentArticles } from "@/content/investment-articles";
 
 export const blogPosts: Record<Locale, BlogPost[]> = {
   en: [
@@ -1217,6 +1218,7 @@ function buildAuthorityTopicPost(locale: Locale, topic: AuthorityTopic, index: n
 
 blogPosts.en.push(...authorityTopics.map((topic, index) => buildAuthorityTopicPost("en", topic, index)));
 blogPosts.tr.push(...authorityTopics.map((topic, index) => buildAuthorityTopicPost("tr", topic, index)));
+blogPosts.tr.push(...investmentArticles);
 
 export function getPosts(locale: Locale) {
   return blogPosts[locale];

@@ -80,6 +80,7 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dict }) {
               <Link href={`/${locale}/about`} className="text-sm text-steel hover:text-energy-500">{dict.nav.about}</Link>
               <Link href={`/${locale}/projects`} className="text-sm text-steel hover:text-energy-500">{dict.nav.projects}</Link>
               <Link href={`/${locale}/blog`} className="text-sm text-steel hover:text-energy-500">{dict.nav.blog}</Link>
+              {locale === "tr" && <Link href="/tr/satilik-enerji-santralleri" className="text-sm text-steel hover:text-energy-500">Yatırım Fırsatları</Link>}
               <Link href={`/${locale}/resources`} className="text-sm text-steel hover:text-energy-500">{locale === "en" ? "Free Resources" : "Ücretsiz Kaynaklar"}</Link>
               <Link href={`/${locale}/free-consultation`} className="text-sm text-steel hover:text-energy-500">{locale === "en" ? "Free Consultation" : "Ücretsiz Danışmanlık"}</Link>
               <Link href={`/${locale}/international`} className="text-sm text-steel hover:text-energy-500">{locale === "en" ? "International Investors" : "Uluslararası Yatırımcılar"}</Link>

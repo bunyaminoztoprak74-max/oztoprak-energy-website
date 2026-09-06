@@ -590,6 +590,11 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         </Container>
       </section>
 
+      {locale === "tr" && <section className="bg-navy-900 py-14"><Container>
+        <h2 className="text-3xl font-bold text-white">Enerji Yatırım Fırsatları</h2>
+        <p className="my-5 max-w-3xl leading-8 text-steel">HES, GES, RES ve BESS yatırımlarında alıcı-satıcı eşleştirme, santral değerleme ve teknik inceleme desteği.</p>
+        <ButtonLink href="/tr/satilik-enerji-santralleri">Yatırım Fırsatlarını İncele</ButtonLink>
+      </Container></section>}
       <InvestorTrustBlock locale={locale} />
       <EngineeringCredentials locale={locale} />
 

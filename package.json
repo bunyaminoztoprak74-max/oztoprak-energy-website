@@ -8,6 +8,8 @@
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
+    "test": "node --test scripts/investment.test.cjs",
+    "test:investment:browser": "node scripts/investment-browser-check.cjs",
     "seo:audit": "node scripts/seo-quality-audit.mjs",
     "signature:assets": "node scripts/generate-signature-assets.mjs"
   },

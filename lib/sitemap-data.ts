@@ -1,4 +1,6 @@
 import { getCategories, getPosts } from "@/content/blog";
+import { investmentPages } from "@/content/investments";
+import { investmentArticles } from "@/content/investment-articles";
 import { getProjects } from "@/content/projects";
 import { getServices } from "@/content/services";
 import { getClusters, getIndustries, getLocations, getPillars, getProblems } from "@/content/programmatic-seo";
@@ -106,6 +108,7 @@ ${urls}
 export function pageSitemapEntries() {
   const entries: SitemapEntry[] = [
     ...pairedEntries("/en", "/tr", { changeFrequency: "weekly", priority: 1.0 }),
+    ...investmentPages.map((page) => ({ path: `/tr/${page.slug}`, lastModified: "2026-09-06", changeFrequency: "monthly" as const, priority: 0.85 })),
     ...pairedEntries("/en/about", "/tr/about", { changeFrequency: "monthly", priority: 0.8 }),
     ...pairedEntries("/en/projects", "/tr/projects", { changeFrequency: "monthly", priority: 0.8 }),
     ...pairedEntries("/en/contact", "/tr/iletisim", { changeFrequency: "monthly", priority: 0.9 }),
@@ -205,7 +208,9 @@ export function pageSitemapEntries() {
 
 export function blogSitemapEntries() {
   const entries: SitemapEntry[] = [
-    ...pairedEntries("/en/blog", "/tr/blog", { changeFrequency: "weekly", priority: 0.8 })
+    ...pairedEntries("/en/blog", "/tr/blog", { changeFrequency: "weekly", priority: 0.8 }),
+    ...investmentArticles.map((post) => ({ path: `/tr/blog/${post.slug}`, lastModified: post.date, changeFrequency: "monthly" as const, priority: 0.7 })),
+    { path: "/tr/blog/category/enerji-yatirimlari", lastModified: "2026-09-06", changeFrequency: "monthly", priority: 0.6 }
   ];
 
   getPosts("en").forEach((post, index) => {
