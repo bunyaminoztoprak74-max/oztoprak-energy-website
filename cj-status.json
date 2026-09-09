@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-08T09:14:13.771545+00:00",
+  "checked_at": "2026-09-09T09:17:34.702748+00:00",
   "ok": true,
   "joined": [
     {
@@ -21,12 +21,12 @@
       "name": "Priceline"
     },
     {
-      "id": "5240294",
-      "name": "Quantum Fiber"
-    },
-    {
       "id": "3014150",
       "name": "Qatar Airways"
+    },
+    {
+      "id": "5240294",
+      "name": "Quantum Fiber"
     }
   ],
   "error": null
