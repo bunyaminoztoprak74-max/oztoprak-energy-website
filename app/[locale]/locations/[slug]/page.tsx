@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ProgrammaticPage } from "@/components/programmatic-page";
-import { getLocation, getLocations, generateProgrammaticSeoPages } from "@/content/programmatic-seo";
+import { getLocation, getLocations } from "@/content/programmatic-seo";
+import { getServices } from "@/content/services";
 import { buildMetadata } from "@/lib/seo";
 import { alternateLocale, isLocale, type Locale } from "@/lib/i18n";
 import { locationPageSchema } from "@/lib/programmatic-schema";
@@ -26,7 +27,7 @@ export default async function LocationPage({ params }: { params: Promise<{ local
   const locale: Locale = isLocale(localeParam) ? localeParam : "en";
   const location = getLocation(locale, slug);
   if (!location) notFound();
-  const pages = generateProgrammaticSeoPages(locale).filter((page) => page.locationSlug === location.slug).slice(0, 8);
+  const services = getServices(locale).slice(0, 8);
   const faqs = locale === "en"
     ? [
         {
@@ -72,7 +73,7 @@ export default async function LocationPage({ params }: { params: Promise<{ local
       schema={[...locationPageSchema(locale, location), faqSchema(faqs)]}
       bullets={[
         locale === "en" ? "Localizes EPC, hydropower, solar, commissioning and audit services for regional search intent." : "EPC, HES, GES, devreye alma ve denetim hizmetlerini bölgesel arama niyetine göre yerelleştirir.",
-        locale === "en" ? "Connects every location to service-intent landing pages and matching technical content." : "Her lokasyonu hizmet-niyet landing page'leri ve ilgili teknik içeriklerle bağlar.",
+        locale === "en" ? "Connects regional conditions to the most relevant technical services and guidance." : "Bölgesel koşulları en ilgili teknik hizmetlere ve rehberliğe bağlar.",
         ...location.keywords
       ]}
       sections={[
@@ -96,8 +97,8 @@ export default async function LocationPage({ params }: { params: Promise<{ local
         }
       ]}
       deliverables={locale === "en"
-        ? [`Localized technical scope for ${location.label}`, "Service-intent landing page map", "Recommended consultation pathway", "Internal links to matching services and topics"]
-        : [`${location.label} için yerelleştirilmiş teknik kapsam`, "Hizmet-niyet landing page haritası", "Önerilen danışmanlık yolu", "İlgili hizmet ve konulara iç linkler"]}
+        ? [`Localized technical scope for ${location.label}`, "Regional evidence requirements", "Recommended consultation pathway", "Relevant services and technical guidance"]
+        : [`${location.label} için yerelleştirilmiş teknik kapsam`, "Bölgesel kanıt gereklilikleri", "Önerilen danışmanlık yolu", "İlgili hizmetler ve teknik rehberlik"]}
       expertCommentary={locale === "en"
         ? `For ${location.label}, I would avoid assuming the same engineering priorities apply to every renewable asset. A solar site, a hydropower station and an industrial self-consumption project can share an owner but have completely different grid, O&M and commissioning risks.`
         : `${location.label} için her yenilenebilir enerji varlığında aynı mühendislik önceliklerinin geçerli olduğunu varsaymam. Bir GES sahası, HES santrali ve endüstriyel öz tüketim projesi aynı işverene ait olabilir; ancak şebeke, O&M ve devreye alma riskleri tamamen farklıdır.`}
@@ -112,9 +113,9 @@ export default async function LocationPage({ params }: { params: Promise<{ local
       conclusion={locale === "en"
         ? `A location page earns trust when it helps the buyer choose a better engineering path, not when it repeats a city name. For ${location.label}, the next useful step is to connect the asset type, grid context and decision deadline to the right technical scope.`
         : `Bir lokasyon sayfası şehir adını tekrar ettiğinde değil, teknik alıcının daha doğru mühendislik yolunu seçmesine yardım ettiğinde güven üretir. ${location.label} için faydalı sonraki adım; varlık türünü, şebeke bağlamını ve karar tarihini doğru teknik kapsama bağlamaktır.`}
-      primaryLinks={pages.map((page) => ({ title: page.h1, href: `/${locale}/seo/${page.slug}`, description: page.description }))}
+      primaryLinks={services.map((service) => ({ title: service.title, href: `/${locale}/services/${service.slug}`, description: service.description }))}
       contextualLinks={[
-        { title: locale === "en" ? "Generated service-location pages" : "Üretilmiş hizmet-lokasyon sayfaları", href: `/${locale}/seo`, description: locale === "en" ? "Browse service, location and intent combinations." : "Hizmet, lokasyon ve niyet kombinasyonlarını inceleyin." },
+        { title: locale === "en" ? "Energy consultancy services" : "Enerji danışmanlığı hizmetleri", href: locale === "en" ? "/en/services" : "/tr/hizmetler", description: locale === "en" ? "Review the technical scopes available for project, investment and operating decisions." : "Proje, yatırım ve işletme kararları için sunulan teknik kapsamları inceleyin." },
         { title: locale === "en" ? "Problem-based pages" : "Problem odaklı sayfalar", href: `/${locale}/problems`, description: locale === "en" ? "Move from regional search intent into field problem diagnosis." : "Bölgesel arama niyetinden saha problemi teşhisine geçin." }
       ]}
       relatedSeed={{ categories: location.keywords, exclude: location.slug }}

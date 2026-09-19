@@ -66,6 +66,12 @@ const content = {
     advisory: "Contact EPC Advisory Team",
     services: [
       {
+        title: "Energy Consultancy",
+        text: "Independent energy sector consultancy for investment, EPC, power plant performance, technical due diligence and industrial energy cost decisions.",
+        href: "/services/energy-consultancy",
+        icon: Globe2
+      },
+      {
         title: "Hydropower Technical Audit",
         text: "Independent review of turbine-generator condition, hydraulic constraints, protection issues, historical alarms and O&M routines.",
         href: "/services/hydropower-plant-optimization",
@@ -153,17 +159,17 @@ const content = {
     ]
   },
   tr: {
-    metaTitle: "Öztoprak Enerji Danışmanlık | Uluslararası EPC ve Yenilenebilir Enerji Danışmanı",
+    metaTitle: "Enerji Danışmanlığı | HES, GES, Santral ve Maliyet Yönetimi",
     metaDescription:
-      "Yatırımcılar, santral sahipleri ve uluslararası EPC ekipleri için HES, GES, devreye alma, şebeke uyumu ve yenilenebilir enerji teknik danışmanlığı.",
-    heroKicker: "Bağımsız EPC ve yenilenebilir enerji teknik danışmanlığı",
-    heroTitle: "28+ Yıllık Enerji Santrali İşletme ve EPC Deneyimi",
+      "Türkiye genelinde yatırımcılar, santral sahipleri ve sanayi kuruluşları için enerji danışmanlığı; HES, GES, teknik inceleme ve enerji maliyeti desteği.",
+    heroKicker: "Türkiye genelinde bağımsız enerji ve santral danışmanlığı",
+    heroTitle: "Enerji Danışmanlığı ve Santral Teknik Çözümleri",
     heroText:
       "Öztoprak Enerji Danışmanlık; santral sahipleri, yatırımcılar ve EPC yüklenicileri için HES, GES, devreye alma, şebeke uyumu ve operasyonel optimizasyon alanlarında sahaya dayalı mühendislik desteği sağlar.",
     proof: "8 başarıyla tamamlanmış enerji santrali projesinde 275+ MW yönetilen kapasite deneyimi.",
     heroSignals: ["HES teknik denetimleri", "İşveren tarafı EPC inceleme", "Devreye alma ve şebeke hazırlığı"],
     servicesEyebrow: "Temel Danışmanlık Hizmetleri",
-    servicesTitle: "Yenilenebilir Enerji Kararları İçin Teknik Danışmanlık",
+    servicesTitle: "Enerji Danışmanlığı Hizmetleri",
     servicesText:
       "Her çalışma saha incelemesi, işletme verisi, devreye alma kayıtları ve EPC dokümantasyonu üzerine kurulur; böylece öneriler işveren, finans kuruluşu ve proje ekipleri için uygulanabilir olur.",
     projectsEyebrow: "Uluslararası Proje Profili",
@@ -189,6 +195,12 @@ const content = {
     assessment: "Ücretsiz İlk Değerlendirme Planla",
     advisory: "EPC Danışmanlık Ekibiyle İletişime Geç",
     services: [
+      {
+        title: "Enerji Danışmanlığı",
+        text: "Yatırım, EPC, santral performansı, teknik durum tespiti ve sanayide enerji maliyeti kararları için bağımsız enerji sektörü danışmanlığı.",
+        href: "/services/enerji-danismanligi",
+        icon: Globe2
+      },
       {
         title: "HES Teknik Denetimi",
         text: "Türbin-jeneratör durumu, hidrolik kısıtlar, koruma problemleri, geçmiş alarmlar ve O&M rutinleri için bağımsız inceleme.",
@@ -578,6 +590,11 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         </Container>
       </section>
 
+      {locale === "tr" && <section className="bg-navy-900 py-14"><Container>
+        <h2 className="text-3xl font-bold text-white">Enerji Yatırım Fırsatları</h2>
+        <p className="my-5 max-w-3xl leading-8 text-steel">HES, GES ve RES projelerinde alıcı-satıcı eşleştirme, santral değerleme ve teknik inceleme desteği.</p>
+        <ButtonLink href="/tr/satilik-enerji-santralleri">Yatırım Fırsatlarını İncele</ButtonLink>
+      </Container></section>}
       <InvestorTrustBlock locale={locale} />
       <EngineeringCredentials locale={locale} />
 

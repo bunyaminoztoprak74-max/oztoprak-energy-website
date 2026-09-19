@@ -373,7 +373,7 @@ export const programmaticSeoData: Record<Locale, ProgrammaticData> = {
         slug: "acquisition-technical-risk",
         label: "Acquisition Technical Risk",
         description: "Identify technical risks before renewable energy asset acquisition or refinancing decisions.",
-        keywords: ["power plant technical audit", "technical due diligence", "renewable energy investment advisory"]
+        keywords: ["power plant technical audit", "technical due diligence", "renewable energy technical assessment"]
       },
       {
         slug: "om-availability-losses",
@@ -404,7 +404,7 @@ export const programmaticSeoData: Record<Locale, ProgrammaticData> = {
       {
         slug: "renewable-energy-consultancy",
         title: "Renewable Energy Consultancy",
-        description: "A strategic pillar for EPC, owner engineering, technical audits and investment advisory across hydropower and solar assets.",
+        description: "A strategic pillar for EPC, owner's engineering, technical audits and technical/commercial assessment across hydropower and solar assets.",
         clusters: ["hydropower-consultancy", "solar-consultancy", "epc-owner-engineering"],
         primaryServices: ["renewable-energy-investment-advisory", "epc-technical-consultancy", "owners-engineering"]
       },
@@ -503,7 +503,7 @@ export const programmaticSeoData: Record<Locale, ProgrammaticData> = {
         slug: "satin-alma-teknik-riski",
         label: "Satın Alma Teknik Riski",
         description: "Yenilenebilir enerji varlığı satın alma veya refinansman kararları öncesinde teknik riskleri belirleyin.",
-        keywords: ["santral teknik denetim", "teknik durum tespiti", "enerji yatırım danışmanlığı"]
+        keywords: ["santral teknik denetim", "teknik durum tespiti", "enerji santrali teknik inceleme"]
       },
       {
         slug: "isletme-bakim-emre-amadelik-kayiplari",
@@ -534,7 +534,7 @@ export const programmaticSeoData: Record<Locale, ProgrammaticData> = {
       {
         slug: "yenilenebilir-enerji-danismanligi",
         title: "Yenilenebilir Enerji Danışmanlığı",
-        description: "HES ve GES varlıklarında EPC, işveren mühendisliği, teknik denetim ve yatırım danışmanlığı için stratejik pillar sayfa.",
+        description: "HES ve GES varlıklarında EPC, işveren mühendisliği, teknik denetim ve teknik/ticari değerlendirme için stratejik pillar sayfa.",
         clusters: ["hes-danismanligi", "ges-danismanligi", "epc-isveren-muhendisligi"],
         primaryServices: ["yenilenebilir-enerji-yatirim-danismanligi", "epc-teknik-danismanlik", "isveren-muhendisligi"]
       },

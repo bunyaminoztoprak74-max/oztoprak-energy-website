@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import Link from "next/link";
 import type { Locale } from "@/lib/i18n";
 
 type FormStatus = "idle" | "loading" | "success" | "error";
@@ -47,7 +48,7 @@ const copy = {
     messagePlaceholder: "Describe your situation or share any details that would help us prepare a more targeted preliminary review.",
     submit: "Request Free Bill Review",
     submitting: "Sending…",
-    successMsg: "Thank you. Your request has been received. We will contact you within 1–2 business days with a preliminary assessment.",
+    successMsg: "Thank you. Your request has been received. Our team will review it and contact you.",
     errorMsg: "The form could not be sent. Please email info@oztoprakenerji.com or contact us directly.",
     notConfigured: "Form delivery requires NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY in Vercel environment variables.",
     disclaimer: "Your information is kept strictly confidential and used only to prepare your preliminary review."
@@ -91,7 +92,7 @@ const copy = {
     messagePlaceholder: "Durumu açıklayın veya ön incelemeye katkı sağlayacak detayları paylaşın.",
     submit: "Ücretsiz Fatura İncelemesi Talep Et",
     submitting: "Gönderiliyor…",
-    successMsg: "Teşekkürler. Talebiniz alındı. 1–2 iş günü içinde ön değerlendirme ile geri dönülecektir.",
+    successMsg: "Teşekkürler. Talebiniz alındı. Ekibimiz inceleyip sizinle iletişime geçecektir.",
     errorMsg: "Form gönderilemedi. Lütfen info@oztoprakenerji.com adresine e-posta gönderin veya doğrudan iletişime geçin.",
     notConfigured: "E-posta teslimi için Vercel ortam değişkenlerinde NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY gereklidir.",
     disclaimer: "Bilgileriniz kesinlikle gizli tutulur ve yalnızca ön incelemenizi hazırlamak için kullanılır."
@@ -123,6 +124,12 @@ export function IndustrialLeadForm({ locale }: { locale: Locale }) {
       setStatus("success");
       setMessage(t.successMsg);
       form.reset();
+      return;
+    }
+
+    if (formData.get("consent") !== "on") {
+      setStatus("error");
+      setMessage(locale === "tr" ? "Lütfen KVKK / gizlilik açıklamasını onaylayın." : "Please confirm the privacy notice.");
       return;
     }
 
@@ -276,6 +283,10 @@ export function IndustrialLeadForm({ locale }: { locale: Locale }) {
           />
         </label>
       </div>
+      <label className="mt-5 flex items-start gap-3 text-xs leading-5 text-steel">
+        <input name="consent" required type="checkbox" className="mt-0.5 h-4 w-4 shrink-0 accent-sky-400" />
+        <span>{locale === "tr" ? <> <Link href="/tr/privacy-policy" className="text-energy-500 underline">KVKK / gizlilik açıklamasını</Link> okudum; iletişim bilgilerimin talebimi değerlendirmek ve benimle iletişim kurmak amacıyla işlenmesini onaylıyorum.</> : <>I have read the <Link href="/en/privacy-policy" className="text-energy-500 underline">privacy notice</Link> and consent to processing my contact details to assess this request and contact me.</>}</span>
+      </label>
       <div className="mt-6 grid gap-3">
         <button
           type="submit"

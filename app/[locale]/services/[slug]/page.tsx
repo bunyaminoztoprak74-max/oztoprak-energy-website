@@ -102,8 +102,8 @@ function serviceExpansionSections(locale: Locale, service: NonNullable<ReturnTyp
         content: `EPC value is protected through disciplined interface control. Civil readiness, electromechanical installation, automation logic, grid connection, protection settings, auxiliary systems, spare parts, training and handover documents must mature together. If one stream moves without the others, delay risk and claim exposure increase. For ${service.title}, owner-side review checks whether submittals, site progress, test plans and acceptance criteria tell the same technical story before unresolved project risk becomes schedule loss, generation loss or a handover dispute.`
       },
       {
-        heading: "Long-Term SEO and Knowledge Architecture",
-        content: `This page is structured as a topic-cluster asset for hydropower consulting, solar energy consulting, EPC technical advisory, power plant commissioning, technical due diligence, owner engineering and power plant audits. It links related services, case studies, blog articles, problem pages and topical clusters so a technical visitor can move from a broad concern to a specific consultation path without hitting a dead end. That internal structure supports organic traffic growth while keeping the content useful for engineers, owners and investors.`
+        heading: "Related Engineering Decision Paths",
+        content: `Power plant decisions rarely belong to one isolated discipline. Hydropower and solar performance, EPC interfaces, commissioning evidence, technical due diligence, owner engineering and plant audits often affect the same investment or operating decision. This service connects those related scopes so owners, engineers and investors can move from an initial concern to the correct evidence, specialist review and practical next action.`
       }
     ];
   }
@@ -118,14 +118,54 @@ function serviceExpansionSections(locale: Locale, service: NonNullable<ReturnTyp
       content: `EPC projelerinde teknik deger disiplinli arayuz kontrolu ile korunur. Insaat hazirligi, elektromekanik montaj, otomasyon mantigi, sebeke baglantisi, koruma ayarlari, yardimci sistemler, yedek parca, egitim ve teslim dokumanlari birlikte olgunlasmalidir. Bir akis digerlerinden kopuk ilerlerse gecikme riski ve talep uyusmazligi artar. ${service.title} kapsaminda isveren tarafi inceleme; teknik sunumlarin, saha ilerlemesinin, test planlarinin ve kabul kriterlerinin ayni teknik hikayeyi anlatip anlatmadigina odaklanir.`
     },
     {
-      heading: "Uzun Vadeli SEO ve Bilgi Mimarisi Degeri",
-      content: `Bu icerik HES danismanligi, GES danismanligi, EPC teknik danismanlik, santral devreye alma, teknik durum tespiti, isveren muhendisligi ve santral denetimleri icin konu kumesi varligi olarak yapilandirilmistir. Sayfa ilgili hizmetlere, vaka calismalarina, blog yazilarina, problem sayfalarina ve konu kumelerine baglanir; teknik ziyaretci genis bir sorundan belirli bir danismanlik yoluna kolayca ilerler.`
+      heading: "İlgili Mühendislik Karar Yolları",
+      content: `Enerji santrali kararları çoğu zaman tek bir disiplinle sınırlı değildir. HES ve GES performansı, EPC arayüzleri, devreye alma kanıtları, teknik durum tespiti, işveren mühendisliği ve santral denetimleri aynı yatırım veya işletme kararını etkileyebilir. Bu hizmet, işverenin ilk teknik endişeden doğru kanıta, uzman incelemesine ve uygulanabilir sonraki aksiyona ilerlemesini sağlar.`
     }
   ];
 }
 
 function specializedServiceSections(locale: Locale, service: NonNullable<ReturnType<typeof getService>>) {
   const en = locale === "en";
+
+  if (service.slug === "energy-consultancy" || service.slug === "enerji-danismanligi") {
+    return en
+      ? [
+          {
+            heading: "Energy Consultancy for Investment and Operations Decisions",
+            content: "Energy sector decisions combine engineering evidence, commercial deadlines and operational constraints. Oztoprak Energy provides one independent decision path for renewable energy investors, power plant owners, industrial facilities and finance teams. The engagement begins with the decision that must be made, then narrows the evidence and engineering work to what can materially change that decision."
+          },
+          {
+            heading: "Renewable Energy Project and Power Plant Support",
+            content: "The consultancy can cover HPP and SPP investments from early technical review through EPC execution, commissioning, handover and operation. Typical work includes design and specification review, owner's engineering, contractor deliverable control, site observations, technical due diligence, performance analysis, O&M assessment and prioritized corrective actions. Each scope is defined around the asset, project stage and risk rather than a generic checklist."
+          },
+          {
+            heading: "Industrial Energy Cost Reduction",
+            content: "For industrial companies, energy consultancy connects bills, interval consumption, reactive power, demand peaks, production schedules and on-site generation opportunities. The objective is to separate quick operational measures from investment options and present savings with assumptions, evidence, implementation priority and measurement criteria."
+          },
+          {
+            heading: "Decision-Ready Deliverables",
+            content: "Deliverables are structured for action: an executive summary, evidence register, prioritized risks and opportunities, estimated operational or cost impact, responsible parties and a practical roadmap. Where uncertainty remains, the report identifies the exact test, document or field check needed to close it."
+          }
+        ]
+      : [
+          {
+            heading: "Yatırım ve İşletme Kararları İçin Enerji Danışmanlığı",
+            content: "Enerji sektörü kararları; mühendislik kanıtını, ticari takvimi ve işletme kısıtlarını birlikte ele almayı gerektirir. Öztoprak Enerji; yenilenebilir enerji yatırımcıları, santral sahipleri, sanayi kuruluşları ve finans ekipleri için bağımsız bir karar yolu oluşturur. Çalışma önce verilmesi gereken kararı netleştirir, ardından veri ve mühendislik kapsamını bu kararı gerçekten etkileyebilecek konulara indirger."
+          },
+          {
+            heading: "Yenilenebilir Enerji Projesi ve Santral Desteği",
+            content: "Enerji danışmanlığı; HES ve GES yatırımlarında ilk teknik incelemeden EPC uygulaması, devreye alma, teslim ve işletme dönemine kadar uzanabilir. Tasarım ve şartname incelemesi, işveren mühendisliği, yüklenici doküman kontrolü, saha gözlemleri, teknik durum tespiti, performans analizi, O&M değerlendirmesi ve öncelikli düzeltici aksiyonlar tipik çalışma alanlarıdır. Kapsam genel bir kontrol listesine göre değil, varlığın durumu ve karar riski üzerinden belirlenir."
+          },
+          {
+            heading: "Sanayide Enerji Maliyetlerini Azaltma",
+            content: "Sanayi kuruluşlarında çalışma; faturaları, saatlik tüketimi, reaktif gücü, talep piklerini, üretim programını ve yerinde üretim seçeneklerini birlikte değerlendirir. Amaç hızlı operasyonel tedbirleri yatırım gerektiren seçeneklerden ayırmak; tasarruf fırsatlarını varsayımları, kanıtı, uygulama önceliği ve ölçüm yöntemiyle birlikte sunmaktır."
+          },
+          {
+            heading: "Karara Hazır Enerji Danışmanlığı Çıktıları",
+            content: "Teslimatlar uygulamaya dönük hazırlanır: yönetici özeti, kanıt listesi, önceliklendirilmiş risk ve fırsatlar, tahmini işletme veya maliyet etkisi, sorumlular ve uygulanabilir yol haritası. Belirsizlik devam ediyorsa bunu kapatacak test, belge ya da saha kontrolü açıkça belirtilir."
+          }
+        ];
+  }
 
   if (service.slug === "technical-due-diligence" || service.slug === "teknik-durum-tespiti") {
     return en

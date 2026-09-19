@@ -31,12 +31,12 @@ export default async function TopicPage({ params }: { params: Promise<{ locale: 
   const pillar = getPillar(locale, cluster.pillar);
   const faqs = locale === "en"
     ? [
-        { question: "Is this cluster only for SEO?", answer: "No. The cluster is also a practical consulting map showing which technical scopes should be considered together before a project or asset decision." },
-        { question: "How does it avoid keyword stuffing?", answer: "Pages are linked by service, problem and evidence relationships rather than repeating the same keyword phrase across every section." },
+        { question: "Which technical scopes should be reviewed together?", answer: "The answer depends on the decision, but EPC, commissioning, performance, O&M, grid and evidence risks often need to be assessed together." },
+        { question: "How are related engineering issues connected?", answer: "Services, operating problems and technical evidence are connected according to their effect on the same project or asset decision." },
         { question: "How should buyers use this page?", answer: "Use it as a navigation hub to move from a broad technical concern to a specific service, problem diagnosis or article." }
       ]
     : [
-        { question: "Bu küme yalnızca SEO için mi?", answer: "Hayır. Küme aynı zamanda proje veya varlık kararı öncesinde hangi teknik kapsamların birlikte düşünülmesi gerektiğini gösteren pratik danışmanlık haritasıdır." },
+        { question: "Hangi teknik kapsamlar birlikte incelenmelidir?", answer: "Karara göre değişmekle birlikte EPC, devreye alma, performans, O&M, şebeke ve kanıt risklerinin çoğu zaman birlikte değerlendirilmesi gerekir." },
         { question: "Anahtar kelime doldurmadan nasıl kaçınır?", answer: "Sayfalar aynı ifadeyi tekrar ederek değil; hizmet, problem ve kanıt ilişkileriyle birbirine bağlanır." },
         { question: "Teknik alıcılar bu sayfayı nasıl kullanmalı?", answer: "Geniş bir teknik endişeden belirli bir hizmete, problem teşhisine veya makaleye geçmek için navigasyon merkezi olarak kullanın." }
       ];
@@ -45,32 +45,32 @@ export default async function TopicPage({ params }: { params: Promise<{ locale: 
     <ProgrammaticPage
       locale={locale}
       title={cluster.title}
-      eyebrow={locale === "en" ? "Semantic Topic Cluster" : "Semantik Konu Kümesi"}
+      eyebrow={locale === "en" ? "Engineering Knowledge Area" : "Mühendislik Bilgi Alanı"}
       description={cluster.description}
       intro={
         locale === "en"
-          ? `${cluster.title} connects service pages, problem pages and technical articles into one coherent engineering theme. This helps search engines and human buyers understand how Oztoprak Energy evaluates risk, performance and project decisions across related power plant scopes.`
-          : `${cluster.title}; hizmet sayfalarını, problem sayfalarını ve teknik yazıları tek bir tutarlı mühendislik teması altında bağlar. Bu yapı hem arama motorlarının hem de teknik alıcıların Öztoprak Enerji'nin ilgili santral kapsamlarında risk, performans ve proje kararlarını nasıl değerlendirdiğini anlamasına yardımcı olur.`
+          ? `${cluster.title} connects services, operating problems and technical evidence that should be considered together before a power plant investment, project or operating decision.`
+          : `${cluster.title}; enerji santrali yatırımı, proje veya işletme kararı öncesinde birlikte değerlendirilmesi gereken hizmetleri, işletme problemlerini ve teknik kanıtları bir araya getirir.`
       }
       breadcrumbs={[{ label: locale === "en" ? "Topics" : "Konular", href: `/${locale}/topics` }, { label: cluster.title }]}
       schema={[...topicClusterSchema(locale, cluster), faqSchema(faqs)]}
       bullets={[
         locale === "en" ? "Groups services, problems and articles around one semantic energy-sector theme." : "Hizmetleri, problemleri ve yazıları tek bir semantik enerji sektörü teması etrafında toplar.",
-        locale === "en" ? "Supports pillar pages with consistent internal links and topical depth." : "Tutarlı iç linkler ve konu derinliği ile pillar sayfaları destekler.",
+        locale === "en" ? "Helps owners move from a broad concern to the right technical scope." : "İşverenin geniş bir endişeden doğru teknik kapsama ilerlemesini sağlar.",
         ...cluster.blogCategories
       ]}
       sections={[
         {
-          heading: locale === "en" ? "Why this topic cluster exists" : "Bu konu kümesi neden var",
+          heading: locale === "en" ? "Why these issues belong together" : "Bu konular neden birlikte ele alınır",
           content: locale === "en"
             ? "Power plant decisions rarely sit inside one isolated service. EPC risk, commissioning quality, O&M discipline and grid reliability influence each other, so the cluster groups pages that should be reviewed together."
             : "Santral kararları çoğu zaman tek bir hizmet içinde izole kalmaz. EPC riski, devreye alma kalitesi, işletme bakım disiplini ve şebeke güvenilirliği birbirini etkiler; bu nedenle konu kümesi birlikte incelenmesi gereken sayfaları gruplar."
         },
         {
-          heading: locale === "en" ? "Internal linking logic" : "İç linkleme mantığı",
+          heading: locale === "en" ? "How to use this engineering area" : "Bu mühendislik alanı nasıl kullanılır",
           content: locale === "en"
-            ? "The cluster links downward to detailed services and problem pages, sideways to related blog categories, and upward to a pillar page. This creates crawl depth without forcing repetitive keyword blocks."
-            : "Küme detay hizmet ve problem sayfalarına aşağı yönlü, ilgili blog kategorilerine yatay, pillar sayfaya yukarı yönlü link verir. Böylece tekrarlı anahtar kelime blokları oluşturmadan tarama derinliği sağlar."
+            ? "Begin with the owner decision or operating symptom, review the related service and problem pages, then use the technical articles to understand the evidence and recommended actions."
+            : "İşveren kararı veya işletme belirtisiyle başlayın; ilgili hizmet ve problem sayfalarını inceleyin, ardından kanıtları ve önerilen aksiyonları anlamak için teknik yazılara ilerleyin."
         }
       ]}
       deliverables={locale === "en"

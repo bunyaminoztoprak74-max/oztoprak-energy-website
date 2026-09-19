@@ -10,14 +10,14 @@ import { faqSchema } from "@/lib/schema";
 
 const copy = {
   en: {
-    title: "Free Industrial Electricity Bill Review",
+    title: "Industrial Electricity Bill Preliminary Review",
     eyebrow: "Industrial Energy Cost Advisory",
-    description: "Send us your last 12 months of electricity bills. We will identify reactive power penalty exposure, contract demand risks, tariff optimization opportunities and rooftop solar feasibility — at no cost.",
+    description: "Share your facility's electricity cost priorities. We assess the appropriate next step for reactive power, contract demand, supply options and rooftop solar feasibility.",
     breadcrumb: "Industrial Bill Review",
     heroStats: [
       { value: "28+", label: "years power sector experience" },
-      { value: "16%", label: "average bill reduction — industrial case study" },
-      { value: "5–7", label: "working days for preliminary review" }
+      { value: "HES / GES", label: "technical review and project support" },
+      { value: "Supply", label: "electricity supply options for eligible facilities" }
     ],
     problemsTitle: "Common Industrial Electricity Cost Problems",
     problems: [
@@ -105,14 +105,14 @@ const copy = {
     formSubtitle: "We respond within 1–2 business days."
   },
   tr: {
-    title: "Ücretsiz Sanayi Elektrik Faturası İncelemesi",
+    title: "Sanayi Elektrik Faturası Ön İnceleme Talebi",
     eyebrow: "Sanayi Enerji Maliyet Danışmanlığı",
-    description: "Son 12 aylık elektrik faturalarınızı gönderin. Reaktif enerji cezaları, sözleşme gücü riskleri, tarife optimizasyon fırsatları ve çatı GES fizibilitesini ücretsiz olarak belirleyelim.",
+    description: "Tesisinizin elektrik maliyeti önceliklerini paylaşın. Reaktif enerji, sözleşme gücü, tedarik seçenekleri ve çatı GES fizibilitesi için uygun sonraki adımı birlikte belirleyelim.",
     breadcrumb: "Fatura İncelemesi",
     heroStats: [
       { value: "28+", label: "yıl enerji sektörü deneyimi" },
-      { value: "%16", label: "ortalama fatura düşüşü — sanayi vaka çalışması" },
-      { value: "5–7", label: "iş günü ön inceleme süresi" }
+      { value: "HES / GES", label: "teknik inceleme ve proje desteği" },
+      { value: "Tedarik", label: "uygun işletmeler için elektrik tedarik seçenekleri" }
     ],
     problemsTitle: "Yaygın Sanayi Elektrik Maliyeti Sorunları",
     problems: [
@@ -196,8 +196,8 @@ const copy = {
     caseStudyHref: "/tr/projects/endustriyel-elektrik-maliyet-optimizasyonu-vaka-calismasi",
     serviceLabel: "Tam Sanayi Enerji Hizmeti",
     serviceHref: "/tr/services/endustriyel-enerji-maliyet-optimizasyonu",
-    formTitle: "Ücretsiz Elektrik Faturası İncelemesi Talep Edin",
-    formSubtitle: "1–2 iş günü içinde yanıt veriyoruz."
+    formTitle: "Elektrik Maliyeti Ön İnceleme Talebi",
+    formSubtitle: "Talebinizi inceleyip sizinle iletişime geçiyoruz."
   }
 } satisfies Record<Locale, {
   title: string; eyebrow: string; description: string; breadcrumb: string;

@@ -11,8 +11,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     locale,
     path: "/hizmetler",
     alternatePath: "/services",
-    title: `Enerji Danışmanlık Hizmetleri | HES, GES, EPC ve İşveren Mühendisliği`,
-    description: "HES, GES ve yenilenebilir enerji santralleri için EPC teknik danışmanlık, işveren mühendisliği, devreye alma, teknik denetim ve işletme bakım optimizasyon hizmetleri."
+    title: "Enerji Danışmanlığı Hizmetleri | HES, GES, EPC ve İşveren Mühendisliği",
+    description: "Enerji danışmanlığı ve enerji sektörü danışmanlığı: HES, GES, EPC, işveren mühendisliği, teknik durum tespiti, santral performansı ve enerji maliyeti optimizasyonu."
   });
 }
 

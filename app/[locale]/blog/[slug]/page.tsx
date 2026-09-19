@@ -28,6 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     locale,
     path: `/blog/${slug}`,
     alternatePath: translated ? `/blog/${translated.slug}` : undefined,
+    hasTranslation: Boolean(translated),
     title: post.title,
     description: post.description,
     type: "article"
@@ -155,6 +156,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ local
               <section key={section.heading}>
                 <h2>{section.heading}</h2>
                 <p>{section.content}</p>
+                {section.links?.map((link) => <p key={link.href}><Link href={link.href}>{link.label}</Link></p>)}
               </section>
             ))}
             <section className="not-prose my-10 rounded-lg border border-energy-500/30 bg-energy-500/10 p-6">
