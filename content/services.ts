@@ -33,7 +33,7 @@ export const services: Record<Locale, Service[]> = {
       description: "Independent energy consultancy for investors, asset owners and industrial companies covering renewable energy projects, power plant performance, technical due diligence, EPC oversight and energy cost reduction.",
       keywords: ["energy consultancy", "energy sector consultancy", "renewable energy consultancy", "energy consultant Turkey", "power plant consulting"],
       outcomes: ["Clear investment and technical decisions", "Reduced project and operating risk", "Prioritized performance and cost improvements"],
-      scope: ["Energy project and investment advisory", "HPP and SPP technical consultancy", "EPC and owner's engineering support", "Technical due diligence and asset review", "Power plant performance and O&M improvement", "Industrial energy cost reduction"],
+      scope: ["Energy project technical and commercial assessment", "HPP and SPP technical consultancy", "EPC and owner's engineering support", "Technical due diligence and asset review", "Power plant performance and O&M improvement", "Industrial energy cost reduction"],
       faqs: [
         {
           question: "What does energy consultancy include?",
@@ -153,10 +153,10 @@ export const services: Record<Locale, Service[]> = {
     },
     {
       slug: "renewable-energy-investment-advisory",
-      title: "Renewable Energy Investment Advisory",
+      title: "Renewable Energy Technical and Commercial Assessment",
       eyebrow: "Technical clarity for investment",
       description: "Renewable energy project advisory for investors evaluating feasibility, acquisition, development or performance recovery options.",
-      keywords: ["renewable energy investment advisory", "renewable energy consultant", "power plant technical audit"],
+      keywords: ["renewable energy technical assessment", "renewable energy consultant", "power plant technical audit"],
       outcomes: ["Better investment decisions", "Clear technical risks", "Practical value creation options"],
       scope: ["Technical due diligence", "Feasibility challenge review", "CAPEX/OPEX technical assumptions", "Asset improvement strategy"],
       faqs: sharedFaq.en
@@ -617,7 +617,7 @@ export const services: Record<Locale, Service[]> = {
       description: "Enerji danışmanlığı ve enerji sektörü danışmanlığı kapsamında yatırımcılara, santral sahiplerine ve sanayi kuruluşlarına; yenilenebilir enerji projeleri, santral performansı, teknik durum tespiti, EPC denetimi ve enerji maliyetlerini azaltma konularında bağımsız mühendislik desteği.",
       keywords: ["enerji danışmanlığı", "enerji sektörü danışmanlığı", "enerji danışmanlık şirketi", "yenilenebilir enerji danışmanlığı", "enerji danışmanı"],
       outcomes: ["Net yatırım ve teknik kararlar", "Azaltılmış proje ve işletme riski", "Önceliklendirilmiş performans ve maliyet iyileştirmeleri"],
-      scope: ["Enerji projesi ve yatırım danışmanlığı", "HES ve GES teknik danışmanlığı", "EPC ve işveren mühendisliği desteği", "Teknik durum tespiti ve varlık incelemesi", "Santral performansı ve O&M iyileştirme", "Sanayide enerji maliyeti azaltma"],
+      scope: ["Enerji projesi teknik ve ticari değerlendirme", "HES ve GES teknik danışmanlığı", "EPC ve işveren mühendisliği desteği", "Teknik durum tespiti ve varlık incelemesi", "Santral performansı ve O&M iyileştirme", "Sanayide enerji maliyeti azaltma"],
       faqs: [
         {
           question: "Enerji danışmanlığı nedir?",
@@ -659,7 +659,7 @@ export const services: Record<Locale, Service[]> = {
       title: "GES Danışmanlığı",
       eyebrow: "Üretim ve güvenilirlik",
       description: "Yatırımcılar, EPC ekipleri ve santral sahipleri için üretim, kalite ve yaşam döngüsü performansını güçlendiren GES danışmanlığı.",
-      keywords: ["GES danışmanlığı", "GES performans iyileştirme", "enerji yatırım danışmanlığı"],
+      keywords: ["GES danışmanlığı", "GES performans iyileştirme", "GES teknik inceleme"],
       outcomes: ["Geliştirilmiş PR analizi", "Düşük performans riskinin azaltılması", "Uygulanabilir O&M yol haritası"],
       scope: ["Üretim ve kayıp incelemesi", "EPC kalite incelemesi", "İşletme bakım performans değerlendirmesi", "Teknik durum tespiti"],
       faqs: sharedFaq.tr
@@ -716,11 +716,11 @@ export const services: Record<Locale, Service[]> = {
     },
     {
       slug: "yenilenebilir-enerji-yatirim-danismanligi",
-      title: "Yenilenebilir Enerji Yatırım Danışmanlığı",
-      eyebrow: "Yatırım için teknik netlik",
-      description: "Fizibilite, satın alma, geliştirme veya performans toparlama seçeneklerini değerlendiren yatırımcılar için teknik yatırım danışmanlığı.",
-      keywords: ["enerji yatırım danışmanlığı", "enerji santrali danışmanlığı", "HES teknik denetim"],
-      outcomes: ["Daha doğru yatırım kararları", "Net teknik riskler", "Pratik değer yaratma seçenekleri"],
+      title: "Yenilenebilir Enerji Teknik ve Ticari Değerlendirme",
+      eyebrow: "Alım-satım ve proje kararları için teknik netlik",
+      description: "Fizibilite, satın alma, geliştirme veya performans toparlama seçeneklerini değerlendiren kurumlar için teknik inceleme ve karar desteği.",
+      keywords: ["enerji santrali teknik inceleme", "enerji santrali danışmanlığı", "HES teknik denetim"],
+      outcomes: ["Daha sağlam teknik ve ticari kararlar", "Net teknik riskler", "Pratik değer yaratma seçenekleri"],
       scope: ["Teknik durum tespiti", "Fizibilite varsayım incelemesi", "CAPEX/OPEX teknik varsayımları", "Varlık iyileştirme stratejisi"],
       faqs: sharedFaq.tr
     },
@@ -769,7 +769,7 @@ export const services: Record<Locale, Service[]> = {
       title: "Yenilenebilir Enerji Teknik Durum Tespiti",
       eyebrow: "Yatirimci duzeyinde teknik risk incelemesi",
       description: "HES, GES ve yenilenebilir enerji varliklari icin performans kaniti, EPC riski, O&M olgunlugu, sebeke uyumu, CAPEX etkisi ve satin alma kararlarini kapsayan teknik durum tespiti.",
-      keywords: ["teknik durum tespiti", "yenilenebilir enerji due diligence", "HES teknik durum tespiti", "GES teknik durum tespiti", "enerji yatirim danismanligi"],
+      keywords: ["teknik durum tespiti", "yenilenebilir enerji due diligence", "HES teknik durum tespiti", "GES teknik durum tespiti", "enerji santrali teknik inceleme"],
       outcomes: ["Yatirima hazir teknik risk listesi", "Net CAPEX ve O&M risk oncelikleri", "Satin alma veya refinansman karari icin kanita dayali destek", "Yatirimci ve finans kurumu guveninin artmasi"],
       scope: [
         "Varlik data room ve EPC dokumantasyon incelemesi",

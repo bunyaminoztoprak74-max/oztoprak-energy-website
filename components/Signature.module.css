@@ -1,0 +1,198 @@
+.card {
+  width: 100%;
+  max-width: 640px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 20px 48px rgba(10, 22, 40, 0.14), 0 2px 6px rgba(10, 22, 40, 0.06);
+  border: 1px solid #eef1f5;
+  padding: 28px;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #0f1b2d;
+}
+
+:global(.dark) .card {
+  background-color: #0f1b2d;
+  border-color: #1c2c40;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.4);
+}
+
+.columns {
+  display: flex;
+  gap: 26px;
+}
+
+@media (max-width: 520px) {
+  .columns {
+    flex-direction: column;
+  }
+}
+
+.left {
+  flex: none;
+  width: 170px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-right: 26px;
+  border-right: 1px solid #eef1f5;
+}
+
+:global(.dark) .left {
+  border-right-color: #1c2c40;
+}
+
+@media (max-width: 520px) {
+  .left {
+    width: 100%;
+    flex-direction: row;
+    align-items: flex-end;
+    padding-right: 0;
+    padding-bottom: 18px;
+    border-right: none;
+    border-bottom: 1px solid #eef1f5;
+  }
+
+  :global(.dark) .left {
+    border-bottom-color: #1c2c40;
+  }
+}
+
+.logo {
+  width: 170px;
+  height: auto;
+  object-fit: contain;
+}
+
+.qrBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.qr {
+  width: 90px;
+  height: 90px;
+  border-radius: 10px;
+  border: 1px solid #eef1f5;
+  object-fit: contain;
+}
+
+:global(.dark) .qr {
+  border-color: #1c2c40;
+}
+
+.qrCaption {
+  font-size: 9px;
+  line-height: 12px;
+  color: #5b6b7e;
+  max-width: 100px;
+}
+
+:global(.dark) .qrCaption {
+  color: #97a6b8;
+}
+
+.right {
+  flex: 1;
+  min-width: 0;
+}
+
+.name {
+  margin: 0 0 3px 0;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #0a1628;
+}
+
+:global(.dark) .name {
+  color: #ffffff;
+}
+
+.roleLine {
+  margin: 0 0 9px 0;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: #1e7a34;
+}
+
+:global(.dark) .roleLine {
+  color: #3fc45f;
+}
+
+.legalName {
+  margin: 0 0 14px 0;
+  font-size: 10.5px;
+  line-height: 15px;
+  color: #5b6b7e;
+}
+
+:global(.dark) .legalName {
+  color: #97a6b8;
+}
+
+.contactList {
+  display: flex;
+  flex-direction: column;
+}
+
+.badges {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid #eef1f5;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+:global(.dark) .badges {
+  border-top-color: #1c2c40;
+}
+
+.footer {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid #eef1f5;
+}
+
+:global(.dark) .footer {
+  border-top-color: #1c2c40;
+}
+
+.tagline {
+  margin: 0 0 12px 0;
+  font-size: 12.5px;
+  font-weight: 700;
+  font-style: italic;
+  color: #0a1628;
+}
+
+:global(.dark) .tagline {
+  color: #ffffff;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.actionLink {
+  display: inline-block;
+  border-radius: 7px;
+  background-color: #0a1628;
+  color: #ffffff;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  padding: 9px 15px;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+.actionLink:hover {
+  background-color: #1e7a34;
+  transform: translateY(-1px);
+}

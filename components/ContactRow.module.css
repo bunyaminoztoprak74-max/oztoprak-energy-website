@@ -1,0 +1,48 @@
+.row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 4px 0;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.chip {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+  border-radius: 6px;
+  background-color: #0a1628;
+  color: #ffffff;
+}
+
+:global(.dark) .chip {
+  background-color: #28860c;
+}
+
+.text {
+  color: #0f1b2d;
+}
+
+.link {
+  color: #0f1b2d;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.link:hover {
+  color: #1e7a34;
+}
+
+:global(.dark) .text,
+:global(.dark) .link {
+  color: #f3f6f9;
+}
+
+:global(.dark) .link:hover {
+  color: #3fc45f;
+}

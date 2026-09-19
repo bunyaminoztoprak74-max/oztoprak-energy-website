@@ -82,14 +82,7 @@ export function localBusinessSchema(locale: Locale) {
       addressCountry: "TR"
     },
     description: dict.seo.siteDescription,
-    knowsAbout: targetKeywords,
-    makesOffer: targetKeywords.map((keyword) => ({
-      "@type": "Offer",
-      itemOffered: {
-        "@type": "Service",
-        name: keyword
-      }
-    }))
+    knowsAbout: targetKeywords
   };
 }
 
