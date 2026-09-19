@@ -22,6 +22,39 @@ function contactHref(locale: Locale) {
   return locale === "tr" ? "/tr/iletisim" : "/en/contact";
 }
 
+const energyConsultancyDecisionPaths = [
+  {
+    href: "/tr/services/teknik-durum-tespiti",
+    title: "Yatırım veya satın alma öncesi teknik inceleme",
+    description: "Santral teknik due diligence, veri odası incelemesi ve karar öncesi risklerin önceliklendirilmesi."
+  },
+  {
+    href: "/tr/services/hes-danismanligi",
+    title: "HES yatırımı ve işletme performansı",
+    description: "Hidroelektrik santraller için teknik inceleme, performans analizi ve işletme karar desteği."
+  },
+  {
+    href: "/tr/services/ges-danismanligi",
+    title: "GES yatırımı ve teknik danışmanlık",
+    description: "Güneş enerji santrallerinde yatırım, EPC, teknik inceleme ve performans ihtiyaçları."
+  },
+  {
+    href: "/tr/services/mevcut-santraller-icin-teknik-denetim",
+    title: "İşletmedeki santral için teknik denetim",
+    description: "Mevcut durum, tekrarlayan arızalar, kayıplar ve uygulanabilir iyileştirme öncelikleri."
+  },
+  {
+    href: "/tr/services/endustriyel-enerji-maliyet-optimizasyonu",
+    title: "Sanayi tesisinde enerji maliyeti optimizasyonu",
+    description: "Tüketim, fatura, talep ve operasyon verilerinden maliyet azaltma fırsatlarının belirlenmesi."
+  },
+  {
+    href: "/tr/services/isveren-muhendisligi",
+    title: "EPC sürecinde işveren mühendisliği",
+    description: "Tasarım, yüklenici dokümanları, saha ilerlemesi, test ve teslim sürecinde bağımsız teknik kontrol."
+  }
+];
+
 function serviceAuthoritySections(locale: Locale, service: NonNullable<ReturnType<typeof getService>>) {
   const en = locale === "en";
   const scopeText = service.scope.join(", ");
@@ -920,12 +953,15 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   if (!service) return {};
   const index = getServices(locale).findIndex((item) => item.slug === slug);
   const translated = getServices(alternateLocale(locale))[index];
+  const isTurkishEnergyConsultancy = locale === "tr" && service.slug === "enerji-danismanligi";
   return buildMetadata({
     locale,
     path: `/services/${slug}`,
     alternatePath: translated ? `/services/${translated.slug}` : undefined,
-    title: service.title,
-    description: service.description
+    title: isTurkishEnergyConsultancy ? "Enerji Danışmanlığı | HES, GES, Santral ve Sanayi" : service.title,
+    description: isTurkishEnergyConsultancy
+      ? "Türkiye genelinde yatırımcılar, santral sahipleri ve sanayi kuruluşları için bağımsız enerji danışmanlığı; HES, GES, teknik inceleme, EPC ve enerji maliyeti desteği."
+      : service.description
   });
 }
 
@@ -1008,7 +1044,40 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
                 </section>
               ))}
             </div>
-            <h2 className="text-2xl font-semibold text-white">{dict.labels.technicalScope}</h2>
+            {locale === "tr" && service.slug === "enerji-danismanligi" && (
+              <section className="mt-12" aria-labelledby="enerji-danismanligi-karar-yollari">
+                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-energy-500">İhtiyacınıza göre ilerleyin</p>
+                <h2 id="enerji-danismanligi-karar-yollari" className="mt-3 text-3xl font-semibold text-white">
+                  Enerji danışmanlığında doğru çalışma kapsamını seçin
+                </h2>
+                <p className="mt-4 max-w-3xl leading-8 text-steel">
+                  Yatırım, satın alma, EPC, işletme veya enerji maliyeti kararınız için ilgili uzmanlık alanına geçin. Kapsam henüz net değilse, ilk görüşmede kararınızı ve mevcut kanıtları birlikte sınıflandıralım.
+                </p>
+                <div className="mt-7 grid gap-4 sm:grid-cols-2">
+                  {energyConsultancyDecisionPaths.map((path) => (
+                    <Link
+                      key={path.href}
+                      href={path.href}
+                      className="group rounded-lg border border-white/10 bg-white/[0.04] p-5 transition hover:border-energy-500/60 hover:bg-energy-500/10"
+                    >
+                      <h3 className="font-semibold text-white group-hover:text-energy-500">{path.title}</h3>
+                      <p className="mt-2 text-sm leading-7 text-steel">{path.description}</p>
+                      <span className="mt-4 inline-block text-sm font-semibold text-energy-500">Hizmeti inceleyin →</span>
+                    </Link>
+                  ))}
+                </div>
+                <div className="mt-7 rounded-lg border border-energy-500/30 bg-energy-500/10 p-6 sm:flex sm:items-center sm:justify-between sm:gap-8">
+                  <div>
+                    <h3 className="text-xl font-semibold text-white">Enerji danışmanlığı görüşmesi planlayın</h3>
+                    <p className="mt-2 leading-7 text-steel">Proje türünü, mevcut aşamayı, ana teknik veya ticari kararı ve hedef takvimi paylaşın.</p>
+                  </div>
+                  <Link href="/tr/iletisim" className="mt-5 inline-flex shrink-0 rounded-md bg-energy-500 px-5 py-3 text-sm font-semibold text-navy-950 hover:bg-white sm:mt-0">
+                    Teknik Danışmanlık Talep Edin
+                  </Link>
+                </div>
+              </section>
+            )}
+            <h2 className="mt-12 text-2xl font-semibold text-white">{dict.labels.technicalScope}</h2>
             <div className="mt-6 grid gap-4">
               {service.scope.map((item) => (
                 <div key={item} className="rounded-lg border border-white/10 bg-white/[0.04] p-5 text-steel">{item}</div>
@@ -1022,12 +1091,12 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
             </ul>
             <div className="mt-12 rounded-lg border border-energy-500/30 bg-energy-500/10 p-6">
               <h2 className="text-2xl font-semibold text-white">
-                {locale === "en" ? "Consultant Recommendation" : "Danisman Tavsiyesi"}
+                {locale === "en" ? "Consultant Recommendation" : "Danışman Tavsiyesi"}
               </h2>
               <p className="mt-4 leading-8 text-steel">
                 {locale === "en"
                   ? `For ${service.title}, the strongest results come when site evidence, EPC documents, commissioning records and O&M logs are reviewed together. This prevents isolated findings and gives the owner a ranked engineering action plan.`
-                  : `${service.title} calismasinda en guclu sonuc; saha kanitlari, EPC dokumanlari, devreye alma kayitlari ve isletme bakim loglari birlikte incelendiginde alinir. Bu yaklasim tekil bulgular yerine onceliklendirilmis muhendislik aksiyon plani uretir.`}
+                  : `${service.title} çalışmasında en güçlü sonuç; saha kanıtları, EPC dokümanları, devreye alma kayıtları ve işletme bakım logları birlikte incelendiğinde alınır. Bu yaklaşım tekil bulgular yerine önceliklendirilmiş mühendislik aksiyon planı üretir.`}
               </p>
               <div className="mt-5 flex flex-wrap gap-3">
                 <Link href={`/${locale}/blog`} className="text-sm font-semibold text-energy-500 hover:text-white">{dict.nav.blog}</Link>
@@ -1089,7 +1158,11 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
         <Container className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
           <div>
             <h2 className="text-3xl font-semibold text-white">
-              {locale === "en" ? "Request a Plant Performance Review" : "Santral Performans İncelemesi Talep Edin"}
+              {locale === "en"
+                ? "Request a Plant Performance Review"
+                : service.slug === "enerji-danismanligi"
+                  ? "Enerji Danışmanlığı Görüşmesi Talep Edin"
+                  : "Santral Performans İncelemesi Talep Edin"}
             </h2>
             <p className="mt-4 leading-8 text-steel">
               {locale === "en"
