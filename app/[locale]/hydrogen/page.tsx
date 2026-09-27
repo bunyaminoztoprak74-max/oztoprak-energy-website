@@ -17,8 +17,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     locale,
     path: "/hydrogen",
     title: en
-      ? "Green Hydrogen Engineering Consulting | Oztoprak Energy"
-      : "Yeşil Hidrojen Mühendislik Danışmanlığı | Öztoprak Enerji",
+      ? "Green Hydrogen Engineering Consulting"
+      : "Yeşil Hidrojen Mühendislik Danışmanlığı",
     description: en
       ? "Engineering consulting for green hydrogen projects in Turkey — electrolyser integration, renewable coupling, grid compliance, feasibility review, and owner's engineering for H2 developers and investors."
       : "Türkiye'de yeşil hidrojen projeleri için mühendislik danışmanlığı — elektrolizör entegrasyonu, yenilenebilir kaynak eşleştirmesi, şebeke uyumu, fizibilite incelemesi ve H2 geliştiriciler ve yatırımcılar için işveren mühendisliği."

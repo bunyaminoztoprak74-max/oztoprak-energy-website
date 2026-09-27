@@ -16,8 +16,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     locale,
     path: "/free-hepp-review",
     title: en
-      ? "Free Hydropower Plant Technical Review | Oztoprak Energy"
-      : "Ücretsiz HES Teknik İncelemesi | Öztoprak Enerji",
+      ? "Free Hydropower Plant Technical Review"
+      : "Ücretsiz HES Teknik İncelemesi",
     description: en
       ? "Request a free initial technical review of your hydropower plant's performance, turbine-governor behavior, grid compliance, or O&M quality — from an independent HEPP engineering consultant."
       : "Bağımsız HES mühendislik danışmanından HES performansı, türbin-governor davranışı, şebeke uyumu veya O&M kalitesine yönelik ücretsiz ön teknik inceleme talep edin."

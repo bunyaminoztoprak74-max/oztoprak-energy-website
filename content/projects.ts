@@ -126,7 +126,7 @@ export const projects: Record<Locale, Project[]> = {
       actions: ["Separated resource and curtailment effects from technical losses", "Reviewed inverter and string-level behavior", "Checked evidence quality from EPC handover", "Defined O&M actions that could recover yield without unnecessary CAPEX"],
       results: ["Underperformance causes grouped by impact", "O&M improvement plan", "Owner-ready reporting package"],
       lessons: ["PR alone is not enough for solar technical decisions", "Data gaps can hide both EPC and O&M responsibility", "Fast field response protects long-term yield"],
-      relatedServices: ["solar-energy-consulting", "solar-power-plant-consultancy", "energy-audit", "om-performance-improvement"],
+      relatedServices: ["solar-power-plant-consultancy", "energy-audit", "om-performance-improvement"],
       faqs: enFaqs.performance
     },
     {
@@ -206,7 +206,7 @@ export const projects: Record<Locale, Project[]> = {
       actions: ["Built loss categories from operating data", "Reviewed outage and alarm history", "Prioritized actions by energy impact", "Created a staged O&M improvement roadmap"],
       results: ["Clear generation recovery priorities", "Better maintenance planning discipline", "Owner-ready performance improvement plan"],
       lessons: ["Performance reviews need operating context", "Availability alone is not enough to explain lost value", "Corrective actions should be ranked by energy impact and execution risk"],
-      relatedServices: ["om-performance-improvement", "hydropower-plant-optimization", "solar-energy-consulting", "energy-audit"],
+      relatedServices: ["om-performance-improvement", "hydropower-plant-optimization", "solar-power-plant-consultancy", "energy-audit"],
       faqs: enFaqs.performance
     },
     {
@@ -226,7 +226,7 @@ export const projects: Record<Locale, Project[]> = {
       actions: ["Separated irradiance and curtailment effects from technical loss", "Reviewed inverter availability patterns", "Checked EPC evidence quality", "Defined O&M response improvements"],
       results: ["Clear PR loss diagnosis", "Prioritized recovery actions", "Improved owner visibility on EPC and O&M responsibilities"],
       lessons: ["Solar audits should not rely on PR alone", "EPC evidence is essential for accountability", "Fast O&M response loops protect long-term yield"],
-      relatedServices: ["solar-energy-consulting", "solar-power-plant-consultancy", "technical-audits-existing-power-plants", "energy-audit"],
+      relatedServices: ["solar-power-plant-consultancy", "technical-audits-existing-power-plants", "energy-audit"],
       faqs: enFaqs.audit
     },
     {
@@ -246,7 +246,7 @@ export const projects: Record<Locale, Project[]> = {
       actions: ["Reviewed technical deliverables", "Mapped interface ownership", "Prepared owner decision memos", "Tracked commissioning readiness risks"],
       results: ["Improved owner control", "Reduced ambiguity in EPC interfaces", "Stronger handover and commissioning discipline"],
       lessons: ["Owner-side control must start before commissioning", "Interface risk is a major driver of EPC delay", "Decision memos help owners act without slowing delivery"],
-      relatedServices: ["epc-technical-advisory", "epc-technical-consultancy", "owners-engineering", "power-plant-commissioning"],
+      relatedServices: ["epc-technical-advisory", "owners-engineering", "power-plant-commissioning"],
       faqs: enFaqs.epc
     },
     {
@@ -283,7 +283,7 @@ export const projects: Record<Locale, Project[]> = {
         "Rooftop solar feasibility is meaningful only when self-consumption ratio is calculated from hourly production and consumption profiles, not from generic capacity factors",
         "Bill decomposition before any equipment purchase prevents the common mistake of investing in efficiency measures while avoidable penalty costs remain in place"
       ],
-      relatedServices: ["industrial-energy-cost-optimization", "energy-audit", "solar-energy-consulting"],
+      relatedServices: ["industrial-energy-cost-optimization", "energy-audit", "solar-power-plant-consultancy"],
       beforeAfterMetrics: [
         { label: "Reactive penalty share of bill", before: "11.0%", after: "0.4%", impact: "Reactive penalty elimination recovered approximately 10.6% of monthly electricity cost through compensation panel replacement and detuned reactor protection." },
         { label: "Monthly capacity charge", before: "6,200 kW contracted", after: "5,820 kW contracted", impact: "Contract power reduction eliminated 380 kW of unused contracted capacity, reducing the monthly capacity charge component by approximately 7%." },
@@ -334,7 +334,7 @@ export const projects: Record<Locale, Project[]> = {
       actions: ["Kaynak ve kisit etkileri teknik kayiplardan ayrildi", "Inverter ve string davranislari incelendi", "EPC teslim kaniti kalitesi kontrol edildi", "Gereksiz CAPEX yaratmadan verim toparlayacak O&M aksiyonlari tanimlandi"],
       results: ["Dusuk performans nedenleri etkiye gore gruplandi", "O&M iyilestirme plani", "Isveren icin raporlama paketi"],
       lessons: ["PR tek basina GES teknik karari icin yeterli degildir", "Veri bosluklari EPC ve O&M sorumlulugunu gizleyebilir", "Hizli saha yaniti uzun vadeli uretimi korur"],
-      relatedServices: ["gunes-enerjisi-danismanligi", "ges-danismanligi", "enerji-denetimi", "isletme-bakim-performans-iyilestirme"],
+      relatedServices: ["ges-danismanligi", "enerji-denetimi", "isletme-bakim-performans-iyilestirme"],
       faqs: trFaqs.performance
     },
     {
@@ -414,7 +414,7 @@ export const projects: Record<Locale, Project[]> = {
       actions: ["Isletme verisinden kayip kategorileri olusturuldu", "Durus ve alarm gecmisi incelendi", "Aksiyonlar enerji etkisine gore siralandi", "Asamali O&M iyilestirme yol haritasi hazirlandi"],
       results: ["Net uretim toparlama oncelikleri", "Daha iyi bakim planlama disiplini", "Isveren icin performans iyilestirme plani"],
       lessons: ["Performans incelemesi isletme baglami ister", "Emre amadelik tek basina deger kaybini aciklamaz", "Duzeltici aksiyonlar enerji etkisi ve uygulama riskine gore siralanmalidir"],
-      relatedServices: ["isletme-bakim-performans-iyilestirme", "hes-optimizasyonu", "gunes-enerjisi-danismanligi", "enerji-denetimi"],
+      relatedServices: ["isletme-bakim-performans-iyilestirme", "hes-optimizasyonu", "ges-danismanligi", "enerji-denetimi"],
       faqs: trFaqs.performance
     },
     {
@@ -434,7 +434,7 @@ export const projects: Record<Locale, Project[]> = {
       actions: ["Isinim ve kisit etkileri teknik kayiptan ayrildi", "Inverter emre amadelik paternleri incelendi", "EPC kanit kalitesi kontrol edildi", "O&M mudahale iyilestirmeleri tanimlandi"],
       results: ["Net PR kayip teshisi", "Oncelikli toparlama aksiyonlari", "EPC ve O&M sorumluluklarinda daha iyi gorunurluk"],
       lessons: ["GES denetimi yalnizca PR'a dayanmamalidir", "EPC kaniti sorumluluk icin kritiktir", "Hizli O&M mudahale donguleri uzun vadeli uretimi korur"],
-      relatedServices: ["gunes-enerjisi-danismanligi", "ges-danismanligi", "mevcut-santraller-icin-teknik-denetim", "enerji-denetimi"],
+      relatedServices: ["ges-danismanligi", "mevcut-santraller-icin-teknik-denetim", "enerji-denetimi"],
       faqs: trFaqs.audit
     },
     {
@@ -454,7 +454,7 @@ export const projects: Record<Locale, Project[]> = {
       actions: ["Teknik ciktilar incelendi", "Arayuz sahipligi haritalandi", "Isveren karar notlari hazirlandi", "Devreye alma hazirlik riskleri takip edildi"],
       results: ["Isveren kontrolu guclendi", "EPC arayuz belirsizligi azaldi", "Teslim ve devreye alma disiplini guclendi"],
       lessons: ["Isveren tarafi kontrol devreye almadan once baslamalidir", "Arayuz riski EPC gecikmesinin onemli nedenidir", "Karar notlari teslimi yavaslatmadan isverenin aksiyon almasini saglar"],
-      relatedServices: ["epc-teknik-danismanlik-hizmeti", "epc-teknik-danismanlik", "isveren-muhendisligi", "enerji-santrali-devreye-alma"],
+      relatedServices: ["epc-teknik-danismanlik-hizmeti", "isveren-muhendisligi", "enerji-santrali-devreye-alma"],
       faqs: trFaqs.epc
     },
     {
@@ -655,7 +655,7 @@ const engineeringCaseStudyTopics: EngineeringCaseStudyTopic[] = [
     improved: 82.9,
     unit: "performance ratio",
     annualEnergy: 82000,
-    serviceSet: { en: ["solar-energy-consulting", "solar-power-plant-consultancy", "om-performance-improvement"], tr: ["gunes-enerjisi-danismanligi", "ges-danismanligi", "isletme-bakim-performans-iyilestirme"] },
+    serviceSet: { en: ["solar-power-plant-consultancy", "om-performance-improvement"], tr: ["ges-danismanligi", "isletme-bakim-performans-iyilestirme"] },
     faqSet: "performance"
   },
   {
@@ -676,7 +676,7 @@ const engineeringCaseStudyTopics: EngineeringCaseStudyTopic[] = [
     improved: 87,
     unit: "readiness evidence score",
     annualEnergy: 230000,
-    serviceSet: { en: ["epc-technical-advisory", "epc-technical-consultancy", "owners-engineering"], tr: ["epc-teknik-danismanlik-hizmeti", "epc-teknik-danismanlik", "isveren-muhendisligi"] },
+    serviceSet: { en: ["epc-technical-advisory", "owners-engineering"], tr: ["epc-teknik-danismanlik-hizmeti", "isveren-muhendisligi"] },
     faqSet: "epc"
   },
   {
@@ -844,7 +844,7 @@ const engineeringCaseStudyTopics: EngineeringCaseStudyTopic[] = [
     improved: 2.1,
     unit: "monthly soiling loss",
     annualEnergy: 59000,
-    serviceSet: { en: ["solar-energy-consulting", "om-performance-improvement", "energy-audit"], tr: ["gunes-enerjisi-danismanligi", "isletme-bakim-performans-iyilestirme", "enerji-denetimi"] },
+    serviceSet: { en: ["solar-power-plant-consultancy", "om-performance-improvement", "energy-audit"], tr: ["ges-danismanligi", "isletme-bakim-performans-iyilestirme", "enerji-denetimi"] },
     faqSet: "performance"
   },
   {

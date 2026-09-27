@@ -4,6 +4,9 @@ export type InvestmentPage = {
   type?: "HES" | "GES" | "RES";
   kind?: "buyer" | "seller";
   service?: "diligence" | "valuation";
+  ctaLabel?: string;
+  navGroup?: "investor" | "owner";
+  navLabel?: string;
   sections: InvestmentSection[];
 };
 
@@ -26,14 +29,16 @@ export const investmentPages: InvestmentPage[] = [
   },
   {
     slug: "satilik-hes", type: "HES",
-    title: "Satılık HES | Hidroelektrik Santrali Yatırım Fırsatları | Öztoprak Enerji",
-    h1: "Satılık HES – Hidroelektrik Santrali Yatırım Fırsatları",
-    description: "Satılık HES ve hidroelektrik santrali yatırım fırsatları. HES satın alma, teknik inceleme, üretim analizi, değerleme ve due diligence hizmetleri.",
-    intro: "Satılık hidroelektrik santrali arayışınızı kapasite, bölge, bütçe ve üretim hedefleriyle tanımlayın. HES satın almak isteyen yatırımcılar için ön elemeden saha incelemesine uzanan bir değerlendirme süreci sunuyoruz.",
+    title: "HES Alım Satım Danışmanlığı | Satılık HES Yatırım Fırsatları | Öztoprak Enerji",
+    h1: "HES Alım Satım Danışmanlığı – Satılık HES Yatırım Fırsatları",
+    description: "HES alım satım danışmanlığı: satılık HES arayan yatırımcılar için kriter tanımlama, teknik/finansal inceleme, HES değerleme ve gizli yatırım süreci yönetimi.",
+    intro: "Satılık HES arayan yatırımcılar için Öztoprak Enerji; yatırım kriterlerinin belirlenmesi, teknik ve finansal inceleme, HES değerleme ve gizli yatırım süreçlerinin yönetilmesi konularında danışmanlık sağlar. Hidroelektrik santrali satın alma veya HES satışı kararınızı kapasite, bölge, bütçe ve üretim hedefleriyle tanımlayın; ön elemeden saha incelemesine uzanan bir değerlendirme süreci sunuyoruz.",
     sections: [
+      { heading: "HES alım satım danışmanlığı kapsamımız", text: "HES satın alma veya HES satışı sürecinde yatırım kriterlerinin tanımlanması, aday projelerin ön elemesi, teknik/finansal incelemenin planlanması ve gizlilik sözleşmesi kapsamında tarafların bir araya getirilmesini yönetiriz. Portföyümüzde şu anda satışa çıkarılmış belirli bir HES bulunduğu yönünde bir taahhüt vermeyiz; süreç talebinize göre şekillenir." },
       { heading: "HES yatırım fırsatlarını nasıl değerlendiriyoruz?", text: "Kurulu güç tek başına üretim potansiyelini açıklamaz. Debi kayıtları, net düşü, kullanılabilir su, mevsimsellik, duruş süreleri ve ölçülen net üretim aynı dönemler üzerinden karşılaştırılır. Eksik veri varsa varsayım olarak işaretlenir; doğrulanmış üretim gibi sunulmaz." },
       { heading: "HES teknik inceleme ve due diligence", text: "Hidroelektrik santrali satın almak öncesinde türbin, jeneratör, cebri boru, su alma yapısı ve koruma sistemlerinin durumu incelenir. Bakım geçmişi, titreşim kayıtları ve işletme olayları, sahada gözlenen durum ile birlikte yorumlanır.", href: "enerji-santrali-due-diligence", linkLabel: "HES due diligence kapsamı" },
-      { heading: "HES değerleme ve satın alma kriterleri", text: "Üretimin nakit akışına dönüşmesi; satış yapısı, işletme giderleri, bakım yatırımları ve borç yüküne bağlıdır. Satılık HES portföyünü elemeden önce kapasite ve bütçenin yanında veri beklentinizi de belirleyin.", href: "hes-degerleme", linkLabel: "HES değerleme parametreleri" }
+      { heading: "HES değerleme ve satın alma kriterleri", text: "Üretimin nakit akışına dönüşmesi; satış yapısı, işletme giderleri, bakım yatırımları ve borç yüküne bağlıdır. Satılık HES ararken kapasite ve bütçenin yanında veri beklentinizi de belirleyin.", href: "hes-degerleme", linkLabel: "HES değerleme parametreleri" },
+      { heading: "HES yatırım danışmanlığı ve gizli süreç yönetimi", text: "Görüşmeler, veri paylaşımı ve teklif süreci; satıcı ve alıcı tarafların belirlediği gizlilik kapsamında ilerler. HES yatırım danışmanlığı talebinizi iletmeniz, belirli bir projenin satışta olduğu anlamına gelmez; kriterleriniz uygun bir fırsatla eşleştiğinde sizinle iletişime geçilir.", href: "santralini-sat", linkLabel: "HES satışı için gizli süreç" }
     ]
   },
   {
@@ -124,6 +129,41 @@ export const investmentPages: InvestmentPage[] = [
       { heading: "Kira, arazi ve OPEX", text: "Arazi mülkiyeti, kira veya çatı kullanım süresi; finansal modelin çalışma ufkuyla eşleştirilir. Kira artışları, bakım, temizlik, güvenlik ve sigorta giderleri ile büyük yenileme kalemleri ayrı değerlendirilir." },
       { heading: "Borç, kalan proje ömrü ve nakit akışı", text: "Proje değerinden özsermaye değerine geçerken borç ve nakit tutarları işlem kapsamına göre ele alınır. Üretim, fiyat, degradasyon ve inverter CAPEX senaryoları modelin hangi varsayıma duyarlı olduğunu gösterir.", href: "enerji-santrali-due-diligence", linkLabel: "GES teknik due diligence kapsamı" }
     ]
+  },
+  {
+    slug: "yekdem-sonrasi-enerji-santrali-yatirimlari",
+    kind: "buyer",
+    ctaLabel: "Yatırım Kriterlerinizi Bildirin",
+    navGroup: "investor",
+    navLabel: "YEKDEM Sonrası Yatırımlar",
+    title: "YEKDEM Sonrası Enerji Santrali Yatırımları | Öztoprak Enerji",
+    h1: "YEKDEM Sonrası Enerji Santrali Yatırımları",
+    description: "YEKDEM süresi dolan HES ve GES santrallerine yatırım analizi: piyasa satış geliri, üretim tahmini, OPEX/CAPEX, lisans süresi ve değerleme yaklaşımı.",
+    intro: "YEKDEM desteği sona eren veya kısa süre içinde sona erecek HES ve GES santralleri, farklı bir gelir ve risk profiline geçer. Bu sayfa belirli bir santralin satışta olduğunu göstermez; YEKDEM sonrası yatırım kararının hangi teknik ve finansal parametrelere bağlı olduğunu açıklar ve yatırım kriterlerinizi tanımlamanıza yardımcı olur.",
+    sections: [
+      { heading: "YEKDEM sonrası gelir modeli", text: "Destek süresi dolduğunda santral, PTF üzerinden ikili anlaşma veya dengeleme piyasası satışına geçer. Gelir modeli sabit garantili fiyattan piyasa fiyat riskine döner; bu geçişin nakit akışına etkisi santral bazında ayrı hesaplanmalıdır." },
+      { heading: "Piyasa fiyat riski ve üretim tahmini", text: "PTF'nin geçmiş oynaklığı, saatlik üretim profili ile fiyat profilinin örtüşme derecesi (dengesizlik maliyeti dahil) ve olası ikili anlaşma yapıları birlikte değerlendirilir. Tek bir yıllık ortalama fiyat, uzun dönem gelir varsayımı olarak kullanılmaz." },
+      { heading: "OPEX, bakım ihtiyacı ve gerekli CAPEX", text: "YEKDEM sonrası dönemde genellikle ekipmanın da yaşı ilerlemiştir. Bakım geçmişi, planlı yenileme ihtiyacı ve ilk yıllarda gerekebilecek CAPEX kalemleri, gelir modeliyle birlikte nakit akışına yansıtılır." },
+      { heading: "Lisans süresi ve teknik ömür", text: "Kalan lisans süresi ve ekipmanın teknik ömrü yatırım ufkunu sınırlar. Lisans yenileme koşulları ve teknik ömür sonrası senaryolar, değerleme ufkunun doğru seçilmesi için netleştirilir." },
+      { heading: "Değerleme ve due diligence bağlantısı", text: "YEKDEM sonrası bir santrale teklif hazırlamadan önce üretim, ekipman durumu ve gelir varsayımlarının teknik olarak doğrulanması önerilir.", href: "enerji-santrali-due-diligence", linkLabel: "Teknik due diligence kapsamı" },
+      { heading: "Yatırım kriterlerinizi tanımlayın", text: "YEKDEM sonrası santral yatırımı arıyorsanız kapasite, bölge, bütçe ve risk toleransınızı iletin; uygun bir fırsat oluştuğunda değerlendirme süreci başlatılır.", href: "hes-degerleme", linkLabel: "Değerleme yaklaşımını inceleyin" }
+    ]
+  },
+  {
+    slug: "lisansli-enerji-projesi-devir-danismanligi",
+    navGroup: "owner",
+    navLabel: "Lisanslı Proje Devri",
+    title: "Lisanslı Enerji Projesi Devir Danışmanlığı | Öztoprak Enerji",
+    h1: "Lisanslı Enerji Projesi Devir Danışmanlığı",
+    description: "Lisanslı GES, RES ve HES projelerinin devrinde teknik fizibilite, lisans ve izin süreçleri, bağlantı durumu, yatırım maliyeti ve yatırımcı eşleştirme danışmanlığı.",
+    intro: "Lisanslı bir enerji projesini devretmek isteyen proje sahipleri ile bu projelere yatırım yapmak isteyen taraflar arasında teknik ve süreç danışmanlığı sağlıyoruz. Bu sayfa devirdeki belirli bir projenin ilanı değildir; proje devri sürecinin hangi teknik ve idari konulara bağlı olduğunu açıklar.",
+    sections: [
+      { heading: "Proje devri ve lisans süreci", text: "Lisans devri EPDK mevzuatı kapsamında idari bir süreçtir. Devir başvurusu öncesinde lisans şartlarına uyum, ödenmemiş yükümlülük olup olmadığı ve devrin hangi aşamada (inşaat öncesi, inşaat sırasında, işletmede) yapılacağı netleştirilir." },
+      { heading: "Bağlantı durumu ve teknik fizibilite", text: "Bağlantı anlaşması, bağlantı kapasitesi ve şebeke yatırım yükümlülükleri projenin devredilebilirliğini doğrudan etkiler. Teknik fizibilite; saha koşulları, ekipman seçimleri ve güncel mevzuata uyumu kapsar." },
+      { heading: "Yatırım maliyeti ve proje riskleri", text: "Kalan yatırım maliyeti, izin/ÇED süreçlerinin durumu, arazi/kullanım hakları ve olası gecikme riskleri devir öncesinde ayrı ayrı değerlendirilir. Doğrulanmamış maliyet veya getiri rakamları paylaşılmaz." },
+      { heading: "Due diligence ve yatırımcı eşleştirme", text: "Devralacak taraf için teknik ve idari due diligence planlanır; proje sahibi tarafında ise gizlilik kapsamında nitelikli yatırımcılarla kontrollü bir süreç yürütülür.", href: "enerji-santrali-due-diligence", linkLabel: "Teknik due diligence kapsamı" },
+      { heading: "Devir sürecini başlatın", text: "Projenizi devretmeyi düşünüyorsanız veya lisanslı bir projeye yatırım arıyorsanız, sürecin gizlilik esasına göre yönetilmesi için kriterlerinizi iletin.", href: "santralini-sat", linkLabel: "Gizli görüşme talep edin" }
+    ]
   }
 ];
 
@@ -135,4 +175,38 @@ export const investmentFaqs = [
   { question: "Talep oluşturmak satın alma taahhüdü müdür?", answer: "Hayır. Form bir ön görüşme talebidir. Portföy uygunluğu, inceleme kapsamı, hizmet bedeli ve işlem koşulları taraflarla ayrıca değerlendirilir; getiri veya satış garantisi verilmez." }
 ];
 
+function defaultNavLabel(page: InvestmentPage) {
+  if (page.navLabel) return page.navLabel;
+  if (page.kind === "buyer") return "Yatırımcı Kaydı";
+  if (page.kind === "seller") return "Gizli Satış Danışmanlığı";
+  if (page.service === "diligence") return "Teknik Due Diligence";
+  if (page.service === "valuation") return page.slug === "ges-degerleme" ? "GES Değerleme" : "HES Değerleme";
+  if (page.type) return `Satılık ${page.type}`;
+  return "Tüm Yatırım Fırsatları";
+}
+
+function defaultNavGroup(page: InvestmentPage): "investor" | "owner" {
+  if (page.navGroup) return page.navGroup;
+  if (page.kind === "seller" || page.service === "valuation") return "owner";
+  return "investor";
+}
+
+export const investmentNavHome = { href: "/tr/satilik-enerji-santralleri", label: "Tüm Yatırım Fırsatları" };
+
+export const investmentNavigationGroups: { title: string; items: { href: string; label: string }[] }[] = [
+  {
+    title: "Yatırımcılar İçin",
+    items: investmentPages
+      .filter((page) => page.slug !== "satilik-enerji-santralleri" && defaultNavGroup(page) === "investor")
+      .map((page) => ({ href: `/tr/${page.slug}`, label: defaultNavLabel(page) }))
+  },
+  {
+    title: "Santral / Proje Sahipleri İçin",
+    items: investmentPages
+      .filter((page) => page.slug !== "satilik-enerji-santralleri" && defaultNavGroup(page) === "owner")
+      .map((page) => ({ href: `/tr/${page.slug}`, label: defaultNavLabel(page) }))
+  }
+];
+
+// Kept for any remaining call sites; prefer investmentNavigationGroups for new UI.
 export const investmentNavigation = investmentPages.slice(0, 7).map((page) => ({ href: `/tr/${page.slug}`, label: page.kind === "buyer" ? "Santral Satın Al" : page.kind === "seller" ? "Santralini Sat" : page.type ? `Satılık ${page.type}` : "Satılık Enerji Santralleri" }));

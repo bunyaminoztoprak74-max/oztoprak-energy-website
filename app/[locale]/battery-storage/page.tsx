@@ -17,8 +17,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     locale,
     path: "/battery-storage",
     title: en
-      ? "Battery Energy Storage Engineering Consulting | Oztoprak Energy"
-      : "Batarya Enerji Depolama Mühendislik Danışmanlığı | Öztoprak Enerji",
+      ? "Battery Energy Storage Engineering Consulting"
+      : "Batarya Enerji Depolama Mühendislik Danışmanlığı",
     description: en
       ? "Independent engineering consulting for BESS projects in Turkey — technical due diligence, EPC scope review, grid compliance, PCS and BMS integration, and owner's engineering for battery storage developers and investors."
       : "Türkiye'deki BESS projeleri için bağımsız mühendislik danışmanlığı — teknik durum tespiti, EPC kapsam incelemesi, şebeke uyumu, PCS ve BMS entegrasyonu ile batarya depolama geliştiricileri ve yatırımcıları için işveren mühendisliği."

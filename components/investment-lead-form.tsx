@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useId, useRef, useState, type FormEvent } from "react";
+import { ShieldCheck } from "lucide-react";
 import { fieldsFor, plantTypes, validateLead, type LeadKind } from "@/lib/investment-fields";
 import { trackInvestment } from "./investment-tracking";
 import { deliverInvestment, UncertainDeliveryError } from "@/lib/investment-delivery";
@@ -69,7 +70,8 @@ export function InvestmentLeadForm({ kind, plantType = "", source }: { kind: Lea
 
   const control = "w-full min-w-0 rounded-md border border-white/20 bg-navy-950 px-4 py-3 text-base text-white outline-none focus:border-energy-500 focus:ring-1 focus:ring-energy-500";
   return <form ref={formRef} onSubmit={submit} onChange={() => { if (!started.current) { started.current = true; trackInvestment(`${kind}_form_start`, { source, intent, locale: "tr" }); } }} className="premium-card rounded-xl p-5 sm:p-8" aria-label={kind === "buyer" ? "Yatırımcı kriter formu" : "Santral satış formu"} aria-busy={status === "sending"} data-hj-suppress>
-    <p className="mb-6 text-sm leading-7 text-steel">Yıldızlı alanlar zorunludur. Diğer alanları henüz bilmiyorsanız boş bırakabilirsiniz. İlk aşamada sözleşme, kimlik veya hassas teknik belge yüklemeniz gerekmez.</p>
+    <p className="mb-3 text-sm leading-7 text-steel">Yıldızlı alanlar zorunludur. Diğer alanları henüz bilmiyorsanız boş bırakabilirsiniz. İlk aşamada sözleşme, kimlik veya hassas teknik belge yüklemeniz gerekmez.</p>
+    <p className="mb-6 flex items-start gap-2 text-sm leading-7 text-energy-500"><ShieldCheck aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0" />Paylaşılan bilgiler gizlilik esasına göre değerlendirilir ve kamuya açık web sitesinde yayınlanmaz.</p>
     {intent !== "investment" && <p className="mb-5 rounded-md border border-energy-500/30 p-3 text-energy-500">Talep konusu: {intent === "valuation" ? "Santral değerleme" : "Satın alma öncesi teknik inceleme"}</p>}
     <div className="hidden" aria-hidden="true"><label>Website<input name="website" tabIndex={-1} autoComplete="off" /></label></div>
     <fieldset disabled={status === "sending" || status === "success"}>

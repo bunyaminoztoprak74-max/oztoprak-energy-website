@@ -19,13 +19,13 @@ export const topicalAuthorityClusters = {
     },
     {
       topic: "solar consulting",
-      services: ["solar-energy-consulting", "solar-power-plant-consultancy", "energy-audit"],
+      services: ["solar-power-plant-consultancy", "energy-audit"],
       articleIdeas: ["Solar Plant Performance Optimization", "Solar PR Loss Diagnosis", "Solar Technical Audit Checklist"],
       landingIntents: ["Turkey", "Istanbul", "solar investors", "PV performance recovery"]
     },
     {
       topic: "EPC advisory and owner's engineering",
-      services: ["epc-technical-advisory", "epc-technical-consultancy", "owners-engineering"],
+      services: ["epc-technical-advisory", "owners-engineering"],
       articleIdeas: ["EPC Technical Due Diligence", "Owner-Side EPC Control", "How EPC Delays Affect Revenue"],
       landingIntents: ["EPC contractors", "renewable energy investors", "owner's engineering services"]
     },
@@ -45,13 +45,13 @@ export const topicalAuthorityClusters = {
     },
     {
       topic: "GES danismanligi",
-      services: ["gunes-enerjisi-danismanligi", "ges-danismanligi", "enerji-denetimi"],
+      services: ["ges-danismanligi", "enerji-denetimi"],
       articleIdeas: ["GES Performans Optimizasyonu", "GES PR Kaybi Teshisi", "GES Teknik Denetim Kontrol Listesi"],
       landingIntents: ["Turkiye", "Istanbul", "GES yatirimcilari", "PV performans toparlama"]
     },
     {
       topic: "EPC danismanlik ve isveren muhendisligi",
-      services: ["epc-teknik-danismanlik-hizmeti", "epc-teknik-danismanlik", "isveren-muhendisligi"],
+      services: ["epc-teknik-danismanlik-hizmeti", "isveren-muhendisligi"],
       articleIdeas: ["EPC Teknik Due Diligence", "Isveren Tarafi EPC Kontrolu", "EPC Gecikmeleri Geliri Nasil Etkiler"],
       landingIntents: ["EPC yuklenicileri", "yenilenebilir enerji yatirimcilari", "isveren muhendisligi hizmetleri"]
     },

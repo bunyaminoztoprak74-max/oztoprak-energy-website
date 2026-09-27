@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return buildMetadata({
     locale,
     path: "/free-consultation",
-    title: en ? "Book a Free Technical Consultation | Oztoprak Energy" : "Ücretsiz Teknik Danışmanlık Görüşmesi | Öztoprak Enerji",
+    title: en ? "Book a Free Technical Consultation" : "Ücretsiz Teknik Danışmanlık Görüşmesi",
     description: en
       ? "Book a free 30-minute technical consultation with a renewable energy engineering consultant. Discuss your EPC, commissioning, grid compliance, TDD, or O&M challenge — no obligation."
       : "Yenilenebilir enerji mühendislik danışmanıyla ücretsiz 30 dakikalık teknik danışmanlık görüşmesi planlayın. EPC, devreye alma, şebeke uyumu, TDD veya O&M sorununuzu tartışın — yükümlülük yoktur."

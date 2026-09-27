@@ -17,8 +17,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     locale,
     path: "/international",
     title: en
-      ? "Independent Engineer & TDD for Turkish Renewable Energy | Oztoprak Energy"
-      : "Türk Yenilenebilir Enerji Projeleri için Bağımsız Mühendis ve TDD | Öztoprak Enerji",
+      ? "Independent Engineer & TDD for Turkish Renewable Energy"
+      : "Türk Yenilenebilir Enerji Projeleri için Bağımsız Mühendis ve TDD",
     description: en
       ? "Independent engineer, lender's engineer, and technical due diligence services for international investors, development banks, and private equity evaluating Turkish solar, HEPP, and wind assets."
       : "Türk GES, HES ve rüzgar varlıklarını değerlendiren uluslararası yatırımcılar, kalkınma bankaları ve özel sermaye için bağımsız mühendis, kredi kuruluşu mühendisi ve teknik durum tespiti hizmetleri."

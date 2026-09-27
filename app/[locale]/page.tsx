@@ -159,17 +159,17 @@ const content = {
     ]
   },
   tr: {
-    metaTitle: "Enerji Danışmanlığı | HES, GES, Santral ve Maliyet Yönetimi",
+    metaTitle: "HES, GES ve Enerji Santralleri için Bağımsız Teknik Danışmanlık",
     metaDescription:
-      "Türkiye genelinde yatırımcılar, santral sahipleri ve sanayi kuruluşları için enerji danışmanlığı; HES, GES, teknik inceleme ve enerji maliyeti desteği.",
+      "Türkiye genelinde yatırımcılar, santral sahipleri ve sanayi kuruluşları için bağımsız mühendislik danışmanlığı; HES, GES, teknik inceleme ve enerji maliyeti desteği.",
     heroKicker: "Türkiye genelinde bağımsız enerji ve santral danışmanlığı",
-    heroTitle: "Enerji Danışmanlığı ve Santral Teknik Çözümleri",
+    heroTitle: "HES, GES ve Enerji Santralleri için Bağımsız Mühendislik Danışmanlığı",
     heroText:
       "Öztoprak Enerji Danışmanlık; santral sahipleri, yatırımcılar ve EPC yüklenicileri için HES, GES, devreye alma, şebeke uyumu ve operasyonel optimizasyon alanlarında sahaya dayalı mühendislik desteği sağlar.",
     proof: "8 başarıyla tamamlanmış enerji santrali projesinde 275+ MW yönetilen kapasite deneyimi.",
     heroSignals: ["HES teknik denetimleri", "İşveren tarafı EPC inceleme", "Devreye alma ve şebeke hazırlığı"],
     servicesEyebrow: "Temel Danışmanlık Hizmetleri",
-    servicesTitle: "Enerji Danışmanlığı Hizmetleri",
+    servicesTitle: "Danışmanlık Hizmetlerimiz",
     servicesText:
       "Her çalışma saha incelemesi, işletme verisi, devreye alma kayıtları ve EPC dokümantasyonu üzerine kurulur; böylece öneriler işveren, finans kuruluşu ve proje ekipleri için uygulanabilir olur.",
     projectsEyebrow: "Uluslararası Proje Profili",

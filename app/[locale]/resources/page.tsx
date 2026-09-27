@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return buildMetadata({
     locale,
     path: "/resources",
-    title: en ? "Free Technical Resources | Oztoprak Energy" : "Ücretsiz Teknik Kaynaklar | Öztoprak Enerji",
+    title: en ? "Free Technical Resources" : "Ücretsiz Teknik Kaynaklar",
     description: en
       ? "Free engineering checklists, due diligence templates, and technical guides for renewable energy investors, developers, and EPC teams operating in Turkey."
       : "Türkiye'deki yenilenebilir enerji yatırımcıları, geliştiriciler ve EPC ekipleri için ücretsiz mühendislik kontrol listeleri, teknik durum tespiti şablonları ve teknik rehberler."

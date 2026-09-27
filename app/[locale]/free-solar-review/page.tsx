@@ -16,8 +16,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     locale,
     path: "/free-solar-review",
     title: en
-      ? "Free Solar Plant Technical Review | Oztoprak Energy"
-      : "Ücretsiz GES Teknik İncelemesi | Öztoprak Enerji",
+      ? "Free Solar Plant Technical Review"
+      : "Ücretsiz GES Teknik İncelemesi",
     description: en
       ? "Request a free initial technical review of your solar plant's performance, commissioning documentation, reactive power compliance, or grid connection status."
       : "GES performansı, devreye alma dokümantasyonu, reaktif güç uyumu veya şebeke bağlantı durumuna yönelik ücretsiz ön teknik inceleme talep edin."
@@ -86,8 +86,8 @@ export default async function FreeSolarReviewPage({ params }: { params: Promise<
               </p>
               <div className="mt-4 grid gap-2">
                 {(en
-                  ? ["solar-energy-consulting", "reactive-power-audit", "grid-compliance-audit", "power-quality-audit", "site-acceptance-test", "asset-management"]
-                  : ["gunes-enerjisi-danismanligi", "reaktif-guc-denetimi", "sebeke-uyum-denetimi", "guc-kalitesi-denetimi", "saha-kabul-testi", "teknik-varlik-yonetimi"]
+                  ? ["solar-power-plant-consultancy", "reactive-power-audit", "grid-compliance-audit", "power-quality-audit", "site-acceptance-test", "asset-management"]
+                  : ["ges-danismanligi", "reaktif-guc-denetimi", "sebeke-uyum-denetimi", "guc-kalitesi-denetimi", "saha-kabul-testi", "teknik-varlik-yonetimi"]
                 ).map((slug) => (
                   <Link key={slug} href={servicePath(locale, slug)} className="text-sm text-energy-500 hover:text-white transition">
                     → {slug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())}

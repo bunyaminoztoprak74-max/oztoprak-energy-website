@@ -16,8 +16,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     locale,
     path: "/free-epc-review",
     title: en
-      ? "Free EPC Technical Review | Oztoprak Energy"
-      : "Ücretsiz EPC Teknik İncelemesi | Öztoprak Enerji",
+      ? "Free EPC Technical Review"
+      : "Ücretsiz EPC Teknik İncelemesi",
     description: en
       ? "Request a free initial review of your EPC contract scope, technical risk exposure, or commissioning readiness — from an independent renewable energy engineering consultant."
       : "EPC sözleşme kapsamı, teknik risk maruziyeti veya devreye alma hazırlığı için bağımsız yenilenebilir enerji mühendislik danışmanından ücretsiz ön inceleme talep edin."

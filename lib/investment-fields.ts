@@ -26,6 +26,7 @@ export const buyerFields: LeadField[] = [
   { name: "region", label: "Tercih Edilen Bölge" },
   { name: "operationalStatus", label: "Santral Durumu", options: ["İşletmede", "Proje", "Farketmez"], required: true },
   { name: "licenseStatus", label: "Lisans Durumu", options: ["Lisanslı", "Lisanssız", "Farketmez"], required: true },
+  { name: "yekdemPreference", label: "YEKDEM Tercihi", options: ["Yararlanıyor olsun", "Süresi dolmuş olabilir", "Farketmez"] },
   { name: "minGeneration", label: "Beklenen Minimum Yıllık Üretim (GWh)", type: "number" },
   { name: "paybackYears", label: "Hedeflenen Geri Dönüş Süresi (Yıl)", type: "number", max: 100 },
   { name: "minIrr", label: "Minimum IRR (%)", type: "number", max: 100 },

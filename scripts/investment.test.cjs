@@ -69,10 +69,10 @@ test("investment CTAs send the four requested events without personal data", () 
     assert.ok(captured.every((item) => Object.keys(item.params).join(",") === "locale"));
   } finally { delete global.window; }
 });
-test("nine unique Turkish pages and eight unique Turkish articles have sitemap entries", () => {
-  assert.equal(investmentPages.length, 9);
+test("eleven unique Turkish pages and eight unique Turkish articles have sitemap entries", () => {
+  assert.equal(investmentPages.length, 11);
   assert.equal(investmentArticles.length, 8);
-  assert.equal(new Set(investmentPages.map((p) => p.title)).size, 9);
+  assert.equal(new Set(investmentPages.map((p) => p.title)).size, 11);
   assert.equal(new Set(investmentArticles.map((p) => p.slug)).size, 8);
   const pages = pageSitemapEntries();
   const blogs = blogSitemapEntries();

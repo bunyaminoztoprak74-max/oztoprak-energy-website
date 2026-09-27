@@ -37,7 +37,7 @@ export default async function IndustryPage({ params }: { params: Promise<{ local
   const dict = getDictionary(locale);
 
   const industrialServices = locale === "en"
-    ? ["industrial-energy-cost-optimization", "energy-audit", "solar-energy-consulting"]
+    ? ["industrial-energy-cost-optimization", "energy-audit", "solar-power-plant-consultancy"]
     : ["endustriyel-enerji-maliyet-optimizasyonu", "enerji-denetimi", "ges-danismanligi"];
 
   const allServices = getServices(locale);

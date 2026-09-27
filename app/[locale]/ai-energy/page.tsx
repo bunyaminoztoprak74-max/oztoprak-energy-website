@@ -17,8 +17,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     locale,
     path: "/ai-energy",
     title: en
-      ? "AI in Renewable Energy — Engineering Perspective | Oztoprak Energy"
-      : "Yenilenebilir Enerjide Yapay Zeka — Mühendislik Perspektifi | Öztoprak Enerji",
+      ? "AI in Renewable Energy — Engineering Perspective"
+      : "Yenilenebilir Enerjide Yapay Zeka — Mühendislik Perspektifi",
     description: en
       ? "How AI and machine learning are being applied to hydropower and solar plant performance, O&M optimization, fault detection, and yield forecasting — from an independent engineering consultant's perspective."
       : "Yapay zeka ve makine öğrenmesinin hidroelektrik ve güneş santrali performansı, O&M optimizasyonu, arıza tespiti ve verim tahminine nasıl uygulandığı — bağımsız bir mühendislik danışmanının perspektifinden."

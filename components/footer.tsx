@@ -26,7 +26,7 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dict }) {
       : [
           "energy-consultancy",
           "hydropower-consulting",
-          "solar-energy-consulting",
+          "solar-power-plant-consultancy",
           "technical-due-diligence",
           "hpp-performance-analysis",
           "epc-technical-advisory",

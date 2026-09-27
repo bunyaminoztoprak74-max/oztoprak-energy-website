@@ -393,7 +393,7 @@ function specializedServiceSections(locale: Locale, service: NonNullable<ReturnT
         ];
   }
 
-  if (service.slug === "solar-energy-consulting" || service.slug === "ges-danismanligi") {
+  if (service.slug === "solar-power-plant-consultancy" || service.slug === "ges-danismanligi") {
     return en
       ? [
           {

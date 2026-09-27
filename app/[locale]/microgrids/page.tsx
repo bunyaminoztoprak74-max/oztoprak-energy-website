@@ -17,8 +17,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     locale,
     path: "/microgrids",
     title: en
-      ? "Microgrid Engineering Consulting | Oztoprak Energy"
-      : "Mikro Şebeke Mühendislik Danışmanlığı | Öztoprak Enerji",
+      ? "Microgrid Engineering Consulting"
+      : "Mikro Şebeke Mühendislik Danışmanlığı",
     description: en
       ? "Independent engineering consulting for industrial and remote microgrids in Turkey — islanding protection, DER integration, grid interface design, and owner's engineering for microgrid developers and operators."
       : "Türkiye'deki endüstriyel ve uzak bölge mikro şebekeleri için bağımsız mühendislik danışmanlığı — adalama koruması, DER entegrasyonu, şebeke arayüz tasarımı ve mikro şebeke geliştiricileri ve işletmecileri için işveren mühendisliği."

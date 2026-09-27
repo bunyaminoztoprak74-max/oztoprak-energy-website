@@ -406,7 +406,7 @@ export const programmaticSeoData: Record<Locale, ProgrammaticData> = {
         title: "Renewable Energy Consultancy",
         description: "A strategic pillar for EPC, owner's engineering, technical audits and technical/commercial assessment across hydropower and solar assets.",
         clusters: ["hydropower-consultancy", "solar-consultancy", "epc-owner-engineering"],
-        primaryServices: ["renewable-energy-investment-advisory", "epc-technical-consultancy", "owners-engineering"]
+        primaryServices: ["renewable-energy-investment-advisory", "epc-technical-advisory", "owners-engineering"]
       },
       {
         slug: "power-plant-performance",
@@ -440,7 +440,7 @@ export const programmaticSeoData: Record<Locale, ProgrammaticData> = {
         title: "EPC and Owner's Engineering Topic Cluster",
         description: "EPC risk, owner-side technical control, tender support and project delivery assurance.",
         pillar: "renewable-energy-consultancy",
-        services: ["epc-technical-consultancy", "owners-engineering"],
+        services: ["epc-technical-advisory", "owners-engineering"],
         problems: ["commissioning-delays", "acquisition-technical-risk"],
         blogCategories: ["epc", "commissioning"]
       },
@@ -458,7 +458,7 @@ export const programmaticSeoData: Record<Locale, ProgrammaticData> = {
         title: "Commissioning Readiness Topic Cluster",
         description: "Commissioning readiness, test procedures, energization sequencing and handover evidence.",
         pillar: "power-plant-performance",
-        services: ["power-plant-commissioning", "epc-technical-consultancy"],
+        services: ["power-plant-commissioning", "epc-technical-advisory"],
         problems: ["commissioning-delays", "grid-trips-protection-issues"],
         blogCategories: ["commissioning", "epc"]
       },
@@ -536,7 +536,7 @@ export const programmaticSeoData: Record<Locale, ProgrammaticData> = {
         title: "Yenilenebilir Enerji Danışmanlığı",
         description: "HES ve GES varlıklarında EPC, işveren mühendisliği, teknik denetim ve teknik/ticari değerlendirme için stratejik pillar sayfa.",
         clusters: ["hes-danismanligi", "ges-danismanligi", "epc-isveren-muhendisligi"],
-        primaryServices: ["yenilenebilir-enerji-yatirim-danismanligi", "epc-teknik-danismanlik", "isveren-muhendisligi"]
+        primaryServices: ["yenilenebilir-enerji-yatirim-danismanligi", "epc-teknik-danismanlik-hizmeti", "isveren-muhendisligi"]
       },
       {
         slug: "enerji-santrali-performansi",
@@ -570,7 +570,7 @@ export const programmaticSeoData: Record<Locale, ProgrammaticData> = {
         title: "EPC ve İşveren Mühendisliği Konu Kümesi",
         description: "EPC riskleri, işveren tarafı teknik kontrol, ihale desteği ve proje teslim güvence içerikleri.",
         pillar: "yenilenebilir-enerji-danismanligi",
-        services: ["epc-teknik-danismanlik", "isveren-muhendisligi"],
+        services: ["epc-teknik-danismanlik-hizmeti", "isveren-muhendisligi"],
         problems: ["devreye-alma-gecikmeleri", "satin-alma-teknik-riski"],
         blogCategories: ["epc", "devreye-alma"]
       },
@@ -588,7 +588,7 @@ export const programmaticSeoData: Record<Locale, ProgrammaticData> = {
         title: "Devreye Alma Hazırlığı Konu Kümesi",
         description: "Devreye alma hazırlığı, test prosedürleri, enerjilendirme sırası ve teslim kanıtları.",
         pillar: "enerji-santrali-performansi",
-        services: ["enerji-santrali-devreye-alma", "epc-teknik-danismanlik"],
+        services: ["enerji-santrali-devreye-alma", "epc-teknik-danismanlik-hizmeti"],
         problems: ["devreye-alma-gecikmeleri", "sebeke-acmalari-koruma-sorunlari"],
         blogCategories: ["devreye-alma", "epc"]
       },

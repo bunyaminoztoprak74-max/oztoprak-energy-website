@@ -56,7 +56,7 @@ export const blogPosts: Record<Locale, BlogPost[]> = {
       readingTime: "8 min",
       toc: ["What PR can and cannot explain", "EPC evidence and inverter behavior", "Typical PR benchmarks by plant type", "Turning PR findings into action"],
       related: ["how-epc-delays-affect-power-plant-revenue", "power-plant-operational-readiness-checklist"],
-      serviceLinks: ["solar-energy-consulting", "energy-audit", "epc-technical-advisory"],
+      serviceLinks: ["solar-power-plant-consultancy", "energy-audit", "epc-technical-advisory"],
       body: [
         { heading: "What PR can and cannot explain", content: "Performance ratio is a useful solar KPI, but it cannot explain asset performance alone. Irradiance quality, curtailment, temperature, soiling, inverter availability, string-level faults and metering accuracy must be reviewed before conclusions are drawn." },
         { heading: "EPC evidence and inverter behavior", content: "Solar underperformance often begins with a handover evidence gap. As-built records, commissioning tests, punch-list closure, inverter event logs and warranty boundaries should be reviewed together to separate delivery issues from operational degradation." },
@@ -138,7 +138,7 @@ export const blogPosts: Record<Locale, BlogPost[]> = {
       readingTime: "5 min",
       toc: ["Weak interface ownership", "Late commissioning planning", "Incomplete handover evidence"],
       related: ["power-plant-commissioning-checklist", "grid-and-protection-system-analysis-for-power-plants"],
-      serviceLinks: ["epc-technical-consultancy", "owners-engineering"],
+      serviceLinks: ["epc-technical-advisory", "owners-engineering"],
       body: [
         { heading: "Weak interface ownership", content: "Many EPC issues arise between civil, electrical, mechanical, grid and control scopes. Interface matrices and decision ownership should be active documents, not tender-stage formalities." },
         { heading: "Late commissioning planning", content: "Commissioning risk grows when test procedures, energization sequences and acceptance criteria are created too late. Early readiness reviews protect schedule and asset quality." },
@@ -155,7 +155,7 @@ export const blogPosts: Record<Locale, BlogPost[]> = {
       readingTime: "7 min",
       toc: ["Mechanical completion", "Electrical energization", "Functional and performance testing"],
       related: ["common-epc-mistakes-renewable-energy-projects", "grid-and-protection-system-analysis-for-power-plants"],
-      serviceLinks: ["power-plant-commissioning", "epc-technical-consultancy"],
+      serviceLinks: ["power-plant-commissioning", "epc-technical-advisory"],
       body: [
         { heading: "Mechanical completion", content: "Completion status should be verified system by system, with clear punch-list ownership and boundaries between construction, pre-commissioning and commissioning." },
         { heading: "Electrical energization", content: "Energization requires verified protection settings, inspections, permits, communication protocols and a controlled sequence accepted by responsible parties." },
@@ -293,7 +293,7 @@ export const blogPosts: Record<Locale, BlogPost[]> = {
       readingTime: "9 min",
       toc: ["When rooftop solar makes financial sense", "Self-consumption rate is the key variable", "Roof assessment and structural considerations", "Grid connection and export constraints", "Financial model validation"],
       related: ["industrial-electricity-bill-analysis-guide", "reactive-penalty-compensation-system-audit"],
-      serviceLinks: ["industrial-energy-cost-optimization", "solar-energy-consulting"],
+      serviceLinks: ["industrial-energy-cost-optimization", "solar-power-plant-consultancy"],
       body: [
         { heading: "When rooftop solar makes financial sense", content: "Rooftop solar makes the most financial sense for facilities with high daytime electricity consumption, large roof areas with good solar exposure, and high grid electricity prices. The combination of these three factors determines the self-consumption rate — the percentage of generated solar energy that is directly consumed rather than exported. A facility that runs two shifts from 07:00 to 23:00, consumes 500 MWh/month and has 2,000 square meters of south-facing unshaded roof area is a strong candidate. A facility that runs only a night shift, or whose peak consumption is in winter when solar generation is low, will show a much weaker financial case." },
         { heading: "Self-consumption rate is the key variable", content: "Self-consumption is the financial engine of a rooftop solar project. Every kWh self-consumed saves the electricity tariff price. Every kWh exported to the grid earns a significantly lower feed-in tariff or is sold at spot market price — typically 30-50% of the retail tariff. A system sized too large for the facility's daytime consumption will push export levels high and reduce the financial return. The feasibility analysis must model hourly consumption and hourly solar generation together over a full year to determine the self-consumption ratio at the proposed system size." },
@@ -409,7 +409,7 @@ export const blogPosts: Record<Locale, BlogPost[]> = {
       readingTime: "7 dk",
       toc: ["PR neyi açıklar, neyi açıklamaz", "EPC kanıtı ve inverter davranışı", "PR bulgularını aksiyona çevirmek"],
       related: ["epc-gecikmeleri-enerji-santrali-gelirini-nasil-etkiler", "enerji-santrali-operasyonel-hazirlik-kontrol-listesi"],
-      serviceLinks: ["gunes-enerjisi-danismanligi", "enerji-denetimi", "epc-teknik-danismanlik-hizmeti"],
+      serviceLinks: ["ges-danismanligi", "enerji-denetimi", "epc-teknik-danismanlik-hizmeti"],
       body: [
         { heading: "PR neyi açıklar, neyi açıklamaz", content: "Performans oranı faydalı bir GES KPI'ıdır fakat tek başına varlık performansını açıklamaz. Işınım, kısıt, sıcaklık, kirlenme, inverter emre amadeliği, string arızaları ve ölçüm doğruluğu birlikte incelenmelidir." },
         { heading: "EPC kanıtı ve inverter davranışı", content: "GES düşük performansı çoğu zaman teslim kanıtı boşluğu ile başlar. As-built kayıtlar, devreye alma testleri, eksik iş kapanışı, inverter olay logları ve garanti sınırları birlikte değerlendirilmelidir." },
@@ -489,7 +489,7 @@ export const blogPosts: Record<Locale, BlogPost[]> = {
       readingTime: "5 dk",
       toc: ["Zayıf arayüz sahipliği", "Geç devreye alma planlaması", "Eksik teslim kanıtları"],
       related: ["enerji-santrali-devreye-alma-kontrol-listesi", "santrallerde-sebeke-ve-koruma-sistemi-analizi"],
-      serviceLinks: ["epc-teknik-danismanlik", "isveren-muhendisligi"],
+      serviceLinks: ["epc-teknik-danismanlik-hizmeti", "isveren-muhendisligi"],
       body: [
         { heading: "Zayıf arayüz sahipliği", content: "Birçok EPC problemi inşaat, elektrik, mekanik, şebeke ve kontrol kapsamlarının arasında oluşur. Arayüz matrisleri yaşayan dokümanlar olmalıdır." },
         { heading: "Geç devreye alma planlaması", content: "Test prosedürleri, enerjilendirme sıraları ve kabul kriterleri geç oluşturulduğunda devreye alma riski büyür." },
@@ -506,7 +506,7 @@ export const blogPosts: Record<Locale, BlogPost[]> = {
       readingTime: "7 dk",
       toc: ["Mekanik tamamlama", "Elektrik enerjilendirme", "Fonksiyonel ve performans testleri"],
       related: ["yenilenebilir-enerji-projelerinde-sik-yapilan-epc-hatalari", "santrallerde-sebeke-ve-koruma-sistemi-analizi"],
-      serviceLinks: ["enerji-santrali-devreye-alma", "epc-teknik-danismanlik"],
+      serviceLinks: ["enerji-santrali-devreye-alma", "epc-teknik-danismanlik-hizmeti"],
       body: [
         { heading: "Mekanik tamamlama", content: "Tamamlama durumu sistem bazında doğrulanmalı, eksik iş sahipliği ve inşaat, ön devreye alma, devreye alma sınırları net olmalıdır." },
         { heading: "Elektrik enerjilendirme", content: "Enerjilendirme doğrulanmış koruma ayarları, kontroller, izinler, iletişim protokolleri ve kontrollü sıra gerektirir." },
@@ -710,7 +710,7 @@ const longFormTopics = {
   en: [
     ["hydropower-plant-commissioning-procedures", "Hydropower Plant Commissioning Procedures", "A field-oriented guide to HPP commissioning gates, test evidence, synchronization, governor response, AVR behavior and owner-side handover control.", "Commissioning", "commissioning", ["HPP commissioning", "governor response", "handover evidence"], ["power-plant-commissioning", "hydropower-consulting", "owners-engineering"]],
     ["common-hpp-operational-problems", "Common HPP Operational Problems", "Technical review of recurring hydropower operating problems including nuisance trips, cooling limits, sediment effects, auxiliary failures and weak alarm discipline.", "Hydropower", "hydropower", ["HPP operations", "availability", "O&M"], ["hydropower-consulting", "om-performance-improvement", "energy-audit"]],
-    ["solar-plant-performance-optimization", "Solar Plant Performance Optimization", "Expert guide to solar PV performance recovery using PR analysis, inverter event review, string testing, soiling logic and O&M response improvement.", "Solar", "solar", ["solar PR", "PV optimization", "technical audit"], ["solar-energy-consulting", "energy-audit", "om-performance-improvement"]],
+    ["solar-plant-performance-optimization", "Solar Plant Performance Optimization", "Expert guide to solar PV performance recovery using PR analysis, inverter event review, string testing, soiling logic and O&M response improvement.", "Solar", "solar", ["solar PR", "PV optimization", "technical audit"], ["solar-power-plant-consultancy", "energy-audit", "om-performance-improvement"]],
     ["epc-technical-due-diligence", "EPC Technical Due Diligence", "How owners and investors should review EPC scope, design evidence, interface risk, commissioning readiness and handover quality before committing capital.", "EPC", "epc", ["EPC due diligence", "owner engineering", "technical advisory"], ["epc-technical-advisory", "owners-engineering", "renewable-energy-investment-advisory"]],
     ["power-plant-operational-readiness", "Power Plant Operational Readiness", "A practical owner-side framework for confirming people, procedures, documentation, grid interface and reliability evidence before commercial operation.", "Operations", "operations", ["operational readiness", "commissioning", "O&M"], ["power-plant-commissioning", "owners-engineering", "om-performance-improvement"]],
     ["turbine-efficiency-loss-analysis", "Turbine Efficiency Loss Analysis", "How hydropower owners can diagnose turbine efficiency loss through water-to-wire evidence, operating points, vibration, cavitation and outage history.", "Hydropower", "hydropower", ["turbine efficiency", "water-to-wire", "HPP audit"], ["hydropower-consulting", "hydropower-plant-optimization", "energy-audit"]],
@@ -720,7 +720,7 @@ const longFormTopics = {
   tr: [
     ["hes-devreye-alma-prosedurleri", "HES Devreye Alma Prosedurleri", "HES devreye alma kapilari, test kanitlari, senkronizasyon, governor tepkisi, AVR davranisi ve isveren tarafi teslim kontrolu icin saha odakli rehber.", "Devreye Alma", "devreye-alma", ["HES devreye alma", "governor tepkisi", "teslim kaniti"], ["enerji-santrali-devreye-alma", "hes-danismanligi", "isveren-muhendisligi"]],
     ["yaygin-hes-isletme-problemleri", "Yaygin HES Isletme Problemleri", "Gereksiz tripler, sogutma limitleri, sediment etkisi, yardimci sistem arizalari ve zayif alarm disiplini dahil HES isletme problemlerinin teknik incelemesi.", "HES", "hes", ["HES isletme", "emre amadelik", "O&M"], ["hes-danismanligi", "isletme-bakim-performans-iyilestirme", "enerji-denetimi"]],
-    ["ges-performans-optimizasyonu", "GES Performans Optimizasyonu", "PR analizi, inverter olay incelemesi, string testi, kirlenme mantigi ve O&M yanit iyilestirmesi ile GES performans toparlama rehberi.", "GES", "ges", ["GES PR", "PV optimizasyon", "teknik denetim"], ["gunes-enerjisi-danismanligi", "enerji-denetimi", "isletme-bakim-performans-iyilestirme"]],
+    ["ges-performans-optimizasyonu", "GES Performans Optimizasyonu", "PR analizi, inverter olay incelemesi, string testi, kirlenme mantigi ve O&M yanit iyilestirmesi ile GES performans toparlama rehberi.", "GES", "ges", ["GES PR", "PV optimizasyon", "teknik denetim"], ["ges-danismanligi", "enerji-denetimi", "isletme-bakim-performans-iyilestirme"]],
     ["epc-teknik-due-diligence", "EPC Teknik Due Diligence", "Sermaye karari oncesinde EPC kapsam, tasarim kaniti, arayuz riski, devreye alma hazirligi ve teslim kalitesinin nasil incelenecegi.", "EPC", "epc", ["EPC due diligence", "isveren muhendisligi", "teknik danismanlik"], ["epc-teknik-danismanlik-hizmeti", "isveren-muhendisligi", "yenilenebilir-enerji-yatirim-danismanligi"]],
     ["enerji-santrali-operasyonel-hazirlik", "Enerji Santrali Operasyonel Hazirlik", "Ticari isletme oncesinde insan, prosedur, dokumantasyon, sebeke arayuzu ve guvenilirlik kanitinin dogrulanmasi icin pratik cerceve.", "Isletme", "isletme", ["operasyonel hazirlik", "devreye alma", "O&M"], ["enerji-santrali-devreye-alma", "isveren-muhendisligi", "isletme-bakim-performans-iyilestirme"]],
     ["turbin-verim-kaybi-analizi", "Turbin Verim Kaybi Analizi", "HES sahipleri icin su-guc kaniti, isletme noktalari, vibrasyon, kavitasyon ve durus gecmisi ile turbin verim kaybi teshisi.", "HES", "hes", ["turbin verimi", "su-guc", "HES denetim"], ["hes-danismanligi", "hes-optimizasyonu", "enerji-denetimi"]],
@@ -817,8 +817,8 @@ const authorityTopics: AuthorityTopic[] = [
     trDescription: "GES danismanligi kapsaminda PR kaybi, inverter kaniti, EPC teslim kalitesi, O&M yaniti ve teknik denetim oncelikleri nasil incelenir?",
     category: "GES",
     categorySlug: "ges",
-    enServices: ["solar-energy-consulting", "energy-audit", "om-performance-improvement"],
-    trServices: ["gunes-enerjisi-danismanligi", "enerji-denetimi", "isletme-bakim-performans-iyilestirme"],
+    enServices: ["solar-power-plant-consultancy", "energy-audit", "om-performance-improvement"],
+    trServices: ["ges-danismanligi", "enerji-denetimi", "isletme-bakim-performans-iyilestirme"],
     focus: "GES danismanligi",
     equipment: "inverter, string, trafo, meteoroloji ve SCADA olcum zinciri",
     risk: "dusuk performans orani, kirlenme kaybi ve gec ariza mudahalesi"
@@ -997,7 +997,7 @@ const authorityTopics: AuthorityTopic[] = [
     trDescription: "GES teknik denetim kontrol listesi: PR analizi, inverter loglari, string kaniti, EPC teslimi, O&M olgunlugu ve yatirim kararlari.",
     category: "GES",
     categorySlug: "ges",
-    enServices: ["solar-energy-consulting", "technical-audits-existing-power-plants", "renewable-energy-investment-advisory"],
+    enServices: ["solar-power-plant-consultancy", "technical-audits-existing-power-plants", "renewable-energy-investment-advisory"],
     trServices: ["ges-danismanligi", "mevcut-santraller-icin-teknik-denetim", "yenilenebilir-enerji-yatirim-danismanligi"],
     focus: "GES teknik denetim",
     equipment: "modul, inverter, string, trafo, kamera, meteoroloji istasyonu ve izleme sistemi",
@@ -1042,8 +1042,8 @@ const authorityTopics: AuthorityTopic[] = [
     trDescription: "Reaktif guc kontrolu rehberi: AVR, inverter modlari, gerilim setleri, trafo limitleri ve sebeke uyum testi.",
     category: "Sebeke",
     categorySlug: "sebeke",
-    enServices: ["grid-protection-system-analysis", "solar-energy-consulting", "power-plant-commissioning"],
-    trServices: ["sebeke-koruma-sistemi-analizi", "gunes-enerjisi-danismanligi", "enerji-santrali-devreye-alma"],
+    enServices: ["grid-protection-system-analysis", "solar-power-plant-consultancy", "power-plant-commissioning"],
+    trServices: ["sebeke-koruma-sistemi-analizi", "ges-danismanligi", "enerji-santrali-devreye-alma"],
     focus: "Reaktif guc kontrolu",
     equipment: "AVR, inverter Q kontrolu, trafo tap, gerilim regule modu ve sayaç olcumleri",
     risk: "gerilim uyumsuzlugu, ceza riski ve ekipman zorlanmasi"
