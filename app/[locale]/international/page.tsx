@@ -259,7 +259,7 @@ export default async function InternationalPage({ params }: { params: Promise<{ 
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {[
               { href: `/${locale}/hydrogen`, label: en ? "Green Hydrogen" : "Yeşil Hidrojen", text: en ? "Electrolyser integration, renewable coupling, H2 project engineering" : "Elektrolizör entegrasyonu, yenilenebilir eşleştirme, H2 proje mühendisliği" },
-              { href: `/${locale}/battery-storage`, label: en ? "Battery Storage" : "Batarya Depolama", text: en ? "BESS TDD, grid compliance, EPC scope, lender's engineer" : "BESS TDD, şebeke uyumu, EPC kapsamı, kredi kuruluşu mühendisi" },
+              { href: `/${locale}/battery-storage`, label: en ? "Battery Storage" : "Batarya Depolama", text: en ? "BESS feasibility, optimum capacity sizing, HEPP/solar integration, TDD" : "BESS fizibilitesi, optimum kapasite belirleme, HES/GES entegrasyonu, TDD" },
               { href: `/${locale}/ai-energy`, label: en ? "AI & Energy" : "YZ ve Enerji", text: en ? "Independent review of AI monitoring tools and yield forecasting" : "Yapay zeka izleme araçları ve verim tahminin bağımsız incelemesi" },
               { href: `/${locale}/microgrids`, label: en ? "Microgrids" : "Mikro Şebekeler", text: en ? "Islanding protection, DER integration, industrial microgrid advisory" : "Adalama koruması, DER entegrasyonu, endüstriyel mikro şebeke danışmanlığı" }
             ].map((item) => (
