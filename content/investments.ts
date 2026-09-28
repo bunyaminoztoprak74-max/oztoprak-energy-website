@@ -14,13 +14,13 @@ export const investmentPages: InvestmentPage[] = [
   {
     slug: "satilik-enerji-santralleri",
     title: "Satılık HES, GES ve RES Projeleri | Öztoprak Enerji",
-    h1: "Satılık Enerji Santralleri ve Yatırım Fırsatları",
+    h1: "Satılık Enerji Santralleri ve Yatırım Danışmanlığı",
     description: "Türkiye genelindeki satılık HES, GES ve RES projeleri için alıcı-satıcı eşleştirme, teknik inceleme ve santral değerleme desteği.",
     intro: "HES, GES ve RES alım-satım süreçlerinde alıcı-satıcı eşleştirme, teknik değerlendirme, üretim analizi, santral değerleme ve satın alma öncesi teknik inceleme desteği.",
     sections: [
-      { heading: "HES Yatırımları", text: "Hidroelektrik yatırımlarını kurulu gücün yanında hidrolik veri, gerçekleşen net üretim, türbin-jeneratör durumu ve işletme geçmişiyle değerlendirin.", href: "satilik-hes", linkLabel: "Satılık HES fırsatları" },
-      { heading: "GES Yatırımları", text: "Lisanslı ve lisanssız güneş projelerinde üretim, panel ve inverter performansı, bağlantı yapısı ve arazi kullanımını birlikte inceleyin.", href: "satilik-ges", linkLabel: "Satılık GES fırsatları" },
-      { heading: "RES Yatırımları", text: "Rüzgar santrallerinde üretim geçmişi, türbin durumu, bakım yükümlülükleri ve büyük ekipman risklerini teknik verilerle birlikte değerlendirin.", href: "satilik-res", linkLabel: "Satılık RES fırsatları" },
+      { heading: "HES Yatırımları", text: "Hidroelektrik yatırımlarını kurulu gücün yanında hidrolik veri, gerçekleşen net üretim, türbin-jeneratör durumu ve işletme geçmişiyle değerlendirin.", href: "satilik-hes", linkLabel: "HES Alım-Satım Danışmanlığı" },
+      { heading: "GES Yatırımları", text: "Lisanslı ve lisanssız güneş projelerinde üretim, panel ve inverter performansı, bağlantı yapısı ve arazi kullanımını birlikte inceleyin.", href: "satilik-ges", linkLabel: "GES Alım-Satım Danışmanlığı" },
+      { heading: "RES Yatırımları", text: "Rüzgar santrallerinde üretim geçmişi, türbin durumu, bakım yükümlülükleri ve büyük ekipman risklerini teknik verilerle birlikte değerlendirin.", href: "satilik-res", linkLabel: "RES Alım-Satım Danışmanlığı" },
       { heading: "Teknik Due Diligence", text: "Saha bulguları ile veri odası kayıtlarını karşılaştırın. Üretim kaybı, ekipman riski ve gerekli CAPEX kalemlerini satın alma kararından önce belirleyin.", href: "enerji-santrali-due-diligence", linkLabel: "Teknik inceleme kapsamı" },
       { heading: "Santral Değerleme", text: "Tek bir MW çarpanı yerine üretim, gelir, OPEX, yenileme ihtiyacı ve kalan işletme süresine dayalı senaryolar hazırlayın.", href: "hes-degerleme", linkLabel: "HES değerleme yaklaşımı" },
       { heading: "Yatırımcı Eşleştirme", text: "Santral türü, kapasite aralığı, bütçe, bölge ve zamanlama kriterleriyle talebinizi tanımlayın. Uygun fırsat oluştuğunda tarafların beklentileri kontrollü biçimde eşleştirilir.", href: "santral-satin-al", linkLabel: "Yatırımcı kriterlerinizi paylaşın" },
@@ -73,7 +73,7 @@ export const investmentPages: InvestmentPage[] = [
     description: "HES, GES ve RES satın alma kriterlerinizi paylaşın. Kapasite, bütçe, bölge ve zamanlamaya göre uygun fırsatlar oluştuğunda sizinle iletişime geçelim.",
     intro: "Kapasite, bütçe ve üretim beklentinizi paylaşın. Uygun fırsat oluştuğunda teknik ön değerlendirme ve alıcı-satıcı eşleştirme için sizinle iletişime geçelim.",
     sections: [
-      { heading: "Talebinizden sonra ne olur?", text: "Ekibimiz kriterlerinizi netleştirir. Uygunluk değerlendirmesinden sonra paylaşılmasına izin verilen portföy bilgileri sunulur. Bu form bir satın alma taahhüdü veya belirli bir portföyün mevcut olduğuna dair garanti değildir." },
+      { heading: "Talebinizden sonra ne olur?", text: "Ekibimiz kriterlerinizi netleştirir. Enerji yatırım fırsatları gizlilik esasına göre yönetilir ve kamuya açık olarak listelenmez; kriterlerinize uygun ve paylaşılabilir bir yatırım süreci oluştuğunda kontrollü şekilde iletişime geçilir. Bu form bir satın alma taahhüdü değildir." },
       { heading: "Teknik incelemeyi erken planlayın", text: "Üretim verisi, ekipman durumu ve bakım ihtiyacının ön incelemesi, yatırım kriterlerinizi daha gerçekçi hale getirir.", href: "enerji-santrali-due-diligence", linkLabel: "Satın alma öncesi teknik due diligence" }
     ]
   },
@@ -168,11 +168,11 @@ export const investmentPages: InvestmentPage[] = [
 ];
 
 export const investmentFaqs = [
-  { question: "Sitede neden santral ilanı göremiyorum?", answer: "Bu bölüm yatırımcı ve satıcı taleplerini toplar. Yayın izni alınmış gerçek portföy eklenene kadar ilan gösterilmez. Kriterlerinizi ileterek uygun fırsat oluştuğunda iletişime geçilmesini isteyebilirsiniz." },
+  { question: "Sitede neden santral ilanı göremiyorum?", answer: "Öztoprak Enerji bir ilan sitesi değildir; enerji santrali alım-satım süreçleri gizlilik esasına göre yürütülür ve kamuya açık olarak listelenmez. Yatırım kriterlerinizi paylaşabilir, kriterlerinize uygun ve paylaşılabilir bir süreç oluştuğunda kontrollü şekilde iletişime geçilmesini isteyebilirsiniz." },
   { question: "Santralimi gizli şekilde satabilir miyim?", answer: "Satış formunda gizli satış seçeneğini kullanabilirsiniz. Başvurunuz otomatik yayımlanmaz. Santral adı ve hassas bilgiler, paylaşım kapsamı sizinle netleştirildikten ve gizlilik sözleşmesi süreci tamamlandıktan sonra nitelikli yatırımcılarla paylaşılabilir." },
   { question: "Santralin değeri yalnızca MW üzerinden hesaplanır mı?", answer: "Hayır. Net üretim, gelir yapısı, işletme giderleri, bakım yatırımları, kalan işletme süresi ve borç durumu birlikte değerlendirilir. Kurulu güç ön elemede yararlıdır; tek başına satış fiyatını belirlemez." },
   { question: "Teknik inceleme için hangi kayıtlar gerekir?", answer: "İlk aşamada kapasite ve işletme durumu yeterlidir. Kapsam belirlendikten sonra mevcut üretim kayıtları, ekipman envanteri, bakım geçmişi, bağlantı ve kabul belgeleri istenir. Eksik kayıtlar raporda ayrıca belirtilir." },
-  { question: "Talep oluşturmak satın alma taahhüdü müdür?", answer: "Hayır. Form bir ön görüşme talebidir. Portföy uygunluğu, inceleme kapsamı, hizmet bedeli ve işlem koşulları taraflarla ayrıca değerlendirilir; getiri veya satış garantisi verilmez." }
+  { question: "Talep oluşturmak satın alma taahhüdü müdür?", answer: "Hayır. Form bir ön görüşme talebidir. Kriter uygunluğu, inceleme kapsamı, hizmet bedeli ve işlem koşulları taraflarla ayrıca değerlendirilir; getiri veya satış garantisi verilmez." }
 ];
 
 function defaultNavLabel(page: InvestmentPage) {

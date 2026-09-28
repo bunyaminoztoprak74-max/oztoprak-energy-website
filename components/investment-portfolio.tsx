@@ -16,8 +16,8 @@ export function PortfolioCard({ plant }: { plant: PlantPortfolio }) {
 
 export function InvestorRequestCard() {
   return <aside className="rounded-xl border border-energy-500/30 bg-energy-500/10 p-6 sm:p-8">
-    <h2 className="text-2xl font-bold text-white">Aradığınız Santral Portföyümüzde Yok mu?</h2>
-    <p className="mb-6 mt-4 max-w-2xl leading-8 text-steel">Kriterlerinizi bırakın. Uygun yatırım fırsatı oluştuğunda sizinle iletişime geçelim.</p>
+    <h2 className="text-2xl font-bold text-white">Kriterlerinize Uygun Bir Yatırım Fırsatı mı Arıyorsunuz?</h2>
+    <p className="mb-6 mt-4 max-w-2xl leading-8 text-steel">Yatırım kriterlerinizi paylaşın. Kriterlerinize uygun ve paylaşılabilir bir yatırım süreci oluştuğunda kontrollü şekilde iletişime geçilir.</p>
     <InvestmentCta kind="request" />
   </aside>;
 }

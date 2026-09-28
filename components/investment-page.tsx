@@ -52,7 +52,7 @@ export function InvestmentPage({ page }: { page: PageData }) {
     {!page.kind && <section className="bg-navy-950 py-12"><Container><InvestorRequestCard /></Container></section>}
     {formKind && <section id="yatirim-formu" className="scroll-mt-52 bg-navy-950 py-14"><Container className="max-w-4xl">
       <h2 className="mb-4 text-3xl font-bold text-white">{page.type ? `Aradığınız ${page.type}’i Birlikte Bulalım` : formKind === "buyer" ? "Yatırım kriterlerinizi paylaşın" : "Santral satış talebiniz"}</h2>
-      <p className="mb-7 leading-8 text-steel">{formKind === "buyer" ? "Yayın izni alınmış gerçek portföy eklenene kadar bu sayfada ilan gösterilmiyor. Kriterlerinizi iletin, uygun fırsat oluştuğunda görüşelim." : "Bilgileriniz ilan olarak yayımlanmaz. Paylaşım kapsamını ilk görüşmede birlikte belirleyelim."}</p>
+      <p className="mb-7 leading-8 text-steel">{formKind === "buyer" ? "Enerji yatırım fırsatları gizlilik esasına göre yönetilir ve kamuya açık olarak listelenmez. Yatırım kriterlerinizi bizimle paylaşabilirsiniz; kriterlerinize uygun ve paylaşılabilir bir yatırım süreci oluştuğunda kontrollü şekilde iletişime geçilir." : "Bilgileriniz ilan olarak yayımlanmaz. Paylaşım kapsamını ilk görüşmede birlikte belirleyelim."}</p>
       <InvestmentLeadForm kind={formKind} plantType={page.type} source={`/tr/${page.slug}`} />
     </Container></section>}
     <section className="bg-navy-900 py-14"><Container>
