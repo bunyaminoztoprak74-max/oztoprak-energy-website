@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-03T10:07:16.879215+00:00",
+  "checked_at": "2026-10-04T10:48:03.453195+00:00",
   "ok": true,
   "joined": [
     {
@@ -13,6 +13,10 @@
       "name": "Quantum Fiber"
     },
     {
+      "id": "2271086",
+      "name": "Intuit QuickBooks"
+    },
+    {
       "id": "3014150",
       "name": "Qatar Airways"
     },
@@ -23,10 +27,6 @@
     {
       "id": "1464653",
       "name": "Priceline"
-    },
-    {
-      "id": "2271086",
-      "name": "Intuit QuickBooks"
     }
   ],
   "error": null
