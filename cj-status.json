@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-04T10:48:03.453195+00:00",
+  "checked_at": "2026-10-05T11:55:24.103268+00:00",
   "ok": true,
   "joined": [
     {
@@ -9,12 +9,12 @@
   ],
   "still_pending": [
     {
-      "id": "5240294",
-      "name": "Quantum Fiber"
-    },
-    {
       "id": "2271086",
       "name": "Intuit QuickBooks"
+    },
+    {
+      "id": "5240294",
+      "name": "Quantum Fiber"
     },
     {
       "id": "3014150",
