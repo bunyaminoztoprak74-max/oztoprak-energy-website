@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       : "BESS Danışmanlığı ve Enerji Depolama Fizibilitesi",
     description: en
       ? "Independent BESS feasibility studies, optimum MW/MWh capacity sizing, HEPP and solar plant battery integration, and revenue optimization advisory for investors and plant owners in Turkey."
-      : "BESS fizibilite danışmanlığı, optimum MW/MWh kapasite belirleme, HES ve GES santrallerine batarya entegrasyonu ve gelir optimizasyonu. Yatırımcılar ve santral sahipleri için teknik ve yatırım danışmanlığı."
+      : "HES ve GES için BESS fizibilitesi, MW/MWh kapasite belirleme, batarya entegrasyonu ve gelir optimizasyonu. Yatırımcılar için bağımsız teknik danışmanlık."
   });
 }
 
@@ -212,9 +212,21 @@ export default async function BatteryStoragePage({ params }: { params: Promise<{
     ? ["Plant type (HEPP / solar / wind / other)", "Installed capacity (MW)", "Indicative BESS power (MW) and capacity (MWh) under consideration", "Existing plant or new project", "Whether production data is available", "Project stage"]
     : ["Santral türü (HES / GES / RES / diğer)", "Kurulu güç (MW)", "Düşünülen BESS gücü (MW) ve kapasitesi (MWh)", "Mevcut santral mi, yeni proje mi", "Üretim verisi mevcut mu", "Proje aşaması"];
 
-  const relatedServices = en
-    ? ["technical-due-diligence", "owners-engineering", "independent-engineer", "grid-compliance-audit", "power-quality-audit"]
-    : ["teknik-durum-tespiti", "isveren-muhendisligi", "bagimsiz-muhendis", "sebeke-uyum-denetimi", "guc-kalitesi-denetimi"];
+  const relatedServices: Array<{ slug: string; label: string }> = en
+    ? [
+        { slug: "technical-due-diligence", label: "Technical Due Diligence" },
+        { slug: "owners-engineering", label: "Owner's Engineering" },
+        { slug: "independent-engineer", label: "Independent Engineer" },
+        { slug: "grid-compliance-audit", label: "Grid Compliance Audit" },
+        { slug: "power-quality-audit", label: "Power Quality Audit" }
+      ]
+    : [
+        { slug: "teknik-durum-tespiti", label: "Teknik Durum Tespiti" },
+        { slug: "isveren-muhendisligi", label: "İşveren Mühendisliği" },
+        { slug: "bagimsiz-muhendis", label: "Bağımsız Mühendis" },
+        { slug: "sebeke-uyum-denetimi", label: "Şebeke Uyum Denetimi" },
+        { slug: "guc-kalitesi-denetimi", label: "Güç Kalitesi Denetimi" }
+      ];
 
   const investmentLinks = [
     { href: "/tr/hes-degerleme", label: "HES Değerleme Yaklaşımı" },
@@ -509,10 +521,10 @@ export default async function BatteryStoragePage({ params }: { params: Promise<{
               {en ? "Related services" : "İlgili hizmetler"}
             </h2>
             <div className="mt-6 grid gap-2">
-              {relatedServices.map((slug) => (
+              {relatedServices.map(({ slug, label }) => (
                 <Link key={slug} href={servicePath(locale, slug)} className="group flex items-center gap-2 text-sm text-steel hover:text-energy-500 transition">
                   <span className="h-px w-4 bg-energy-500/40 group-hover:w-6 group-hover:bg-energy-500 transition-all" />
-                  {slug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())}
+                  {label}
                 </Link>
               ))}
             </div>

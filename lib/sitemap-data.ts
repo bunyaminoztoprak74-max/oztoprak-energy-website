@@ -25,6 +25,14 @@ export type SitemapEntry = {
 
 const buildStamp = new Date().toISOString();
 
+// Service slugs that permanently redirect (see next.config.mjs). Pages stay in content data.
+const redirectedServiceSlugs = new Set([
+  "epc-technical-consultancy",
+  "epc-teknik-danismanlik",
+  "gunes-enerjisi-danismanligi",
+  "solar-energy-consulting"
+]);
+
 function escapeXml(value: string) {
   return value
     .replace(/&/g, "&amp;")
@@ -118,7 +126,7 @@ export function pageSitemapEntries() {
     ...pairedEntries("/en/problems", "/tr/problems", { changeFrequency: "monthly", priority: 0.7 }),
     ...pairedEntries("/en/locations", "/tr/locations", { changeFrequency: "monthly", priority: 0.7 }),
     ...pairedEntries("/en/pillars", "/tr/pillars", { changeFrequency: "monthly", priority: 0.7 }),
-    ...pairedEntries("/en/industries", "/tr/industries", { changeFrequency: "monthly", priority: 0.8 }),
+    // /en|/tr/industries index pages do not exist (404); only /industries/[slug] pages are listed below.
     ...pairedEntries("/en/industrial-bill-review", "/tr/industrial-bill-review", { changeFrequency: "monthly", priority: 0.9 }),
     { path: "/tr/sanayi-enerji-cozumleri", changeFrequency: "monthly", priority: 0.9 },
     ...pairedEntries("/en/reactive-penalty-analysis", "/tr/reactive-penalty-analysis", { changeFrequency: "monthly", priority: 0.85 }),
@@ -248,6 +256,8 @@ export function serviceSitemapEntries() {
   getServices("en").forEach((service, index) => {
     const trService = getServices("tr")[index];
     if (!trService) return;
+    // Legacy slugs are 308-redirected in next.config.mjs; keep them out of the sitemap.
+    if (redirectedServiceSlugs.has(service.slug) || redirectedServiceSlugs.has(trService.slug)) return;
     entries.push(
       ...pairedEntries(`/en/services/${service.slug}`, `/tr/services/${trService.slug}`, {
         changeFrequency: "monthly",

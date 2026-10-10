@@ -11,6 +11,12 @@ import { investmentPages, investmentFaqs, type InvestmentPage as PageData } from
 import { investmentArticles } from "@/content/investment-articles";
 import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 
+// Visible labels for the "next step" links, keyed by target page slug (URLs unchanged).
+const navLabelBySlug: Record<string, string> = {
+  "yekdem-sonrasi-enerji-santrali-yatirimlari": "YEKDEM Sonrası Yatırımlar",
+  "lisansli-enerji-projesi-devir-danismanligi": "Lisanslı Proje Devri"
+};
+
 export function InvestmentPage({ page }: { page: PageData }) {
   const home = page.slug === "satilik-enerji-santralleri";
   const crumbs = [...(!home ? [{ label: "Yatırım Fırsatları", href: "/tr/satilik-enerji-santralleri" }] : []), { label: home ? "Yatırım Fırsatları" : page.h1 }];
@@ -58,7 +64,7 @@ export function InvestmentPage({ page }: { page: PageData }) {
     <section className="bg-navy-900 py-14"><Container>
       <h2 className="mb-6 text-2xl font-bold text-white">Yatırım sürecinizin sonraki adımı</h2>
       <nav aria-label="İlgili yatırım hizmetleri" className="flex flex-wrap gap-3">
-        {investmentPages.filter((item) => item.slug !== page.slug).map((item) => <Link key={item.slug} href={`/tr/${item.slug}`} className="rounded-md border border-white/15 px-4 py-3 text-sm text-steel hover:border-energy-500 hover:text-energy-500">{item.type ? `Satılık ${item.type}` : item.slug === "hes-degerleme" ? "HES Değerleme" : item.slug === "ges-degerleme" ? "GES Değerleme" : item.kind === "buyer" ? "Santral Satın Al" : item.kind === "seller" ? "Santralini Sat" : item.service ? "Teknik Due Diligence" : "Satılık Enerji Santralleri"}</Link>)}
+        {investmentPages.filter((item) => item.slug !== page.slug).map((item) => <Link key={item.slug} href={`/tr/${item.slug}`} className="rounded-md border border-white/15 px-4 py-3 text-sm text-steel hover:border-energy-500 hover:text-energy-500">{navLabelBySlug[item.slug] ?? (item.type ? `Satılık ${item.type}` : item.slug === "hes-degerleme" ? "HES Değerleme" : item.slug === "ges-degerleme" ? "GES Değerleme" : item.kind === "buyer" ? "Santral Satın Al" : item.kind === "seller" ? "Santralini Sat" : item.service ? "Teknik Due Diligence" : "Satılık Enerji Santralleri")}</Link>)}
       </nav>
       <div className="mt-7 flex flex-col gap-3 sm:flex-row"><InvestmentCta kind="diligence" /><InvestmentCta kind="valuation" secondary /></div>
     </Container></section>
