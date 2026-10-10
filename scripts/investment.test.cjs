@@ -62,11 +62,28 @@ test("confidential projection cannot expose names, exact city, summary, slug or 
 test("investment CTAs send the four requested events without personal data", () => {
   const { InvestmentCta } = loadTs("components/investment-cta.tsx");
   const captured = [];
-  global.window = { oztoprakTrack: (event, params) => captured.push({ event, params }) };
+  // The click handler reads window.location.pathname at event time, so the mock must provide it.
+  global.window = { location: { pathname: "/tr/satilik-hes" }, oztoprakTrack: (event, params) => captured.push({ event, params }) };
   try {
-    for (const kind of ["hes", "ges", "diligence", "valuation"]) InvestmentCta({ kind }).props.onClick();
+    const kinds = ["hes", "ges", "diligence", "valuation"];
+    for (const kind of kinds) InvestmentCta({ kind }).props.onClick();
     assert.deepEqual(captured.map((item) => item.event), ["hes_investment_cta_click", "ges_investment_cta_click", "due_diligence_cta_click", "valuation_cta_click"]);
-    assert.ok(captured.every((item) => Object.keys(item.params).join(",") === "locale"));
+    // Exact parameter contract: no extra (personal) fields may be added.
+    assert.ok(captured.every((item) => Object.keys(item.params).sort().join(",") === "cta_source,lead_source_page,locale,service_type"));
+    captured.forEach((item, index) => {
+      assert.equal(item.params.locale, "tr");
+      assert.equal(item.params.lead_source_page, "/tr/satilik-hes");
+      assert.equal(item.params.service_type, kinds[index]);
+      assert.ok(typeof item.params.cta_source === "string" && item.params.cta_source.length > 0);
+    });
+    const serialized = JSON.stringify(captured);
+    assert.equal(/@|email|phone|name|message|company/i.test(serialized.replace(/lead_source_page|service_type|cta_source/g, "")), false);
+    // CTAs without a legacy event (buyer/seller) use the generic event with the same parameters.
+    captured.length = 0;
+    InvestmentCta({ kind: "buyer" }).props.onClick();
+    InvestmentCta({ kind: "seller" }).props.onClick();
+    assert.deepEqual(captured.map((item) => item.event), ["investment_cta_click", "investment_cta_click"]);
+    assert.deepEqual(captured.map((item) => item.params.service_type), ["buyer", "seller"]);
   } finally { delete global.window; }
 });
 test("eleven unique Turkish pages and eight unique Turkish articles have sitemap entries", () => {

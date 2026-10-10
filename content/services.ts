@@ -658,7 +658,7 @@ export const services: Record<Locale, Service[]> = {
       slug: "ges-danismanligi",
       title: "GES Danışmanlığı",
       eyebrow: "Üretim ve güvenilirlik",
-      description: "Yatırımcılar, EPC ekipleri ve santral sahipleri için üretim, kalite ve yaşam döngüsü performansını güçlendiren GES danışmanlığı.",
+      description: "GES yatırımcıları, EPC ekipleri ve santral sahipleri için bağımsız mühendislik danışmanlığı. Üretim ve kayıp analizi, EPC kalite incelemesi, işletme-bakım performansı ve satın alma öncesi teknik durum tespiti ile yatırım ve işletme kararlarını kanıta dayandırır.",
       keywords: ["GES danışmanlığı", "GES performans iyileştirme", "GES teknik inceleme"],
       outcomes: ["Geliştirilmiş PR analizi", "Düşük performans riskinin azaltılması", "Uygulanabilir O&M yol haritası"],
       scope: ["Üretim ve kayıp incelemesi", "EPC kalite incelemesi", "İşletme bakım performans değerlendirmesi", "Teknik durum tespiti"],

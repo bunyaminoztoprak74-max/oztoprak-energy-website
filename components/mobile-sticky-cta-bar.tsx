@@ -6,11 +6,21 @@ import { Phone, Mail, MessageCircle, FileText } from "lucide-react";
 import type { Locale } from "@/lib/i18n";
 import { contactPath } from "@/lib/routes";
 
-const PHONE = "+905321234567";
-const EMAIL = "info@oztoprakenerji.com";
-const WHATSAPP = "https://wa.me/905321234567";
-
-export function MobileStickyCtaBar({ locale }: { locale: Locale }) {
+// Contact details come from the dictionary (single source of truth) via props,
+// so this client component does not bundle the dictionaries.
+export function MobileStickyCtaBar({
+  locale,
+  phoneRaw,
+  email
+}: {
+  locale: Locale;
+  /** Digits only, international format without "+", e.g. 905456113320 (dict.contact.phoneRaw). */
+  phoneRaw: string;
+  email: string;
+}) {
+  const PHONE = `+${phoneRaw}`;
+  const EMAIL = email;
+  const WHATSAPP = `https://wa.me/${phoneRaw}`;
   const [visible, setVisible] = useState(false);
   const lastScrollY = useRef(0);
 
@@ -30,6 +40,11 @@ export function MobileStickyCtaBar({ locale }: { locale: Locale }) {
 
   const en = locale === "en";
 
+  // Reuses the existing window.oztoprakTrack helper and existing event names; no PII is sent.
+  function track(eventName: string) {
+    window.oztoprakTrack?.(eventName, { locale, lead_source_page: window.location.pathname, cta_source: "mobile_sticky_bar" });
+  }
+
   return (
     <div
       className={`fixed bottom-0 left-0 right-0 z-50 lg:hidden transition-transform duration-300 ${
@@ -40,6 +55,7 @@ export function MobileStickyCtaBar({ locale }: { locale: Locale }) {
       <div className="grid grid-cols-4 border-t border-energy-500/30 bg-navy-950/96 backdrop-blur">
         <a
           href={`tel:${PHONE}`}
+          onClick={() => track("phone_click")}
           className="flex flex-col items-center gap-1 py-3 text-[10px] font-semibold text-steel hover:text-energy-500 active:bg-navy-900"
         >
           <Phone className="h-5 w-5" />
@@ -47,6 +63,7 @@ export function MobileStickyCtaBar({ locale }: { locale: Locale }) {
         </a>
         <a
           href={`mailto:${EMAIL}`}
+          onClick={() => track("email_click")}
           className="flex flex-col items-center gap-1 py-3 text-[10px] font-semibold text-steel hover:text-energy-500 active:bg-navy-900"
         >
           <Mail className="h-5 w-5" />
@@ -54,6 +71,7 @@ export function MobileStickyCtaBar({ locale }: { locale: Locale }) {
         </a>
         <a
           href={WHATSAPP}
+          onClick={() => track("whatsapp_click")}
           target="_blank"
           rel="noopener noreferrer"
           className="flex flex-col items-center gap-1 py-3 text-[10px] font-semibold text-steel hover:text-energy-500 active:bg-navy-900"
@@ -63,6 +81,7 @@ export function MobileStickyCtaBar({ locale }: { locale: Locale }) {
         </a>
         <Link
           href={contactPath(locale)}
+          onClick={() => track("consultation_request_click")}
           className="flex flex-col items-center gap-1 bg-energy-500 py-3 text-[10px] font-bold text-navy-950 hover:bg-white active:bg-energy-500"
         >
           <FileText className="h-5 w-5" />

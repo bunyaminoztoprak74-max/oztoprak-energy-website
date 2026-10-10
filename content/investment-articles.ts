@@ -33,6 +33,8 @@ const drafts = [
   },
   {
     slug: "ges-degeri-nasil-hesaplanir", title: "GES Değeri Nasıl Hesaplanır?",
+    seoTitle: "GES Değeri Nasıl Hesaplanır? Üretim ve Nakit Akışı",
+    seoDescription: "GES değeri nasıl hesaplanır? Net üretim, ışınım, PR, degradasyon, kullanım hakları, inverter yenilemesi ve nakit akışı senaryolarıyla GES değerleme yaklaşımı.",
     description: "GES değerinde ışınım, PR, degradasyon, kullanım hakları, inverter yenilemesi ve gelecekteki nakit akışını değerlendirme yöntemi.",
     body: [
       { heading: "Üretim varsayımını teknik kanıta bağlayın", content: "GES değerlemenin temel girdisi satılabilir veya ilgili yapı içinde değerlendirilebilir net üretimdir. Üretim modeli; ışınım, sıcaklık, sistem kayıpları, kullanılabilirlik ve panel degradasyonunu içerir. Modelin geçmiş sayaç verileriyle karşılaştırılması, varsayımların gerçek işletmeyle uyumunu gösterir. Veri eksikliği veya ölçüm hatası varsa sonuç yalnızca hassas bir sayı olarak sunulmamalıdır. Kullanılan ölçüm dönemi ve dışlanan kesintiler raporda görünür olmalıdır.", links: [{ label: "GES değerleme parametreleri", href: "/tr/ges-degerleme" }] },
@@ -53,12 +55,14 @@ const drafts = [
   },
   {
     slug: "santral-teknik-due-diligence-nedir", title: "Santral Teknik Due Diligence Nedir?",
+    seoTitle: "Santral Teknik Due Diligence Nedir? Kapsam ve Süreç",
+    seoDescription: "Santral teknik due diligence nedir, neleri kapsar? Veri odası kontrolü, saha incelemesi, üretim analizi ve risk matrisinin yatırım kararındaki rolü.",
     description: "Santral teknik due diligence kapsamı, veri kontrolü, saha incelemesi, üretim analizi ve risk matrisinin yatırım kararındaki rolü.",
     body: [
       { heading: "Karar sorusuna göre kapsam belirlenir", content: "Teknik due diligence, bir santralin mevcut durumunu ve gelecekteki teknik yükümlülüklerini karar amacıyla incelemektir. Satın alma, finansman veya ortaklık sürecinde farklı sorular öne çıkabilir. Kapsam tesis sınırı, erişilebilir belgeler, saha ziyareti ve planlanan testlerle tanımlanır. Bir dosya incelemesi, yapılmamış saha testlerinin yerini tutmaz. Raporda neyin görüldüğü, neyin belgelerden okunduğu ve neyin doğrulanamadığı ayrı belirtilmelidir.", links: [{ label: "Enerji santrali teknik due diligence hizmeti", href: "/tr/enerji-santrali-due-diligence" }] },
       { heading: "İşletme göstergeleri doğru sınırlarla okunur", content: "Emre amadelik tesisin kullanılabilirliğini, kapasite faktörü ise belirli dönemde üretimin kapasiteye göre düzeyini anlatır. Bu göstergeler aynı şeyi ölçmez. Şebeke kısıntısı, kaynak eksikliği ve ekipman duruşu ayrı sınıflandırılmalıdır. Yüksek kapasite faktörü tek başına ekipman sağlığının kanıtı değildir. İnceleme ölçüm dönemini ve hesaplama sınırını açıklar; göstergeleri alarm, bakım ve üretim kayıtlarıyla ilişkilendirir." },
       { heading: "Saha bulgusu kanıtla desteklenir", content: "Fotoğraf, test kaydı, işletme trendi ve bakım dokümanı aynı bulgu altında ilişkilendirilir. Tekrarlayan alarmın kök nedeni belirlenememişse bu belirsizlik raporda korunur. Kusurun etkisi güvenlik, üretim, şebeke uyumu veya bakım maliyeti açısından değerlendirilir. Ek test gerektiğinde test amacı, duruş gereksinimi ve sorumlusu yazılır. Böylece genel bir kontrol listesi yerine yatırımcının aksiyon alabileceği kanıt seti oluşur." },
-      { heading: "Sonuç risk matrisi ve aksiyon planıdır", content: "Risk matrisi, olasılık ve etkinin yanında maliyet aralığı, zamanlama ve giderilme koşullarını içerir. Kritik bulgunun yalnızca renkle işaretlenmesi yeterli değildir; işlem öncesinde nasıl doğrulanacağı da belirtilmelidir. Teknik yatırım raporu hukuki ve mali incelemenin yerine geçmez. Onların kullanacağı üretim ve CAPEX varsayımlarını destekler. Satın alma sonrası bakım planı da aynı bulgular üzerinden geliştirilebilir.", links: [{ label: "Santral satın alma talebinizi paylaşın", href: "/tr/santral-satin-al" }, { label: "Enerji Yatırım Danışmanlığı Alın", href: "/tr/satilik-enerji-santralleri" }] }
+      { heading: "Sonuç risk matrisi ve aksiyon planıdır", content: "Risk matrisi, olasılık ve etkinin yanında maliyet aralığı, zamanlama ve giderilme koşullarını içerir. Kritik bulgunun yalnızca renkle işaretlenmesi yeterli değildir; işlem öncesinde nasıl doğrulanacağı da belirtilmelidir. Teknik yatırım raporu hukuki ve mali incelemenin yerine geçmez. Onların kullanacağı üretim ve CAPEX varsayımlarını destekler. Satın alma sonrası bakım planı da aynı bulgular üzerinden geliştirilebilir.", links: [{ label: "Teknik Due Diligence Talebi: kapsam, yöntem ve çıktılar", href: "/tr/enerji-santrali-due-diligence" }, { label: "Santral satın alma talebinizi paylaşın", href: "/tr/santral-satin-al" }, { label: "Enerji Yatırım Danışmanlığı Alın", href: "/tr/satilik-enerji-santralleri" }] }
     ]
   },
   {

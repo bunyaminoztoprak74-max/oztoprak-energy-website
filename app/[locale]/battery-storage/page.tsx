@@ -3,6 +3,7 @@ import Link from "next/link";
 import { CheckCircle2, BatteryCharging, ShieldCheck, TrendingUp, Gauge } from "lucide-react";
 import { Container } from "@/components/container";
 import { CtaSection } from "@/components/cta-section";
+import { TrackedCtaLink } from "@/components/tracked-cta-link";
 import { getDictionary } from "@/content/dictionaries";
 import { buildMetadata } from "@/lib/seo";
 import { isLocale, type Locale } from "@/lib/i18n";
@@ -222,6 +223,31 @@ export default async function BatteryStoragePage({ params }: { params: Promise<{
     { href: "/tr/satilik-enerji-santralleri", label: "Enerji Yatırım Danışmanlığı" }
   ];
 
+  // Qualitative engineering checklist only: no costs, efficiencies, returns or vendor guarantee values are stated.
+  const engineeringFramework = en
+    ? [
+        ["Power-to-energy ratio and storage duration", "MW and MWh are sized together. Storage duration (hours at rated power) is a design variable derived from the plant's production profile, grid limits and the intended use of the battery, not a fixed value."],
+        ["PCS selection", "Power rating, reactive power capability, grid-code compliance, efficiency across the operating range, thermal derating, and AC- versus DC-coupling for the specific plant."],
+        ["Battery container configuration", "DC block sizing, cooling and thermal management, fire protection, layout and access, and conformity with the applicable standards and permitting requirements."],
+        ["Transformer and grid connection", "Connection point and voltage level, transformer sizing, protection coordination and the effect of the battery on fault levels at the point of connection."],
+        ["Short-circuit and grid constraints", "Short-circuit contribution, fault ride-through behaviour, export and import limits and the operator's technical requirements, checked before capacity is fixed."],
+        ["Degradation and augmentation", "Capacity fade assumptions taken from supplier data and tested against the planned cycling regime, with an augmentation or replacement strategy reflected in the model."],
+        ["Round-trip efficiency and availability", "Efficiency is only comparable when the measurement boundary is defined (for example at the point of connection, including auxiliaries). Availability definitions and exclusions are reviewed in the contract."],
+        ["CAPEX and OPEX assessment", "Cost items (battery, PCS, balance of plant, EPC, grid connection, O&M, augmentation, insurance) are compared on a like-for-like basis using current quotations, never generic benchmarks."],
+        ["Technical specification and bid evaluation", "Specification drafting and technical comparison of EPC and vendor offers: scope gaps, interfaces, performance guarantees, test procedures (FAT/SAT), warranty exclusions and liability terms."]
+      ]
+    : [
+        ["Güç/enerji oranı ve depolama süresi", "MW ve MWh birlikte boyutlandırılır. Depolama süresi (nominal güçte saat), santralin üretim profili, şebeke limitleri ve bataryanın kullanım amacından türetilen bir tasarım değişkenidir; sabit bir değer değildir."],
+        ["PCS seçimi", "Güç değeri, reaktif güç kabiliyeti, şebeke kodu uyumu, çalışma aralığı boyunca verim, sıcaklığa bağlı güç düşümü ve ilgili santral için AC veya DC bağlantı tercihi değerlendirilir."],
+        ["Batarya konteyner konfigürasyonu", "DC blok boyutlandırma, soğutma ve termal yönetim, yangın koruma, yerleşim ve erişim ile ilgili standartlar ve izin gereksinimlerine uygunluk incelenir."],
+        ["Trafo ve şebeke bağlantısı", "Bağlantı noktası ve gerilim seviyesi, trafo boyutlandırma, koruma koordinasyonu ve bataryanın bağlantı noktasındaki arıza seviyelerine etkisi ele alınır."],
+        ["Kısa devre ve şebeke kısıtları", "Kısa devre katkısı, arıza anında şebekede kalma (FRT) davranışı, ihracat/ithalat limitleri ve işletmecinin teknik gereksinimleri kapasite belirlenmeden önce kontrol edilir."],
+        ["Degradasyon ve augmentation", "Kapasite kaybı varsayımları tedarikçi verisinden alınır ve planlanan çevrim rejimiyle sınanır; augmentation veya yenileme stratejisi modele yansıtılır."],
+        ["Round-trip verim ve availability", "Verim ancak ölçüm sınırı tanımlandığında (örneğin bağlantı noktasında, yardımcı tüketimler dahil) karşılaştırılabilir. Availability tanımları ve istisnaları sözleşmede incelenir."],
+        ["CAPEX ve OPEX değerlendirmesi", "Maliyet kalemleri (batarya, PCS, tesis bütünleyicileri, EPC, şebeke bağlantısı, O&M, augmentation, sigorta) genel referans değerler yerine güncel tekliflerle aynı temelde karşılaştırılır."],
+        ["Teknik şartname ve teklif değerlendirme", "Şartname hazırlığı ile EPC ve tedarikçi tekliflerinin teknik karşılaştırması: kapsam boşlukları, arayüzler, performans garantileri, test prosedürleri (FAT/SAT), garanti istisnaları ve sorumluluk şartları."]
+      ];
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }} />
@@ -239,17 +265,17 @@ export default async function BatteryStoragePage({ params }: { params: Promise<{
               : "Öztoprak Enerji; BESS fizibilite çalışması, optimum MW/MWh kapasite belirleme, HES ve GES santrallerine batarya entegrasyonu, gelir optimizasyonu ve teknik durum tespiti konularında bağımsız danışmanlık sunar. Türkiye'deki mevcut üretim tesislerine BESS entegrasyonunu değerlendiren yatırımcılar ve santral sahipleri için proje özelinde teknik ve ekonomik analiz sağlıyoruz."}
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
-            <Link href={`/${locale}/free-consultation`} className="inline-flex rounded-md bg-energy-500 px-6 py-3 text-sm font-bold text-navy-950 shadow-glow hover:bg-white transition">
+            <TrackedCtaLink href={`/${locale}/free-consultation`} serviceType="bess" ctaSource="bess_hero_feasibility" className="inline-flex rounded-md bg-energy-500 px-6 py-3 text-sm font-bold text-navy-950 shadow-glow hover:bg-white transition">
               {en ? "Request a BESS Feasibility Review" : "BESS Fizibilite Talep Et"}
-            </Link>
+            </TrackedCtaLink>
             {en ? (
               <Link href={`/${locale}/contact`} className="inline-flex rounded-md border border-white/20 px-6 py-3 text-sm font-semibold text-white hover:border-energy-500 hover:text-energy-500 transition">
                 Contact Us
               </Link>
             ) : (
-              <Link href="/tr/satilik-enerji-santralleri" className="inline-flex rounded-md border border-white/20 px-6 py-3 text-sm font-semibold text-white hover:border-energy-500 hover:text-energy-500 transition">
-                Enerji Yatırım Danışmanlığı Alın
-              </Link>
+              <TrackedCtaLink href="#santraliniz-icin-bess-analizi" serviceType="bess" ctaSource="bess_hero_plant_analysis" className="inline-flex rounded-md border border-white/20 px-6 py-3 text-sm font-semibold text-white hover:border-energy-500 hover:text-energy-500 transition">
+                Santraliniz İçin BESS Analizi
+              </TrackedCtaLink>
             )}
           </div>
         </Container>
@@ -273,6 +299,40 @@ export default async function BatteryStoragePage({ params }: { params: Promise<{
                 </div>
               );
             })}
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-navy-950 py-16">
+        <Container>
+          <h2 className="text-2xl font-bold text-white">
+            {en ? "BESS from an Investment Perspective" : "Yatırım Açısından BESS"}
+          </h2>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-steel">
+            {en
+              ? "A battery energy storage system (BESS) stores electricity and releases it later, which can change how a generation asset earns revenue and manages grid constraints. Whether that is worthwhile depends on the specific plant, its connection, its production profile and the market conditions it operates in. For an investor the useful question is therefore not whether to install a battery, but under which technical and economic assumptions a given size makes sense, and what must be verified before committing capital."
+              : "Bataryalı enerji depolama sistemi (BESS), elektriği depolayıp daha sonra şebekeye verir; bu da bir üretim varlığının gelir elde etme ve şebeke kısıtlarını yönetme biçimini değiştirebilir. Bunun anlamlı olup olmadığı santrale, bağlantı yapısına, üretim profiline ve faaliyet gösterdiği piyasa koşullarına bağlıdır. Yatırımcı için asıl soru bu nedenle batarya kurulup kurulmayacağı değil, hangi teknik ve ekonomik varsayımlarda hangi büyüklüğün anlamlı olduğu ve sermaye taahhüdünden önce nelerin doğrulanması gerektiğidir."}
+          </p>
+        </Container>
+      </section>
+
+      <section className="bg-navy-900 py-16">
+        <Container>
+          <h2 className="text-2xl font-bold text-white">
+            {en ? "Our Engineering Evaluation Framework" : "Mühendislik Değerlendirme Çerçevemiz"}
+          </h2>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-steel">
+            {en
+              ? "Each BESS engagement is built around the topics below. They describe what is reviewed, not typical results: capacities, efficiencies, costs and returns are determined project by project from the plant's own data and current supplier documentation."
+              : "Her BESS çalışması aşağıdaki başlıklar etrafında kurulur. Bunlar tipik sonuçları değil, nelerin incelendiğini tanımlar: kapasite, verim, maliyet ve getiri; santralin kendi verisi ve güncel tedarikçi dokümanlarından proje bazında belirlenir."}
+          </p>
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {engineeringFramework.map(([title, text]) => (
+              <div key={title} className="premium-card rounded-xl p-6">
+                <h3 className="font-semibold text-white">{title}</h3>
+                <p className="mt-2 text-sm leading-7 text-steel">{text}</p>
+              </div>
+            ))}
           </div>
         </Container>
       </section>
@@ -487,7 +547,7 @@ export default async function BatteryStoragePage({ params }: { params: Promise<{
       </section>
 
       {!en && (
-        <section className="bg-navy-950 py-14">
+        <section id="santraliniz-icin-bess-analizi" className="scroll-mt-28 bg-navy-950 py-14">
           <Container className="max-w-3xl">
             <h2 className="text-xl font-semibold text-white">BESS fizibilite talebinizde neler belirtebilirsiniz</h2>
             <p className="mt-3 text-sm leading-7 text-steel">İlk görüşmede tüm teknik bilgileri paylaşmanız gerekmez; aşağıdakilerden bildiğiniz kadarını mesajınıza eklemeniz süreci hızlandırır.</p>
@@ -499,9 +559,12 @@ export default async function BatteryStoragePage({ params }: { params: Promise<{
                 </div>
               ))}
             </div>
-            <Link href="/tr/free-consultation" className="mt-6 inline-flex rounded-md bg-energy-500 px-6 py-3 text-sm font-bold text-navy-950 shadow-glow hover:bg-white transition">
+            <TrackedCtaLink href="/tr/free-consultation" serviceType="bess" ctaSource="bess_capacity_analysis_request" className="mt-6 inline-flex rounded-md bg-energy-500 px-6 py-3 text-sm font-bold text-navy-950 shadow-glow hover:bg-white transition">
               BESS Kapasite Analizi Talep Et
-            </Link>
+            </TrackedCtaLink>
+            <p className="mt-4 text-sm leading-7 text-steel">
+              BESS çalışması; yatırım kararı öncesinde <Link href="/tr/enerji-santrali-due-diligence" className="text-energy-500 hover:text-white">teknik due diligence</Link> ve <Link href="/tr/hes-degerleme" className="text-energy-500 hover:text-white">santral değerleme</Link> çalışmalarıyla birlikte ele alınabilir.
+            </p>
           </Container>
         </section>
       )}

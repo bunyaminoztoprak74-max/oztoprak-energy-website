@@ -37,6 +37,9 @@ export type BlogPost = {
   slug: string;
   title: string;
   description: string;
+  /** Optional SERP-only overrides; H1/card text keep using title/description. */
+  seoTitle?: string;
+  seoDescription?: string;
   category: string;
   categorySlug: string;
   tags?: string[];

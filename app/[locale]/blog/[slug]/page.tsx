@@ -29,8 +29,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     path: `/blog/${slug}`,
     alternatePath: translated ? `/blog/${translated.slug}` : undefined,
     hasTranslation: Boolean(translated),
-    title: post.title,
-    description: post.description,
+    title: post.seoTitle ?? post.title,
+    description: post.seoDescription ?? post.description,
     type: "article"
   });
 }

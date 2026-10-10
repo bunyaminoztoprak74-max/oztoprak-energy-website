@@ -75,8 +75,13 @@ export function ContactForm({ dict, locale }: { dict: Dict; locale: Locale }) {
           : "Thank you. Your technical consultation request was sent to info@oztoprakenerji.com."
       );
       form.reset();
-      if (typeof window !== "undefined" && (window as unknown as { oztoprakTrack?: (e: string) => void }).oztoprakTrack) {
-        (window as unknown as { oztoprakTrack: (e: string) => void }).oztoprakTrack("contact_form_submit");
+      if (typeof window !== "undefined" && (window as unknown as { oztoprakTrack?: (e: string, p?: Record<string, unknown>) => void }).oztoprakTrack) {
+        // No form content (PII) is sent; only the page the lead came from.
+        (window as unknown as { oztoprakTrack: (e: string, p?: Record<string, unknown>) => void }).oztoprakTrack("contact_form_submit", {
+          locale,
+          lead_source_page: window.location.pathname,
+          cta_source: "contact_form"
+        });
       }
     } catch {
       setStatus("error");

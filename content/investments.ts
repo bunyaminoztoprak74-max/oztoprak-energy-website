@@ -28,7 +28,7 @@ export const investmentPages: InvestmentPage[] = [
     ]
   },
   {
-    slug: "satilik-hes", type: "HES",
+    slug: "satilik-hes", type: "HES", ctaLabel: "Yatırım Kriterlerinizi Bildirin",
     title: "HES Alım Satım Danışmanlığı | Satılık HES Yatırım Fırsatları | Öztoprak Enerji",
     h1: "HES Alım Satım Danışmanlığı – Satılık HES Yatırım Fırsatları",
     description: "HES alım satım danışmanlığı: satılık HES arayan yatırımcılar için kriter tanımlama, teknik/finansal inceleme, HES değerleme ve gizli yatırım süreci yönetimi.",
@@ -42,7 +42,7 @@ export const investmentPages: InvestmentPage[] = [
     ]
   },
   {
-    slug: "satilik-ges", type: "GES",
+    slug: "satilik-ges", type: "GES", ctaLabel: "Yatırım Kriterlerinizi Bildirin",
     title: "Satılık GES | Güneş Enerji Santrali Yatırım Fırsatları | Öztoprak Enerji",
     h1: "Satılık GES – Güneş Enerji Santrali Yatırım Fırsatları",
     description: "Satılık GES ve güneş enerji santrali arayan yatırımcılar için lisanslı ve lisanssız proje değerlendirme, üretim analizi, GES değerleme ve due diligence.",
@@ -55,7 +55,7 @@ export const investmentPages: InvestmentPage[] = [
     ]
   },
   {
-    slug: "satilik-res", type: "RES",
+    slug: "satilik-res", type: "RES", ctaLabel: "Yatırım Kriterlerinizi Bildirin",
     title: "Satılık RES | Rüzgar Enerji Santrali Fırsatları | Öztoprak Enerji",
     h1: "Satılık RES – Rüzgar Enerji Santrali Fırsatları",
     description: "Satılık RES arayan kurumlar için rüzgar enerji santrallerinde üretim, bakım yükümlülükleri ve teknik inceleme desteği.",
@@ -70,7 +70,7 @@ export const investmentPages: InvestmentPage[] = [
     slug: "santral-satin-al", kind: "buyer",
     title: "Santral Satın Al | Enerji Yatırımcı Talebi | Öztoprak Enerji",
     h1: "Enerji Santrali Satın Almak İstiyorum",
-    description: "HES, GES ve RES satın alma kriterlerinizi paylaşın. Kapasite, bütçe, bölge ve zamanlamaya göre uygun fırsatlar oluştuğunda sizinle iletişime geçelim.",
+    description: "Enerji santrali satın almak mı istiyorsunuz? HES, GES ve RES yatırım kriterlerinizi (kapasite, bütçe, bölge, zamanlama) paylaşın; uygun ve paylaşılabilir bir süreç oluştuğunda iletişime geçelim.",
     intro: "Kapasite, bütçe ve üretim beklentinizi paylaşın. Uygun fırsat oluştuğunda teknik ön değerlendirme ve alıcı-satıcı eşleştirme için sizinle iletişime geçelim.",
     sections: [
       { heading: "Talebinizden sonra ne olur?", text: "Ekibimiz kriterlerinizi netleştirir. Enerji yatırım fırsatları gizlilik esasına göre yönetilir ve kamuya açık olarak listelenmez; kriterlerinize uygun ve paylaşılabilir bir yatırım süreci oluştuğunda kontrollü şekilde iletişime geçilir. Bu form bir satın alma taahhüdü değildir." },
@@ -81,7 +81,7 @@ export const investmentPages: InvestmentPage[] = [
     slug: "santralini-sat", kind: "seller",
     title: "Santralini Sat | Gizli Enerji Santrali Satışı | Öztoprak Enerji",
     h1: "Enerji Santralinizi Satmayı mı Düşünüyorsunuz?",
-    description: "HES, GES veya RES satış talebinizi iletin. Gizli satış süreci, teknik değerlendirme, değerleme ve nitelikli alıcılarla kontrollü iletişim desteği alın.",
+    description: "Santralinizi satmayı mı düşünüyorsunuz? HES, GES veya RES için gizli satış süreci, teknik değerlendirme, değerleme ve nitelikli alıcılarla kontrollü iletişim. Gizli görüşme talep edin.",
     intro: "Öztoprak Enerji; HES, GES ve RES projelerinde gizli satış süreci, teknik değerlendirme, alıcı-satıcı eşleştirme ve işlem desteği sunar.",
     sections: [
       { heading: "Ön değerlendirme ve gizlilik", text: "Başvurunuz doğrudan halka açık bir ilana dönüşmez. Satış beklentisi, teknik veri kapsamı ve paylaşım sınırları sizinle netleştirilir. Gizli satış tercihi başlangıçta seçilidir; şirket ve hassas proje belgeleri ilk görüşmeden sonra kontrollü kanalla istenir." },
@@ -90,23 +90,25 @@ export const investmentPages: InvestmentPage[] = [
   },
   {
     slug: "enerji-santrali-due-diligence", service: "diligence",
-    title: "HES, GES ve RES Teknik İnceleme | Öztoprak Enerji",
+    ctaLabel: "Teknik Due Diligence Talebi",
+    title: "Teknik Due Diligence | HES, GES ve RES Teknik İnceleme | Öztoprak Enerji",
     h1: "Enerji Santrali Teknik Due Diligence",
-    description: "HES, GES ve RES satın alma öncesinde teknik durum, üretim, ekipman, bakım CAPEX'i ve şebeke bağlantısını inceleyen teknik due diligence hizmeti.",
+    description: "HES, GES ve RES teknik due diligence hizmeti: kapsam, yöntem ve raporlanan çıktılar. Satın alma öncesi teknik durum, üretim, ekipman, bakım CAPEX'i ve şebeke bağlantısı incelemesi.",
     intro: "Satın alma kararını doğrulanabilir saha ve işletme verisine dayandırın. Teknik inceleme; varlığın mevcut durumunu, performans belirsizliğini ve gelecekteki yatırım ihtiyacını görünür kılar.",
     sections: [
       { heading: "Teknik durum ve üretim analizi", text: "Son 3–5 yıllık sayaç, SCADA ve işletme kayıtları veri sürekliliği açısından kontrol edilir. Availability (emre amadelik), capacity factor (kapasite faktörü) ve verimlilik; veri kapsamı, ölçüm sınırı ve duruş sınıfları açıklanarak hesaplanır. Kaynak değişimi ile ekipman kaynaklı performans kaybı ayrılır." },
       { heading: "Ana ekipman ve kalan ekonomik ömür", text: "Türbin, jeneratör, panel, inverter, trafo, koruma ve yardımcı sistemler envanterle eşleştirilir. Ekipman yaşı tek başına kalan ekonomik ömrü belirlemez; işletme yükü, bakım geçmişi, arıza tekrarları ve parça temini birlikte incelenir." },
       { heading: "Rehabilitasyon ve CAPEX tahmini", text: "Yenileme / rehabilitasyon ihtiyacı; acil güvenlik işleri, üretimi koruyan bakım ve performansı artırabilecek yatırımlar olarak ayrılır. CAPEX tahmini için kapsam, fiyat tarihi, belirsizlik aralığı ve duruş gereksinimi kaydedilir; teklif alınmamış kalemler kesin bedel olarak gösterilmez." },
       { heading: "Şebeke bağlantısı, lisans ve izinler", text: "Bağlantı kapasitesi, tek hat şemaları, koruma koordinasyonu ve kabul testlerinin teknik tutarlılığı incelenir. Lisans ve izinlerin teknik kontrolü; işletmenin belgelenen sınırlarla uyumuna odaklanır. Hukuki ve mali inceleme kapsamları ilgili uzmanlarla ayrıca koordine edilir." },
-      { heading: "Risk matrisi ve teknik yatırım raporu", text: "Her bulgu kanıt, olasılık, etki, önerilen aksiyon, sorumlu ve zamanlama ile raporlanır. Açık veri talepleri ayrı tutulur. Nihai teknik yatırım raporu, kapanış öncesi koşulları ve satın alma sonrasındaki ilk bakım önceliklerini destekler.", href: "santral-satin-al", linkLabel: "Teknik inceleme gereksiniminizi paylaşın" }
+      { heading: "Risk matrisi ve teknik yatırım raporu", text: "Her bulgu kanıt, olasılık, etki, önerilen aksiyon, sorumlu ve zamanlama ile raporlanır. Açık veri talepleri ayrı tutulur. Nihai teknik yatırım raporu, kapanış öncesi koşulları ve satın alma sonrasındaki ilk bakım önceliklerini destekler.", href: "santral-satin-al", linkLabel: "Teknik inceleme gereksiniminizi paylaşın" },
+      { heading: "Kapsamı nasıl belirliyoruz?", text: "Teknik durum tespiti satın alma, finansman veya ortaklık gibi karar sorusuna göre kapsamlandırılır. Kapsam; tesis sınırı, erişilebilir belgeler, saha ziyareti ve gerekiyorsa planlanan testlerle tanımlanır. Raporda neyin sahada görüldüğü, neyin belgelerden okunduğu ve neyin doğrulanamadığı ayrı belirtilir.", href: "blog/santral-teknik-due-diligence-nedir", linkLabel: "Teknik due diligence nedir? Kapsam ve süreç rehberi" }
     ]
   },
   {
     slug: "hes-degerleme", service: "valuation",
-    title: "HES Değerleme | Hidroelektrik Santrali Değeri | Öztoprak Enerji",
+    title: "HES Değerleme: Santral Değeri Nasıl Belirlenir? | Öztoprak Enerji",
     h1: "HES Değerleme ve Hidroelektrik Yatırım Değeri",
-    description: "HES değeri nasıl hesaplanır? Hidroelektrik santrali değerlemede net üretim, hidrolik veriler, OPEX, CAPEX, borç ve nakit akışı yaklaşımını inceleyin.",
+    description: "HES değerleme yaklaşımı: hidroelektrik santrali değerinde net üretim, hidrolik veriler, OPEX, bakım CAPEX'i, borç ve nakit akışı senaryoları. Değerleme talebi oluşturun.",
     intro: "HES satış fiyatı yalnızca MW üzerinden belirlenemez. Aynı kurulu güçteki iki santral; su rejimi, üretim, ekipman durumu ve işletme maliyetleri nedeniyle farklı ekonomik sonuçlar üretir.",
     sections: [
       { heading: "Yıllık net üretim ve hidrolik veriler", text: "Debi, düşü, kullanılabilir su ve kapasite faktörü uzun dönem beklentisini belirler. Sayaçtan doğrulanmış yıllık net üretim, kuru ve yağışlı dönemlerle birlikte incelenir. Ölçülmüş değer ile model çıktısı ayrı gösterilir." },

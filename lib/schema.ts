@@ -119,14 +119,6 @@ export function serviceSchema(locale: Locale, service: Service) {
     inLanguage: locale,
     description: service.description,
     keywords: service.keywords.join(", "),
-    offers: {
-      "@type": "Offer",
-      availability: "https://schema.org/InStock",
-      priceSpecification: {
-        "@type": "PriceSpecification",
-        priceCurrency: "EUR"
-      }
-    },
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: `${service.title} consulting scope`,

@@ -29,6 +29,16 @@ const energyConsultancyDecisionPaths = [
     description: "Santral teknik due diligence, veri odası incelemesi ve karar öncesi risklerin önceliklendirilmesi."
   },
   {
+    href: "/tr/enerji-santrali-due-diligence",
+    title: "Santral satın alma öncesi teknik due diligence",
+    description: "Satın alma kararı için kapsam, yöntem ve raporlanan çıktılar; HES, GES ve RES varlıklarında teknik durum ve CAPEX riski."
+  },
+  {
+    href: "/tr/battery-storage",
+    title: "BESS ve enerji depolama danışmanlığı",
+    description: "HES veya GES santraline batarya depolama eklemeyi düşünenler için fizibilite, MW/MWh kapasite ve şebeke bağlantısı değerlendirmesi."
+  },
+  {
     href: "/tr/services/hes-danismanligi",
     title: "HES yatırımı ve işletme performansı",
     description: "Hidroelektrik santraller için teknik inceleme, performans analizi ve işletme karar desteği."
@@ -54,6 +64,37 @@ const energyConsultancyDecisionPaths = [
     description: "Tasarım, yüklenici dokümanları, saha ilerlemesi, test ve teslim sürecinde bağımsız teknik kontrol."
   }
 ];
+
+type RelatedPath = { href: string; title: string; description: string };
+
+// Small, hand-picked cross-links between commercial pages (TR slugs only). Pages not listed here are unchanged.
+const relatedCommercialPaths: Record<string, RelatedPath[]> = {
+  "teknik-durum-tespiti": [
+    { href: "/tr/enerji-santrali-due-diligence", title: "Satın alma veya finansman öncesi teknik due diligence", description: "Alım kararı için kapsam, yöntem ve raporlanan çıktılar; alıcı ve yatırımcı bakış açısı." },
+    { href: "/tr/services/mevcut-santraller-icin-teknik-denetim", title: "İşletmedeki tesisin teknik durumu", description: "Mevcut santralde varlık durumu, performans riskleri ve O&M olgunluğunun denetimi." },
+    { href: "/tr/services/bagimsiz-muhendis", title: "Kredi kuruluşu için bağımsız mühendis görüşü", description: "Proje finansmanında tarafsız teknik denetim ve raporlama." }
+  ],
+  "ges-danismanligi": [
+    { href: "/tr/ges-degerleme", title: "GES değerleme yaklaşımı", description: "Üretim, degradasyon, inverter yenilemesi ve nakit akışı varsayımlarıyla GES değeri." },
+    { href: "/tr/battery-storage", title: "GES + BESS değerlendirmesi", description: "Güneş santraline batarya depolama eklemeyi düşünenler için fizibilite ve kapasite çalışması." },
+    { href: "/tr/enerji-santrali-due-diligence", title: "GES satın alma öncesi teknik inceleme", description: "Panel, inverter ve üretim verisinin alım öncesi teknik doğrulaması." }
+  ],
+  "hes-danismanligi": [
+    { href: "/tr/hes-degerleme", title: "HES değerleme yaklaşımı", description: "Net üretim, hidrolik veri, OPEX ve bakım CAPEX'i ile HES değeri." },
+    { href: "/tr/satilik-hes", title: "HES alım satım danışmanlığı", description: "Yatırım kriterlerinizi tanımlayın; teknik ve finansal inceleme desteği alın." },
+    { href: "/tr/battery-storage", title: "HES + BESS değerlendirmesi", description: "Hidroelektrik santrale batarya depolama entegrasyonunun teknik ve ekonomik değerlendirmesi." }
+  ],
+  "bagimsiz-muhendis": [
+    { href: "/tr/enerji-santrali-due-diligence", title: "Teknik due diligence", description: "Satın alma ve refinansman öncesi teknik durum, üretim ve CAPEX riski incelemesi." },
+    { href: "/tr/services/epc-teknik-danismanlik-hizmeti", title: "EPC teknik danışmanlık", description: "Tasarım, arayüz, devreye alma ve teslim aşamalarında işveren tarafı kontrol." },
+    { href: "/tr/battery-storage", title: "BESS projelerinde teknik inceleme", description: "Depolama projelerinde şartname, teklif ve performans garantisi değerlendirmesi." }
+  ],
+  "epc-teknik-danismanlik-hizmeti": [
+    { href: "/tr/services/bagimsiz-muhendis", title: "Bağımsız mühendis", description: "Finansman sürecinde kredi kuruluşları ve yatırımcılar için tarafsız teknik denetim." },
+    { href: "/tr/services/isveren-muhendisligi", title: "İşveren mühendisliği", description: "Tasarım, kalite ve teslim sürecinde işveren adına teknik kontrol." },
+    { href: "/tr/battery-storage", title: "BESS EPC ve teklif değerlendirmesi", description: "Batarya depolama EPC kapsamı, tedarikçi teklifleri ve test kriterleri." }
+  ]
+};
 
 function serviceAuthoritySections(locale: Locale, service: NonNullable<ReturnType<typeof getService>>) {
   const en = locale === "en";
@@ -942,6 +983,33 @@ function specializedServiceSections(locale: Locale, service: NonNullable<ReturnT
   return [];
 }
 
+const serviceSeoOverrides: Record<string, { title: string; description: string }> = {
+  "tr:enerji-danismanligi": {
+    title: "Enerji Danışmanlığı | HES, GES, Santral ve Sanayi",
+    description: "Türkiye genelinde yatırımcılar, santral sahipleri ve sanayi kuruluşları için bağımsız enerji danışmanlığı; HES, GES, teknik inceleme, EPC ve enerji maliyeti desteği."
+  },
+  "tr:ges-danismanligi": {
+    title: "GES Danışmanlığı | Yatırım, Teknik İnceleme ve Performans",
+    description: "GES yatırımcıları, EPC ekipleri ve santral sahipleri için bağımsız GES danışmanlığı: üretim ve kayıp analizi, EPC kalite incelemesi, O&M performansı ve teknik durum tespiti."
+  },
+  "tr:bagimsiz-muhendis": {
+    title: "Bağımsız Mühendis (Independent Engineer) | Yenilenebilir Enerji",
+    description: "Yenilenebilir enerji proje finansmanında kredi kuruluşları ve yatırımcılar için bağımsız mühendis (Independent Engineer) hizmeti: EPC sözleşme incelemesi, inşaat izleme, FAT/SAT ve performans testi tanıklığı."
+  },
+  "tr:epc-teknik-danismanlik-hizmeti": {
+    title: "EPC Teknik Danışmanlık | İşveren Tarafı Kontrol ve Teslim",
+    description: "Yenilenebilir enerji projelerinde tasarım incelemesi, arayüz yönetimi, devreye alma ve teslim aşamalarında işveren tarafı bağımsız EPC teknik danışmanlık hizmeti."
+  },
+  "en:technical-due-diligence": {
+    title: "Technical Due Diligence for Renewable Energy Assets | Hydro & Solar",
+    description: "Technical due diligence for hydropower and solar assets: performance evidence, EPC and commissioning records, O&M maturity, grid compliance and CAPEX exposure for acquisition or refinancing decisions."
+  },
+  "en:solar-power-plant-consultancy": {
+    title: "Solar Power Plant Consultancy | Yield, EPC Quality and O&M",
+    description: "Independent solar power plant consultancy for investors, EPC teams and owners: yield and loss review, EPC quality, O&M performance assessment and technical due diligence."
+  }
+};
+
 export function generateStaticParams() {
   return (["en", "tr"] as Locale[]).flatMap((locale) => getServices(locale).map((service) => ({ locale, slug: service.slug })));
 }
@@ -953,15 +1021,15 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   if (!service) return {};
   const index = getServices(locale).findIndex((item) => item.slug === slug);
   const translated = getServices(alternateLocale(locale))[index];
-  const isTurkishEnergyConsultancy = locale === "tr" && service.slug === "enerji-danismanligi";
+  // Targeted SERP title/description overrides for the highest-value commercial pages only.
+  // All other services keep service.title / service.description (no bulk rewrite).
+  const override = serviceSeoOverrides[`${locale}:${service.slug}`];
   return buildMetadata({
     locale,
     path: `/services/${slug}`,
     alternatePath: translated ? `/services/${translated.slug}` : undefined,
-    title: isTurkishEnergyConsultancy ? "Enerji Danışmanlığı | HES, GES, Santral ve Sanayi" : service.title,
-    description: isTurkishEnergyConsultancy
-      ? "Türkiye genelinde yatırımcılar, santral sahipleri ve sanayi kuruluşları için bağımsız enerji danışmanlığı; HES, GES, teknik inceleme, EPC ve enerji maliyeti desteği."
-      : service.description
+    title: override?.title ?? service.title,
+    description: override?.description ?? service.description
   });
 }
 
@@ -1001,7 +1069,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
   return (
     <>
       <StickyConsultationCta locale={locale} />
-      <MobileStickyCtaBar locale={locale} />
+      <MobileStickyCtaBar locale={locale} phoneRaw={dict.contact.phoneRaw} email={dict.contact.email} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }} />
       <section className="bg-navy-950 py-20">
         <Container>
@@ -1077,6 +1145,19 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
                 </div>
               </section>
             )}
+            {locale === "tr" && relatedCommercialPaths[service.slug] ? (
+              <section className="mt-12" aria-labelledby="related-commercial-paths">
+                <h2 id="related-commercial-paths" className="text-2xl font-semibold text-white">Kararınıza uygun ilgili hizmetler</h2>
+                <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                  {relatedCommercialPaths[service.slug].map((path) => (
+                    <Link key={path.href} href={path.href} className="group rounded-lg border border-white/10 bg-white/[0.04] p-5 transition hover:border-energy-500/60 hover:bg-energy-500/10">
+                      <h3 className="font-semibold text-white group-hover:text-energy-500">{path.title}</h3>
+                      <p className="mt-2 text-sm leading-7 text-steel">{path.description}</p>
+                    </Link>
+                  ))}
+                </div>
+              </section>
+            ) : null}
             <h2 className="mt-12 text-2xl font-semibold text-white">{dict.labels.technicalScope}</h2>
             <div className="mt-6 grid gap-4">
               {service.scope.map((item) => (

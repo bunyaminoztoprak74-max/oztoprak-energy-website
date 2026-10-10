@@ -2,12 +2,14 @@ import type { Metadata } from "next";
 import {
   Activity,
   ArrowUpRight,
+  BatteryCharging,
   Building2,
   CheckCircle2,
   ClipboardCheck,
   FileSearch,
   Gauge,
   Globe2,
+  Landmark,
   RadioTower,
   SearchCheck,
   Settings2,
@@ -24,6 +26,7 @@ import { EngineeringCredentials } from "@/components/engineering-credentials";
 import { MotionReveal } from "@/components/motion-reveal";
 import { FeatureCard } from "@/components/cards";
 import { buildMetadata } from "@/lib/seo";
+import { getDictionary } from "@/content/dictionaries";
 import { isLocale, type Locale } from "@/lib/i18n";
 import Link from "next/link";
 
@@ -112,6 +115,18 @@ const content = {
         text: "Investor-ready assessment of asset condition, EPC evidence, O&M maturity, grid compliance and CAPEX risk before acquisition or refinancing.",
         href: "/services/technical-due-diligence",
         icon: SearchCheck
+      },
+      {
+        title: "BESS Advisory",
+        text: "Battery energy storage feasibility, MW/MWh capacity sizing and storage integration for hydropower and solar plants.",
+        href: "/battery-storage",
+        icon: BatteryCharging
+      },
+      {
+        title: "Independent Engineer",
+        text: "Neutral technical oversight for lenders and investors in renewable energy project finance, from pre-construction to completion.",
+        href: "/services/independent-engineer",
+        icon: Landmark
       },
       {
         title: "HPP Performance Analysis",
@@ -244,6 +259,18 @@ const content = {
         icon: SearchCheck
       },
       {
+        title: "BESS Danışmanlığı",
+        text: "HES ve GES santralleri için bataryalı enerji depolama fizibilitesi, MW/MWh kapasite belirleme ve entegrasyon değerlendirmesi.",
+        href: "/battery-storage",
+        icon: BatteryCharging
+      },
+      {
+        title: "Bağımsız Mühendis",
+        text: "Yenilenebilir enerji proje finansmanında kredi kuruluşları ve yatırımcılar için ön yapımdan tamamlanmaya tarafsız teknik denetim.",
+        href: "/services/bagimsiz-muhendis",
+        icon: Landmark
+      },
+      {
         title: "HES Performans Analizi",
         text: "Türbin verimi, governor tepkisi, AGC davranışı, SCADA alarmları, duruşlar ve O&M toparlama aksiyonları için HES üretim kaybı incelemesi.",
         href: "/services/hes-performans-analizi",
@@ -340,6 +367,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   const { locale: localeParam } = await params;
   const locale: Locale = isLocale(localeParam) ? localeParam : "en";
   const page = content[locale];
+  const dict = getDictionary(locale);
   const contactHref = locale === "tr" ? "/tr/iletisim" : "/en/contact";
   const servicesHref = locale === "tr" ? "/tr/hizmetler" : "/en/services";
   const metrics = [
@@ -352,7 +380,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
   return (
     <>
-      <MobileStickyCtaBar locale={locale} />
+      <MobileStickyCtaBar locale={locale} phoneRaw={dict.contact.phoneRaw} email={dict.contact.email} />
       <section className="hero-industrial relative overflow-hidden bg-navy-950">
         <Container className="relative z-10 grid min-h-[70vh] items-center py-14 sm:py-16 lg:py-20">
           <div className="grid gap-10 lg:grid-cols-[1.02fr_0.72fr] lg:items-center">
@@ -593,7 +621,10 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       {locale === "tr" && <section className="bg-navy-900 py-14"><Container>
         <h2 className="text-3xl font-bold text-white">Enerji Yatırım Fırsatları</h2>
         <p className="my-5 max-w-3xl leading-8 text-steel">HES, GES ve RES projelerinde alıcı-satıcı eşleştirme, santral değerleme ve teknik inceleme desteği.</p>
-        <ButtonLink href="/tr/satilik-enerji-santralleri">Enerji Yatırım Danışmanlığı Alın</ButtonLink>
+        <div className="flex flex-wrap gap-3">
+          <ButtonLink href="/tr/satilik-enerji-santralleri">Enerji Yatırım Danışmanlığı Alın</ButtonLink>
+          <ButtonLink href="/tr/enerji-santrali-due-diligence" variant="secondary">Satın Alma Öncesi Teknik Due Diligence</ButtonLink>
+        </div>
       </Container></section>}
       <InvestorTrustBlock locale={locale} />
       <EngineeringCredentials locale={locale} />
