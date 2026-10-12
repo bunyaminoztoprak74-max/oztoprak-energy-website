@@ -1,5 +1,5 @@
 "use client";
-import { Mail, Phone, Linkedin, MessageSquareText, FileText, Clock, CheckCircle2 } from "lucide-react";
+import { Mail, MapPin, Phone, Linkedin, MessageSquareText, FileText, Clock, CheckCircle2 } from "lucide-react";
 import { Container } from "@/components/container";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { ContactForm } from "@/components/contact-form";
@@ -110,6 +110,14 @@ export function ContactPageContent({ locale }: { locale: Locale }) {
                     <p className="text-sm font-semibold">{dict.contact.phone}</p>
                   </div>
                 </a>
+                <div className="premium-card flex items-center gap-4 rounded-lg p-4 text-white">
+                  <MapPin className="h-5 w-5 shrink-0 text-energy-500" />
+                  <address className="not-italic">
+                    <p className="text-xs text-steel/60">{en ? "Address" : "Adres"}</p>
+                    <p className="text-sm font-semibold">{dict.contact.addressStreet}</p>
+                    <p className="text-sm font-semibold">{dict.contact.addressCity}</p>
+                  </address>
+                </div>
                 <a
                   href={linkedinUrl}
                   target="_blank"

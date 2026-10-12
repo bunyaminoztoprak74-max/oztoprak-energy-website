@@ -79,6 +79,9 @@ export function localBusinessSchema(locale: Locale) {
     priceRange: "$$$",
     address: {
       "@type": "PostalAddress",
+      streetAddress: dict.contact.addressStreet,
+      addressLocality: "Çankaya",
+      addressRegion: "Ankara",
       addressCountry: "TR"
     },
     description: dict.seo.siteDescription,

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Linkedin, Mail, Phone } from "lucide-react";
+import { Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import type { Locale } from "@/lib/i18n";
 import type { getDictionary } from "@/content/dictionaries";
 import { getServices } from "@/content/services";
@@ -59,6 +59,14 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dict }) {
                 <Phone className="h-4 w-4 text-energy-500" />
                 {dict.contact.phone}
               </a>
+              <address className="inline-flex items-start gap-3 not-italic text-white/88">
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-energy-500" />
+                <span>
+                  {dict.contact.addressStreet}
+                  <br />
+                  {dict.contact.addressCity}
+                </span>
+              </address>
             </div>
           </div>
 

@@ -88,6 +88,8 @@ export const dictionaries = {
       values: ["Technical independence", "Operational realism", "Investor-grade reporting", "Long-term asset performance"]
     },
     contact: {
+      addressStreet: "Balgat Mah. Ziyabey Cad. No:30 İç Kapı No:4",
+      addressCity: "Çankaya / Ankara, Türkiye",
       title: "Request a Plant Performance Review",
       description:
         "Tell us about your project, asset or technical challenge. We will respond with a practical next step.",
@@ -191,6 +193,8 @@ export const dictionaries = {
       values: ["Teknik bağımsızlık", "Operasyonel gerçekçilik", "Yatırımcı düzeyinde raporlama", "Uzun vadeli varlık performansı"]
     },
     contact: {
+      addressStreet: "Balgat Mah. Ziyabey Cad. No:30 İç Kapı No:4",
+      addressCity: "Çankaya / Ankara, Türkiye",
       title: "Teknik Danışmanlık Talep Edin",
       description:
         "Projenizi, santralinizi veya teknik probleminizi paylaşın. Uygulanabilir bir sonraki adım ile dönüş yapalım.",
