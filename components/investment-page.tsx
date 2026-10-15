@@ -10,6 +10,9 @@ import { InvestorRequestCard } from "./investment-portfolio";
 import { investmentPages, investmentFaqs, type InvestmentPage as PageData } from "@/content/investments";
 import { investmentArticles } from "@/content/investment-articles";
 import { breadcrumbSchema, faqSchema } from "@/lib/schema";
+import { getDictionary } from "@/content/dictionaries";
+import { MobileStickyCtaBar } from "./mobile-sticky-cta-bar";
+import { getConversionBar } from "@/lib/conversion-bar";
 
 // Visible labels for the "next step" links, keyed by target page slug (URLs unchanged).
 const navLabelBySlug: Record<string, string> = {
@@ -20,8 +23,13 @@ const navLabelBySlug: Record<string, string> = {
 export function InvestmentPage({ page }: { page: PageData }) {
   const home = page.slug === "satilik-enerji-santralleri";
   const crumbs = [...(!home ? [{ label: "Yatırım Fırsatları", href: "/tr/satilik-enerji-santralleri" }] : []), { label: home ? "Yatırım Fırsatları" : page.h1 }];
-  const schemas = [breadcrumbSchema([{ name: "Ana Sayfa", url: "/tr" }, ...(!home ? [{ name: "Yatırım Fırsatları", url: "/tr/satilik-enerji-santralleri" }] : []), { name: page.h1, url: `/tr/${page.slug}` }]), ...(home ? [faqSchema(investmentFaqs)] : [])];
+  const faqs = page.faqs ?? (home ? investmentFaqs : undefined); // hub sets page.faqs (hubFaqs + investmentFaqs)
+  const schemas = [breadcrumbSchema([{ name: "Ana Sayfa", url: "/tr" }, ...(!home ? [{ name: "Yatırım Fırsatları", url: "/tr/satilik-enerji-santralleri" }] : []), { name: page.h1, url: `/tr/${page.slug}` }]), ...(faqs ? [faqSchema(faqs)] : [])];
   const formKind = page.kind || (page.type ? "buyer" : null);
+  const conversionBar = getConversionBar(`/tr/${page.slug}`);
+  const trContact = getDictionary("tr").contact;
+  const rank = (slug: string) => { const i = page.relatedArticles?.indexOf(slug) ?? -1; return i === -1 ? Number.MAX_SAFE_INTEGER : i; };
+  const articles = page.relatedArticles ? [...investmentArticles].sort((a, b) => rank(a.slug) - rank(b.slug)) : investmentArticles;
   return <>
     <InvestmentPageView slug={page.slug} />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas).replace(/</g, "\\u003c") }} />
@@ -32,12 +40,24 @@ export function InvestmentPage({ page }: { page: PageData }) {
         <h1 className="max-w-5xl text-balance text-3xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">{page.h1}</h1>
         <p className="mt-6 max-w-3xl text-lg leading-8 text-steel">{page.intro}</p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-          {page.service ? <InvestmentCta kind={page.service} label={page.ctaLabel ?? (page.service === "diligence" ? "Santral Satın Alma Öncesi Teknik İnceleme Talep Et" : undefined)} /> : <InvestmentCta kind={page.type === "HES" ? "hes" : page.type === "GES" ? "ges" : page.kind === "seller" ? "seller" : "buyer"} href={formKind ? "#yatirim-formu" : undefined} label={page.ctaLabel ?? (page.type ? `Satılık ${page.type} Arıyorum` : page.kind === "seller" ? "Gizli Görüşme Talep Et" : undefined)} />}
-          <InvestmentCta kind={page.kind === "seller" ? "buyer" : "seller"} secondary href={page.type ? `/tr/santralini-sat?type=${page.type}` : undefined} label={page.type ? `${page.type}’imi Satmak İstiyorum` : undefined} />
+          {page.service ? <InvestmentCta kind={page.service} href={page.ctaHref} label={page.ctaLabel ?? (page.service === "diligence" ? "Santral Satın Alma Öncesi Teknik İnceleme Talep Et" : undefined)} /> : <InvestmentCta kind={page.type === "HES" ? "hes" : page.type === "GES" ? "ges" : page.kind === "seller" ? "seller" : "buyer"} href={formKind ? "#yatirim-formu" : undefined} label={page.ctaLabel ?? (page.type ? `Satılık ${page.type} Arıyorum` : page.kind === "seller" ? "Gizli Görüşme Talep Et" : undefined)} />}
+          <InvestmentCta kind={page.secondaryCta?.kind ?? (page.kind === "seller" ? "buyer" : "seller")} secondary href={page.secondaryCta?.href ?? (page.type ? `/tr/santralini-sat?type=${page.type}` : undefined)} label={page.secondaryCta?.label ?? (page.type ? `${page.type}’imi Satmak İstiyorum` : undefined)} />
         </div>
         <p className="mt-6 flex items-start gap-2 text-sm leading-6 text-steel"><ShieldCheck aria-hidden="true" className="mt-0.5 h-5 w-5 shrink-0 text-energy-500" />Kontrollü bilgi paylaşımı · Teknik değerlendirme · Yatırımcı eşleştirme</p>
       </Container>
     </section>
+    {page.process && <section className="bg-navy-950 py-12 sm:py-16"><Container>
+      <h2 className="text-3xl font-bold text-white">{page.process.heading}</h2>
+      <ol className={`mt-8 grid gap-5 md:grid-cols-2 ${page.process.steps.length === 5 ? "lg:grid-cols-3 xl:grid-cols-5" : "lg:grid-cols-4"}`}>
+        {page.process.steps.map((step, index) => <li key={step.title} className="premium-card rounded-xl p-6">
+          <p aria-hidden="true" className="mb-4 text-xs font-semibold tracking-widest text-energy-500">{String(index + 1).padStart(2, "0")}</p>
+          <h3 className="text-lg font-bold text-white">{step.title}</h3>
+          <p className="mt-3 text-sm leading-7 text-steel">{step.text}</p>
+          {step.links && <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2">{step.links.map((link) => <Link key={link.href} href={link.href} className="inline-flex items-center gap-1 text-sm font-semibold text-energy-500 hover:text-white">{link.label}<ArrowUpRight aria-hidden="true" className="h-4 w-4 shrink-0" /></Link>)}</div>}
+        </li>)}
+      </ol>
+      {page.process.note && <p className="mt-6 max-w-3xl text-sm leading-7 text-steel">{page.process.note}</p>}
+    </Container></section>}
     <section className="bg-navy-900 py-14 sm:py-20">
       <Container>
         <div className={home ? "grid gap-5 md:grid-cols-2 lg:grid-cols-4" : "grid gap-6 lg:grid-cols-2"}>
@@ -46,6 +66,7 @@ export function InvestmentPage({ page }: { page: PageData }) {
             <h2 className="text-xl font-bold text-white">{section.heading}</h2>
             <p className="mt-4 text-sm leading-7 text-steel">{section.text}</p>
             {section.href && <Link href={`/tr/${section.href}`} className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-energy-500 hover:text-white">{section.linkLabel}<ArrowUpRight aria-hidden="true" className="h-4 w-4 shrink-0" /></Link>}
+            {section.extraLinks && <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2">{section.extraLinks.map((link) => <Link key={link.href} href={`/tr/${link.href}`} className="inline-flex items-center gap-2 text-sm font-semibold text-energy-500 hover:text-white">{link.label}<ArrowUpRight aria-hidden="true" className="h-4 w-4 shrink-0" /></Link>)}</div>}
           </section>)}
         </div>
       </Container>
@@ -66,15 +87,16 @@ export function InvestmentPage({ page }: { page: PageData }) {
       <nav aria-label="İlgili yatırım hizmetleri" className="flex flex-wrap gap-3">
         {investmentPages.filter((item) => item.slug !== page.slug).map((item) => <Link key={item.slug} href={`/tr/${item.slug}`} className="rounded-md border border-white/15 px-4 py-3 text-sm text-steel hover:border-energy-500 hover:text-energy-500">{navLabelBySlug[item.slug] ?? (item.type ? `Satılık ${item.type}` : item.slug === "hes-degerleme" ? "HES Değerleme" : item.slug === "ges-degerleme" ? "GES Değerleme" : item.kind === "buyer" ? "Santral Satın Al" : item.kind === "seller" ? "Santralini Sat" : item.service ? "Teknik Due Diligence" : "Satılık Enerji Santralleri")}</Link>)}
       </nav>
-      <div className="mt-7 flex flex-col gap-3 sm:flex-row"><InvestmentCta kind="diligence" /><InvestmentCta kind="valuation" secondary /></div>
+      <div className="mt-7 flex flex-col gap-3 sm:flex-row">{page.kind === "seller" ? <InvestmentCta kind="seller" href="#yatirim-formu" label={page.ctaLabel} /> : page.service === "diligence" ? <InvestmentCta kind="diligence" href={page.ctaHref} label={page.ctaLabel} /> : <><InvestmentCta kind="diligence" /><InvestmentCta kind="valuation" secondary href={page.service === "valuation" ? page.ctaHref : undefined} /></>}</div>
     </Container></section>
-    {home && <section className="bg-navy-950 py-14"><Container>
+    {faqs && <section className="bg-navy-950 py-14"><Container>
       <h2 className="mb-7 text-3xl font-bold text-white">Sık sorulan sorular</h2>
-      <div className="grid gap-4">{investmentFaqs.map((faq) => <details key={faq.question} className="rounded-lg border border-white/15 p-5"><summary className="cursor-pointer font-semibold text-white">{faq.question}</summary><p className="mt-4 max-w-4xl leading-8 text-steel">{faq.answer}</p></details>)}</div>
+      <div className="grid gap-4">{faqs.map((faq) => <details key={faq.question} className="rounded-lg border border-white/15 p-5"><summary className="cursor-pointer font-semibold text-white">{faq.question}</summary><p className="mt-4 max-w-4xl leading-8 text-steel">{faq.answer}</p></details>)}</div>
     </Container></section>}
     <section className="bg-navy-950 py-14"><Container>
       <h2 className="mb-7 text-2xl font-bold text-white">Enerji yatırım rehberleri</h2>
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{investmentArticles.map((post) => <Link key={post.slug} href={`/tr/blog/${post.slug}`} className="premium-card rounded-lg p-5 hover:border-energy-500/50"><h3 className="font-semibold text-white">{post.title}</h3><p className="mt-3 text-sm leading-6 text-steel">{post.description}</p></Link>)}</div>
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{articles.map((post) => <Link key={post.slug} href={`/tr/blog/${post.slug}`} className="premium-card rounded-lg p-5 hover:border-energy-500/50"><h3 className="font-semibold text-white">{post.title}</h3><p className="mt-3 text-sm leading-6 text-steel">{post.description}</p></Link>)}</div>
     </Container></section>
+    {conversionBar && <MobileStickyCtaBar locale="tr" variant="conversion" phoneRaw={trContact.phoneRaw} email={trContact.email} quoteHref={conversionBar.quoteHref} serviceType={conversionBar.serviceType} waText={conversionBar.waText} />}
   </>;
 }

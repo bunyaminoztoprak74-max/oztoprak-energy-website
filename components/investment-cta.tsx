@@ -5,13 +5,13 @@ import { ArrowRight } from "lucide-react";
 import { trackInvestment } from "./investment-tracking";
 
 const ctas = {
-  buyer: ["Yatırım Kriterlerinizi Bildirin", "/tr/santral-satin-al", ""],
-  seller: ["Gizli Görüşme Talep Et", "/tr/santralini-sat", ""],
+  buyer: ["Yatırım Kriterlerinizi İletin", "/tr/santral-satin-al", ""],
+  seller: ["Gizli Satış Görüşmesi Talep Edin", "/tr/santralini-sat", ""],
   hes: ["Satılık HES Arıyorum", "/tr/santral-satin-al?type=HES", "hes_investment_cta_click"],
   ges: ["Satılık GES Arıyorum", "/tr/santral-satin-al?type=GES", "ges_investment_cta_click"],
-  diligence: ["Teknik İnceleme Talep Et", "/tr/santral-satin-al?intent=due-diligence", "due_diligence_cta_click"],
-  valuation: ["Santral Değerleme Talep Et", "/tr/santralini-sat?intent=valuation", "valuation_cta_click"],
-  request: ["Yatırım Kriterlerinizi Bildirin", "/tr/santral-satin-al", ""]
+  diligence: ["Satın Alma Öncesi Teknik İnceleme Talep Edin", "/tr/santral-satin-al?intent=due-diligence", "due_diligence_cta_click"],
+  valuation: ["Ön Değerleme Talep Edin", "/tr/santralini-sat?intent=valuation", "valuation_cta_click"],
+  request: ["Yatırım Kriterlerinizi İletin", "/tr/santral-satin-al", ""]
 } as const;
 
 export function InvestmentCta({ kind, label, href, secondary = false }: { kind: keyof typeof ctas; label?: string; href?: string; secondary?: boolean }) {

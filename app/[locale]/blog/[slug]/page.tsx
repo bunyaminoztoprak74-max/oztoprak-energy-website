@@ -6,6 +6,7 @@ import { Container } from "@/components/container";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { CtaSection } from "@/components/cta-section";
 import { ConversionFunnel } from "@/components/conversion-funnel";
+import { TrackedCtaLink } from "@/components/tracked-cta-link";
 import { getPost, getPosts } from "@/content/blog";
 import { getDictionary } from "@/content/dictionaries";
 import { getService } from "@/content/services";
@@ -159,6 +160,21 @@ export default async function BlogPostPage({ params }: { params: Promise<{ local
                 {section.links?.map((link) => <p key={link.href}><Link href={link.href}>{link.label}</Link></p>)}
               </section>
             ))}
+            {post.cta && (
+              <section className="not-prose my-10 rounded-xl border border-energy-500/30 bg-energy-500/10 p-6">
+                <h2 className="text-xl font-bold text-white">{post.cta.title}</h2>
+                <p className="mt-3 text-sm leading-7 text-steel">{post.cta.text}</p>
+                <TrackedCtaLink
+                  href={post.cta.href}
+                  serviceType="investment_blog"
+                  ctaSource={post.cta.source}
+                  event="investment_cta_click"
+                  className="mt-5 inline-flex min-h-12 items-center rounded-md bg-energy-500 px-5 py-3 text-sm font-bold text-navy-950 shadow-glow hover:bg-white"
+                >
+                  {post.cta.label}
+                </TrackedCtaLink>
+              </section>
+            )}
             <section className="not-prose my-10 rounded-lg border border-energy-500/30 bg-energy-500/10 p-6">
               <h2 className="text-2xl font-semibold text-white">
                 {locale === "en" ? "Consultant Field Note" : "Danisman Saha Notu"}

@@ -53,6 +53,8 @@ export type BlogPost = {
   body: Array<{ heading: string; content: string; links?: Array<{ label: string; href: string }> }>;
   serviceLinks: string[];
   faqs?: Array<{ question: string; answer: string }>;
+  /** Optional end-of-article conversion box pointing to a commercial page. */
+  cta?: { title: string; text: string; label: string; href: string; source: string };
 };
 
 export type SeoEntity = {
