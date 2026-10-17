@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-16T09:23:22.761324+00:00",
+  "checked_at": "2026-10-17T08:55:00.809370+00:00",
   "ok": true,
   "joined": [
     {
@@ -9,20 +9,20 @@
   ],
   "still_pending": [
     {
-      "id": "5240294",
-      "name": "Quantum Fiber"
+      "id": "2271086",
+      "name": "Intuit QuickBooks"
     },
     {
       "id": "1675692",
       "name": "IHG Hotels AMER"
     },
     {
-      "id": "2271086",
-      "name": "Intuit QuickBooks"
-    },
-    {
       "id": "3014150",
       "name": "Qatar Airways"
+    },
+    {
+      "id": "5240294",
+      "name": "Quantum Fiber"
     },
     {
       "id": "1464653",
