@@ -93,7 +93,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     locale: "tr",
     path: "/elektrik-tedarigi",
     hasTranslation: false,
-    title: "Elektrik Tedariği Teklifi | Uludağ Elektrik Yetkili Satış Acentesi | Öztoprak Enerji",
+    title: "Elektrik Tedariği Teklifi | Uludağ Elektrik Yetkili Satış Acentesi",
     description:
       "Sanayi ve yüksek tüketimli işletmeler için Uludağ Elektrik yetkili satış acentesi olarak elektrik tedariği teklifi: fatura ve tüketim bilgilerinize göre yazılı teklif ve sözleşme koşulları."
   });
