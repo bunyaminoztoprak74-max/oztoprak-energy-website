@@ -129,6 +129,7 @@ export function pageSitemapEntries() {
     // /en|/tr/industries index pages do not exist (404); only /industries/[slug] pages are listed below.
     ...pairedEntries("/en/industrial-bill-review", "/tr/industrial-bill-review", { changeFrequency: "monthly", priority: 0.9 }),
     { path: "/tr/sanayi-enerji-cozumleri", changeFrequency: "monthly", priority: 0.9 },
+    { path: "/tr/elektrik-tedarigi", changeFrequency: "monthly", priority: 0.85 },
     ...pairedEntries("/en/reactive-penalty-analysis", "/tr/reactive-penalty-analysis", { changeFrequency: "monthly", priority: 0.85 }),
     ...pairedEntries("/en/industrial-savings-checklist", "/tr/industrial-savings-checklist", { changeFrequency: "monthly", priority: 0.8 }),
     // Lead magnets & conversion pages

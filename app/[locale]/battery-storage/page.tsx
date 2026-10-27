@@ -21,10 +21,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     path: "/battery-storage",
     title: en
       ? "BESS Advisory: Feasibility, Capacity Sizing and Storage Integration"
-      : "BESS Danışmanlığı ve Enerji Depolama Fizibilitesi",
+      : "BESS Danışmanlığı: Enerji Depolama Fizibilite ve Teknik İnceleme",
     description: en
       ? "Independent BESS feasibility studies, optimum MW/MWh capacity sizing, HEPP and solar plant battery integration, and revenue optimization advisory for investors and plant owners in Turkey."
-      : "HES ve GES için BESS fizibilitesi, MW/MWh kapasite belirleme, batarya entegrasyonu ve gelir optimizasyonu. Yatırımcılar için bağımsız teknik danışmanlık."
+      : "Enerji depolama (BESS) fizibilitesi, MW/MWh kapasite belirleme, teknik due diligence ve proje danışmanlığı. HES, GES ve depolamalı GES yatırımcıları için teknik danışmanlık."
   });
 }
 

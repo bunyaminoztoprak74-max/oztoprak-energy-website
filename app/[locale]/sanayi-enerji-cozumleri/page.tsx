@@ -118,8 +118,9 @@ export default async function IndustrialEnergySolutionsPage({ params }: { params
           <div className="rounded-xl border border-energy-500/25 bg-energy-500/5 p-8">
             <p className="text-sm font-semibold uppercase tracking-widest text-energy-500">Elektrik tedariki ve maliyet incelemesi</p>
             <h2 className="mt-4 text-3xl font-bold text-white">Tüketim yapınıza göre başlayın</h2>
-            <p className="mt-4 text-sm leading-7 text-steel">Fatura ve tüketim verileri üzerinden hangi bilgilerin gerektiğini belirleyelim. Elektrik tedariki talebi satış sürecinde, teknik inceleme ihtiyacı danışmanlık sürecinde ele alınır.</p>
+            <p className="mt-4 text-sm leading-7 text-steel">Fatura ve tüketim verileri üzerinden hangi bilgilerin gerektiğini belirleyelim. Elektrik tedariği için doğrudan teklif talep edebilir, teknik inceleme ihtiyacını ise danışmanlık sürecinde ele alabilirsiniz.</p>
             <Link href="/tr/industrial-bill-review" className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-energy-500 hover:text-white">İnceleme talebi oluştur <ArrowRight className="h-4 w-4" /></Link>
+            <Link href="/tr/elektrik-tedarigi" className="mt-4 flex items-center gap-2 text-sm font-bold text-energy-500 hover:text-white">Elektrik tedariği teklifi talep edin <ArrowRight className="h-4 w-4" /></Link>
           </div>
           <div className="rounded-xl border border-white/15 bg-white/[0.03] p-8">
             <p className="text-sm font-semibold uppercase tracking-widest text-energy-500">GES/HES kaynak araştırması</p>

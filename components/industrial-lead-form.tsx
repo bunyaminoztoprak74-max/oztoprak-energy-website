@@ -99,7 +99,8 @@ const copy = {
   }
 } as const;
 
-export function IndustrialLeadForm({ locale }: { locale: Locale }) {
+export function IndustrialLeadForm({ locale, variant = "bill-review" }: { locale: Locale; variant?: "bill-review" | "supply" }) {
+  const isSupply = variant === "supply";
   const [status, setStatus] = useState<FormStatus>("idle");
   const [message, setMessage] = useState("");
   const t = copy[locale];
@@ -147,8 +148,8 @@ export function IndustrialLeadForm({ locale }: { locale: Locale }) {
     const company = String(formData.get("company") || "");
 
     formData.set("access_key", accessKey as string);
-    formData.set("subject", `Oztoprak Energy: Industrial Bill Review — ${company || name}`);
-    formData.set("from_name", "Oztoprak Energy — Industrial Lead");
+    formData.set("subject", isSupply ? `Oztoprak Energy: Elektrik Tedarigi Teklif Talebi — ${company || name}` : `Oztoprak Energy: Industrial Bill Review — ${company || name}`);
+    formData.set("from_name", isSupply ? "Oztoprak Energy — Electricity Supply Lead" : "Oztoprak Energy — Industrial Lead");
     formData.set("to", "info@oztoprakenerji.com");
     formData.set(
       "message",
@@ -179,7 +180,7 @@ export function IndustrialLeadForm({ locale }: { locale: Locale }) {
       setMessage(t.successMsg);
       form.reset();
       if (typeof window !== "undefined" && typeof (window as Window & { oztoprakTrack?: (e: string, p?: object) => void }).oztoprakTrack === "function") {
-        (window as Window & { oztoprakTrack?: (e: string, p?: object) => void }).oztoprakTrack!("bill_review_form_submit", { locale });
+        (window as Window & { oztoprakTrack?: (e: string, p?: object) => void }).oztoprakTrack!(isSupply ? "electricity_supply_form_submit" : "bill_review_form_submit", { locale });
       }
     } catch {
       setStatus("error");
@@ -293,7 +294,7 @@ export function IndustrialLeadForm({ locale }: { locale: Locale }) {
           disabled={status === "loading"}
           className="w-full rounded-md bg-energy-500 px-6 py-4 text-base font-bold text-navy-950 shadow-glow transition hover:bg-white disabled:cursor-not-allowed disabled:opacity-70"
         >
-          {status === "loading" ? t.submitting : t.submit}
+          {status === "loading" ? t.submitting : isSupply && locale === "tr" ? "Elektrik Tedariği Teklifi Talep Et" : t.submit}
         </button>
         <p className="text-center text-xs leading-5 text-steel">{t.disclaimer}</p>
       </div>
