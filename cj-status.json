@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-13T12:42:43.982549+00:00",
+  "checked_at": "2026-11-14T11:51:11.946527+00:00",
   "ok": true,
   "joined": [
     {
@@ -8,10 +8,6 @@
     }
   ],
   "still_pending": [
-    {
-      "id": "1464653",
-      "name": "Priceline"
-    },
     {
       "id": "2271086",
       "name": "Intuit QuickBooks"
@@ -27,6 +23,10 @@
     {
       "id": "1675692",
       "name": "IHG Hotels AMER"
+    },
+    {
+      "id": "1464653",
+      "name": "Priceline"
     }
   ],
   "error": null
